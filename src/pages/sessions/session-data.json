@@ -1,0 +1,30 @@
+{
+  "lastUpdated": "2019-01-03T00:00:00.000Z",
+  "sessions": [
+    {
+      "id": "SG-S01-E01",
+      "series": "SG-S01",
+      "name": "Kick off - Session 01",
+      "location": {
+        "id": "sg-wework-beach-road"
+      },
+      "time": {
+        "start": "2019-02-20T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": "https://www.meetup.com/BlockChain-Dapps-Technology/events/257675124/"
+      }
+    }
+  ],
+  "locations": [
+    {
+      "id": "sg-wework-beach-road",
+      "name": "WeWork Beach Centre",
+      "address": "15 Beach Rd, Singapore 189677",
+      "plusCode": "7VW4+86 Singapore"
+    }
+  ]
+}
