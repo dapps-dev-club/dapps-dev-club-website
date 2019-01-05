@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 
 import sessionData from './session-data.json';
@@ -97,6 +98,11 @@ export default class Sessions extends React.Component {
     return (
       <Layout>
         <section className="section">
+          <Helmet
+            titleTemplate="%s | DApps Dev Club"
+          >
+            <title>Sessions</title>
+          </Helmet>
           <div className="container">
             <div className="content">
               <h1>Sessions</h1>

@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from 'react-helmet';
 import Layout from '../../components/Layout'
 
 export default class Cert extends React.Component {
@@ -22,6 +23,11 @@ export default class Cert extends React.Component {
     return (
       <Layout>
         <section className="section">
+          <Helmet
+            titleTemplate="%s | DApps Dev Club"
+          >
+            <title>Certificates</title>
+          </Helmet>
           <div className="container">
             <div className="content">
               <h1>Certificates</h1>
