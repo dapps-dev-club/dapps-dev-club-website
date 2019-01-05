@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import githubIcon from '../img/github-icon.svg'
 import discordIcon from '../img/discord-icon.svg'
+import rssIcon from '../img/rss-icon.svg'
 
 const Navbar = class extends React.Component {
 
@@ -86,6 +87,18 @@ const Navbar = class extends React.Component {
         >
           <span className="icon">
             <img src={discordIcon} alt="Discord" />
+          </span>
+        </a>
+      </div>
+      <div className="navbar-end has-text-centered">
+        <a
+          className="navbar-item"
+          href="/rss.xml"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="icon">
+            <img src={rssIcon} alt="RSS Feed" />
           </span>
         </a>
       </div>

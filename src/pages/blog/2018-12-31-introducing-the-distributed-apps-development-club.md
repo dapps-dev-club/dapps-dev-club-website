@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Introducing the Distributed Apps Development Club
 date: 2018-12-31T14:56:00.000Z
+draft: false
 description: Why we're creating this club
 tags:
   - news

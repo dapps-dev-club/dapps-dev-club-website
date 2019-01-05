@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: We have a logo!
 date: 2019-01-04T06:12:00.000Z
+draft: false
 description: Time to rock!
 tags:
   - news
