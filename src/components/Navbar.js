@@ -46,62 +46,52 @@ const Navbar = class extends React.Component {
         </div>
       </div>
       <div id="navMenu" className="navbar-menu">
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/start">
-          Start here!
-        </Link>
-      </div>
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/sessions">
-          Sessions
-        </Link>
-      </div>
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/sponsors">
-          Sponsors
-        </Link>
-      </div>
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/cert">
-          Certificates
-        </Link>
-      </div>
-      <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="https://github.com/dapps-dev-club"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={githubIcon} alt="Github" />
-          </span>
-        </a>
-      </div>
-      <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="https://discordapp.com/invite/RTup7Ba"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={discordIcon} alt="Discord" />
-          </span>
-        </a>
-      </div>
-      <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="/rss.xml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={rssIcon} alt="RSS Feed" />
-          </span>
-        </a>
-      </div>
+        <div className="navbar-start has-text-centered">
+          <Link className="navbar-item" to="/start">
+            Start here!
+          </Link>
+          <Link className="navbar-item" to="/sessions">
+            Sessions
+          </Link>
+          <Link className="navbar-item" to="/sponsors">
+            Sponsors
+          </Link>
+          <Link className="navbar-item" to="/cert">
+            Certificates
+          </Link>
+        </div>
+        <div className="navbar-end has-text-centered">
+          <a
+            className="navbar-item"
+            href="https://github.com/dapps-dev-club"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <img src={githubIcon} alt="Github" />
+            </span>
+          </a>
+          <a
+            className="navbar-item"
+            href="https://discordapp.com/invite/RTup7Ba"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <img src={discordIcon} alt="Discord" />
+            </span>
+          </a>
+          <a
+            className="navbar-item"
+            href="/rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <img src={rssIcon} alt="RSS Feed" />
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
