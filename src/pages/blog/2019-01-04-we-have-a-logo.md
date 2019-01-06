@@ -8,7 +8,7 @@ tags:
   - news
 ---
 
-“Distributed Applications Development Club” - that is quite a mouthful to say!
+“Decentralised Applications Development Club” - that is quite a mouthful to say!
 
 <!-- excerpt -->
 

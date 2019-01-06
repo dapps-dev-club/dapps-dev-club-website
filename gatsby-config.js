@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'DApps Dev Club',
-    description: 'Website of the Distributed Applications Development Club',
+    description: 'Website of the Decentralised Applications Development Club',
     siteUrl: 'https:\/\/dappsdev.org',
     author: 'bguiz',
   },

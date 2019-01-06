@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Introducing the Distributed Apps Development Club
+title: Introducing the Decentralised Apps Development Club
 date: 2018-12-31T14:56:00.000Z
 draft: false
 description: Why we're creating this club
@@ -10,7 +10,7 @@ tags:
 
 Cryptocurrencies are about *much more* than just money and investing.
 
-There are many technologies underpinning them: Cryptography, peer-to-peer communication, distributed consensus, distributed storage, smart contracts, and many more.
+There are many technologies underpinning them: Cryptography, peer-to-peer communication, distributed consensus, decentralised storage, smart contracts, and many more.
 
 <!-- excerpt -->
 
@@ -20,5 +20,5 @@ However, when attending the local meetups dedicated to cryptocurrencies, we have
 
 What is missing, we feel, in the meetup ecosystem, is how does one actually go about developing applications using this new set of technologies.
 
-This is the impetus for the Distributed Apps Development Club - a group that meets regularly, to learn, collaborate, and build DApps together on a regular basis. More details to come soon!
+This is the impetus for the Decentralised Apps Development Club - a group that meets regularly, to learn, collaborate, and build DApps together on a regular basis. More details to come soon!
 
