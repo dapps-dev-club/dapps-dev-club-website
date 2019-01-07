@@ -30,11 +30,15 @@ const TemplateWrapper = ({ children }) => (
 
 	        <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#ff4400" />
 	        <meta name="theme-color" content="#fff" />
-
+          <meta property="og:locale" content="en_GB" />
 	        <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
+          <meta property="og:site_name" content={data.site.siteMetadata.title} />
+          <meta property="og:description" content={data.site.siteMetadata.description} />
           <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/og-image.jpg" />
+          <meta property="og:image" content="/img/dadc-logo.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:alt" content={data.site.siteMetadata.description} />
         </Helmet>
         <Navbar />
         <div>{children}</div>

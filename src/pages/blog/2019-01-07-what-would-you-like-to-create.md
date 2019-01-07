@@ -2,10 +2,15 @@
 templateKey: blog-post
 title: What would you like to create?
 date: 2019-01-06T16:29:00.000Z
+updatedDate: 2019-01-06T16:29:00.000Z
 draft: false
 description: Ideas welcome! Feedback welcome!
+section: news
+authors:
+  - bguiz
 tags:
-  - news
+  - DApps
+  - events
 ---
 
 The Decentralised Apps Development Club plans to meet regularly, twice a month. In each meeting we will review the previous session’s topic, and discuss a new topic. In between sessions, we work on the current topic so as to have something to bring to the next one.

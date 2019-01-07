@@ -42,14 +42,18 @@ AuthorPageTemplate.propTypes = {
   fullName: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   helmet: PropTypes.object.isRequired,
 };
 
 const AuthorPage = ({ data }) => {
   const { markdownRemark: post } = data
   const fullName = post.frontmatter.fullName;
-  const ogpDescription = `${fullName} | Author | DApps Dev Club`;
+  const ogpDescription = `${fullName} | Author`;
+  const img = post.frontmatter.image || data.site.siteMetadata.siteLogo || '';
+  const ogpImage = img.match(/^https?\:\/\/.*/) ?
+    img :
+    `${data.site.siteMetadata.siteUrl}${img}`;
 
   return (
     <Layout>
@@ -66,15 +70,20 @@ const AuthorPage = ({ data }) => {
             <meta property="og:title" content={fullName} />
             <meta property="og:description" content={ogpDescription} />
 	          <meta property="og:type" content="profile" />
-            <meta property="og:image" content={`${post.frontmatter.image}`} />
+            <meta property="og:image" content={ogpImage} />
+            <meta property="og:section" content="author" />
             <meta property="og:url" content={`/author/${post.frontmatter.userName}`} />
             <meta property="og:article:username" content={post.frontmatter.userName} />
             <meta property="og:article:first_name" content={post.frontmatter.firstName} />
             <meta property="og:article:last_name" content={post.frontmatter.lastName} />
           </Helmet>
         }
-        tags={['author']}
         title={post.frontmatter.title}
+        userName={post.frontmatter.userName}
+        fullName={post.frontmatter.fullName}
+        firstName={post.frontmatter.firstName}
+        lastName={post.frontmatter.lastName}
+        image={post.frontmatter.image}
       />
     </Layout>
   )
@@ -90,6 +99,12 @@ export default AuthorPage;
 
 export const pageQuery = graphql`
   query AuthorPageByID($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+        siteLogo
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       id
       html

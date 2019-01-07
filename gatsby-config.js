@@ -3,6 +3,7 @@ module.exports = {
     title: 'DApps Dev Club',
     description: 'Website of the Decentralised Applications Development Club',
     siteUrl: 'https:\/\/dappsdev.org',
+    siteLogo: '/img/dadc-logo.png',
     author: 'bguiz',
   },
   plugins: [

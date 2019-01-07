@@ -2,10 +2,16 @@
 templateKey: blog-post
 title: Introducing the Decentralised Apps Development Club
 date: 2018-12-31T14:56:00.000Z
+updatedDate: 2018-12-31T14:56:00.000Z
 draft: false
 description: Why we're creating this club
+section: news
+authors:
+  - bguiz
 tags:
-  - news
+  - DApps
+  - cryptocurrency
+  - software
 ---
 
 Cryptocurrencies are about *much more* than just money and investing.

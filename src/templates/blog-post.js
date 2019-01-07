@@ -49,13 +49,20 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string,
   helmet: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
+  const ogpTitle = `${post.frontmatter.title} | DApps Dev Club`;
+  const ogpDescription = `${post.frontmatter.description}`;
+  const img = post.frontmatter.image || data.site.siteMetadata.siteLogo || '';
+  const ogpImage = img.match(/^https?\:\/\/.*/) ?
+    img :
+    `${data.site.siteMetadata.siteUrl}${img}`;
 
   return (
     <Layout>
@@ -68,7 +75,24 @@ const BlogPost = ({ data }) => {
             titleTemplate="%s | DApps Dev Club"
           >
             <title>{`${post.frontmatter.title}`}</title>
-            <meta name="description" content={`${post.frontmatter.description}`} />
+            <meta name="description" content={ogpDescription} />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={ogpTitle} />
+            <meta property="og:description" content={ogpDescription} />
+            <meta property="og:image" content={ogpImage} />
+            <meta property="og:article:published_time" content={`${post.frontmatter.date}`} />
+            <meta property="og:article:modified_time" content={`${post.frontmatter.updatedDate}`} />
+            <meta property="og:section" content={`${post.frontmatter.section}`} />
+            {post.frontmatter.authors.map((author) => {
+              return (
+                <meta property="og:author" content={`/author/${author}`} key={author} />
+              );
+            })}
+            {post.frontmatter.tags.map((tag) => {
+              return (
+                <meta property="og:tag" content={tag} key={tag} />
+              );
+            })}
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -88,6 +112,12 @@ export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+        siteLogo
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -96,6 +126,9 @@ export const pageQuery = graphql`
         title
         description
         tags
+        updatedDate
+        section
+        authors
       }
     }
   }
