@@ -11,39 +11,48 @@ const TemplateWrapper = ({ children }) => (
       query HeadingQuery {
           site {
             siteMetadata {
-              title,
-              description,
+              title
+              description
+              siteUrl
+              siteLogo
             }
           }
         }
     `}
-    render={data => (
-      <div>
+    render={(data) => {
+      const { siteMetadata } = data.site;
+      const img = siteMetadata.siteLogo || '';
+      const ogpImage = img.match(/^https?:\/\/.*/) ?
+        img :
+        `${siteMetadata.siteUrl}${img}`;
+      const ogpUrl = `${siteMetadata.siteUrl}/`
+
+      return (<div>
         <Helmet>
           <html lang="en" />
-          <title>{data.site.siteMetadata.title}</title>
-          <meta name="description" content={data.site.siteMetadata.description} />
+          <title>{siteMetadata.title}</title>
+          <meta name="description" content={siteMetadata.description} />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
 	        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
 	        <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
-
-	        <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#ff4400" />
 	        <meta name="theme-color" content="#fff" />
+
           <meta property="og:locale" content="en_GB" />
 	        <meta property="og:type" content="website" />
-          <meta property="og:title" content={data.site.siteMetadata.title} />
-          <meta property="og:site_name" content={data.site.siteMetadata.title} />
-          <meta property="og:description" content={data.site.siteMetadata.description} />
-          <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/dadc-logo.png" />
+          <meta property="og:title" content={siteMetadata.title} />
+          <meta property="og:site_name" content={siteMetadata.title} />
+          <meta property="og:description" content={siteMetadata.description} />
+          <meta property="og:url" content={ogpUrl} />
+          <meta property="og:image" content={ogpImage} />
           <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:alt" content={data.site.siteMetadata.description} />
+          <meta property="og:image:alt" content={siteMetadata.description} />
         </Helmet>
         <Navbar />
         <div>{children}</div>
-      </div>
-    )}
+      </div>);
+      }
+    }
   />
 )
 

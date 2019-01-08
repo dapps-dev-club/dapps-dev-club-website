@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'DApps Dev Club',
-    description: 'Website of the Decentralised Applications Development Club',
+    description: 'The Decentralised Applications Development Club',
     siteUrl: 'https:\/\/dappsdev.org',
-    siteLogo: '/img/dadc-logo.png',
+    siteLogo: '/img/dadc-logo-square.png',
     author: 'bguiz',
   },
   plugins: [

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -48,42 +47,45 @@ AuthorPageTemplate.propTypes = {
 
 const AuthorPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const fullName = post.frontmatter.fullName;
-  const ogpDescription = `${fullName} | Author`;
-  const img = post.frontmatter.image || data.site.siteMetadata.siteLogo || '';
-  const ogpImage = img.match(/^https?\:\/\/.*/) ?
+  const { frontmatter } = post;
+  const { siteMetadata } = data.site;
+
+  const fullName = frontmatter.fullName;
+  const ogpDescription = `Author | ${siteMetadata.title}`;
+  const img = frontmatter.image || siteMetadata.siteLogo || '';
+  const ogpImage = img.match(/^https?:\/\/.*/) ?
     img :
-    `${data.site.siteMetadata.siteUrl}${img}`;
+    `${siteMetadata.siteUrl}${img}`;
+  const ogpUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
 
   return (
     <Layout>
       <AuthorPageTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={frontmatter.description}
         helmet={
           <Helmet
-            titleTemplate="%s | Author | DApps Dev Club"
+            titleTemplate={`%s | Author | ${siteMetadata.title}`}
           >
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{frontmatter.fullName}</title>
             <meta name="description" content={ogpDescription} />
             <meta property="og:title" content={fullName} />
             <meta property="og:description" content={ogpDescription} />
 	          <meta property="og:type" content="profile" />
             <meta property="og:image" content={ogpImage} />
             <meta property="og:section" content="author" />
-            <meta property="og:url" content={`/author/${post.frontmatter.userName}`} />
-            <meta property="og:article:username" content={post.frontmatter.userName} />
-            <meta property="og:article:first_name" content={post.frontmatter.firstName} />
-            <meta property="og:article:last_name" content={post.frontmatter.lastName} />
+            <meta property="og:url" content={ogpUrl} />
+            <meta property="og:article:username" content={frontmatter.userName} />
+            <meta property="og:article:first_name" content={frontmatter.firstName} />
+            <meta property="og:article:last_name" content={frontmatter.lastName} />
           </Helmet>
         }
-        title={post.frontmatter.title}
-        userName={post.frontmatter.userName}
-        fullName={post.frontmatter.fullName}
-        firstName={post.frontmatter.firstName}
-        lastName={post.frontmatter.lastName}
-        image={post.frontmatter.image}
+        userName={frontmatter.userName}
+        fullName={frontmatter.fullName}
+        firstName={frontmatter.firstName}
+        lastName={frontmatter.lastName}
+        image={frontmatter.image}
       />
     </Layout>
   )
@@ -101,6 +103,8 @@ export const pageQuery = graphql`
   query AuthorPageByID($id: String!) {
     site {
       siteMetadata {
+        title
+        description
         siteUrl
         siteLogo
       }
@@ -108,6 +112,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields { slug }
       frontmatter {
         userName
         fullName

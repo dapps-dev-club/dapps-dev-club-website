@@ -56,47 +56,53 @@ BlogPostTemplate.propTypes = {
 };
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
-  const ogpTitle = `${post.frontmatter.title} | DApps Dev Club`;
-  const ogpDescription = `${post.frontmatter.description}`;
-  const img = post.frontmatter.image || data.site.siteMetadata.siteLogo || '';
-  const ogpImage = img.match(/^https?\:\/\/.*/) ?
+  const { markdownRemark: post } = data;
+  const { frontmatter } = post;
+  const { siteMetadata } = data.site;
+
+  const ogpTitle = `${frontmatter.title} | DApps Dev Club`;
+  const ogpDescription = `${frontmatter.description}`;
+  const img = frontmatter.image || siteMetadata.siteLogo || '';
+  const ogpImage = img.match(/^https?:\/\/.*/) ?
     img :
-    `${data.site.siteMetadata.siteUrl}${img}`;
+    `${siteMetadata.siteUrl}${img}`;
+  const ogpUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
 
   return (
     <Layout>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={frontmatter.description}
         helmet={
           <Helmet
-            titleTemplate="%s | DApps Dev Club"
+            titleTemplate={`%s | News | ${siteMetadata.title}`}
           >
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${frontmatter.title}`}</title>
             <meta name="description" content={ogpDescription} />
             <meta property="og:type" content="article" />
             <meta property="og:title" content={ogpTitle} />
             <meta property="og:description" content={ogpDescription} />
             <meta property="og:image" content={ogpImage} />
-            <meta property="og:article:published_time" content={`${post.frontmatter.date}`} />
-            <meta property="og:article:modified_time" content={`${post.frontmatter.updatedDate}`} />
-            <meta property="og:section" content={`${post.frontmatter.section}`} />
-            {post.frontmatter.authors.map((author) => {
+            <meta property="og:url" content={ogpUrl} />
+            <meta property="og:article:published_time" content={`${frontmatter.date}`} />
+            <meta property="og:article:modified_time" content={`${frontmatter.updatedDate}`} />
+            <meta property="og:section" content={`${frontmatter.section}`} />
+            {frontmatter.authors.map((author) => {
+              const ogpAuthor = `${siteMetadata.siteUrl}/author/${author}`
               return (
-                <meta property="og:author" content={`/author/${author}`} key={author} />
+                <meta property="og:author" content={ogpAuthor} key={author} />
               );
             })}
-            {post.frontmatter.tags.map((tag) => {
+            {frontmatter.tags.map((tag) => {
               return (
                 <meta property="og:tag" content={tag} key={tag} />
               );
             })}
           </Helmet>
         }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
+        tags={frontmatter.tags}
+        title={frontmatter.title}
       />
     </Layout>
   )
@@ -121,6 +127,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields { slug }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

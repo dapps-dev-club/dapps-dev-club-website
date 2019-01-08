@@ -36,6 +36,16 @@ AboutPageTemplate.propTypes = {
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
+  const { frontmatter } = post;
+  const { siteMetadata } = data.site;
+
+  const ogpTitle = `${frontmatter.title} | DApps Dev Club`;
+  const ogpDescription = frontmatter.description || frontmatter.title;
+  const img = frontmatter.image || siteMetadata.siteLogo || '';
+  const ogpImage = img.match(/^https?:\/\/.*/) ?
+    img :
+    `${siteMetadata.siteUrl}${img}`;
+  const ogpUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
 
   return (
     <Layout>
@@ -47,7 +57,12 @@ const AboutPage = ({ data }) => {
           <Helmet
             titleTemplate="%s | DApps Dev Club"
           >
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${frontmatter.title}`}</title>
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={ogpTitle} />
+            <meta property="og:description" content={ogpDescription} />
+            <meta property="og:image" content={ogpImage} />
+            <meta property="og:url" content={ogpUrl} />
           </Helmet>
         }
       />
@@ -63,10 +78,18 @@ export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+        siteLogo
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       html
+      fields { slug }
       frontmatter {
         title
+        description
       }
     }
   }
