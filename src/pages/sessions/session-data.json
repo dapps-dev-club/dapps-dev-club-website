@@ -4,22 +4,342 @@
     {
       "id": "SG-S01-E01",
       "series": "SG-S01",
-      "name": "Kick off - Session 01",
+      "name": "Kick off - Session #01",
       "location": {
         "id": "sg-wework-beach-road"
       },
       "time": {
+        "confirmed": true,
         "start": "2019-02-20T18:00:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
+      "topics": [
+        {
+          "id": "club-introduction",
+          "name": "Club introduction"
+        },
+        {
+          "id": "what-is-a-dapp",
+          "name": "What is a DApp?"
+        },
+        {
+          "id": "what-will-we-build",
+          "name": "What will we build?"
+        }
+      ],
       "rsvp": {
         "name": "RSVP on meetup",
         "url": "https://www.meetup.com/BlockChain-Dapps-Technology/events/257675124/"
       }
+    },
+    {
+      "id": "SG-S01-E02",
+      "series": "SG-S02",
+      "name": "Technical overview - Session #02",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-03-05T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "evm-intro",
+          "name": "The Ethereum Virtual Machine"
+        },
+        {
+          "id": "smart-contracts-intro",
+          "name": "Smart Contracts"
+        },
+        {
+          "id": "web3-intro",
+          "name": "Web3"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E03",
+      "series": "SG-S03",
+      "name": "Solidity Basics - Session #03",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-03-20T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "remix",
+          "name": "Remix"
+        },
+        {
+          "id": "solidity-data-types",
+          "name": "Data types"
+        },
+        {
+          "id": "solidity-functions",
+          "name": "Functions"
+        },
+        {
+          "id": "solidity-events",
+          "name": "Events"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E04",
+      "series": "SG-S04",
+      "name": "Using Solidity - Session #04",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-04-05T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "solidity-compiler-solc",
+          "name": "solc"
+        },
+        {
+          "id": "truffle-intro",
+          "name": "truffle"
+        },
+        {
+          "id": "ganache-intro",
+          "name": "ganache"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E05",
+      "series": "SG-S05",
+      "name": "Testing Solidity - Session #05",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-04-20T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "solidity-testing-mocha",
+          "name": "Testing with Mocha"
+        },
+        {
+          "id": "solidity-testing-state-machines",
+          "name": "Testing state machines"
+        },
+        {
+          "id": "solidity-testing-data-storage",
+          "name": "Testing data storage"
+        },
+        {
+          "id": "solidity-testing-events",
+          "name": "Testing events"
+        },
+        {
+          "id": "solidity-mocking-smart-contracts",
+          "name": "Mocking smart contracts"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E06",
+      "series": "SG-S06",
+      "name": "Front end - Session #06",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-05-05T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "web3-call-vs-send",
+          "name": "Call and Send"
+        },
+        {
+          "id": "web3-calling-payable",
+          "name": "Calling a payable function"
+        },
+        {
+          "id": "web3-estimating-gas",
+          "name": "Estimating gas"
+        },
+        {
+          "id": "web3-event-listening",
+          "name": "Listening to events"
+        },
+        {
+          "id": "web3-signing-tranactions",
+          "name": "Signing transactions"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E07",
+      "series": "SG-S07",
+      "name": "Security - Session #07",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-05-20T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "security-training-games",
+          "name": "Security training games"
+        },
+        {
+          "id": "security-modules",
+          "name": "Modules and libraries"
+        },
+        {
+          "id": "security-analysis-tools",
+          "name": "Analysis tools"
+        },
+        {
+          "id": "security-auditing",
+          "name": "Smart contract auditing"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E08",
+      "series": "SG-S08",
+      "name": "IPFS - Session #08",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-06-05T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "static-sites",
+          "name": "Static sites"
+        },
+        {
+          "id": "ipfs-uploading-updating",
+          "name": "Uploading and updating"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E09",
+      "series": "SG-S09",
+      "name": "Back end - Session #09",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-06-20T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "backend-infura",
+          "name": "Infura"
+        },
+        {
+          "id": "backend-wallet-generation",
+          "name": "Wallet generation"
+        },
+        {
+          "id": "backend-hd-wallets",
+          "name": "HD Wallets"
+        },
+        {
+          "id": "backend-multisig",
+          "name": "Multi-sig transactions"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
+    },
+    {
+      "id": "SG-S01-E10",
+      "series": "SG-S10",
+      "name": "Beyond Ethereum - Session #10",
+      "location": {
+        "id": "sg-tbc"
+      },
+      "time": {
+        "start": "2019-07-05T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "external-evm-based",
+          "name": "EVM-based"
+        },
+        {
+          "id": "external-non-evm-based",
+          "name": "EVM-based"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on meetup",
+        "url": ""
+      }
     }
   ],
   "locations": [
+    {
+      "id": "sg-tbc",
+      "name": "To Be Confirmed",
+      "address": "TBC",
+      "plusCode": "Singapore"
+    },
     {
       "id": "sg-wework-beach-road",
       "name": "WeWork Beach Centre",
