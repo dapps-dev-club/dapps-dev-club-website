@@ -38,7 +38,7 @@ export default class Sessions extends React.Component {
           </Helmet>
           <div className="container">
             <div className="content">
-              <h1>Sessions</h1>
+              <h1 id="session" name="session">Sessions</h1>
               <p>
                 We maintain a live list of all the sessions run by the club here.
                 Since we tailor each session based on the outcome of the one that just concluded,
@@ -50,12 +50,12 @@ export default class Sessions extends React.Component {
                 After each session is over, we will add links to any resources or discussions
                 from that session.
               </p>
+              <h2 id="calendar" name="calendar">Calendar</h2>
+              { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
               <h2 id="upcoming" name="upcoming">Upcoming sessions</h2>
               { renderSessionsList(upcomingSessions) }
               <h2 id="past" name="past">Past sessions</h2>
               { renderSessionsList(pastSessions) }
-              <h2 id="calendar" name="calendar">Calendar</h2>
-              { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
             </div>
           </div>
         </section>
@@ -259,17 +259,16 @@ function renderCalendar(timeZone, upcomingSessions, pastSessions) {
       className="calendar-container"
       compactMonths={false}
       dayAbbrevs={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
-      dayHeaderClassName="calendar-day-header"
+      dayHeaderClassName="tt-cal-day-header"
       dayHeaderStyle={Calendar.DayHeaderStyles.InFirstMonth}
       firstRenderedDay="2019/02/01"
       lastRenderedDay="2019/07/31"
-      gutterWidth="0.15em"
-      monthClassName="calendar-month"
+      monthClassName="tt-cal-month"
       monthHeaderFormat="MMM YYYY"
-      monthHeaderClassName="calendar-month-header"
+      monthHeaderClassName="tt-cal-month-header"
       renderDay={renderCalendarDay.bind(undefined, timeZone, sessionsMap)}
       renderMonthHeader={renderCalendarMonthHeader}
-      weekClassName="calendar-week"
+      weekClassName="tt-cal-week"
     />
   );
 }

@@ -132,7 +132,23 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    'gatsby-plugin-purgecss', // must be after other CSS plugins
+    {
+      resolve: 'gatsby-plugin-purgecss', // must be after other CSS plugins
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        develop: true, // Enable while using `gatsby develop`
+        // tailwind: true, // Enable tailwindcss support
+        // whitelist: ['whitelist'], // Don't remove this selector
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+
+        // NOTE this plug in does not deal well with snake case CSS class
+        // names, and by default purges them all. Need to explicitly white list
+        // them, since these ones come from an external library, and thus cannot
+        // be renamed.
+        whitelistPatterns: [/^tt-cal-.*$/],
+      }
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
