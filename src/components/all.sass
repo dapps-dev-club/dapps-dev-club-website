@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import "~tt-react-calendar/dist/styles"
 
 // Config vars
 // Kalidi logo brand color: #FD461E
@@ -54,5 +55,23 @@ a.navbar-item
 
 .margin-top-0
   margin-top: 0 !important
+
+.tt-cal-day > .day
+  background-color: #f3f3f3
+  color: #333333
+  margin: 0.15em
+  padding: 0em 0.5em
+  border-radius: 0.25em 0.25em 0.25em 0.25em
+
+.tt-cal-day > .day.hasEvent
+  background-color: #ff0000
+  color: #ffffff
+  font-weight: bolder
+
+.tt-cal-day > .day.hasEvent a
+  color: #ffffff
+
+.calendar-month
+  margin: 0.5em 0.15em 0.5em 0.15em;
 
 @import "~bulma"

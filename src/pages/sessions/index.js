@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
+import Calendar from 'tt-react-calendar';
 
 import sessionData from './session-data.json';
 
@@ -16,11 +17,17 @@ export default class Sessions extends React.Component {
     this.state = {
       upcomingSessions,
       pastSessions,
+      calendarTimeZone: sessionData.calendarTimeZone,
     };
   }
 
   render() {
-    console.log(this.state);
+    const {
+      upcomingSessions,
+      pastSessions,
+      calendarTimeZone,
+    } = this.state;
+
     return (
       <Layout>
         <section className="section">
@@ -43,10 +50,12 @@ export default class Sessions extends React.Component {
                 After each session is over, we will add links to any resources or discussions
                 from that session.
               </p>
-              <h2>Upcoming sessions</h2>
-              { renderSessionsList(this.state.upcomingSessions) }
-              <h2>Past sessions</h2>
-              { renderSessionsList(this.state.pastSessions) }
+              <h2 id="upcoming" name="upcoming">Upcoming sessions</h2>
+              { renderSessionsList(upcomingSessions) }
+              <h2 id="past" name="past">Past sessions</h2>
+              { renderSessionsList(pastSessions) }
+              <h2 id="calendar" name="calendar">Calendar</h2>
+              { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
             </div>
           </div>
         </section>
@@ -102,17 +111,21 @@ function preprocessSessions(sessionData) {
     };
 }
 
+function getSessionAnchor(session) {
+  return `session-${session.id}`;
+}
+
 function renderTopicsList(topics) {
   if (!Array.isArray(topics) || topics.length < 1) {
     return (
-      <p>
+      <div>
         <p>Topics: (none)</p>
-      </p>
+      </div>
     );
   }
 
   return (
-    <p>
+    <div>
       <p>Topics: </p>
       <ul>
         {topics.map((topic) => {
@@ -121,7 +134,7 @@ function renderTopicsList(topics) {
           </li>);
         })}
       </ul>
-    </p>
+    </div>
   );
 }
 
@@ -129,7 +142,7 @@ function renderRsvp(session) {
   if (!session.rsvp || !session.rsvp.url) {
     return (
       <p>
-        Registration not yet available
+        <span>Registration not yet available</span>
       </p>
     );
   }
@@ -151,12 +164,14 @@ function renderRsvp(session) {
 function renderSession(session) {
   const timeNotConfirmedEl = !session.time.confirmed ?
     (
-      <spam>&nbsp;&mdash; to be confirmed</spam>
+      <span>&nbsp;&mdash; to be confirmed</span>
     ) :
     null;
 
-  return (<li key={session.id}>
-    <h3>
+  const anchor = getSessionAnchor(session);
+
+  return (<div key={session.id}>
+    <h3 id={anchor} name={anchor}>
       {session.name}
     </h3>
     <p>
@@ -170,7 +185,8 @@ function renderSession(session) {
     </p>
     { renderTopicsList(session.topics) }
     { renderRsvp(session) }
-  </li>);
+    <p></p>
+  </div>);
 }
 
 function renderSessionsList(sessions) {
@@ -182,8 +198,78 @@ function renderSessionsList(sessions) {
     );
   }
   return (
-    <ul>
+    <div>
       { sessions.map(renderSession) }
-    </ul>
+    </div>
+  );
+}
+
+function getCalendarSessionMapKey(date, timeZone) {
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone,
+  });
+}
+
+function renderCalendarDay(timeZone, sessionsMap, day) {
+  const text = day.format('DD');
+  const key = getCalendarSessionMapKey(day.toDate());
+  const session = sessionsMap.get(key);
+  if (!session) {
+    return (
+      <div className="day">
+        {text}
+      </div>
+    );
+  } else {
+    // When an event is on this day, highlight and hyperlink
+    const href = `#${getSessionAnchor(session)}`;
+    return (
+      <div className="day hasEvent">
+        <a href={href}>
+          {text}
+        </a>
+      </div>
+    );
+  }
+}
+
+function renderCalendarMonthHeader(firstDay, format) {
+  const text = firstDay.format(format);
+  return (
+    <span className="monthHeader">
+      {text}
+    </span>
+  );
+}
+
+function renderCalendar(timeZone, upcomingSessions, pastSessions) {
+  const allSessions = [...upcomingSessions, ...pastSessions];
+  const sessionsMap = new Map();
+  allSessions.forEach((session) => {
+    const start = new Date(session.time.start);
+    const key = getCalendarSessionMapKey(start, session.time.tz);
+    sessionsMap.set(key, session);
+  });
+
+  return (
+    <Calendar
+      className="calendar-container"
+      compactMonths={false}
+      dayAbbrevs={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
+      dayHeaderClassName="calendar-day-header"
+      dayHeaderStyle={Calendar.DayHeaderStyles.InFirstMonth}
+      firstRenderedDay="2019/02/01"
+      lastRenderedDay="2019/07/31"
+      gutterWidth="0.15em"
+      monthClassName="calendar-month"
+      monthHeaderFormat="MMM YYYY"
+      monthHeaderClassName="calendar-month-header"
+      renderDay={renderCalendarDay.bind(undefined, timeZone, sessionsMap)}
+      renderMonthHeader={renderCalendarMonthHeader}
+      weekClassName="calendar-week"
+    />
   );
 }
