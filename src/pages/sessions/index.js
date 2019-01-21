@@ -115,17 +115,21 @@ function getSessionAnchor(session) {
   return `session-${session.id}`;
 }
 
+function getCalendarAnchor(session) {
+  return `calendar-${session.id}`;
+}
+
 function renderTopicsList(topics) {
   if (!Array.isArray(topics) || topics.length < 1) {
     return (
-      <div>
+      <div className="topicsList">
         <p>Topics: (none)</p>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="topicsList">
       <p>Topics: </p>
       <ul>
         {topics.map((topic) => {
@@ -168,7 +172,10 @@ function renderSession(session) {
     ) :
     null;
 
+
+  // Link "back" to the anchor of the corresponding day within the calendar
   const anchor = getSessionAnchor(session);
+  const href = `#${getCalendarAnchor(session)}`;
 
   return (<div key={session.id}>
     <h3 id={anchor} name={anchor}>
@@ -185,6 +192,11 @@ function renderSession(session) {
     </p>
     { renderTopicsList(session.topics) }
     { renderRsvp(session) }
+    <p>
+      <a href={href}>
+        &laquo; back to calendar
+      </a>
+    </p>
     <p></p>
   </div>);
 }
@@ -198,7 +210,7 @@ function renderSessionsList(sessions) {
     );
   }
   return (
-    <div>
+    <div className="sessionsList">
       { sessions.map(renderSession) }
     </div>
   );
@@ -226,8 +238,13 @@ function renderCalendarDay(timeZone, sessionsMap, day) {
   } else {
     // When an event is on this day, highlight and hyperlink
     const href = `#${getSessionAnchor(session)}`;
+    const anchor = getCalendarAnchor(session);
     return (
-      <div className="day hasEvent">
+      <div
+        id={anchor}
+        name={anchor}
+        className="day hasEvent"
+      >
         <a href={href}>
           {text}
         </a>
