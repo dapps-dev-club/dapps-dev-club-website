@@ -1,9 +1,9 @@
 ---
 templateKey: about-page
-title: DADC Sponsors
+title: Our Partners
 ---
 
-The DApps Dev Club is currently looking for sponsors!
+The DApps Dev Club is currently looking for partners!
 
 ## Venue
 
