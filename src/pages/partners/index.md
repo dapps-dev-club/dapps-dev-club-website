@@ -1,6 +1,9 @@
 ---
 templateKey: about-page
 title: Our Partners
+redirect_from:
+  - /sponsors
+  - /sponsors/
 ---
 
 The DApps Dev Club is currently looking for partners!

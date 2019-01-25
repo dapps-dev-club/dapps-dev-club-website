@@ -126,6 +126,8 @@ module.exports = {
         ],
       },
     },
+    'gatsby-redirect-from',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
