@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import Img from 'gatsby-image';
 
 export const BlogPostTemplate = ({
   content,
@@ -13,8 +14,18 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  featuredImage,
 }) => {
   const PostContent = contentComponent || Content;
+
+  let headerImage;
+  if (featuredImage) {
+    headerImage = (<Img
+      sizes={featuredImage.childImageSharp.sizes}
+    ></Img>)
+  } else {
+    headerImage = null;
+  }
 
   return (
     <section className="section">
@@ -25,14 +36,16 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
+            {headerImage}
+            <p></p>
+            <p><em>{description}</em></p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
-                    <li key={tag + `tag`}>
+                    <li key={`${tag}-tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
@@ -51,7 +64,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  featuredImage: PropTypes.object, // string has been parsed by childImageSharp
   helmet: PropTypes.object,
 };
 
@@ -60,9 +73,16 @@ const BlogPost = ({ data }) => {
   const { frontmatter } = post;
   const { siteMetadata } = data.site;
 
+  console.log('featuredImage', frontmatter.featuredImage);
+
   const ogpTitle = `${frontmatter.title} | DApps Dev Club`;
   const ogpDescription = `${frontmatter.description}`;
-  const img = frontmatter.image || siteMetadata.siteLogo || '';
+  let img;
+  if (frontmatter.featuredImage) {
+    img = frontmatter.featuredImage.childImageSharp.sizes.src;
+  } else {
+    img = siteMetadata.siteLogo || '';
+  }
   const ogpImage = img.match(/^https?:\/\/.*/) ?
     img :
     `${siteMetadata.siteUrl}${img}`;
@@ -103,6 +123,7 @@ const BlogPost = ({ data }) => {
         }
         tags={frontmatter.tags}
         title={frontmatter.title}
+        featuredImage={frontmatter.featuredImage}
       />
     </Layout>
   )
@@ -136,6 +157,15 @@ export const pageQuery = graphql`
         updatedDate
         section
         authors
+        featuredImage {
+          childImageSharp{
+              sizes(
+                maxWidth: 630
+              ) {
+                  ...GatsbyImageSharpSizes
+              }
+          }
+        }
       }
     }
   }

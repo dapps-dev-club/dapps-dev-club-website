@@ -5,6 +5,7 @@ date: 2019-01-06T16:29:00.000Z
 updatedDate: 2019-01-06T16:29:00.000Z
 draft: false
 description: Ideas welcome! Feedback welcome!
+featuredImage: /img/dadc-banner-sg-s01-e01.jpeg
 section: news
 authors:
   - bguiz

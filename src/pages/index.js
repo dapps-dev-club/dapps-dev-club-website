@@ -1,7 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+
+import Layout from '../components/Layout';
+import { HTMLContent } from '../components/Content';
+import Img from 'gatsby-image';
+
+function renderPostSummary({ node: post }) {
+  const { featuredImage } = post.frontmatter;
+
+  let headerImage;
+  if (featuredImage) {
+    headerImage = (<Img
+      sizes={featuredImage.childImageSharp.sizes}
+    ></Img>)
+  } else {
+    headerImage = null;
+  }
+
+  return (
+    <div
+      className="content"
+      style={{ border: '1px solid #333', padding: '2em 4em' }}
+      key={post.id}
+    >
+      <p>
+        <Link className="has-text-primary" to={post.fields.slug}>
+          {post.frontmatter.title}
+        </Link>
+        <span> &bull; </span>
+        <small>{post.frontmatter.date}</small>
+      </p>
+      <div>
+        {headerImage}
+        <HTMLContent content={post.excerpt}>
+        </HTMLContent>
+        <br />
+        <Link className="button is-small" to={post.fields.slug}>
+          Keep Reading →
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default class IndexPage extends React.Component {
   render() {
@@ -16,29 +57,7 @@ export default class IndexPage extends React.Component {
               <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
             </div>
             {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #333', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
+              .map(renderPostSummary)}
           </div>
         </section>
       </Layout>
@@ -65,7 +84,10 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(
+            pruneLength: 400
+            format: HTML
+          )
           id
           fields {
             slug
@@ -74,6 +96,19 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp{
+                  sizes(
+                    maxHeight: 20
+                    maxWidth: 100
+                    quality: 70
+                    grayscale: true
+                    cropFocus: CENTER
+                  ) {
+                      ...GatsbyImageSharpSizes
+                  }
+              }
+            }
           }
         }
       }
