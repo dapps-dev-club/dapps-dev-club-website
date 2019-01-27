@@ -20,9 +20,13 @@ export const BlogPostTemplate = ({
 
   let headerImage;
   if (featuredImage) {
-    headerImage = (<Img
-      sizes={featuredImage.childImageSharp.sizes}
-    ></Img>)
+    if (typeof featuredImage === 'string') {
+      headerImage = (<img src={featuredImage}></img>);
+    } else {
+      headerImage = (<Img
+        sizes={featuredImage.childImageSharp.sizes}
+      ></Img>);
+    }
   } else {
     headerImage = null;
   }
