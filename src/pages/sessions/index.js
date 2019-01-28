@@ -154,12 +154,12 @@ function renderRsvp(session) {
   return (
     <p>
       <a
-        className="navbar-item"
+        className="button is-large"
         href={session.rsvp.url}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span>{session.rsvp.name}</span>
+        <strong>{session.rsvp.name}</strong>
       </a>
     </p>
   );
