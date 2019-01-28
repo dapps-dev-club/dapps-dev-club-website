@@ -52,12 +52,31 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <div className="container">
+          <div className="content">
+            <p>
+              The Decentralised Apps Development club is a small group of
+              people who meet regularly - twice a month - think book club
+              meets tech meetup.
+            </p>
+            <p>
+              The goal is to collaboratively develop a DApp (decentralised
+              app) together, learn a lot of new skills, and have fun in the
+              process.
+            </p>
+            <p>
+              Get in touch with us online
+              on <a href="https://discordapp.com/invite/RTup7Ba">discord</a>,
+              or better still, meet us IRL at
+              the <a href="/sessions">next session</a>.
+            </p>
+          </div>
+        </section>
+        <section className="section">
+          <div>
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
             </div>
-            {posts
-              .map(renderPostSummary)}
+            {posts.map(renderPostSummary)}
           </div>
         </section>
       </Layout>
