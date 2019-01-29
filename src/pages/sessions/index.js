@@ -2,6 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 import Calendar from 'tt-react-calendar';
+import dateFormat from 'date-fns/format';
+import dateParseIso from 'date-fns/parseISO';
 
 import sessionData from './session-data.json';
 
@@ -78,16 +80,15 @@ function preprocessSessions(sessionData) {
       const location =
         locationMap.get(session.location.id) ||
         { ...session.location, name: 'NOT FOUND' };
-      const sessionTime = new Date(session.time.start);
-      const displayTime = sessionTime.toLocaleDateString(session.time.locale, {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        timeZone: session.time.tz,
-      });
+      const sessionTime = dateParseIso(session.time.start);
+      const displayTime = dateFormat(
+        sessionTime,
+        'EEEE, do MMMM YYYY, h:mm a',
+        {
+          weekStartsOn: 1,
+          awareOfUnicodeTokens: true,
+        },
+      );
       const time = {
         ...session.time,
         name: displayTime,
@@ -217,12 +218,14 @@ function renderSessionsList(sessions) {
 }
 
 function getCalendarSessionMapKey(date, timeZone) {
-  return date.toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    timeZone,
-  });
+  return dateFormat(
+    date,
+    'YYYY-MM-DD',
+    {
+      weekStartsOn: 1,
+      awareOfUnicodeTokens: true,
+    },
+  );
 }
 
 function renderCalendarDay(timeZone, sessionsMap, day) {
@@ -266,7 +269,7 @@ function renderCalendar(timeZone, upcomingSessions, pastSessions) {
   const allSessions = [...upcomingSessions, ...pastSessions];
   const sessionsMap = new Map();
   allSessions.forEach((session) => {
-    const start = new Date(session.time.start);
+    const start = dateParseIso(session.time.start);
     const key = getCalendarSessionMapKey(start, session.time.tz);
     sessionsMap.set(key, session);
   });
