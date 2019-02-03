@@ -77,8 +77,6 @@ const BlogPost = ({ data }) => {
   const { frontmatter } = post;
   const { siteMetadata } = data.site;
 
-  console.log('featuredImage', frontmatter.featuredImage);
-
   const ogpTitle = `${frontmatter.title} | DApps Dev Club`;
   const ogpDescription = `${frontmatter.description}`;
   let img;

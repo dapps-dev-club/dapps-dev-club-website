@@ -86,15 +86,40 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
+              const { siteMetadata } = site;
+
+              return allMarkdownRemark.edges.map((edge) => {
+                const { frontmatter, fields, html, excerpt } = edge.node;
+                const { title, date } = frontmatter;
+
+                let content_encoded;
+                if (frontmatter.featuredImage) {
+                  const img = frontmatter.featuredImage.publicURL;
+                  const imgUrl = img.match(/^https?:\/\/.*/) ?
+                    img :
+                    `${siteMetadata.siteUrl}${img}`;
+                  content_encoded =
+                    `<img src="${imgUrl}" alt="${title}"></img>\n<br />\n${html}`;
+                } else {
+                  content_encoded = html;
+                }
+                const custom_elements = [
+                  {
+                    "content:encoded": content_encoded,
+                  }
+                ]
+
+                return Object.assign({
+                  title,
+                  date,
+                }, {
+                  description: excerpt,
+                  date: frontmatter.date,
+                  url: siteMetadata.siteUrl + fields.slug,
+                  guid: siteMetadata.siteUrl + fields.slug + '?v=2',
+                  custom_elements,
+                });
+              });
             },
             query: `
               {
@@ -114,6 +139,9 @@ module.exports = {
                       frontmatter {
                         title
                         date
+                        featuredImage {
+                          publicURL
+                        }
                       }
                     }
                   }
