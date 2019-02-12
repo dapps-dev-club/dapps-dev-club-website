@@ -2,9 +2,10 @@
 templateKey: blog-post
 title: NBC’19 partners with DApps Dev Club
 date: 2019-10-09T15:08:00.000Z
-updatedDate: 2019-02-12T14:20:00.000Z
+updatedDate: 2019-02-13T15:05:00.000Z
 draft: false
 description:
+featuredImage: /img/nbc19-dadc-partnership-post.png
 section: news
 authors:
   - bguiz
