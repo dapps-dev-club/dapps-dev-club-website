@@ -4,8 +4,15 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import QrCode from '../components/QrCode';
 
-export const AboutPageTemplate = ({ title, content, contentComponent, helmet }) => {
+export const AboutPageTemplate = ({
+  title,
+  content,
+  qrCode,
+  contentComponent,
+  helmet,
+}) => {
   const PageContent = contentComponent || Content;
 
   return (
@@ -19,6 +26,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent, helmet }) 
                 {title}
               </h2>
               <PageContent className="content" content={content} />
+              {qrCode}
             </div>
           </div>
         </div>
@@ -30,6 +38,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent, helmet }) 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
+  qrCode: PropTypes.object,
   contentComponent: PropTypes.func,
   helmet: PropTypes.object,
 };
@@ -46,6 +55,7 @@ const AboutPage = ({ data }) => {
     img :
     `${siteMetadata.siteUrl}${img}`;
   const ogpUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
+  const logoUrl = `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`;
 
   return (
     <Layout>
@@ -64,6 +74,12 @@ const AboutPage = ({ data }) => {
             <meta property="og:image" content={ogpImage} />
             <meta property="og:url" content={ogpUrl} />
           </Helmet>
+        }
+        qrCode={
+          <QrCode
+            url={ogpUrl}
+            logoUrl={logoUrl}
+          ></QrCode>
         }
       />
     </Layout>

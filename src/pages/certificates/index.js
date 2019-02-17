@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout'
+import QrCode from '../../components/QrCode';
 
 export default class Cert extends React.Component {
   constructor(props) {
@@ -48,6 +49,10 @@ export default class Cert extends React.Component {
                   <button className="button is-link" type="submit">Retrieve</button>
                 </div>
               </form>
+              <QrCode
+                url="https://dappsdev.org/certificates/"
+                logoUrl="https://dappsdev.org/img/dadc-logo.png"
+              ></QrCode>
             </div>
           </div>
         </section>

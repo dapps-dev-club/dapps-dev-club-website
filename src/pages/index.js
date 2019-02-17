@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import { HTMLContent } from '../components/Content';
-import Img from 'gatsby-image';
+import QrCode from '../components/QrCode';
 
 function renderPostSummary({ node: post }) {
   const { featuredImage } = post.frontmatter;
@@ -79,6 +80,10 @@ export default class IndexPage extends React.Component {
             {posts.map(renderPostSummary)}
           </div>
         </section>
+        <QrCode
+          url="https://dappsdev.org/"
+          logoUrl="https://dappsdev.org/img/dadc-logo.png"
+        ></QrCode>
       </Layout>
     )
   }

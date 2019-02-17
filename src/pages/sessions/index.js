@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import Calendar from 'tt-react-calendar';
 import dateFormat from 'date-fns/format';
 import dateParseIso from 'date-fns/parseISO';
+import QrCode from '../../components/QrCode';
 
 import sessionData from './session-data.json';
 
@@ -58,6 +59,10 @@ export default class Sessions extends React.Component {
               { renderSessionsList(upcomingSessions) }
               <h2 id="past" name="past">Past sessions</h2>
               { renderSessionsList(pastSessions) }
+              <QrCode
+                url="https://dappsdev.org/sessions/"
+                logoUrl="https://dappsdev.org/img/dadc-logo.png"
+              ></QrCode>
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import QrCode from '../components/QrCode';
 import Img from 'gatsby-image';
 
 export const BlogPostTemplate = ({
@@ -13,6 +14,7 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  qrCode,
   helmet,
   featuredImage,
 }) => {
@@ -44,6 +46,7 @@ export const BlogPostTemplate = ({
             <p></p>
             <p><em>{description}</em></p>
             <PostContent content={content} />
+            {qrCode}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -68,6 +71,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  qrCode: PropTypes.object,
   featuredImage: PropTypes.object, // string has been parsed by childImageSharp
   helmet: PropTypes.object,
 };
@@ -89,6 +93,7 @@ const BlogPost = ({ data }) => {
     img :
     `${siteMetadata.siteUrl}${img}`;
   const ogpUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
+  const logoUrl = `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`;
 
   return (
     <Layout>
@@ -122,6 +127,12 @@ const BlogPost = ({ data }) => {
               );
             })}
           </Helmet>
+        }
+        qrCode={
+          <QrCode
+            url={ogpUrl}
+            logoUrl={logoUrl}
+          ></QrCode>
         }
         tags={frontmatter.tags}
         title={frontmatter.title}
