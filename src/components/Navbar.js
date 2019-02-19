@@ -73,7 +73,7 @@ const Navbar = class extends React.Component {
           </a>
           <a
             className="navbar-item"
-            href="https://discordapp.com/invite/RTup7Ba"
+            href="https://discordapp.com/invite/eM9Vv7P"
             target="_blank"
             rel="noopener noreferrer"
           >

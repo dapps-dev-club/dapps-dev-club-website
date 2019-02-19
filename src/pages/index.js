@@ -66,7 +66,7 @@ export default class IndexPage extends React.Component {
             </p>
             <p>
               Get in touch with us online
-              on <a href="https://discordapp.com/invite/RTup7Ba">discord</a>,
+              on <a href="https://discordapp.com/invite/eM9Vv7P">discord</a>,
               or better still, meet us IRL at
               the <a href="/sessions">next session</a>.
             </p>
