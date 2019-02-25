@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: NBC’19 partners with DApps Dev Club
-date: 2019-10-09T15:08:00.000Z
+date: 2019-02-09T15:08:00.000Z
 updatedDate: 2019-02-13T15:05:00.000Z
 draft: false
 description: National Blockchain Challenge 2019 is Singapore's first cross-disciplinary blockchain hackathon
