@@ -173,7 +173,7 @@ export const pageQuery = graphql`
         featuredImage {
           childImageSharp{
               sizes(
-                maxWidth: 630
+                maxWidth: 1024
               ) {
                   ...GatsbyImageSharpSizes
               }

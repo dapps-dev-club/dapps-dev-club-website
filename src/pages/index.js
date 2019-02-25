@@ -123,9 +123,9 @@ export const pageQuery = graphql`
             featuredImage {
               childImageSharp{
                   sizes(
-                    maxHeight: 20
-                    maxWidth: 100
-                    quality: 70
+                    maxHeight: 60
+                    maxWidth: 300
+                    quality: 80
                     grayscale: true
                     cropFocus: CENTER
                   ) {
