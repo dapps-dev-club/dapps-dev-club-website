@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-01-03T00:00:00.000Z",
+  "lastUpdated": "2019-03-05T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -39,10 +39,10 @@
       "series": "SG-S02",
       "name": "Technical overview - Session #02",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-chainstack"
       },
       "time": {
-        "start": "2019-03-06T18:00:00.000+0800",
+        "start": "2019-03-12T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -61,8 +61,8 @@
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "https://dappsdev-s01e02.eventbrite.com"
       }
     },
     {
@@ -73,7 +73,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-03-20T18:00:00.000+0800",
+        "start": "2019-03-26T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -108,7 +108,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-04-03T18:00:00.000+0800",
+        "start": "2019-04-09T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -139,7 +139,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-04-17T18:00:00.000+0800",
+        "start": "2019-04-23T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -178,7 +178,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-05-01T18:00:00.000+0800",
+        "start": "2019-05-14T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -217,7 +217,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-05-15T15:00:00.000+0800",
+        "start": "2019-05-28T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -252,7 +252,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-06-05T18:00:00.000+0800",
+        "start": "2019-06-11T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -279,7 +279,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-06-19T19:00:00.000+0800",
+        "start": "2019-06-25T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -314,7 +314,7 @@
         "id": "sg-tbc"
       },
       "time": {
-        "start": "2019-07-03T18:00:00.000+0800",
+        "start": "2019-07-09T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
@@ -340,6 +340,12 @@
       "name": "To Be Confirmed",
       "address": "TBC",
       "plusCode": "Singapore"
+    },
+    {
+      "id": "sg-chainstack",
+      "name": "ChainStack @Acronis",
+      "address": "8 Temasek Boulevard, #30-01/02 Suntec Tower 3, Singapore 038988",
+      "plusCode": "7VW6+62 Singapore"
     },
     {
       "id": "sg-microsoft",
