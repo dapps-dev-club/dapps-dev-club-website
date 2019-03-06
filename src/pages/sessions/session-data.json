@@ -29,6 +29,12 @@
           "name": "What will we build?"
         }
       ],
+      "links": [
+        {
+          "text": "Round up",
+          "url": "/blog/2018-02-25-dapps-dev-club-kickoff-session/"
+        }
+      ],
       "rsvp": {
         "name": "RSVP on meetup",
         "url": "https://www.meetup.com/BlockChain-Dapps-Technology/events/257675124/"
@@ -58,6 +64,12 @@
         {
           "id": "web3-intro",
           "name": "Web3"
+        }
+      ],
+      "links": [
+        {
+          "text": "Venue partner: Chainstack",
+          "url": "/blog/2019-03-04-chainstack-partnership/"
         }
       ],
       "rsvp": {
@@ -105,7 +117,7 @@
       "series": "SG-S04",
       "name": "Using Solidity - Session #04",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-chainstack"
       },
       "time": {
         "start": "2019-04-09T18:30:00.000+0800",
@@ -175,7 +187,7 @@
       "series": "SG-S06",
       "name": "Front end - Session #06",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-chainstack"
       },
       "time": {
         "start": "2019-05-14T18:30:00.000+0800",
@@ -249,7 +261,7 @@
       "series": "SG-S08",
       "name": "IPFS - Session #08",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-chainstack"
       },
       "time": {
         "start": "2019-06-11T18:30:00.000+0800",
@@ -311,7 +323,7 @@
       "series": "SG-S10",
       "name": "Beyond Ethereum - Session #10",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-chainstack"
       },
       "time": {
         "start": "2019-07-09T18:30:00.000+0800",
@@ -343,7 +355,7 @@
     },
     {
       "id": "sg-chainstack",
-      "name": "ChainStack @Acronis",
+      "name": "Chainstack @Acronis",
       "address": "8 Temasek Boulevard, #30-01/02 Suntec Tower 3, Singapore 038988",
       "plusCode": "7VW6+62 Singapore"
     },

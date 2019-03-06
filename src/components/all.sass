@@ -71,9 +71,12 @@ a.navbar-item
   border-radius: 0.25em 0.25em 0.25em 0.25em
 
 .tt-cal-day > .day.hasEvent
-  background-color: #ff0000
+  background-color: #f07070
   color: #ffffff
   font-weight: bolder
+
+.tt-cal-day > .day.nextEvent
+  background-color: #3090f0
 
 .tt-cal-day > .day.hasEvent a
   display: block
@@ -84,5 +87,16 @@ a.navbar-item
 
 @import "~bulma"
 
-.topicsList > p + ul
+.topicsList > p + ul, .linksList > p + ul
   margin: -0.5em 0.0em 0.5em 2.0em
+
+.button.rsvp
+  color: #ffffff
+  background-color: #3090f0
+
+.sessionsList
+  border-bottom: 1px solid #3090f0;
+
+.sessionsList .session
+  padding: 2em;
+  border-bottom: 1px solid #3090f0;

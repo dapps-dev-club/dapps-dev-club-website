@@ -111,6 +111,11 @@ function preprocessSessions(sessionData) {
       }
     });
 
+    const firstUpcomingSession = upcomingSessions[0];
+    if (firstUpcomingSession) {
+      firstUpcomingSession.isNext = true;
+    }
+
     return  {
       upcomingSessions,
       pastSessions,
@@ -148,6 +153,27 @@ function renderTopicsList(topics) {
   );
 }
 
+function renderLinksList(links) {
+  if (!Array.isArray(links) || links.length < 1) {
+    return null;
+  }
+
+  return (
+    <div className="linksList">
+      <p>Read more: </p>
+      <ul>
+        {links.map((link, index) => {
+          return (<li key={index}>
+            <p>
+              <a href={link.url}>{link.text}</a>
+            </p>
+          </li>);
+        })}
+      </ul>
+    </div>
+  );
+}
+
 function renderRsvp(session) {
   if (!session.rsvp || !session.rsvp.url) {
     return (
@@ -160,7 +186,7 @@ function renderRsvp(session) {
   return (
     <p>
       <a
-        className="button is-large"
+        className="button is-large rsvp"
         href={session.rsvp.url}
         target="_blank"
         rel="noopener noreferrer"
@@ -183,7 +209,10 @@ function renderSession(session) {
   const anchor = getSessionAnchor(session);
   const href = `#${getCalendarAnchor(session)}`;
 
-  return (<div key={session.id}>
+  return (<div
+      key={session.id}
+      className="session"
+    >
     <h3 id={anchor} name={anchor}>
       {session.name}
     </h3>
@@ -197,6 +226,7 @@ function renderSession(session) {
       {timeNotConfirmedEl}
     </p>
     { renderTopicsList(session.topics) }
+    { renderLinksList(session.links) }
     { renderRsvp(session) }
     <p>
       <a href={href}>
@@ -247,11 +277,12 @@ function renderCalendarDay(timeZone, sessionsMap, day) {
     // When an event is on this day, highlight and hyperlink
     const href = `#${getSessionAnchor(session)}`;
     const anchor = getCalendarAnchor(session);
+    const className = session.isNext ? 'day hasEvent nextEvent' : 'day hasEvent';
     return (
       <div
         id={anchor}
         name={anchor}
-        className="day hasEvent"
+        className={className}
       >
         <a href={href}>
           {text}
