@@ -4,7 +4,7 @@ title: "Kickoff session"
 date: 2019-02-25T07:04:00.000Z
 updatedDate: 2019-02-25T07:04:00.000Z
 draft: false
-description: ""
+description: "DApps Dev Club's first session"
 featuredImage: /img/dadc-s01-e01-featured-image.jpeg
 section: news
 authors:
@@ -79,7 +79,7 @@ Read select parts of the [*Mastering Ethereum*](https://github.com/ethereumbook/
     - Optional: *Ethereum’s Development Culture*
     - Read all of the sections in this chapter, except for these ones above, as we do not plan to discuss them in the next session.
     - If you only have time to read *one* section, read: *Ethereum and Turing Completeness*
-  - Chapter 3: The Ethereum Virtual Machine
+  - Chapter 13: The Ethereum Virtual Machine
     - Optional: Compiling Solidity to EVM Bytecode
     - Optional: Contract Deployment Code
     - Optional: Disassembling the Bytecode

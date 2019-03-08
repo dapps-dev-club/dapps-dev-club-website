@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-03-05T00:00:00.000+0800",
+  "lastUpdated": "2019-03-14T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -82,7 +82,7 @@
       "series": "SG-S03",
       "name": "Solidity Basics - Session #03",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-bittemple"
       },
       "time": {
         "start": "2019-03-26T18:30:00.000+0800",
@@ -108,8 +108,8 @@
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "https://dappsdev-s01e03.eventbrite.com/"
       }
     },
     {
@@ -352,6 +352,12 @@
       "name": "To Be Confirmed",
       "address": "TBC",
       "plusCode": "Singapore"
+    },
+    {
+      "id": "sg-bittemple",
+      "name": "BitTemple",
+      "address": "9 Raffles Place, Distrii, Republic Plaza, Level 5",
+      "plusCode": "7VM2+6C Singapore"
     },
     {
       "id": "sg-chainstack",

@@ -70,6 +70,13 @@ export default class IndexPage extends React.Component {
               or better still, meet us IRL at
               the <a href="/sessions">next session</a>.
             </p>
+            <p>
+              Brought to you by&nbsp;
+              <a href="/author/kenneth/">Kenneth</a>&nbsp;
+              and <a href="/author/bguiz/">Brendan</a>,
+              with many thanks to a large number of people who have helped us along the way,
+              and <a href="/tags/partnership/">our partners</a> who have made this possible.
+            </p>
           </div>
         </section>
         <section className="section">
