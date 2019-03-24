@@ -11,6 +11,8 @@ authors:
   - bguiz
 tags:
   - irl
+  - s01
+  - s01e02
   - evm
   - smart contract
   - web3
@@ -70,7 +72,7 @@ over a week to get the videos processed, uploaded, and posted on this site.
 This time, the whole set was turned around in just three days, which we're
 pretty happy with!
 
-An area for improvement that we've identified is the colour contract on the
+An area for improvement that we've identified is the colour contrast on the
 slide deck - we will make sure that this is better in the next session!
 
 ## Next session

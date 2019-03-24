@@ -1,0 +1,227 @@
+<html>
+  <head>
+    <title>
+      Simple TX - Hands-on - DApps Dev Club
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="Simple Tx - Hands-on - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Simple Tx - Hands-on | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="Simple Tx - Hands-on - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:section" content="handson"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="handson"/>
+    <meta property="og:tag" content="transaction"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+  </head>
+  <body>
+    <h2>Simple Tx</h2>
+    <p>A hands-on exercise for the <a href="https://dappsdev.org/">DApps Dev Club</a></p>
+
+    <h3>Account (read-only)</h3>
+    <p>
+      <label>address:</label>
+      <br />
+      <input class="from" type="text" readonly="true"></input>
+    </p>
+    <p>
+      <label>balance:</label>
+      <br />
+      <input class="balance" type="text" readonly="true"></input>
+    </p>
+    <p>
+      <label>network:</label>
+      <br />
+      <input class="network" type="text" readonly="true"></input>
+    </p>
+    <p>
+      <button class="refresh">Refresh</button>
+    </p>
+
+    <h3>Transaction</h3>
+    <p>
+      <label>to:</label>
+      <br />
+      <input class="to" type="text"></input>
+    </p>
+    <p>
+      <label>amount:</label>
+      <br />
+      <input class="amount" type="number"></input>
+    </p>
+    <p>
+      <label>data:</label>
+      <br />
+      <input class="data" type="text"></input>
+    </p>
+    <p>
+      <button class="send">Send</button>
+    </p>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.35/dist/web3.js"></script>
+    <script>
+      async function init () {
+        const App = {};
+        window.App = App;
+          
+        if (window.ethereum) {
+          // Current version
+          App.web3Provider = window.ethereum;
+          try {
+            await window.ethereum.enable();
+            console.log("User allowed access");
+          } catch (err) {
+            console.error("User denied access");
+          }
+          window.web3 = new Web3(App.web3Provider);
+        } else if (window.web3) {
+          App.web3Provider = window.web3.currentProvider;
+          console.log("Implicitly allowed access (legacy)");
+        }
+        App.web3 = window.web3
+
+        refresh();
+
+        const sendButton = document.querySelector('.send');
+        sendButton.addEventListener('click', send);
+
+        const refreshButton = document.querySelector('.refresh');
+        refreshButton.addEventListener('click', refresh);
+
+        if (window.ethereum) {
+          // Current version
+          window.ethereum.on('accountsChanged', refresh);
+          window.ethereum.on('networkChanged', refresh);
+
+          // Note: For older versions, the fallback would be to poll at a regular interval to check,
+          // but we're opting to not do that here.
+        }
+      }
+
+      async function refresh() {
+        const fromInput = document.querySelector('.from');
+        const balanceInput = document.querySelector('.balance');
+        const networkInput = document.querySelector('.network');
+
+        let from;
+        let balance;
+        try {
+          // access the account to transfer from
+          const accounts = await web3.eth.getAccounts();
+          from = accounts[0];
+          if (!from) {
+            throw new Error('No accounts found');
+          }
+
+          const balanceString = await web3.eth.getBalance(from);
+          balance = web3.utils.toBN(balanceString);
+
+          const network = await web3.eth.net.getNetworkType();
+
+          fromInput.value = from;
+          balanceInput.value = web3.utils.fromWei(balance, 'ether');
+          networkInput.value = network;
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      async function send() {
+        console.log('send...');
+        const toInput = document.querySelector('.to');
+        const amountInput = document.querySelector('.amount');
+        const dataInput = document.querySelector('.data');
+
+        const to = toInput.value;
+        const amount = 
+          web3.utils.toBN(web3.utils.toWei(amountInput.value, 'ether'));
+        let data = dataInput.value;
+        if (data && !web3.utils.isHexStrict(data)) {
+          data = web3.utils.toHex(data);
+        }
+
+        let from;
+        let balance;
+        try {
+          // access the account to transfer from
+          const accounts = await web3.eth.getAccounts();
+          from = accounts[0];
+          if (!from) {
+            throw new Error('No accounts found');
+          }
+
+          const balanceString = await web3.eth.getBalance(from);
+          balance = web3.utils.toBN(balanceString);
+          if (amount.gt(balance)) {
+            throw new Error('amount excdeeds balance');
+          }
+          console.log('from', from);
+          console.log('balance', balance);
+
+          // work out the transaction parameters
+          let txParams = {
+            from,
+            to,
+            value: amount,
+          }
+          if (data) {
+            txParams = {
+              ...txParams,
+              data,
+            };
+          }
+
+          const gas = await web3.eth.estimateGas(txParams);
+          txParams = {
+            ...txParams,
+            gas,
+          };
+
+          console.log('txParams', txParams);
+
+          // send the transaction
+          let forceRefreshTimeout;
+
+          const sendTxPromiEvent = web3.eth.sendTransaction(txParams);
+          sendTxPromiEvent
+            .on('transactionHash', (txHash) => {
+              console.log('txHash', txHash);
+            })
+            .on('confirmation', (txConfirmationCount, txReceipt) => {
+              if (txConfirmationCount === 1) {
+                console.log('first txReceipt', txReceipt);
+              }
+            })
+            .on('receipt', (txReceipt) => {
+              console.log('txReceipt', txReceipt);
+              clearTimeout(forceRefreshTimeout);
+            })
+            .on('error', (err) => {
+               console.error(err);
+               clearTimeout(forceRefreshTimeout);
+            });
+
+          // Manually force a refresh after 30s, to workaround MetaMask bug that appears to not
+          // check an account until it performs the next transaction
+          forceRefreshTimeout = setTimeout(refresh, 30e5);
+        } catch (err) {
+          console.error(err);
+          return; 
+        }
+      }
+
+      init();
+    </script>
+  </body>
+</html>

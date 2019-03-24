@@ -11,6 +11,8 @@ authors:
   - bguiz
 tags:
   - irl
+  - s01
+  - s01e02
   - evm
   - smart contract
   - web3

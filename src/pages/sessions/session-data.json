@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-03-14T00:00:00.000+0800",
+  "lastUpdated": "2019-03-27T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -80,7 +80,7 @@
     {
       "id": "SG-S01-E03",
       "series": "SG-S03",
-      "name": "Solidity Basics - Session #03",
+      "name": "Talking to Ethereum - Session #03",
       "location": {
         "id": "sg-bittemple"
       },
@@ -91,20 +91,20 @@
       },
       "topics": [
         {
-          "id": "remix",
-          "name": "Remix"
+          "id": "evm-stack-based-execution",
+          "name": "EVM's stack-based execution model"
         },
         {
-          "id": "solidity-data-types",
-          "name": "Data types"
+          "id": "cryptographic-key-generation",
+          "name": "Cryptogrpahic Key Generation using BIP39"
         },
         {
-          "id": "solidity-functions",
-          "name": "Functions"
+          "id": "metamask",
+          "name": "MetaMask"
         },
         {
-          "id": "solidity-events",
-          "name": "Events"
+          "id": "simple-transactions",
+          "name": "Simple Transactions"
         }
       ],
       "rsvp": {
@@ -115,7 +115,7 @@
     {
       "id": "SG-S01-E04",
       "series": "SG-S04",
-      "name": "Using Solidity - Session #04",
+      "name": "Solidity - Session #04",
       "location": {
         "id": "sg-chainstack"
       },
@@ -125,6 +125,10 @@
         "tz": "Asia/Singapore"
       },
       "topics": [
+        {
+          "id": "solidity",
+          "name": "Solidity"
+        },
         {
           "id": "solidity-compiler-solc",
           "name": "solc"
@@ -138,9 +142,9 @@
           "name": "ganache"
         }
       ],
-      "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+      "rsvp":{
+        "name": "RSVP on eventbrite",
+        "url": "https://dappsdev-s01e04.eventbrite.com/"
       }
     },
     {

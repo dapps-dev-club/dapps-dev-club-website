@@ -11,6 +11,8 @@ authors:
   - bguiz
 tags:
   - irl
+  - s01
+  - s01e01
   - blockchain
   - dapp
 ---
