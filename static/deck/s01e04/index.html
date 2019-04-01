@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S01E04 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="S01E04 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="S01E04 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="S01E04 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E04"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent img {
+        width: 100%;
+        margin: 1em;
+      }
+
+      .width50percent img {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body onload="var slideshow = remark.create();">
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+.width50percent[
+  ![DApps Dev Club S01E04 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e04](http://bit.do/dadc-s01e04)
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# Decentralised Applications Development Club
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+## Solidity
+
+09/04/2019
+
+???
+
+- The title for tonight's session is "Solidity", but we'll be doing
+  more than that
+- We'll also be covering the different tools used when developing solidity
+- And we'll also have a guest speaker joining us later in the session?
+- Mean while, I'd like everyone to scan this QR code, or type out that
+  shortened URL - bit.do/dadc-s01e04 - that will open up the same slide deck
+  that I am presenting from on your computers, and this will be essential to
+  do and follow along, because there are going to be a lot of links to follow
+- in the previous session, we wasted quite a bit of time communicating the URLs
+  so this time, we're going to not do that. grab this link now, or get it from
+  our discord
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![DApps Dev Club S01E04 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e04](http://bit.do/dadc-s01e04)
+
+???
+
+- This is where you can find our discord link. It's on our homepage -
+  dappsdev.org - near the top, before the blog posts
+
+---
+layout: false
+class: center, middle, inverse
+
+.width100percent[
+  ![Where to get our discord link](./dadc-discord-link.jpeg)
+]
+
+.footnote[
+[bit.do/dadc-chat](http://bit.do/dadc-chat)
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+### Install these!
+
+- [NodeJs](https://nodejs.org/)
+- [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+- [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+- [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+???
+
+- So in the previous session, I asked all of you to install a bunch of stuff
+- and here's that list again
+- can I have a show of hands, for how many have actually installed all of these
+  things?
+- ok so for the rest, did any of you encounter any issues while trying to
+  install it?
+- and if you haven't quite gotten around to it yet, well let's get that out of
+  the way before we start, while we're waiting for people to trickle in, might
+  as well put the time to good use
+- ok so if anyone here has had trouble installing node, solc, truffle, or
+  ganache, please raise your hands, and I'll try my best to help you to
+  troubleshoot in the next few minutes
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- Also, for those of you who are joining us in our DApps Dev Club session for
+  the very first time - welcome!
+- We are a technical book club, and we run our sessions twice per month -
+  and a book club implies a book, well this is the book
+- Mastering Ethereum by Andreas Antonopoulos & Gavin Wood
+
+---
+name: agenda
+layout: false
+class: left, middle, inverse
+
+## Today
+
+- [Partners](#partners)
+- [Intro](#intro)
+- [Recap of #03](#recap)
+- [Solidity](#solidity)
+- [solc](#solc)
+- [ganache](#ganache)
+- [truffle](#truffle)
+- [Alex](#guest_topic)
+- [Next session](#next)
+- [Announcements](#next)
+
+???
+
+- This is the line up for tonight's session
+- We'll start off by introducing our partners, and ourselves
+- Then do a quick recap of the previous session
+- Then we'll cover solidity, the programming language
+- Then we'll cover ome tools that are used to work with solidity: solc, truffle,
+  and ganache
+- Then we'll have our guest speaker, Alex
+- And finally we'll wrap up with a recap, and our next session
+
+---
+name: partners
+layout: false
+class: left, middle, inverse
+
+## Partners
+
+???
+
+- Before we begin, let us thank all of our partners who made this session possible
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+  .width50percent.lightBg[
+    ![Lifelong Learning Institute](/img/lli-skillsfuture-logo.png)
+  ]
+]
+
+???
+
+- The DApps Dev Club is happy to announce that the Lifelong Learning Institute is partnering
+  with us. We have Dr Leong, who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+- Dr Leong: ____
+- Dr Leong: (presents slide deck)
+- Thank you very much Dr Leong. As mentioned, the DApps Dev Club is under the Learning Circles
+  program, which I think is a really good fit for anyone running tech meetups - so if you're part
+  of another group, and I know that many of you are, tell your organisers about it!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+]
+.right-column[
+  .width50percent.lightBg[
+    ![Chainstack](/img/chainstack-logo.svg)
+  ]
+
+  .width50percent.lightBg[
+    ![Acronis](/img/acronis-logo.svg)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+]
+.right-column[
+  .width50percent.lightBg[
+    ![BitTemple](/img/bittemple-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+]
+.right-column[
+  .width50percent.lightBg[
+    ![National Blockchain Challenge '19](https://www.globaltechchallenge.com/static/NBC_no-font-3678ea62042bbdfc621ac92a89052221.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+]
+.right-column[
+  .width50percent[
+    ![Spartan Group](https://static.wixstatic.com/media/dbc33c_2c759d6693424944ad5b6f7be2dd039a~mv2.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+]
+.right-column[
+  .width50percent[
+    ![StartupToken meetup](https://www.startuptoken.com/wp-content/uploads/2017/09/StartupToken-logo-copy-Website-361x100.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+]
+.right-column[
+  .width50percent.lightBg[
+    ![Engineers.SG](/img/engineerssg-logo.svg)
+  ]
+]
+
+---
+name: intro
+layout: false
+class: left, middle, inverse
+
+## Intro
+
+???
+
+- Before we go into the the topics, for the benefit of those who are attending
+  the their first session today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- Decentralised Applications Development Club
+- Format inspired by the technical book club from SingaporeJS
+
+]
+
+???
+
+- The DApps Dev Club meets twice a month, and this is our 4th session
+  - In each session, we plan to discuss about 3 or four different topics,
+   selected from the *Mastering Ethereum* book
+- We are a technical book club, so in each session, when we meet up together,
+  we'll be discussing select parts from this book, plus working through things
+  together
+  - I should mention that while this is not a common format, it isn't completely
+    new - in fact it is inspired by the book club that the SingaporeJS meetup
+    runs
+  - In the first couple of sessions, it was mostly me talking, but the rest of
+    the sessions are going to be hands-on
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC/2
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- [dappsdev.org](https://dappsdev.org/)
+- [bit.do/dadc-chat](https://bit.do/dadc-chat)
+
+]
+
+???
+
+- The nexus for all the club happenings are on this website, dappsdev.org
+  - The main thing to look out for on the website are the news feed, which you
+    can subscribe to via the RSS feed, or check back on manually
+  - The other thing to look out for on the website is the sessions page,
+    which is a calendar for all of the events
+- Apart from meeting in person, we can also have discussions online
+  - We have a discord server for that, and you can join using the link found
+    on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+]
+.right-column[
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+]
+
+???
+
+- As mentioned earlier, the book which we're covering together is
+  Mastering Ethereum, which is written by by Andreas Antonopoulos & Gavin Wood
+- Andreas Antonopoulos is the author of the Mastering Bitcoin book, and Gavin
+  wrote most of the initial implementation of Ethereum itself.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+]
+.right-column[
+- CTO of Baypay
+- Also runs the Blockchain&amp;DApps meetup
+
+.width50percent[
+  ![Kenneth Hu](http://www.kennethhu.net/img/huchiawei.jpg)
+]
+
+.footnote[
+[kennethhu.net](http://www.kennethhu.net/)
+]
+]
+
+???
+
+- Kenneth is the CTO of Baypay
+- He knows the Ethereum stack inside out
+- He also runs a blockchain events across Taiwan, Malaysia, and Singapore
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+]
+.right-column[
+- Started DApps Dev Club
+- NodeJS developer
+
+.footnote[
+[bguiz.com](http://bguiz.com/)
+]
+]
+
+???
+
+- I'm Brendan, and I work as a software engineer
+- Spend most of my time doing NodeJs
+- Met Kenneth through the EthSG hackathon last year
+- We decided to collaborate and create a series of educational blockchain
+  meetups, and here we are
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+]
+.right-column[
+- No blockchain knowledge required
+- No solidity or smart contract knowledge required
+- Basic Javascript needed in session #05
+]
+
+???
+
+- So, how about you? These sessions are designed with a particular audience in
+  mind.
+- If you know nothing about blockchain, or about smart contracts, that's perfect
+- However, if you don't know some basic JS, you'll need to pick that up to follow along in the later sessions.
+  - I've already posted some resources that you can use to learn JS - it's in
+    the latest post on dappsdev.org now,
+    or come talk to me, or ask around in our discord
+- Bring your laptops to the sessions, as you'll be able to participate in the
+  hands on parts of the sessions
+
+---
+layout: false
+class: left, middle, inverse
+
+wen ico? wen moon?
+
+.width100percent[
+  ![Ya Basic - The Good Place](https://66.media.tumblr.com/1d07b7c0c9625031871bc3855858270a/tumblr_phjkj5Jgr61qb77hzo3_540.gif)
+]
+
+???
+
+- I think most of us by now have encountered someone on a Telegram group, who
+  joins, and within seconds says "wen ico? wen moon?" (with that exact spelling)
+- If you're that person, these sessions are not for you. We're *not* going
+  to be building an ERC20, or learning how to trade or speculate on them.
+- What we're about here is focussed on developing decentralised applications
+- This is a great show by the way, it takes real skill to take a subject matter
+  that dry and make it entertaining
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+]
+.right-column[
+
+.width50percent[
+  !["Author of Mastering Ethereum likes tweet about DApps Dev Club"](/deck/s01e03/andreas-antonopoulos-likes-tweet.png)
+]
+
+.footnote[
+[this tweet](https://twitter.com/ChainstackHQ/status/1106042958443233280)
+]
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+name: intro-end
+class: center, middle, inverse, nextSection
+
+## /intro
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+
+---
+name: recap
+class: center, middle, inverse, nextSection
+
+## Recap of Session #03
+
+???
+
+- Before we begin the topics for this session, I'd like to do a quick recap of
+  what we did in the previous session
+- That was initially planned to be an introduction to Solidity, but we ran out
+  of time during the session. Retrospectively, I would call the previous
+  session "talking to Ethereum" instead.
+- Some of you commented that the previous session was too slow paced, and Vedant
+  had an excellent suggestion where he said why not have the ones who finish
+  first help the others, so as to speed things up? So I guess you're going to
+  be our first volunteer Vedant!
+- Also, tonight we have a guest speaker, Alex, which is great, but it also means
+  that we need to be more strict about time. So tonight, the tempo is going to
+  be a little faster, let's see how it goes, and if we don't like it, we can
+  switch back in our next session.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## #03
+### Stacks
+]
+.right-column[
+
+- (2 * 3) + 4
+- EVM's stack based execution model
+- Post-fix notation
+
+.footnote[
+- [dappsdev.org/deck/s01e03/#evm_stacks_steps](https://dappsdev.org/deck/s01e03/#evm_stacks_steps)
+- [codingame.com/training/hard/reverse-polish-notation](https://www.codingame.com/training/hard/reverse-polish-notation)
+]
+]
+
+???
+
+- First, we talked about the stack based execution model used by the EVM
+- We took a simple arithmetic operation: 2 times 3 plus 4, and looked at how they would be represented in EVM bytecode, and then stepped through its execution, one stack operation at a time, advancing the program counter
+- Of course it gets a lot more complicated than this, but that fundamentally illustrates how the EVM works at a low level
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## #03
+### Stacks
+### Key Gen
+]
+.right-column[
+
+- Cryptographic Key Generation
+- BIP39, BIP44, BIP32
+
+.footnote[
+- [dappsdev.org/deck/s01e03/#keygen](https://dappsdev.org/deck/s01e03/#keygen)
+]
+]
+
+???
+
+- Next we took a look at generating cryptographic keys using seedphrases
+- This was a hands-on activity, where we all used generated an entire table full
+  of keys
+- Since the method to generate keys is described using these various standards -
+  BIP39, BIP44, BIP32 - any wallet software that is compliant with those
+  standards works too
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## #03
+### Stacks
+### Key Gen
+### MetaMask
+]
+.right-column[
+
+- Ethereum wallet software
+- Browser extension
+
+.footnote[
+- [dappsdev.org/deck/s01e03/#metamask](https://dappsdev.org/deck/s01e03/#metamask)
+]
+]
+
+???
+
+- Next we installed MetaMask, which is Ethereum wallet software
+- It also is a browser extension at the same time
+- This is currently the most common way to interact with Ethereum DApps, where
+  the web app runs in the browser, and then, when a transaction needs to be
+  sent to the network, MetaMask prompts you before signing it, and propagates
+  it to the Ethereum network
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## #03
+### Stacks
+### Key Gen
+### MetaMask
+### Simple Tx
+]
+.right-column[
+
+- Send Ethers to each other
+- Write arbitrary data onto the blockchain
+
+.footnote[
+- [dappsdev.org/hands-on/simple-tx/](https://dappsdev.org/hands-on/simple-tx/)
+- [bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Once we had MetaMask all ready to go, we all took it for a spin, by using
+  this demo DApp (which cannot truly be called a proper DApp, as there is no
+  smart contract), to sign and send transactions
+- We all went onto our group chat, and entered our (test net) Ethereum adresses
+  there, and then sent Ethers to each other
+- Some of us also added arbitrary data to these transactions, so we used
+  Etherscan to examine these transactions, and look at this arbitrary data
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## #03
+### Stacks
+### Key Gen
+### MetaMask
+### Simple Tx
+### Games
+]
+.right-column[
+
+- Crypto Zombies
+
+.footnote[
+[cryptozombies.io](cryptozombies.io)
+]
+]
+
+???
+
+- Then we talked a bit about crypto kitties, and crypto zombies
+- Who here went home and gave crypto zombies a spin? Was it fun?
+
+---
+name: recap-end
+class: center, middle, inverse, nextSection
+
+## /recap
+
+???
+
+- Q&A
+- so that now brings us to tonight's session, but before we go into that, are there any questions that we have from the previous session, that were left unanswered?
+
+---
+name: solidity
+class: center, middle, inverse, nextSection
+
+## Solidity
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+]
+.right-column[
+
+- Write smart contracts in a high-level language
+- Stack-based execution model in EVM
+- Code + State blockchain demo
+
+.footnote[
+]
+]
+
+???
+
+- recap: what is a smart contract
+- solidity as a high level language that compiles to EVM bytecode
+  - human readable, vs machine executable
+- recap: simple arithmetic operation from EVM stack-based execution example
+- recap: code + state - code is immutable, state is mutable
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+]
+.right-column[
+
+- Classes in OOP
+- Enforce certain functions only called by certain accounts
+- Retrieve state, mutate state
+
+.footnote[
+]
+]
+
+???
+
+- comparison to classes and instances from OOP
+- additional capabilities: enforce that certain functions are only callable by certain accounts by looking at the address which signed the transaction
+- standard capabilities: call a function to retrieve or mutate state, or just perform a "pure" function
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+]
+.right-column[
+
+- Remix is limited
+- Try installing a syntax highlighter plugin
+  - VS code, Atom, vim, emacs, etc.
+
+.footnote[
+]
+]
+
+???
+
+- Remix is good enough for a certain level of complexity
+- While we will be staying in very simple territory, later we'll be introducing development tools
+  which are powerful enough to do complex work.
+- Note that tonight's session does not aim to be a thorough treatment of the Solidity language,
+  rather it is an introduction
+  - For example, we will not be covering inheritance, interfaces, libraries, etc.
+- IDE: remix only gets you so far, get vscode (or atom, etc) with plug in
+  for syntax highlighting, just like you would for any other programming language
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Hands-on
+]
+.right-column[
+
+Open your laptops!
+
+.footnote[
+- [remix.ethereum.org](http://remix.ethereum.org/)
+- [dappsdev.org/hands-on/solidity-intro](https://dappsdev.org/hands-on/solidity-intro/)
+]
+]
+
+???
+
+- Now we're all going to start of my exploring building a very simple smart contract in Solidity
+  within Remix
+- While this smart contract is simple, it covers a large range of of different language features that
+  are available
+- As mentioned before, we're not going for a thorough treatment of the language, and instead going
+  for an introduction to the various aspects of it
+- So let's all open up both remix, and the hands on from the DApps Dev Club session, in different browser tabs
+  - Note that these don't exactly work very well on mobile, so please use your laptops
+- (check that everyone has opened their tabs)
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Syntax
+]
+.right-column[
+
+- [Value types](https://solidity.readthedocs.io/en/v0.5.7/types.html#value-types)
+- [Reference types](https://solidity.readthedocs.io/en/v0.5.7/types.html#reference-types)
+- [Functions](https://solidity.readthedocs.io/en/v0.5.7/contracts.html#functions)
+- [Modifiers](https://solidity.readthedocs.io/en/v0.5.7/contracts.html#function-modifiers)
+- [Events](https://solidity.readthedocs.io/en/v0.5.7/contracts.html#events)
+- [Special values](https://solidity.readthedocs.io/en/v0.5.7/units-and-global-variables.html#special-variables-and-functions)
+
+.footnote[
+- [solidity.readthedocs.io](https://solidity.readthedocs.io/)
+]
+]
+
+???
+
+- value types: bool, int, uint, address, address payable, bytes
+  - `msg.sender`, `tx.origin` is an address
+  - `msg.value`,  `msg.gas`, `block.timestamp`, `now`, is a uint
+  - `msg.data` is bytes
+  - https://solidity.readthedocs.io/en/v0.5.7/units-and-global-variables.html
+- reference types: struct, fixed size arrays, dynamic sized arrays, mapping
+- visibility: public, internal, private
+  - talk about auto generated accessors
+
+example
+
+- start with primitive types to model a car.
+  - colour: byte (hex)
+  - doors: uint16
+  - make: string
+  - year: uint16
+  - mileage: uint256
+  - lat: uint
+  - long: uint
+  - status: enum
+  - owner: address
+- then introduce more complex types
+  - put car into a struct
+  - then have cars as a dynamic array
+  - also show how to have cars as a mapping
+- then introduce functions
+  - add car
+  - drive car
+  - paint car (changes colour)
+- then introduce events
+  - reference the Eiffel programming language
+  - function contracts defined as invariable statements or expressions
+  - modifiers are intended to do the same thing
+- then introduce events
+  - for new car
+  - for honk (at another car)
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Syntax
+### Eiffel
+]
+.right-column[
+
+```eiffel
+class interface ACCOUNT create
+  make
+feature
+  balance: INTEGER
+  ...
+  deposit (sum: INTEGER) is
+      -- Deposit sum into the account.
+    require
+      sum >= 0
+    ensure
+      balance = old balance + sum
+  withdraw (sum: INTEGER) is
+      -- Withdraw sum from the account.
+    require
+      sum >= 0
+      sum <= balance - minimum_balance
+    ensure
+      balance = old balance - sum
+  may_withdraw ...
+end -- class ACCOUNT
+```
+
+.footnote[
+[Eiffel: Deign by Contract and Assertions](https://archive.eiffel.com/doc/online/eiffel50/intro/language/invitation-07.html#pgfId-445274)
+]
+]
+
+???
+
+- Right now, we are learning about Solidity, but I thought it might be interesting to bring up a
+  different programming language, Eiffel, because of the very interesting parallels that it has
+  with smart contract programming in Ethereum
+- This snippet of code that we have here on the screen features a class "ACCOUNT", with "deposit"
+  and "withdraw" functions.
+- Code syntax is very similar to Pascal, unlike Solidity, which is very similar to Javascript or C
+- What is interesting here is that the designer of the language baked in a concept into the language
+  spec called "design by contract", which allows the programmer to specify pre-conditions,
+  post-conditions, and class invariants, and actually have this enforced by the compiler and
+  at run time
+- when programming smart contracts in ethereum, I think it is extremely helpful to keep the concept
+  of "design by contract" in mind
+- In previous sessions, some of you have asked me about what the phrase "smart contract" means, and
+  many think it is about code to implement legal contracts, financial contracts, etc
+  - Which is right, however, I think that "contract" in smart contract should *also* be viewed through
+    the lens of Eiffel's definition of "Design by Contract", so I'd encourage you to have a read of that article!
+  - especially in the context of function modifiers, require statements, etc
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Syntax
+### Eiffel
+### Example
+]
+.right-column[
+
+```solidity
+function honkCar(uint256 carId, uint256 otherCarId)
+  public
+  onlyCarOwner(carId)
+{
+  require(cars[otherCarId].owner != address(0x00), "other car must exist");
+  emit CarHonk(carId, otherCarId);
+}
+```
+
+.footnote[
+]
+]
+
+???
+
+- here this function sort of shows a large number of the different language
+  features that solidity has
+  - syntax -  highlight the following areas:
+    - name, return type, params, and their types, modifiers
+  - built in modifiers:
+    - specifier: public, internal, private, external
+      - draw this in a quadrant diagram
+    - indicator: view, pure
+    - your own custom defined modifiers
+  - events
+- not covered
+  - signature
+    - based on name plus param types
+    - note on hash collisions
+  - fallback function
+  - payable function
+  - constructor
+    - reference compiled byte code vs deployed byte code difference
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Syntax
+### Eiffel
+### Example/2
+]
+.right-column[\
+
+.width100percent[
+  ![Solidity Function Anatomy](solidity-function-anatomy.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+- syntax -  highlight the following areas:
+  - name, return type, params, and their types, modifiers
+- built in modifiers:
+  - specifier: public, internal, private, external
+    - draw this in a quadrant diagram
+- your own custom defined modifiers
+- indicator: view, pure
+- events
+
+not covered
+
+- signature
+  - based on name plus param types
+- note on hash collisions
+- fallback function
+- payable function
+- constructor
+  - reference compiled byte code vs deployed byte code difference
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Solidity
+### Recap
+### Contrast
+### Tools
+### Syntax
+### Eiffel
+### Example
+### Others
+]
+.right-column[
+
+- [Control structures](https://solidity.readthedocs.io/en/v0.5.7/control-structures.html#control-structures)
+- [Inheritance](https://solidity.readthedocs.io/en/v0.5.7/contracts.html#inheritance)
+- [Error handling](https://solidity.readthedocs.io/en/v0.5.7/control-structures.html#error-handling-assert-require-revert-and-exceptions)
+- [Destructuring](https://solidity.readthedocs.io/en/v0.5.7/control-structures.html#assignment)
+- [Inline assembly](https://solidity.readthedocs.io/en/v0.5.7/assembly.html#inline-assembly)
+- [Libraries](https://solidity.readthedocs.io/en/v0.5.7/contracts.html#libraries)
+
+.footnote[
+]
+]
+
+???
+
+- There are many other language features within solidity which we simply will not have enough time to
+  go through in a single session. Solidity as a language has a lot of other things that
+  other programming lnaguegs have as well.
+- The list above itself is just a subset - the stuff that you are most likely to encounter
+- Please read these bits within the solidity documentation after the session, as we probably
+  will encounter these in later sessions
+
+---
+name: solidity-end
+class: center, middle, inverse, nextSection
+
+## /solidity
+
+???
+
+- Q&A
+- solidity outro
+
+---
+name: solc
+class: center, middle, inverse, nextSection
+
+## solc
+
+???
+
+- what's coming up:
+- what does solc do?
+- set up
+- what is the ABI?
+- hands on
+- also, later on, alex, will talk about what the compiler does in a bit more
+  depth, so stay tuned till the end of the session
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## solc
+### What
+]
+.right-column[
+
+- Solidity compiler
+- Input: Solidity
+- Outputs: EVM bytecode + ABI
+
+.footnote[
+- [Using the compiler](https://solidity.readthedocs.io/en/v0.5.7/using-the-compiler.html)
+]
+]
+
+???
+
+- The compiler takes a high-level language, in this case solidity, and turns it into
+  a low-level language, in this case the EVM byte, which can be executed by the EVM
+- One interesting thing that it does, is to also generate an Application Binary interface
+  as well (next slide)
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## solc
+### What
+### ABI
+]
+.right-column[
+
+```solidity
+function honkCar(uint256 carId, uint256 otherCarId)
+  public
+  onlyCarOwner(carId) {
+  require(cars[otherCarId].owner != address(0x00), "other car must exist");
+  emit CarHonk(carId, otherCarId);
+}
+```
+
+Canonical function signature:
+
+```solidity
+honkCar(uint256,uint256)
+```
+
+Method ID - first4Bytes(keccak256(canonicalFuncSig)):
+
+```solidity
+0x6977eaaa
+```
+
+(hash collisions can occur)
+
+.footnote[
+[ABI spec](https://solidity.readthedocs.io/en/v0.5.7/abi-spec.html)
+]
+]
+
+???
+
+- We've already talked about the EVM byte code quite a bit in the previous sessions,
+  but so far we haven't really talked about the ABI yet. In fact I've put off answering
+  questions about the ABI twice so far - so now we'll actually get ot it.
+- The ABI is needed for clients (think web apps), as well as other contracts, to invoke
+  functions on the compiled contract.
+- This is necessary because when you have a bit of compiled EVM bytecode, and you wish
+  to call a function, which part of the byte code do you execute? Where do you place your
+  program counter? That's what the ABI does, it specifies this mapping
+- To go into a bit more detail - you cannot use the function names directly, because they
+  do not exist within the compiled EVM bytecode, but instead are stored as the first 4
+  bytes of the hash of the canonical function signature
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## solc
+### What
+### ABI/2
+]
+.right-column[
+
+```json
+{
+  "constant": false,
+  "inputs": [
+    {
+      "name": "carId",
+      "type": "uint256"
+    },
+    {
+      "name": "otherCarId",
+      "type": "uint256"
+    }
+  ],
+  "name": "honkCar",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function",
+  "signature": "0x6977eaaa"
+}
+```
+
+- ABI is output as JSON
+- This is the part of the ABI for the `honkCar` function
+- `signature` is the Method ID
+
+.footnote[
+[ABI spec](https://solidity.readthedocs.io/en/v0.5.7/abi-spec.html)
+]
+]
+
+???
+
+- So what's in the ABI is basically a mapping of all the method IDs for each of the
+  function signatures, along with other metadata about the functions. For those who have
+  done C programming before, you can think of this as a header file that is generated
+  from the implementation automatically.
+- A client who doesn't have the original solidity source code of the smart contract it
+  is calling, or does not want to compile it itself, would need the ABI to be able
+  to interact with the smart contract - other wise it is just trial and error
+- We won't be going into the exact call semantics and how the client makes use of the ABI,
+  so please read the ABI specification docs, which does a very thorough job of explaining this
+- web3js - which we talked about in previous sessions, but will only go into detail in in
+  session #06 - will be given this ABI and the address at which the smart contract is
+  deployed, and then it will parse the ABI and know how to invoke functions at that address.
+- At this point, that is what we really care about
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## solc
+### What
+### ABI
+### Setup
+]
+.right-column[
+
+- via package managers
+- via `npm`
+- compile from source
+
+.footnote[
+[Installing solidity](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+]
+]
+
+???
+
+- There are a few different ways that you can set up `solc`
+- You should install using a package manager used in your operating system, e.g.
+  brew on mac, or apt-get, yum, etc on unixes
+- Show of hands - who has installed everything already?
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## solc
+### What
+### ABI
+### Setup
+### Hands-on
+]
+.right-column[
+
+Time to give `solc` a spin!
+
+.footnote[
+[dappsdev.org/hands-on/solc-intro](/hands-on/solc-intro)
+]
+]
+
+???
+
+- Time to crack open your laptops!
+- Let's follow the link to this hands on, and follow along
+
+---
+name: solc-end
+class: center, middle, inverse, nextSection
+
+## /solc
+
+???
+
+- Q&A
+- solc outro
+
+---
+name: ganache
+class: center, middle, inverse, nextSection
+
+## Ganache
+
+???
+
+- start off with a list of the tools, and how they work together
+  - make a systems diagram for this
+  - browser, MetaMask, ganache, truffle, solc
+- walk through set up process
+- explain that you can set up your own localhost ethereum test net using geth...
+  but that will be an entire session in itself
+- explain what the purpose of ganache is
+  - simulates a single ethereum node that you can connect to, send transactions
+    to, etc
+  - in a real ethereum node, e.g. if you run geth, that will broadcast its
+    transactions to other nodes in the same network
+  - in ganache, OTOH, it simply skips all of that, and it is a single node
+    network
+  - super fast compared to the real ethereum networks
+  - integrates neatly with other development and testing tools, geared for
+    development/ testing on localhost
+- mention BIP39 again
+- ask who is familiar with test-rpc
+- walk through setting up MetaMask to talk to it as well
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ganache
+### Tools
+]
+.right-column[
+
+Smart contract development tools
+
+.width100percent[
+  ![Smart contract development tools](smart-contract-development-tools.svg)
+]
+
+.footnote[
+]
+]
+
+???
+
+- We've just tried out solc, the Solidity compiler. However, in order to develop
+  DApps, we need a lot more than just the ability to compile. There is an entire
+  set of tools that are necessary, and solc is just the first one.
+- Tonight we'll be also talking about ganache and truffle, two other tools that
+  we will be using
+- In the previous session, we've talked about MetaMask, and in two sessions from
+  now we will be covering web3.js in detail
+- This is how all of these tools fit together, while you are developing
+  - solc compiles solidity and produces byte code and ABI.
+  - truffle is used to manage the running solc (you don't have to run the
+    compiler yourself directly), manage deploying the compiled contract to the
+    blockchain, and provide you with a REPL to interact with the deployed
+    contracts directly.
+  - ganache is a tool that provides you with a fuss free simulate blockchain on
+    localhost.
+- Note that this is not the *only* way to develop, there are indeed other ways,
+  but this seems to be the most popular, or even default, preferred by solidity
+  developers today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ganache
+### Tools
+### What
+]
+.right-column[
+
+- Simulates an Ethereum network
+  - Including the EVM
+- Creates several test accounts
+- Runs on localhost
+
+.footnote[
+]
+]
+
+???
+
+- So what does ganache do? It simulates an entire Ethereum network, including
+  both the blockchain, and the the EVM
+- It also creates a bunch of accounts pre-populated with Ethers, which makes it
+  super convenient for testing, but we'll get to that in our next session
+- For those of you who have previously attempted to run this on localhost,
+  using geth, you might remember how much time this takes to do - many many
+  hours -  so you'll be happy to learn that the set up for ganache is literally
+  a few minutes long
+- geth gives you a real Ethereum nodes, but for local development purposes, this
+  is usually overkill. on the other hand, ganache is just right
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ganache
+### Tools
+### What
+### Setup
+]
+.right-column[
+
+[ganache installation instructions](https://truffleframework.com/docs/ganache/quickstart#1-install-ganache)
+
+.footnote[
+]
+]
+
+???
+
+- Alright, let's do this, let's install ganache
+- It's super quick to get set up, you just download the appropriate installer
+  for your operating system, and run it
+- How many of you here have already installed this on your computers prior to the session?
+
+---
+name: ganache-end
+class: center, middle, inverse, nextSection
+
+## /ganache
+
+???
+
+- Q&A
+- ganache outro
+
+---
+name: truffle
+class: center, middle, inverse, nextSection
+
+## truffle
+
+???
+
+- truffle intro
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Truffle
+### Setup
+]
+.right-column[
+
+```bash
+npm install --global truffle
+```
+
+.footnote[
+]
+]
+
+???
+
+- walk through the setup process
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Truffle
+### Setup
+### What
+]
+.right-column[
+
+- Configure multiple environments
+- Manages compilation
+- Manages deployment
+- Test harness
+- REPL to interact with contracts
+- Integrates with ganache well
+
+.footnote[
+]
+]
+
+???
+
+- truffle is a smart contract development tool that can really be thought of
+  as a collection of tools - a meta-tool if you will
+- It manages the compilation and deployment of smart contracts. You don't need
+  to run solc directly, neither do you need to send the compiled EVM byte code
+  to the `0X00` address any more
+- It also provides a test harness, which is essentially mocha wrapped with some
+  smart contract stuff injected by truffle, which we'll get to in the next
+  session.
+- It also gives you a REPL, or a read-eval-print-loop, that allows you to
+  interact with your smart contracts within your terminal
+- It also interfaces with ganache realy well
+- Note that depending on who you talk to, you might get rather varied opinions
+  on whether truffle is suitable for use on the Ethereum main net. Many hold the
+  opinion that it is not, and that you should only use it for localhost dev,
+  or for localhost plus staging (test net) dev, but never for production
+  (main net).
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Truffle
+### Setup
+### What
+### Hands-on
+]
+.right-column[
+
+[dappsdev.org/hands-on/truffle-intro](https://dappsdev.org/hands-on/truffle-intro/)
+
+.footnote[
+]
+]
+
+???
+
+- OK time to crack open our laptops again, this one will be our most involved
+  hands on session tonight
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Truffle
+### Setup
+### What
+### Hands-on
+### Tools
+]
+.right-column[
+
+.width100percent[
+  ![Smart contract development tools](smart-contract-development-tools.svg)
+]
+
+.footnote[
+]
+]
+
+???
+
+- OK so now we have gone through all of the hands on sections for tonight,
+  and we have seen all the tools in action. With truffle, we have yet to use it
+  fully - we'll get to the other main thing we use it for in the next session
+  of DApps Dev Club
+- For now I think it is worth doing a recap of how all the tools sit together
+  again.
+- round up with a list of the tools, and how they work together
+  - show the same systems diagram from earlier
+  - browser, metamask, ganache, truffle, solc
+
+---
+name: truffle-end
+class: center, middle, inverse, nextSection
+
+## /truffle
+
+???
+
+- Q&A
+- truffle outro
+
+---
+name: guest_topic
+class: center, middle, inverse, nextSection
+
+## Alex
+
+???
+
+- Make sure that AV is set up and ready to go
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Alex
+### Intro
+]
+.right-column[
+
+- EthSingapore
+- Authio
+- Costa Rica
+- &hellip; DApps Dev Club
+
+.footnote[
+[dappsdev.org/blog/2019-02-01-alex-towle-guest-speaker/](http://dappsdev.org/blog/2019-02-01-alex-towle-guest-speaker/)
+]
+]
+
+???
+
+- So I met Alex at EthSingapore. He's the lead engineer at Authio, which does
+  smart contract auditing and development
+- His passion for education comes across immediately - he's running a school in
+  Costa Rica to teach kids there about computers
+- When I told him about what we're doing at DApps Dev Club, he immediately
+  volunteered to help. In fact, we're likely to collaborate on more things than
+  tonight's session, so watch this space.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Alex
+### Intro
+### Topic
+]
+.right-column[
+
+- How Solidity works
+- Inline assembly
+- Complex data structures
+- Guarantees
+
+.footnote[
+]
+]
+
+???
+
+- Our sessions in the DApps Dev Club are at the introductory level, aimed at
+  complete beginners
+- Tonight though, we'll be doing something different, temporarily, with Alex
+  talking about some advanced aspects of smart contracts. He's going to:
+  - Rip the covers off how Solidity works
+  - Use inline assembly to motivate  more complicated data structures
+  - What guarantees Solidity makes for dynamic types, and what it doesn't
+
+.left-column[
+## Alex
+### Intro
+### Topic
+### 🎤
+]
+.right-column[
+
+.footnote[
+]
+]
+
+???
+
+- So let's hear it from Alex!
+- (switch over to zoom call)
+
+---
+name: guest_topic-end
+class: center, middle, inverse, nextSection
+
+## /alex
+
+???
+
+- Thank you so much for coming on tonight Alex!
+- (Q&A) Does anyone have any questions for him?
+- Thanks to Alex for staying up super late/ waking up really early in his
+  timezone, and bringing us through those things he did with such great depth!
+
+---
+name: next
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+]
+.right-column[
+
+- Solidity: structure, variables, functions, events
+- Development Tools: `solc`, `truffle`, `ganache`
+- Alex: Solidity and EVM under the hood
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E05
+]
+.right-column[
+
+- [DApps Dev Club S01E05](https://dappsdev.org/sessions#session-SG-S01-E05)
+- How to test smart contracts
+
+.footnote[
+[dappsdev-s01e05.eventbrite.com](https://dappsdev-s01e05.eventbrite.com/)
+]
+]
+
+???
+
+- So our next session will be on the 4th Tuesday of the month, at BitTemple,
+  check out the details on the sessions page on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E05
+### Hands-on
+
+]
+.right-column[
+
+- Read from Ethereum Book:
+  - [Chapter 7](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc) - re-read
+- Practice Javascript:
+  - [scrimba](https://scrimba.com/g/gintrotojavascript)
+  - [exercism.io](https://exercism.io/)
+  - [freeCodeCamp](https://www.freecodecamp.org/)
+- Mocha:
+  - [Getting started](https://mochajs.org/#getting-started)
+
+.footnote[
+]
+]
+
+???
+
+- The topic that we are covering in our next session - testing smart contracts -
+  does not have its own dedicated section in the Mastering Ethereum book.
+  However, Chapter 7 is *still relevant*, as we will still be looking at
+  Solidity. So re-read it if you have already, and read it if you haven't yet!
+- The main thing that will be needed in the next session is some Javascript. In
+  our DApps Dev Club sessions, we *do* teach Solidity from scratch, but we
+  *will not** teach Javascript in the same way - you will need to know how to
+  write some at a very basic level. But fret not, you can get up to speed
+  extremely quickly, using the resources that you see on the screen.
+  - In order of least time commitment to most: We have scrimba, exercism, and
+    freeCodeCamp.
+  - Scrimba is more of a basic introduction, exercism is set up as a
+    "daily puzzle" type thing, and freeCodeCamp is a full-on course that goes
+    from A-Z
+  - If you don't have a lot of time to spare, just do the course on Scrimba
+    that's linked here.
+- Finally, there's one piece of software that you'll need to get acquainted
+  with, and that is mocha, which is a framework for writing and running tests
+  in Javascript
+  - This is what we'll be using to test out smart contracts, so it might be
+    worthwhile at least running through their getting started guide ahead of the next session, so that you are primed and ready to go
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E04
+### Hands-on
+### Setup
+
+]
+.right-column[
+
+- To install:
+  - [Mocha](https://mochajs.org/#installation)
+- Already installed:
+  - [MetaMask](https://metamask.io/)
+  - [NodeJs](https://nodejs.org/)
+  - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+  - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+  - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+.footnote[
+]
+]
+
+???
+
+- Finally here's a list of all the tools that we will be making use of in the
+  next session
+- I've split them into tools which we have not encountered yet and needs to be
+  installed, which is just Mocha
+- &hellip; and tools which we should have already encountered, installed and
+  used. If you have not got these working yet, please talk to me after the
+  session, and I'll help you to troubleshoot.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E04
+### Hands-on
+### Setup
+### Q&amp;A
+
+]
+.right-column[
+
+Questions?
+
+.footnote[
+[bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Before we wrap up, do you have any questions?
+- Is you think of some questions later, or already have them, but prefer to
+  type instead, head over to our discord, the link is right there!
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Lifelong Learning Institute &amp; SkillsFutureSG,
+Chainstack &amp; Acronis,
+BitTemple,
+NBC'19,
+Spartan,
+StartupToken,
+EngineersSG, and
+Blockchain&amp;DApps
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Alex Towle
+
+---
+layout: false
+class: center, middle, inverse
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+[dappsdev.org](https://dappsdev.org/)
+
+???
+
+- be sure to check out the sessions page for updates, and join our discord
+- Q&amp;A
+- any other announcements?
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+  </body>
+</html>

@@ -20,7 +20,7 @@ DApps Dev Club is excited to announce that we will be partnering with [Chainstac
 
 Let’s hear about it from [Ashlie Chin](https://twitter.com/ashliechin), who is a product marketer at Chainstack.
 
-----
+<!-- excerpt -->
 
 **Brendan**: Hi Ashlie! Before we start, I’d like to say a big thanks from Kenneth and myself for offering to host our sessions at your offices. It has been quite the tough journey for us sourcing for venue partners - finding a once-off venue is hard enough, and finding a recurring one has been a most daunting task. So you coming through is somewhat akin to the light at the end of the tunnel!
 

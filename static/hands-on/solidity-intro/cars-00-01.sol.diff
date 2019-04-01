@@ -1,0 +1,19 @@
+--- cars-00.sol	2019-04-06 23:40:22.000000000 +0800
++++ cars-01.sol	2019-04-06 23:40:35.000000000 +0800
+@@ -1,6 +1,15 @@
+-// structure
++// variables basic types
+ pragma solidity ^0.5.0;
+ 
+ contract Cars {
++    bytes3 public colour;
++    uint8 public doors;
++    uint256 public distance;
++    uint16 public lat;
++    uint16 public lon;
++    enum Status { driving, parked }
++    Status public status;
++    address public owner;
++
+     constructor() public {}
+ }

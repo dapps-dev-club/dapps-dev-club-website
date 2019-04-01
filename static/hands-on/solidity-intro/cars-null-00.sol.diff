@@ -1,0 +1,9 @@
+--- null.sol	2019-04-04 22:29:07.000000000 +0800
++++ cars-00.sol	2019-04-06 23:40:22.000000000 +0800
+@@ -1 +1,6 @@
++// structure
++pragma solidity ^0.5.0;
+ 
++contract Cars {
++    constructor() public {}
++}

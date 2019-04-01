@@ -22,6 +22,8 @@ which ran last Wednesday (20th February 2019) at the Microsoft office in Marina 
 
 The [slide deck](https://dappsdev.org/deck/s01e01/) that was used during the session, has been published, so now you can take a look.
 
+<!-- excerpt -->
+
 **Highlights**
 
 During the mid-session break, and after the session, we asked you what your favourite parts were. Most of you said that your favourite part was the live demo of the [Anders' Blockchain explainer](https://anders.com/blockchain/) during the *Just enough blockchain* segment - so a very quick recap of what we went through:

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style type="text/css" media="screen">
+      body, html {
+        box-sizing: border-box;
+        display: flex;
+        margin: 0;
+        min-height: 100vh;
+        width: 100%;
+      }
+      pre {
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+      <code class="solidity">
+// structure
+pragma solidity ^0.5.0;
+
+contract Cars {
+    constructor() public {}
+}
+
+      </code>
+    </pre>
+    <link rel="stylesheet" href="/3rd/js/highlight-9.15.6.min.css">
+    <script src="/3rd/js/highlight-9.15.6.min.js"></script>
+    <script src="/3rd/js/highlight-solidity-1.0.6.js"></script>
+    <script type="text/javascript">
+      hljs.registerLanguage('solidity', window.hljsDefineSolidity);
+      const codeBlock = document.querySelector('pre > code')
+      hljs.highlightBlock(codeBlock);
+    </script>
+  </body>
+</html>

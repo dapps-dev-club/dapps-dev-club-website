@@ -1,0 +1,34 @@
+--- cars-01.sol	2019-04-06 23:40:35.000000000 +0800
++++ cars-02.sol	2019-04-06 23:40:46.000000000 +0800
+@@ -1,15 +1,22 @@
+-// variables basic types
++// variables reference types
+ pragma solidity ^0.5.0;
+ 
+ contract Cars {
+-    bytes3 public colour;
+-    uint8 public doors;
+-    uint256 public distance;
+-    uint16 public lat;
+-    uint16 public lon;
+-    enum Status { driving, parked }
+-    Status public status;
+-    address public owner;
++
++    enum CarStatus { driving, parked }
++
++    struct Car {
++        bytes3 colour;
++        uint8 doors;
++        uint256 distance;
++        uint16 lat;
++        uint16 lon;
++        CarStatus status;
++        address owner;
++    }
++
++    uint256 public numCars = 0;
++    mapping(uint256 => Car) public cars;
+ 
+     constructor() public {}
+ }

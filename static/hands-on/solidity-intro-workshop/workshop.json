@@ -1,0 +1,53 @@
+{
+  "title": "Solidity Intro - Hands-on - DApps Dev Club",
+  "icon": "/img/dadc-logo.png",
+  "chat": "https://bit.do/dadc-chat",
+  "lessons": [
+  {
+    "title": "Solidity by feature",
+    "lesson": "data/cars-00.sol.html",
+    "info": "data/intro.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Smart Contract Structure",
+    "lesson": "data/cars-00.sol.html",
+    "info": "data/info-00.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Primitive Types",
+    "lesson": "data/cars-01.sol.html",
+    "info": "data/info-01.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Dynamic Types",
+    "lesson": "data/cars-02.sol.html",
+    "info": "data/info-02.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Functions",
+    "lesson": "data/cars-03.sol.html",
+    "info": "data/info-03.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Function Modifiers",
+    "lesson": "data/cars-04.sol.html",
+    "info": "data/info-04.md",
+    "tool": "https://remix.ethereum.org/"
+  },
+  {
+    "title": "Events",
+    "lesson": "data/cars-05.sol.html",
+    "info": "data/info-05.md",
+    "tool": "https://remix.ethereum.org/"
+  }
+ ],
+  "needs": [
+  ],
+  "unlocks": [
+  ]
+}

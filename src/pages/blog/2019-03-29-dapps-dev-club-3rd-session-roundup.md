@@ -12,7 +12,7 @@ authors:
 tags:
   - irl
   - s01
-  - s01e02
+  - s01e03
   - evm
   - rpn
   - cryptography
@@ -23,7 +23,7 @@ tags:
 
 DApps Dev Club held its third session - Talking to Ethereum - on Tuesday, where the stack-based execution model used by the Ethereum Virtual Machine, means to generate cryptographic keys for use in Ethereum wallet software, using MetaMask, performing simple transactions, and DApp Games.
 
-We've *already* posted 
+We've *already* posted
 [the videos from the session here](/blog/2019-03-27-dapps-dev-club-3rd-session-videos/).
 
 <!-- excerpt -->
@@ -44,7 +44,7 @@ Things are finally starting to feel like it is a **technical book club**, as ori
 ## Deck
 
 If you would like to review the slide deck that was presented again, or follow
-along while watching the recordings, or get at a hyperlink that we mentioned - 
+along while watching the recordings, or get at a hyperlink that we mentioned -
 [here it is!](https://dappsdev.org/deck/s01e03/ "DApps Dev Club S01E03 Slide Deck")
 
 ## Topics
@@ -55,7 +55,7 @@ The concept of a virtual machine as a software abstraction over hardware executi
 
 As we all will be learning about and making use of solidity compilers, we thought it would best to visually show exactly what was meant by that.
 
-Using reverse-Polish-notation and EVM opcodes we stepped through a simple arithmetic operation with [illustrations for each step of the way](/deck/s01e03/#evm_stacks_steps).
+Using reverse-Polish-notation and EVM op codes we stepped through a simple arithmetic operation with [illustrations for each step of the way](/deck/s01e03/#evm_stacks_steps).
 
 ## Generating cryptographic keys Ethereum
 
@@ -68,8 +68,8 @@ When talking about randomly generated entropy,
 
 Next we installed MetaMask, which was introduced in session #02, this time we made use of the seed phrase that we generated as an input, as demonstrated that each *Account* actually matches the keys generated using BIP39.
 
-Next, we used these accounts to send each other test-net Ethers, via 
-[this simple web page](https://dappsdev.org/hands-on/simple-tx.html).
+Next, we used these accounts to send each other test-net Ethers, via
+[this simple web page](https://dappsdev.org/hands-on/simple-tx/).
 
 We also wrote random text strings onto the (test-net) blockchain, just for fun!
 
@@ -79,7 +79,7 @@ This is the section that we had been gearing up, never quite got enough time. In
 
 [CryptoZombies](https://cryptozombies.io/) is that game, except that instead of kittens, you have Zombies.
 
-## Refelctions
+## Reflections
 
 **Pace**: Four of you said that the pace was too slow for you, during the hands-on sections. We are trying to cater for everyone, but at the same time feel your frustrations. But can we have our collective cake and eat it too? Vedant came up with an interesting solution:
 
@@ -109,7 +109,7 @@ This was really interesting because it was a very concrete way to show that exec
 
 ## Thanks
 
-A huge thanks to [BitTemple](https://bittemple.io/) 
+A huge thanks to [BitTemple](https://bittemple.io/)
 for hosting us at their excellent office space.
 Especially Solomon for organising the event space.
 
@@ -117,7 +117,7 @@ Thanks also to Wing & Gerald for their on-site assistance in running the event.
 
 ## Next session
 
-Our fourth session will be on Tuesday 9th April. Please let us know if you're 
+Our fourth session will be on Tuesday 9th April. Please let us know if you're
 planning to attend, as it helps us to plan!
 
 [**RSVP** on eventbrite](https://dappsdev-s01e04.eventbrite.com/)

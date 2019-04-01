@@ -1,0 +1,29 @@
+--- cars-04.sol	2019-04-06 23:49:56.000000000 +0800
++++ cars-05.sol	2019-04-06 23:49:34.000000000 +0800
+@@ -1,10 +1,12 @@
+-// function modifiers
++// events
+ pragma solidity ^0.5.0;
+ 
+ contract Cars {
+ 
+     enum CarStatus { driving, parked }
+ 
++    event CarHonk (uint256 indexed fromCar, uint256 indexed atCar);
++
+     struct Car {
+         bytes3 colour;
+         uint8 doors;
+@@ -68,4 +70,12 @@
+         cars[carId].lat = lat;
+         cars[carId].lon = lon;
+     }
++
++    function honkCar(uint256 carId, uint256 otherCarId)
++        public
++        onlyCarOwner(carId)
++    {
++        require(cars[otherCarId].owner != address(0x00), "other car must exist");
++        emit CarHonk(carId, otherCarId);
++    }
+ }

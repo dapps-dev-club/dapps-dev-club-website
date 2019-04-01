@@ -1,6 +1,6 @@
 # DApps Dev Club website
 
-Source code for the website
+Source code for the website - [dappsdev.org](https://dappsdev.org/)
 
 ## Author
 

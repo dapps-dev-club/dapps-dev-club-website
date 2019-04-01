@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Solidity Introduction - S01E04 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="Solidity Introduction - S01E04 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Solidity Introduction | S01E04 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="Solidity Introduction - S01E04 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-04-05T01:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-04-054T01:05:35.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E04"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+  </head>
+  <body>
+    <div class="selectWrapper">
+      <button class="select00">Structure</button>
+      <button class="select01">Base Types</button>
+      <button class="select02">Ref Types</button>
+      <button class="select03">Functions</button>
+      <button class="select04">Modifiers</button>
+      <button class="select05">Events</button>
+    </div>
+    <div class="twoColumn">
+      <div class="diffWrapper">
+          <div class="diff">
+          </div>
+        </div>
+        <div class="codeWrapper">
+          <pre class="solidity">
+          </pre>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="/3rd/js/highlight-9.15.6.min.css">
+    <script src="/3rd/js/highlight-9.15.6.min.js"></script>
+    <script src="/3rd/js/highlight-solidity-1.0.6.js"></script>
+    <link rel="stylesheet" type="text/css" href="/3rd/js/diff2html-2.7.0.css">
+    <script type="text/javascript" src="/3rd/js/diff2html-2.7.0.js"></script>
+
+    <style type="text/css">
+      .twoColumn {
+        width: 100%;
+        height: 100%;
+        margin:0;
+        padding:0;
+      }
+      .diffWrapper {
+        width: 50%;
+        float: left;
+        background: #ccc;
+        height: 100%;
+      }
+      .codeWrapper {
+        width: 50%;
+        float: right;
+        background: #aaa;
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      hljs.registerLanguage('solidity', window.hljsDefineSolidity);
+
+      const selections = [
+        [
+          'select00',
+          '/hands-on/solidity-intro/cars-00.sol',
+          '/hands-on/solidity-intro/cars-null-00.sol.diff',
+        ],
+        [
+          'select01',
+          '/hands-on/solidity-intro/cars-01.sol',
+          '/hands-on/solidity-intro/cars-00-01.sol.diff',
+        ],
+        [
+          'select02',
+          '/hands-on/solidity-intro/cars-02.sol',
+          '/hands-on/solidity-intro/cars-01-02.sol.diff',
+        ],
+        [
+          'select03',
+          '/hands-on/solidity-intro/cars-03.sol',
+          '/hands-on/solidity-intro/cars-02-03.sol.diff',
+        ],
+        [
+          'select04',
+          '/hands-on/solidity-intro/cars-04.sol',
+          '/hands-on/solidity-intro/cars-03-04.sol.diff',
+        ],
+        [
+          'select05',
+          '/hands-on/solidity-intro/cars-05.sol',
+          '/hands-on/solidity-intro/cars-04-05.sol.diff',
+        ],
+      ];
+      selections.forEach(registerButton);
+
+      const [firstSelection] = selections;
+      const [, firstCodePath, firstDiffPath] = firstSelection;
+      loadCode(firstCodePath);
+      loadDiff(firstDiffPath);
+
+      function registerButton([buttonClass, codePath, diffPath]) {
+        document.querySelector(`.${buttonClass}`).addEventListener('click', function(event) {
+          event.preventDefault();
+          loadCode(codePath);
+          loadDiff(diffPath);
+        });
+      }
+
+      function loadCode(path) {
+        fetch(path)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(code) {
+          const codeBlock = document.querySelector('.codeWrapper > pre')
+          codeBlock.innerHTML = code;
+          hljs.highlightBlock(codeBlock);
+        });
+      }
+
+      function loadDiff(path) {
+        fetch(path)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(diff) {
+          const diffHtml = Diff2Html.getPrettyHtml(
+          diff,
+          {
+            inputFormat: 'diff',
+            showFiles: true,
+            matching: 'lines',
+            outputFormat: 'line-by-line',
+          }
+        );
+        document.querySelector('.diff').innerHTML = diffHtml;
+        });
+      }
+    </script>
+  </body>
+</html>

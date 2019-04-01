@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-03-27T00:00:00.000+0800",
+  "lastUpdated": "2019-04-12T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -126,20 +126,24 @@
       },
       "topics": [
         {
-          "id": "solidity",
+          "id": "solidity-intro",
           "name": "Solidity"
         },
         {
-          "id": "solidity-compiler-solc",
+          "id": "tools-solc",
           "name": "solc"
         },
         {
-          "id": "truffle-intro",
+          "id": "tools-ganache",
+          "name": "ganache"
+        },
+        {
+          "id": "tools-truffle",
           "name": "truffle"
         },
         {
-          "id": "ganache-intro",
-          "name": "ganache"
+          "id": "guest-speaker-alex-towle",
+          "name": "Guest Speaker: Alex Towle: EVM Internals"
         }
       ],
       "rsvp":{
@@ -152,7 +156,7 @@
       "series": "SG-S05",
       "name": "Testing Solidity - Session #05",
       "location": {
-        "id": "sg-tbc"
+        "id": "sg-bittemple"
       },
       "time": {
         "start": "2019-04-23T18:30:00.000+0800",
@@ -182,8 +186,8 @@
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "https://www.eventbrite.com/e/dapps-dev-club-session-05-testing-smart-contracts-tickets-60041615087"
       }
     },
     {

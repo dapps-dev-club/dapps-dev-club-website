@@ -18,7 +18,7 @@ DApps Dev Club is excited to announce that we will be partnering with the [Natio
 
 Let’s hear about it from its organiser, Puah Hui Ying, also known as [The Geek Wing](https://www.thegeekwing.com/).
 
-----
+<!-- excerpt -->
 
 **Brendan**: I’d like to ask you some questions about NBC’19. Let’s start with the backstory - when did you come up with it?
 

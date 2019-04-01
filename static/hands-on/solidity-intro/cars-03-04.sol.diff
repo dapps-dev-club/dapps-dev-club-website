@@ -1,0 +1,46 @@
+--- cars-03.sol	2019-04-06 23:40:56.000000000 +0800
++++ cars-04.sol	2019-04-06 23:49:56.000000000 +0800
+@@ -1,4 +1,4 @@
+-// functions
++// function modifiers
+ pragma solidity ^0.5.0;
+ 
+ contract Cars {
+@@ -41,17 +41,29 @@
+         cars[carId] = newCar;
+     }
+ 
+-    function driveCar(uint256 carId) public {
+-        Car memory car = cars[carId];
+-        require(car.status == CarStatus.parked, "must be parked to start driving");
+-        require(car.owner == msg.sender, "you may only drive a car you own");
++    modifier onlyCarOwner(uint256 carId) {
++        require(cars[carId].owner == msg.sender, "you need to own this car");
++        _;
++    }
++
++    modifier onlyCarStatus(uint256 carId, CarStatus expectedStatus) {
++        require(cars[carId].status == expectedStatus, "car is not in the required status");
++        _;
++    }
++
++    function driveCar(uint256 carId)
++        public
++        onlyCarOwner(carId)
++        onlyCarStatus(carId, CarStatus.parked)
++    {
+         cars[carId].status = CarStatus.driving;
+     }
+ 
+-    function parkCar(uint256 carId, uint16 lat, uint16 lon) public {
+-        Car memory car = cars[carId];
+-        require(car.status == CarStatus.driving, "must be driving to park");
+-        require(car.owner == msg.sender, "you may only park a car you own");
++    function parkCar(uint256 carId, uint16 lat, uint16 lon)
++        public
++        onlyCarOwner(carId)
++        onlyCarStatus(carId, CarStatus.driving)
++    {
+         cars[carId].status = CarStatus.parked;
+         cars[carId].lat = lat;
+         cars[carId].lon = lon;
