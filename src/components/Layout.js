@@ -50,7 +50,9 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:image:alt" content={siteMetadata.description} />
         </Helmet>
         <Navbar />
-        <div>{children}</div>
+        <div className="layout">
+          <div className="container">{children}</div>
+        </div>
       </div>);
       }
     }

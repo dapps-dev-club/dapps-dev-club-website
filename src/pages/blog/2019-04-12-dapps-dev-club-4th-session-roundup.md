@@ -13,6 +13,7 @@ tags:
   - irl
   - s01
   - s01e04
+  - summary
   - solidity
   - solc
   - truffle

@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S01E05 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="S01E05 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="S01E05 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="S01E05 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E05"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+.width50percent[
+  ![DApps Dev Club S01E05 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e05](http://bit.do/dadc-s01e05)
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# Decentralised Applications Development Club
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+## Testing Smart Contracts
+
+23/04/2019
+
+???
+
+- In our previous session, we learnt how to write smart contracts using solidity
+  as well as explored using smart contract development tools
+- One of those tools was truffle, which we used to compile and deploy our smart
+  contracts with
+- Tonight we will continue using truffle, but this time we'll focus on using
+  it to write tests for our smart Contracts
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![DApps Dev Club S01E05 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e05](http://bit.do/dadc-s01e05)
+
+???
+
+- This is where you can find our discord link. It's on our homepage -
+  dappsdev.org - near the top, before the blog posts
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![Where to get our discord link](/img/dadc-chat-qrcode.png)
+]
+
+.footnote[
+[bit.do/dadc-chat](https://bit.do/dadc-chat)
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+### Install these!
+
+- [NodeJs](https://nodejs.org/)
+- [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+- [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+- [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+Note: Make sure you don't have Python 3 on your `PATH`
+
+```bash
+$ python --version
+Python 3.6.5 :: Anaconda, Inc. # node-gyp may fail
+```
+
+???
+
+- In the info page about this session, I asked all of you to install a bunch of stuff
+- and here's that list again
+- We should have this all installed on our computers already, from the previous session
+- can I have a show of hands, for how many have actually installed all of these
+  things?
+- ok so for the rest, did any of you encounter any issues while trying to
+  install it?
+- and if you haven't quite gotten around to it yet, well let's get that out of
+  the way before we start, while we're waiting for people to trickle in, might
+  as well put the time to good use
+- ok so if anyone here has had trouble installing node, solc, truffle, or
+  ganache, please raise your hands, and I'll try my best to help you to
+  troubleshoot in the next few minutes
+- Also, a quick note, for some of you who had trouble from the previous session,
+  we discovered that if you had python 3 on your path instead of python 2,
+  as shown here, you might not be able to install truffle or some of the other
+  tools, because node-gyp assumes python 2 only.
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- Also, for those of you who are joining us in our DApps Dev Club session for
+  the very first time - welcome!
+- We are a technical book club, and we run our sessions twice per month -
+  and a book club implies a book, well this is the book
+- Mastering Ethereum by Andreas Antonopoulos & Gavin Wood
+
+---
+name: agenda
+layout: false
+class: left, middle, inverse
+
+## Today
+
+- [Partners](#partners)
+- [Intro](#intro)
+- [Recap of #04](#recap)
+- [Mocha](#mocha)
+- [State Machines](#state-machines)
+- [Data Storage](#data)
+- [Events](#truffle)
+- [Mocking](#mock)
+- [Next session](#next)
+- [Announcements](#next)
+
+???
+
+- This is the line up for tonight's session
+- We'll start off by introducing our partners, and ourselves
+- Then do a quick recap of the previous session
+- Then we'll cover mocha which is a Javascript test runner/ framework - it is
+  general purpose, and has nothing to do with smart contracts
+- Then we'll go over to truffle which has its own test runner, which,
+  you'll see soon, wraps around mocha - so it's mostly the same - but adds a
+  few extra things that make it convenient to test smart contracts with
+  - We'll use truffle to test smart contracts in a few commonly encountered
+    different ways.
+- And finally we'll wrap up with a recap, plus information about our next session
+
+---
+name: partners
+layout: false
+class: left, middle, inverse
+
+## Partners
+
+???
+
+- Before we begin, let us thank all of our partners who made this session possible
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Lifelong Learning Institute](/img/lli-skillsfuture-logo.png)
+  ]
+]
+
+???
+
+- In our previous session, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+
+.width100percent[
+  ![Lifelong Learning Institute Partnership with DApps Dev Club](/img/lli-s01e04-dr-leong.jpg)
+]
+
+[Blog Post](https://dappsdev.org/blog/2019-04-15-lifelong-learning-institute-partnership/)
+
+[Video from session](https://youtu.be/pfV-XnQYoLw?t=114)
+
+]
+
+???
+
+- In our previous session, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Chainstack](/img/chainstack-logo.svg)
+  ]
+
+  .width100percent.lightBg[
+    ![Acronis](/img/acronis-logo.svg)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+]
+.right-column[
+  .width100percent.lightBg[
+    ![BitTemple](/img/bittemple-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+]
+.right-column[
+  .width50percent.lightBg[
+    ![National Blockchain Challenge '19](/img/nbc-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Spartan Group](/img/spartan-logo-black.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+]
+.right-column[
+  .width100percent.lightBg[
+    ![StartupToken meetup](/img/startuptoken-logo-blue.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Engineers.SG](/img/engineerssg-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+### CryptoJobsList
+]
+.right-column[
+  .width100percent.lightBg[
+    ![CryptoJobsList](/img/cryptojobslist-logo.png)
+  ]
+]
+
+---
+name: intro
+layout: false
+class: left, middle, inverse
+
+## Intro
+
+???
+
+- Before we go into the the topics, for the benefit of those who are attending
+  the their first session today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- Decentralised Applications Development Club
+- Format inspired by the technical book club from SingaporeJS
+
+]
+
+???
+
+- The DApps Dev Club meets twice a month, and this is our 4th session
+  - In each session, we plan to discuss about 3 or four different topics,
+   selected from the *Mastering Ethereum* book
+- We are a technical book club, so in each session, when we meet up together,
+  we'll be discussing select parts from this book, plus working through things
+  together
+  - I should mention that while this is not a common format, it isn't completely
+    new - in fact it is inspired by the book club that the SingaporeJS meetup
+    runs
+  - In the first couple of sessions, it was mostly me talking, but the rest of
+    the sessions are going to be hands-on
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![Let me hit you with some knowledge](https://i.giphy.com/media/coYo4nM8jE1TW/giphy.webp)
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC/2
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- [dappsdev.org](https://dappsdev.org/)
+- [bit.do/dadc-chat](https://bit.do/dadc-chat)
+
+]
+
+???
+
+- The nexus for all the club happenings are on this website, dappsdev.org
+  - The main thing to look out for on the website are the news feed, which you
+    can subscribe to via the RSS feed, or check back on manually
+  - The other thing to look out for on the website is the sessions page,
+    which is a calendar for all of the events
+- Apart from meeting in person, we can also have discussions online
+  - We have a discord server for that, and you can join using the link found
+    on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+]
+.right-column[
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+]
+
+???
+
+- As mentioned earlier, the book which we're covering together is
+  Mastering Ethereum, which is written by by Andreas Antonopoulos & Gavin Wood
+- Andreas Antonopoulos is the author of the Mastering Bitcoin book, and Gavin
+  wrote most of the initial implementation of Ethereum itself.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+]
+.right-column[
+- CTO of Baypay
+- Also runs the Blockchain&amp;DApps meetup
+
+.width50percent[
+  ![Kenneth Hu](http://www.kennethhu.net/img/huchiawei.jpg)
+]
+
+.footnote[
+[kennethhu.net](http://www.kennethhu.net/)
+]
+]
+
+???
+
+- Kenneth is the CTO of Baypay
+- He knows the Ethereum stack inside out
+- He also runs a blockchain events across Taiwan, Malaysia, and Singapore
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+]
+.right-column[
+- Started DApps Dev Club
+- NodeJS developer
+
+.footnote[
+[bguiz.com](http://bguiz.com/)
+]
+]
+
+???
+
+- I'm Brendan, and I work as a software engineer
+- Spend most of my time doing NodeJs
+- Met Kenneth through the EthSG hackathon last year
+- We decided to collaborate and create a series of educational blockchain
+  meetups, and here we are
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+]
+.right-column[
+- No blockchain knowledge required
+- No solidity or smart contract knowledge required
+- Basic Javascript needed in session #05
+]
+
+???
+
+- So, how about you? These sessions are designed with a particular audience in
+  mind.
+- If you know nothing about blockchain, or about smart contracts, that's perfect
+- However, if you don't know some basic JS, you'll need to pick that up to follow along in the later sessions.
+  - I've already posted some resources that you can use to learn JS - it's in
+    the latest post on dappsdev.org now,
+    or come talk to me, or ask around in our discord
+- Bring your laptops to the sessions, as you'll be able to participate in the
+  hands on parts of the sessions
+
+---
+layout: false
+class: left, middle, inverse
+
+wen ico? wen moon?
+
+.width100percent[
+  ![Ya Basic - The Good Place](https://66.media.tumblr.com/1d07b7c0c9625031871bc3855858270a/tumblr_phjkj5Jgr61qb77hzo3_540.gif)
+]
+
+???
+
+- I think most of us by now have encountered someone on a Telegram group, who
+  joins, and within seconds says "wen ico? wen moon?" (with that exact spelling)
+- If you're that person, these sessions are not for you. We're *not* going
+  to be building an ERC20, or learning how to trade or speculate on them.
+- What we're about here is focussed on developing decentralised applications
+- This is a great show by the way, it takes real skill to take a subject matter
+  that dry and make it entertaining
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+]
+.right-column[
+
+.width50percent[
+  !["Author of Mastering Ethereum likes tweet about DApps Dev Club"](/deck/s01e03/andreas-antonopoulos-likes-tweet.png)
+]
+
+.footnote[
+[this tweet](https://twitter.com/ChainstackHQ/status/1106042958443233280)
+]
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+name: intro-end
+class: center, middle, inverse, nextSection
+
+## /intro
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+---
+name: mocha
+class: center, middle, inverse, nextSection
+
+## Mocha
+
+???
+
+- OK, so now we are going to start this session proper
+- And we're going to do that by introducing mocha
+- This section will have absolutely nothing to do with smart contracts, EVM, etc
+- Just pure javascript
+- Once we've covered the basics of Mocha on it's own, we'll then transition to
+  using mocha within truffle, and that's when we start using web3.js,
+  interacting with smart contracts, etc
+- This session has a record number of hands-on parts -
+  six in total, which is **two more** than we've done in any other session -
+  so depending on how we go, we might not get through all of them
+- With that in mind, I have enlisted the help of a few generous volunteers
+  who are familiar/ comfortable with Javascript,
+  and have volunteered to help people in tonight's session with stuff when we
+  get stuck
+  - Can we have a show of hands please!
+- We will not be teaching Javascript itself - the programming language that is -
+  in these sessions, so if you're not that familiar with it, or get stuck at
+  any point, please don't be afraid to ask for help
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+]
+.right-column[
+
+- A test runner for Javascript
+- Can execute "spec" files either in browser, or in NodeJs
+  - We'll be using NodeJs only
+- Executes tests, outputs reports
+
+.footnote[
+[mochajs.org](https://mochajs.org/)
+]
+]
+
+???
+
+- Could I have a show of hands who here has written some implementation,
+  and also written a specification that tests that implementation before?
+  (in any language)
+- How about those who have done that for Javascript specifically?
+  (can I have another show of hands)
+- Which test runners did you use?
+  (popular responses expected: mocha, jasmine, jest)
+- So some of you have written tests before, and some of you have even used
+  mocha before, so you may want to spend the time during this next section
+  helping out the people around you
+- Let's now define what a test runner is
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+### Impl
+]
+.right-column[
+
+- Implementation is code that you write
+- Executes when the program is being used
+- You are *implementing* the *features* of your software
+- `impl`
+
+.footnote[
+]
+]
+
+???
+
+- Next, let's define some terminology which we'll be running into quite a bit
+- First up we have "implementation"
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+### Impl
+### Spec
+]
+.right-column[
+
+- Specification is also code that you write
+- Does **not** execute when the program is being used
+- Instead it executes the implementation
+- You are *specifying* the *features* of your software
+- `spec`
+
+.footnote[
+]
+]
+
+???
+
+- and we also have "specification"
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+### Impl
+### Spec
+### Runner
+]
+.right-column[
+
+- A test runner is a developer tool
+- **runner** executes **specification** executes **implementation**
+- **runner** observes **behaviour** produces **report**
+- Mocha is a test runner
+
+.footnote[
+]
+]
+
+???
+
+- and we also have the "runner", also known as the "test framework"
+- mocha executes your specification code,
+  which in turn executes your implementation in specific ways
+- while this is happening, mocha is set up such that it observes the
+  behaviour in certain ways
+  - mainly: did the test crash? did any assertions fail? what was the return value?
+- and once all of the specifications have completed running,
+  or they have timed out and mocha decides to terminate them,
+  it produces a report, which summarises all of the results from the
+  specifications that you have written
+  - generally this will be
+    - summary statistics of how many tests there were in total, and
+      how many passed or failed
+    - plus: detailed output about any of the tests that have failed
+- mocha has a plugin or addons system, where you can install your own custom
+  reporter that do things differently from the default.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+### Impl
+### Spec
+### Runner
+### Other
+]
+.right-column[
+
+- [Unit](https://en.wikipedia.org/wiki/Unit_testing)/
+  [Integration](https://en.wikipedia.org/wiki/Integration_testing)/
+  [Acceptance](https://en.wikipedia.org/wiki/Acceptance_testing)
+- [Black box](https://en.wikipedia.org/wiki/Black-box_testing)/
+  [White box](https://en.wikipedia.org/wiki/White-box_testing)
+- [Code coverage](https://en.wikipedia.org/wiki/Code_coverage)
+
+.footnote[
+]
+]
+
+???
+
+- When you talk abut testing, there are also these other terms that come up
+  quite frequently, and I would be in remiss not to mention them at least
+- However, for the scope of our session tonight,
+  we don't need to care about these
+- In lieu of that, H/W, for those who are interested in going deeper,
+  I have included some links for further reading
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocha
+### What
+### Impl
+### Spec
+### Runner
+### Other
+### Hands-on
+]
+.right-column[
+
+- Time to open your laptops!
+- [dappsdev.org/hands-on/mocha-intro](http://dappsdev.org/hands-on/mocha-intro/)
+
+.footnote[
+]
+]
+
+???
+
+- alright it is time for our first hands-on part for tonight's session!
+- before we start though, quick show of hands, who here has completed the
+  mocha getting started guide?
+  (use this to gauge how fast to go)
+
+---
+name: mocha-end
+class: center, middle, inverse, nextSection
+
+## /mocha
+
+???
+
+- OK, so now we're done with our very quick introduction to testing
+  vanilla javascript using mocha. Just a quick recap:
+- we created a new NodeJs project, and pushed it onto github.
+  BTW all of you should copy the project URL and paste it into the #sessions
+  channel of our chat group! why not do that now?
+- next we wrote an implementation file in Javascript, for a very simple
+  add function
+- next we wrote the specification file, also in Javascript, using
+  `describe` and `it` blocks provided by mocha, and `assert` from NodeJs core.
+- then we ran the tests using mocha
+- then we intentionally "broke" our code in various ways, and discussed the
+  implementation and specification correctness quadrants
+- some of us who happened to finish faster than the rest got to explore
+  property based testing. those of you who didn't get to that, not to worry!
+  we aren't going to need that at all for the rest of tonight's session -
+  property based testing was really just to keep the fast ones from
+  getting too bored! 😉
+- Q&A
+
+---
+name: data-storage
+class: center, middle, inverse, nextSection
+
+## Data Storage
+
+???
+
+- Alright, let's move on to the next section where we are going to get back to
+  DApp development.
+  This is where we'll start putting our new or perhaps refreshed mocha skills
+  to use, but to test out smart contracts that are written in Solidity,
+  instead of testing our vanilla Javascript, instead!
+
+---
+layout: false
+class: left, middle, inverse
+
+- **truffle** has its own test runner
+
+.width50percent[
+  ![](https://i.kym-cdn.com/photos/images/original/001/449/436/dce.png)
+]
+
+???
+
+- Who here loves a good joke about recursion?
+- I put a can in yo' can!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Data Storage
+### Macro/1
+]
+.right-column[
+
+- **truffle** has its own test runner
+- this test runner is
+  - 99% mocha
+  - 1% things that are specific to truffle
+
+.footnote[
+]
+]
+
+???
+
+- Before we get into that, let's take a moment to know what's in store
+- Firstly we won't be using mocha as the test runner, we'll be using
+  truffle's own test runner instead
+- But truffle's test runner is almost 100% the same as mocha -
+  in fact it really is a wrapper around mocha -
+  there are just a few tiny things that are different which you'll need to know
+  and we will get to later
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Data Storage
+### Macro/2
+]
+.right-column[
+
+- Tasks:
+  - test data storage
+  - test state transitions
+  - test events
+  - mock the smart contract
+
+.footnote[
+]
+]
+
+???
+
+- And here are the various things that we will be doing with our tests,
+  which are specific to smart contracts
+- Note that there are a few other types of things that you can test in addition
+  to this, but these are the most common categories of things that need to be
+  done in tests for smart contracts,
+  and therefore the most useful ones to learn!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Data Storage
+### Macro
+### Set up
+]
+.right-column[
+
+Hands-on: Truffle Set Up
+
+[dappsdev.org/hands-on/testing/truffle-setup](https://dappsdev.org/hands-on/testing/truffle-setup/)
+
+.footnote[
+]
+]
+
+???
+
+- Here we'll be setting up our a truffle project for testing
+- We'll need to grab a copy of the truffle project that you would have created
+  from the previous session, and use that as the starting point
+- We'll also need a copy of ganache set up and running as well
+- Let's get cracking!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Data Storage
+### Macro
+### Set up
+]
+.right-column[
+
+Hands-on: Truffle Set Up
+
+[dappsdev.org/hands-on/testing/solidity-data-storage](https://dappsdev.org/hands-on/testing/solidity-data-storage/)
+
+.footnote[
+]
+]
+
+???
+
+- (hopefully the previous one was very quick)
+- Now we're going to do the proper hands-on for this section which is to test
+  data storage
+- Here we'll be writing some very simple tests, and all they do is perform
+  assertions on the initial stae of the smart contract
+- Let's get cracking!
+
+---
+name: data-storage-end
+class: center, middle, inverse, nextSection
+
+## /data-storage
+
+???
+
+- OK, so now we have our very first test running
+- Q&A
+
+---
+name: state-machines
+class: center, middle, inverse, nextSection
+
+## State Machines
+
+???
+
+- The next thing we'd like to cover are state machines and state transitions
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## State Machines
+### FSM
+]
+.right-column[
+
+> A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata),
+> finite automaton, or simply a state machine, is a mathematical model of
+> computation. It is an abstract machine that can be in exactly one of a
+> finite number of states at any given time. The FSM can change from one state
+> to another in response to some external inputs; the change from one state to
+> another is called a transition. An FSM is defined by a list of its states,
+> its initial state, and the conditions for each transition.
+
+&mdash; Wikipedia
+
+.footnote[
+]
+]
+
+???
+
+- Here's the definition of a state machine, taken off Wikipedia
+- There's a lot of theory there, but the main take away is that
+  in the context of software development, in some cases,
+  you can think of a program as a series of states,
+  and the program's implementation governs how it moves from one state to
+  another.
+
+---
+name: state_transitions
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## State Machines
+### FSM
+### Transitions
+]
+.right-column[
+
+> A Scilla smart contract (and in general most smart contracts that you see
+> today) are stateful systems. This basically means that a smart contract at
+> any point of time can be said to be in a particular "state". This "state"
+> for instance can be a set of variables (and its current value) or say map
+> (in the case of ERC20 token contract) that stores which user owns how many
+> tokens. A state transition is a function that allows users to change the
+> state of the contract. For instance, the transfer state transition function
+> will allow users to transfer tokens from one user to another and hence
+> changing the map.
+
+&mdash; Amrit Kumar
+
+.footnote[
+]
+]
+
+???
+
+- When a state machine moves from state to another, that is called a state
+  transition
+- There is another crypto network (not Ethereum) called Zilliqa,
+  which is developed by a company here is Singapore,
+  and they have their own smart contract language called Scilla.
+- So, roughly speaking, Scilla is to Zilliqa as Solidity is to Ethereum
+- The interesting thing about Scilla is that it explicitly makes you write
+  their smart contracts as state machines, and instead of calling their
+  functions functions, they call them transitions, because that's what they
+  really are in that context.
+- I asked Amrit Kumar who is one of the co-authors of Scilla,
+  and also one of the lead developers at Zilliqa,
+  to define a state transition, and here we have it
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## State Machines
+### FSM
+### Transitions
+### Key Q's
+]
+.right-column[
+
+- Can you model your smart contract as a state machine?
+- What are the state transitions that you need in your smart contract?
+- What is the connection to event logs?
+
+.footnote[
+]
+]
+
+???
+
+- Now let's answer these questions:
+- Can you model your smart contract as a state machine?
+  - Yes you can, but only if you keep that in mind, or as a goal,
+    while writing your smart contract
+  - The analogy I'll offer is perhaps from older programming languages such as
+    BASIC and such which had GOTO statements. You always had the option of
+    using GOTOs, but some software engineers thought that they were something
+    to be avoided, and wrote functionally equivalent code without GOTO statements.
+- What are the state transitions that you need in your smart contract?
+  - Think about what data your smart contract stores.
+    Think about what cause that data to be changed
+    Think about what thing need to be checked before allowing those changes.
+    When you know all of those, you can model your states and your state
+    transitions.
+- What is the connection to event logs?
+  - There is a theory that whenever you change some state, you store a log
+    of those changes, containing enough info to be able to rebuild the entire
+    state from scratch.
+  - Recall in session #02 where we talked about distributed computing
+    and how databases use transaction logs to restore known state with consensus
+    when one or more nodes have failed.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## State Machines
+### FSM
+### Transitions
+### Key Q's
+### Hands-on
+]
+.right-column[
+
+[dappsdev.org/hands-on/testing/solidity-state-machines](https://dappsdev.org/hands-on/testing/solidity-state-machines/)
+
+.footnote[
+]
+]
+
+???
+
+- Now it's time for another hands on
+- We'll be performing some state transitions, and then checking that they have
+  indeed done what we expected them to do
+
+---
+name: state-machines-end
+class: center, middle, inverse, nextSection
+
+## /state-machines
+
+???
+
+- So let's do a quick recap:
+- First we discussed what state machines and state transitions were,
+  and looked at how Solidity functions can be modelled as,
+  or thought of as, state transitions
+- Next we wrote a test that invokes the `addCar()` function,
+  and asserted that it did indeed add a new `Car` object,
+  and that the right values were stored in the contract
+- Then we took a look at a few different approaches towards asserting the
+  return value of a function that performs a state transition
+- Finally we explored writing more than one test,
+  and hopefully discovered the truffle clean room environment,
+  and learned about how to group/ structure tests within a specification file
+- Q&A
+
+---
+name: events
+class: center, middle, inverse, nextSection
+
+## Events
+
+???
+
+- Next up we have events
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![](https://media.makeameme.org/created/brace-yourself-events.jpg)
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Events
+### Logs
+]
+.right-column[
+
+- Events -> Structured Logs
+- On an immutable ledger
+
+.footnote[
+- [Mastering Ethereum, Chapter 7, Events](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#events)
+]
+]
+
+???
+
+- In solidity when you emit an event, you are adding a structured log
+  to an immutable ledger (the blockchain)
+- In a centralised app server, you might be accustomed to performing
+  `console.log()`, or otherwise output to STDOUT,
+  and you pipe that to a file on disk, and
+  look through that when you wish to discover how your server has (mis)behaved
+- If you know that a human is the only one who will be reading the logs,
+  that's fine, however, if you want your logs to be machine-parseable too,
+  instead of writing arbitrary stuff into your log files,
+  every line that you output should be in some standardised format.
+  For example, a common one that I see in NodeJs servers is JSON objects
+  that are serialised one per line
+- Ethereum makes use of structured logs as well,
+  but instead of outputting to STDOUT and piping that into a file,
+  it stores them on an immutable ledger that is distributed amongst all the
+  nodes running in the network.
+- Read the linked section from the Mastering Ethereum book, in chapter 7,
+  as this goes into more implementation-level details about this
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Events
+### Logs
+### Hands-on
+]
+.right-column[
+
+[dappsdev.org/hands-on/testing/solidity-events](https://dappsdev.org/hands-on/testing/solidity-events/)
+
+.footnote[
+]
+]
+
+???
+
+- Time to move on to our next hands-on part, where we're going to test events
+
+---
+name: events-end
+class: center, middle, inverse, nextSection
+
+## /events
+
+???
+
+- Recap:
+- we introduced, and made use of, a new mocha feature, which is the `before`
+  block, in order to set up the state of the contract prior to running tests
+- this time we added both a "happy path" test,
+  and a failure scenario test.
+- Q&A
+
+---
+name: mocking
+class: center, middle, inverse, nextSection
+
+## Mocking
+
+???
+
+- Next we'll take a look at mocks for Solidity
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocking
+### What
+]
+.right-column[
+
+- Is *not* make fun of type
+- **Is** the imitate type
+
+.footnote[
+]
+]
+
+???
+
+- In English, the word mock can mean either to make fun of someone,
+  or to imitate them.
+- In the context of software specification and testing,
+  mocking refers to the latter, to imitate
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![](https://i.imgflip.com/1pf0t1.jpg)
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocking
+### What
+### Why
+]
+.right-column[
+
+- Test with **mostly** the same behaviour
+
+.footnote[
+]
+]
+
+???
+
+- Why do we need mocks?
+- The key is that we want some part of your software to be tested
+- But... for various reasons that are out of your control,
+  you cannot test test that part of the software directly
+- You have to modify its behaviour is some small and specific way
+  in order for you to be able to write and execute the tests that you need
+- This is where mocks come in, you create a new version of that piece of
+  software that behaves as it were an exact copy,
+  with the exception of the bits that need to be different
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Mocking
+### What
+### Why
+### Hands-on
+]
+.right-column[
+
+[dappsdev.org/hands-on/testing/solidity-mocks](https://dappsdev.org/hands-on/testing/solidity-mocks/)
+
+.footnote[
+]
+]
+
+???
+
+- so now it's time for our next hands-on where
+  we're going to create mock for our `Cars` smart contract
+
+---
+name: mocking-end
+class: center, middle, inverse, nextSection
+
+## /mocking
+
+???
+
+- Recap:
+- We modified the implementation of smart contract to add a new rule,
+  which enforces that cars are not allowed to honk at certain times of the day.
+- Then we ran our tests and found out that the test now pass or fail,
+  depending on the time of day it happens to be IRL when the tests are run
+  - This is actually a very common scenario for introducing mocks to
+    test specifications, not just in smart contracts
+- Then we wrote a mocked version of our cars smart contract,
+  which allows the test to override the IRL value, and instead
+  set the time of the day that will be used by the test
+- Then we modified the tests to run against the mocked version of the `Cars`
+  contract instead of the regular one.
+- Then we wrote a new test to specifically test the mocked scenario
+  which was a new possible failure scenario
+- Q&A
+
+---
+name: next
+class: center, middle, inverse, nextSection
+
+## Next
+
+???
+
+- ...
+
+---
+name: next
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+]
+.right-column[
+
+-
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E06
+]
+.right-column[
+
+- [DApps Dev Club S01E06](https://dappsdev.org/sessions#session-SG-S01-E06)
+- How to test smart contracts
+
+.footnote[
+[dappsdev-s01e06.eventbrite.com](https://dappsdev-s01e06.eventbrite.com/)
+]
+]
+
+???
+
+- So our next session will be on the 2nd Tuesday of the month, at Chainstack,
+  check out the details on the sessions page on our website
+- Show the sessions page
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E05
+### Hands-on
+
+]
+.right-column[
+
+- Read from Ethereum Book:
+  - [Appendix A - web3.js](https://github.com/ethereumbook/ethereumbook/blob/develop/appdx-web3js-tutorial.asciidoc)
+  - [Chapter 12 - DApps](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc)
+- Practice Javascript:
+  - [scrimba](https://scrimba.com/g/gintrotojavascript)
+  - [exercism.io](https://exercism.io/)
+  - [freeCodeCamp](https://www.freecodecamp.org/)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E05
+### Hands-on
+### Setup
+
+]
+.right-column[
+
+- To install:
+  - Nothing new! 🎉
+- Already installed:
+  - [Chrome](https://www.google.com/chrome/)
+  - [MetaMask](https://metamask.io/)
+  - [NodeJs](https://nodejs.org/)
+  - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+  - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+  - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E05
+### Hands-on
+### Setup
+### Q&amp;A
+
+]
+.right-column[
+
+Questions?
+
+.footnote[
+[bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Before we wrap up, do you have any questions?
+- Is you think of some questions later, or already have them, but prefer to
+  type instead, head over to our discord, the link is right there!
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Lifelong Learning Institute &amp; SkillsFutureSG,
+Chainstack &amp; Acronis,
+BitTemple,
+NBC'19,
+Spartan,
+StartupToken,
+EngineersSG,
+CryptoJobsList, and
+Blockchain&amp;DApps
+
+---
+layout: false
+class: center, middle, inverse
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+[dappsdev.org](https://dappsdev.org/)
+
+???
+
+- be sure to check out the sessions page for updates, and join our discord
+- Q&amp;A
+- any other announcements?
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>
