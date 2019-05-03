@@ -13,6 +13,7 @@ tags:
   - irl
   - s01
   - s01e03
+  - videos
   - evm
   - cryptography
   - transactions
@@ -57,7 +58,7 @@ without which we would probably have no recordings!
 
 ## Reflections
 
-As mentioned in our 
+As mentioned in our
 [video recordings post for the previous session](/blog/2019-03-16-dapps-dev-club-2nd-session-videos/ "Videos from session #02 | DApps Dev Club"), AV is an area in which we started off with close to no experience, and we have a steep learning curve ahead of us.
 
 *Low volume*: This is still a problem that we have not figured out. We may need to do some post-processing to rectify amp up the volume, if we can't figure out a way to record at the right level.
@@ -70,7 +71,7 @@ As mentioned in our
 
 ## Next session
 
-Our fourth session will be on Tuesday 9th April. Please let us know if you're 
+Our fourth session will be on Tuesday 9th April. Please let us know if you're
 planning to attend, as it helps with planning!
 
 [**RSVP** on eventbrite](https://dappsdev-s01e04.eventbrite.com/)

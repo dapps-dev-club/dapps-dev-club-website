@@ -4,7 +4,7 @@ title: "Summary of session #05"
 date: 2019-05-02T07:37:00Z
 updatedDate: 2019-05-02T07:37:00Z
 draft: false
-description: "Solidity: Solidity-by-feature + solc + ganache + truffle"
+description: "Testing: Mocha + truffle test + data storage + state machines + events + (mocking)"
 featuredImage: /img/dadc-s01e05-roundup.png
 section: news
 authors:

@@ -13,6 +13,7 @@ tags:
   - irl
   - s01
   - s01e02
+  - videos
   - evm
   - smart contract
   - web3
@@ -77,7 +78,7 @@ slide deck - we will make sure that this is better in the next session!
 
 ## Next session
 
-Our third session will be on Tuesday 26th March. Please let us know if you're 
+Our third session will be on Tuesday 26th March. Please let us know if you're
 planning to attend, as it helps with planning!
 
 [RSVP on eventbrite](https://dappsdev-s01e03.eventbrite.com/)

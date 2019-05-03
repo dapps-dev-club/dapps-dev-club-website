@@ -27,7 +27,8 @@ Here's what you need to know about the session!
 
 ## Event
 
-The session will be held at Chainstack's office in Suntec City. Thanks [Ashlie](https://www.ashliechin.com/) for helping us run the event!
+The session will be held at Chainstack's office in Suntec City.
+Thanks [Ashlie](https://www.ashliechin.com/) for helping us run the event!
 
 [Dr Leong Li-Ming](https://www.linkedin.com/in/limingleong/),
 principal manager of Lifelong Learning Institute (SkillsFutureSG), will be there

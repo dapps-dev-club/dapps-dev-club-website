@@ -4,7 +4,7 @@ title: "Videos from session #05"
 date: 2019-05-01T03:11:00Z
 updatedDate: 2019-05-01T03:11:00Z
 draft: false
-description: "Testing: Mocha, data storage, state machines, events, (mocking)"
+description: "Videos: Testing: Mocha, data storage, state machines, events, (mocking)"
 featuredImage: /img/dadc-s01e05-videos.png
 section: news
 authors:
@@ -13,7 +13,7 @@ tags:
   - irl
   - s01
   - s01e05
-  - video
+  - videos
   - solidity
   - mocha
   - testing

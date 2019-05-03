@@ -4,7 +4,7 @@ title: "Kickoff session"
 date: 2019-02-25T07:04:00.000Z
 updatedDate: 2019-02-25T07:04:00.000Z
 draft: false
-description: "DApps Dev Club's first session"
+description: "Videos and summary of DApps Dev Club's first session"
 featuredImage: /img/dadc-s01-e01-featured-image.jpeg
 section: news
 authors:
@@ -13,6 +13,8 @@ tags:
   - irl
   - s01
   - s01e01
+  - summary
+  - videos
   - blockchain
   - dapp
 ---

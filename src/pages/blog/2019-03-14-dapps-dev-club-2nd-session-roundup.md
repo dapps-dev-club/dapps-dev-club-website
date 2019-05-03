@@ -13,6 +13,7 @@ tags:
   - irl
   - s01
   - s01e02
+  - summary
   - evm
   - smart contract
   - web3
@@ -23,7 +24,7 @@ where we covered the Ethereum Virtual Machine, Smart Contracts, and Web3.
 
 Each of these three things are hard to explain without first knowing what the other
 two of them are, so the over-arching idea was to go cover each of these briefly,
-in a single session, before we delve into the details about them in subsequent 
+in a single session, before we delve into the details about them in subsequent
 sessions. Hence we had an "overview". We could call this, to borrow a very apt
 computer science terminology, a
 [*breadth-first* approach](https://en.wikipedia.org/wiki/Breadth-first_search)
@@ -44,11 +45,11 @@ presentation session - akin to a lecture - and towards an interactive, hands-on
 session - akin to a **workshop**.
 While we did spend most of the time looking at information on slides, we also spent a some time exploring and trying out  mini-exercises on your computers.
 
-The other changes that happened naturally, was that the talking was a lot more 
-bi-directional, with you fielding many questions and comments. 
+The other changes that happened naturally, was that the talking was a lot more
+bi-directional, with you fielding many questions and comments.
 
-We hope that this continues, being more **participatory** - with both working 
-hands-on on something, as well as with discussion - as that is the core or 
+We hope that this continues, being more **participatory** - with both working
+hands-on on something, as well as with discussion - as that is the core or
 essence of being a **technical book club**!
 
 As with the kickoff session, we recorded this one too. ~~, and will post them as soon as we can!~~
@@ -59,7 +60,7 @@ are now up.
 ## Deck
 
 If you would like to review the slide deck that was presented again, or follow
-along while watching the recordings, or get at a hyperlink that we mentioned - 
+along while watching the recordings, or get at a hyperlink that we mentioned -
 [here it is!](https://dappsdev.org/deck/s01e02/ "DApps Dev Club S01E02 Slide Deck")
 
 ## Hands on
@@ -121,15 +122,15 @@ The code state blockchain demo was a hit, with lots of **Aha** moments all aroun
 We even got requests to *take it further*, by making it a smart contract blockchain demo!
 
 The other thing that perhaps wasn't so much a favourite, as it was something that
-provoked a very obvious reaction (gasps!) was the cost of storage. One 
+provoked a very obvious reaction (gasps!) was the cost of storage. One
 participant even remarked during the break that she was now reconsidering about
-whether something that she had in mind could be feasibly built on a blockchain. 
+whether something that she had in mind could be feasibly built on a blockchain.
 
 ## Thanks
 
 A huge thanks to [Chainstack](https://chainstack.com) and
-[Acronis](https://www.acronis.com/) 
-for hosting us at their excellent office space. Especially 
+[Acronis](https://www.acronis.com/)
+for hosting us at their excellent office space. Especially
 Ashlie for organising the event space, and Dennis for supporting the AV set up.
 
 Thanks to [Spartan](https://spartangroup.io) for sponsoring the refreshments,
@@ -142,7 +143,7 @@ Thanks also to Wing & Gerald for their on-site assistance in running the event.
 
 ## Next session
 
-Our third session will be on Tuesday 26th March. Please let us know if you're 
+Our third session will be on Tuesday 26th March. Please let us know if you're
 planning to attend, as it helps us to plan for seating, et cetera.
 
 [RSVP on eventbrite](https://dappsdev-s01e03.eventbrite.com/)
