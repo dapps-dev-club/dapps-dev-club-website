@@ -31,8 +31,8 @@
       ],
       "links": [
         {
-          "text": "Round up",
-          "url": "/blog/2018-02-25-dapps-dev-club-kickoff-session/"
+          "text": "Videos from and round up of session #01",
+          "url": "/blog/2019-02-25-dapps-dev-club-kickoff-session/"
         }
       ],
       "rsvp": {
@@ -69,8 +69,12 @@
       ],
       "links": [
         {
-          "text": "Venue partner: Chainstack",
-          "url": "/blog/2019-03-04-chainstack-partnership/"
+          "text": "Videos from session #02",
+          "url": "/blog/2019-03-16-dapps-dev-club-2nd-session-videos/"
+        },
+        {
+          "text": "Round up of session #02",
+          "url": "/blog/2019-03-14-dapps-dev-club-2nd-session-roundup/"
         }
       ],
       "rsvp": {
@@ -107,6 +111,16 @@
         {
           "id": "simple-transactions",
           "name": "Simple Transactions"
+        }
+      ],
+      "links": [
+        {
+          "text": "Videos from session #03",
+          "url": "/blog/2019-03-27-dapps-dev-club-3rd-session-videos/"
+        },
+        {
+          "text": "Round up of session #03",
+          "url": "/blog/2019-03-29-dapps-dev-club-3rd-session-roundup/"
         }
       ],
       "rsvp": {
@@ -149,6 +163,20 @@
           "name": "Guest Speaker: Alex Towle: EVM Internals"
         }
       ],
+      "links": [
+        {
+          "text": "Details about session #04",
+          "url": "/blog/2019-04-06-dapps-dev-club-4th-session-info/"
+        },
+        {
+          "text": "Round up of session #04",
+          "url": "/blog/2019-04-12-dapps-dev-club-4th-session-roundup/"
+        },
+        {
+          "text": "Videos from session #04",
+          "url": "/blog/2019-04-13-dapps-dev-club-4th-session-videos/"
+        }
+      ],
       "rsvp":{
         "name": "RSVP on eventbrite",
         "url": "https://dappsdev-s01e04.eventbrite.com/"
@@ -189,6 +217,20 @@
           "name": "Mocking smart contracts"
         }
       ],
+      "links": [
+        {
+          "text": "Details about session #05",
+          "url": "/blog/2019-04-14-dapps-dev-club-5th-session-info/"
+        },
+        {
+          "text": "Videos from session #05",
+          "url": "/blog/2019-05-01-dapps-dev-club-5th-session-videos/"
+        },
+        {
+          "text": "Round up of session #05",
+          "url": "/blog/2019-05-02-dapps-dev-club-5th-session-roundup/"
+        }
+      ],
       "rsvp": {
         "name": "RSVP on eventbrite",
         "url": "https://www.eventbrite.com/e/dapps-dev-club-session-05-testing-smart-contracts-tickets-60041615087"
@@ -227,6 +269,12 @@
         {
           "id": "web3-signing-transactions",
           "name": "Signing transactions"
+        }
+      ],
+      "links": [
+        {
+          "text": "Details about session #06",
+          "url": "/blog/2019-05-03-dapps-dev-club-6th-session-info/"
         }
       ],
       "rsvp": {

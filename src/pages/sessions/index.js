@@ -48,10 +48,14 @@ export default class Sessions extends React.Component {
                 expect this list to change as we progress.
               </p>
               <p>
-                Each session will link to an external site (meetup.com), where we would like you
+                Each session will link to an external site (meetup.com or eventbrite),
+                where we would like you
                 to RSVP in order for the organisers to plan for numbers in attendance!
                 After each session is over, we will add links to any resources or discussions
                 from that session.
+              </p>
+              <p>
+                Jump to: <a href="#upcoming">Upcoming sessions</a> | <a href="#past">Past sessions</a>
               </p>
               <h2 id="calendar" name="calendar">Calendar</h2>
               { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
