@@ -31,8 +31,8 @@
       ],
       "links": [
         {
-          "text": "Round up",
-          "url": "/blog/2018-02-25-dapps-dev-club-kickoff-session/"
+          "text": "Round up, slides and videos",
+          "url": "/blog/2019-02-25-dapps-dev-club-kickoff-session/"
         }
       ],
       "rsvp": {
@@ -68,6 +68,10 @@
         }
       ],
       "links": [
+        {
+          "text": "Round up, slides and videos",
+          "url": "/blog/2019-03-14-dapps-dev-club-2nd-session-roundup/"
+        },
         {
           "text": "Venue partner: Chainstack",
           "url": "/blog/2019-03-04-chainstack-partnership/"
@@ -107,6 +111,12 @@
         {
           "id": "simple-transactions",
           "name": "Simple Transactions"
+        }
+      ],
+      "links": [
+        {
+          "text": "Round up, slides and videos",
+          "url": "/blog/2019-03-29-dapps-dev-club-3rd-session-roundup/"
         }
       ],
       "rsvp": {
@@ -149,6 +159,12 @@
           "name": "Guest Speaker: Alex Towle: EVM Internals"
         }
       ],
+      "links": [
+        {
+          "text": "Round up, slides and videos",
+          "url": "/blog/2019-04-12-dapps-dev-club-4th-session-roundup/"
+        }
+      ],
       "rsvp":{
         "name": "RSVP on eventbrite",
         "url": "https://dappsdev-s01e04.eventbrite.com/"
@@ -187,6 +203,12 @@
         {
           "id": "solidity-mocking-smart-contracts",
           "name": "Mocking smart contracts"
+        }
+      ],
+      "links": [
+        {
+          "text": "Round up, slides and videos",
+          "url": "/blog/2019-05-02-dapps-dev-club-5th-session-roundup/"
         }
       ],
       "rsvp": {
