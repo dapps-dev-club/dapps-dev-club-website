@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S01E06 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="S01E06 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="S01E06 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="S01E06 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E06"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+.width50percent[
+  ![DApps Dev Club S01E06 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e05](http://bit.do/dadc-s01e05)
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# Decentralised Applications Development Club
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+## Web3
+
+14/05/2019
+
+???
+
+- In our previous session, we learnt how to write tests for our smart contracts,
+  and use truffle's test runner capabilities
+- In this session, we will be learning how to write a front end that talks to
+  this smart contract
+- As with previous sessions, the focus will *not* be on writing a real world
+  DApp, but rather to build a DApp that focuses on the features of the various
+  tools and platforms used in developing one
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![DApps Dev Club S01E06 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e06](http://bit.do/dadc-s01e06)
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![Where to get our discord link](/img/dadc-chat-qrcode.png)
+]
+
+.footnote[
+[bit.do/dadc-chat](https://bit.do/dadc-chat)
+]
+
+???
+
+- This is where you can find our discord link. It's on our homepage -
+  dappsdev.org - near the top, before the blog posts
+
+---
+layout: false
+class: left, middle, inverse
+
+### Install these!
+
+- [NodeJs](https://nodejs.org/)
+- [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+- [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+- [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+Note: Make sure you don't have Python 3 on your `PATH`
+
+```bash
+$ python --version
+Python 3.6.5 :: Anaconda, Inc. # node-gyp may fail
+```
+
+???
+
+- In the info page about this session, I asked all of you to install a bunch of stuff
+- and here's that list again
+- We should have this all installed on our computers already, from the previous session
+- can I have a show of hands, for how many have actually installed all of these
+  things?
+- ok so for the rest, did any of you encounter any issues while trying to
+  install it?
+- and if you haven't quite gotten around to it yet, well let's get that out of
+  the way before we start, while we're waiting for people to trickle in, might
+  as well put the time to good use
+- ok so if anyone here has had trouble installing node, solc, truffle, or
+  ganache, please raise your hands, and I'll try my best to help you to
+  troubleshoot in the next few minutes
+- Also, a quick note, for some of you who had trouble from the previous session,
+  we discovered that if you had python 3 on your path instead of python 2,
+  as shown here, you might not be able to install truffle or some of the other
+  tools, because node-gyp assumes python 2 only.
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- Also, for those of you who are joining us in our DApps Dev Club session for
+  the very first time - welcome!
+- We are a technical book club, and we run our sessions twice per month -
+  and a book club implies a book, well this is the book
+- Mastering Ethereum by Andreas Antonopoulos & Gavin Wood
+
+---
+layout: false
+class: left, middle, inverse
+
+- This session:
+  - [Appendix A - web3.js](https://github.com/ethereumbook/ethereumbook/blob/develop/appdx-web3js-tutorial.asciidoc)
+  - [Chapter 12 - DApps](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc)
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- For this session, our materials come from Chapter 12 and Appendix A
+
+---
+name: agenda
+layout: false
+class: left, middle, inverse
+
+## Today
+
+- [Partners](#partners)
+- [Intro](#intro)
+- [Recap of #05](#recap)
+- [Set up](#setup)
+- [Smart contract interactions](#interactions)
+- [Next session](#next)
+- [Announcements](#next)
+
+???
+
+- This is the line up for tonight's session
+- We'll start off by introducing our partners, and ourselves
+- Then do a quick recap of the previous session
+- Then we'll cover...
+      - TODO
+- And finally we'll wrap up with a recap, plus information about our next session
+
+---
+name: partners
+layout: false
+class: left, middle, inverse
+
+## Partners
+
+???
+
+- Before we begin, let us thank all of our partners who made this session possible
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Lifelong Learning Institute](/img/lli-skillsfuture-logo.png)
+  ]
+]
+
+???
+
+- In our previous session, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+
+.width100percent[
+  ![Lifelong Learning Institute Partnership with DApps Dev Club](/img/lli-s01e04-dr-leong.jpg)
+]
+
+[Blog Post](https://dappsdev.org/blog/2019-04-15-lifelong-learning-institute-partnership/)
+
+[Video from session](https://youtu.be/pfV-XnQYoLw?t=114)
+
+]
+
+???
+
+- In our session #04, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Chainstack](/img/chainstack-logo.svg)
+  ]
+
+  .width100percent.lightBg[
+    ![Acronis](/img/acronis-logo.svg)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+]
+.right-column[
+  .width100percent.lightBg[
+    ![BitTemple](/img/bittemple-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+]
+.right-column[
+  .width50percent.lightBg[
+    ![National Blockchain Challenge '19](/img/nbc-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Spartan Group](/img/spartan-logo-black.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+]
+.right-column[
+  .width100percent.lightBg[
+    ![StartupToken meetup](/img/startuptoken-logo-blue.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Engineers.SG](/img/engineerssg-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+### CryptoJobsList
+]
+.right-column[
+  .width100percent.lightBg[
+    ![CryptoJobsList](/img/cryptojobslist-logo.png)
+  ]
+]
+
+---
+name: intro
+layout: false
+class: left, middle, inverse
+
+## Intro
+
+???
+
+- Before we go into the the topics, for the benefit of those who are attending
+  the their first session today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- Decentralised Applications Development Club
+- Format inspired by the technical book club from SingaporeJS
+
+]
+
+???
+
+- The DApps Dev Club meets twice a month, and this is our 4th session
+  - In each session, we plan to discuss about 3 or four different topics,
+   selected from the *Mastering Ethereum* book
+- We are a technical book club, so in each session, when we meet up together,
+  we'll be discussing select parts from this book, plus working through things
+  together
+  - I should mention that while this is not a common format, it isn't completely
+    new - in fact it is inspired by the book club that the SingaporeJS meetup
+    runs
+  - In the first couple of sessions, it was mostly me talking, but the rest of
+    the sessions are going to be hands-on
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![Let me hit you with some knowledge](https://i.giphy.com/media/coYo4nM8jE1TW/giphy.webp)
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC/2
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- [dappsdev.org](https://dappsdev.org/)
+- [bit.do/dadc-chat](https://bit.do/dadc-chat)
+
+]
+
+???
+
+- The nexus for all the club happenings are on this website, dappsdev.org
+  - The main thing to look out for on the website are the news feed, which you
+    can subscribe to via the RSS feed, or check back on manually
+  - The other thing to look out for on the website is the sessions page,
+    which is a calendar for all of the events
+- Apart from meeting in person, we can also have discussions online
+  - We have a discord server for that, and you can join using the link found
+    on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+]
+.right-column[
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+]
+
+???
+
+- As mentioned earlier, the book which we're covering together is
+  Mastering Ethereum, which is written by by Andreas Antonopoulos & Gavin Wood
+- Andreas Antonopoulos is the author of the Mastering Bitcoin book, and Gavin
+  wrote most of the initial implementation of Ethereum itself.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+]
+.right-column[
+- CTO of Baypay
+- Also runs the Blockchain&amp;DApps meetup
+
+.width50percent[
+  ![Kenneth Hu](http://www.kennethhu.net/img/huchiawei.jpg)
+]
+
+.footnote[
+[kennethhu.net](http://www.kennethhu.net/)
+]
+]
+
+???
+
+- Kenneth is the CTO of Baypay
+- He knows the Ethereum stack inside out
+- He also runs a blockchain events across Taiwan, Malaysia, and Singapore
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+]
+.right-column[
+- Started DApps Dev Club
+- NodeJS developer
+
+.footnote[
+[bguiz.com](http://bguiz.com/)
+]
+]
+
+???
+
+- I'm Brendan, and I work as a software engineer
+- Spend most of my time doing NodeJs
+- Met Kenneth through the EthSG hackathon last year
+- We decided to collaborate and create a series of educational blockchain
+  meetups, and here we are
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+]
+.right-column[
+- No blockchain knowledge required
+- No solidity or smart contract knowledge required
+- Basic Javascript needed in session #05
+]
+
+???
+
+- So, how about you? These sessions are designed with a particular audience in
+  mind.
+- If you know nothing about blockchain, or about smart contracts, that's perfect
+- However, if you don't know some basic JS, you'll need to pick that up to follow along in the later sessions.
+  - I've already posted some resources that you can use to learn JS - it's in
+    the latest post on dappsdev.org now,
+    or come talk to me, or ask around in our discord
+- Bring your laptops to the sessions, as you'll be able to participate in the
+  hands on parts of the sessions
+
+---
+layout: false
+class: left, middle, inverse
+
+wen ico? wen moon?
+
+.width100percent[
+  ![Ya Basic - The Good Place](https://66.media.tumblr.com/1d07b7c0c9625031871bc3855858270a/tumblr_phjkj5Jgr61qb77hzo3_540.gif)
+]
+
+???
+
+- I think most of us by now have encountered someone on a Telegram group, who
+  joins, and within seconds says "wen ico? wen moon?" (with that exact spelling)
+- If you're that person, these sessions are not for you. We're *not* going
+  to be building an ERC20, or learning how to trade or speculate on them.
+- What we're about here is focussed on developing decentralised applications
+- This is a great show by the way, it takes real skill to take a subject matter
+  that dry and make it entertaining
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+]
+.right-column[
+
+.width50percent[
+  !["Author of Mastering Ethereum likes tweet about DApps Dev Club"](/deck/s01e03/andreas-antonopoulos-likes-tweet.png)
+]
+
+.footnote[
+[this tweet](https://twitter.com/ChainstackHQ/status/1106042958443233280)
+]
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+### Basics
+]
+.right-column[
+
+- Get Wifi
+- Open this deck to follow links
+- Questions:
+  - Raise your hands!
+  - Ask in chat group
+- For hands-on exercises, use git and push your work
+- F&B - don't leave a mess
+- Attendance
+- Photos
+
+]
+
+???
+
+---
+name: intro-end
+class: center, middle, inverse, nextSection
+
+## /intro
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+---
+name: recap
+class: center, middle, inverse, nextSection
+
+## Recap #05
+
+???
+
+- Let's recap what we did in the previous session
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #05
+### Tools
+]
+.right-column[
+
+- No new tools
+- Used truffle test for the first time
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #05
+### Tools
+### Mocha
+]
+.right-column[
+
+- Test vanilla JS
+- Implementation specification correctness quadrants
+- Differences between mocha and truffle test
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #05
+### Tools
+### Mocha
+### Truffle
+]
+.right-column[
+
+- Test initial state
+- Test state transitions
+- Test events
+- ~~Mocking~~
+
+.footnote[
+]
+]
+
+???
+
+- We didn't quite get to mocking though, as predicted, by the end of the night
+- Show of hands:
+  Who here tried out the mocking hands on prior to tonight's session?
+
+---
+name: recap-end
+class: center, middle, inverse, nextSection
+
+## /recap
+
+???
+
+- Q&A
+- ...
+
+---
+name: setup
+class: center, middle, inverse, nextSection
+
+## Setup
+
+???
+
+- Alright let's begin
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Web3 hands-on exercises QR code](./web3-hands-on-exercises-qrcode.png)
+]
+
+.footnote[
+[dappsdev.org/hands-on/web3/](https://dappsdev.org/hands-on/web3/)
+]
+
+???
+
+- This is the link for all the hands on exercises during this session
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Setup
+### Project
+]
+.right-column[
+
+- We're about to do set up a means to develop a standard web application
+- HTML, CSS, Javascript + npm + webpack
+- Not yet a DApp
+
+.footnote[
+[dappsdev.org/hands-on/web3/project-setup/](https://dappsdev.org/hands-on/web3/project-setup/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Setup
+### Project
+### Web3
+]
+.right-column[
+
+- Now we have a CApp!
+- Let's make it a DApp
+- web3 provider
+- web3.js
+
+.footnote[
+[dappsdev.org/hands-on/web3/scaffold/](https://dappsdev.org/hands-on/web3/scaffold/)
+]
+]
+
+???
+
+- MetaMask is the web3 provider
+- web3.js is the client side library that provide the API and functions
+  used to talk to the ethereum network through a web3 provider
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Setup
+### Project
+### Web3
+### Recap
+]
+.right-column[
+
+- CApp vs DApp front-end and back-end
+- Webpack
+- Why vanilla JS?
+- Development build vs production build
+- Troubleshooting a network reset
+- Web3 provider injection
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: setup-end
+class: center, middle, inverse, nextSection
+
+## /setup
+
+???
+
+- Recap:
+- ...
+- Q&A
+
+---
+name: interactions
+class: center, middle, inverse, nextSection
+
+## Smart Contract Interactions
+
+???
+
+- Previously, we have managed to set up a development work flow for our DApps
+- But we have not actually interacted with our smart contracts yet -
+  so let's do that!
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Web3 hands-on exercises QR code](./web3-hands-on-exercises-qrcode.png)
+]
+
+.footnote[
+[dappsdev.org/hands-on/web3/](https://dappsdev.org/hands-on/web3/)
+]
+
+???
+
+- This is the link for all the hands on exercises during this session
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Smart Contract Interactions
+### Query
+]
+.right-column[
+
+- Detect when user switches accounts
+- Query state using `.call()`
+  - primitive variables
+  - dynamic variables
+
+.footnote[
+[dappsdev.org/hands-on/web3/query-state/](dappsdev.org/hands-on/web3/query-state/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Smart Contract Interactions
+### Query
+### Modify
+]
+.right-column[
+
+- Detect when user switches accounts
+- Modify state using `.send()`
+- Emit events
+- Payable vs non-payable
+- Estimating gas
+- Examine transaction data
+
+.footnote[
+[dappsdev.org/hands-on/web3/mutate-state/](dappsdev.org/hands-on/web3/mutate-state/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Smart Contract Interactions
+### Query
+### Modify
+]
+.right-column[
+
+- Detect when user switches accounts
+- Modify state using `.send()`
+- Emit events
+- Payable vs non-payable
+- Estimating gas
+- Examine transaction data
+
+.footnote[
+[dappsdev.org/hands-on/web3/mutate-state/](dappsdev.org/hands-on/web3/mutate-state/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Smart Contract Interactions
+### Query
+### Modify
+### Listen
+]
+.right-column[
+
+- Listen to events
+- Filtering events
+  - By block number
+  - By indexed parameters
+
+.footnote[
+[dappsdev.org/hands-on/web3/listen-events/](dappsdev.org/hands-on/web3/listen-events/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Smart Contract Interactions
+### Query
+### Modify
+### Listen
+### Recap
+]
+.right-column[
+
+- Contract interactions
+  - Query state
+  - Modify state
+  - Listen to events
+- Miscellaneous
+  - Function hoisting
+  - Vanilla DOM manipulation
+  - "Eyeball" transaction data
+  - Gas price calculations
+
+.footnote[
+[dappsdev.org/hands-on/web3/mutate-state/](dappsdev.org/hands-on/web3/mutate-state/)
+]
+]
+
+???
+
+- ...
+
+---
+name: interactions-end
+class: center, middle, inverse, nextSection
+
+## /interactions
+
+???
+
+- Recap:
+- ...
+- Q&A
+
+---
+name: next
+class: center, middle, inverse, nextSection
+
+## Next
+
+???
+
+- ...
+
+---
+name: next
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+]
+.right-column[
+
+- Set up a "regular" web app development work flow
+- Set up web3.js for DApp development
+- Make smart web app interact with smart contracts
+  - queries, modifications, event listening
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E07
+]
+.right-column[
+
+- [DApps Dev Club S01E06](https://dappsdev.org/sessions#session-SG-S01-E07)
+- Security
+
+.footnote[
+]
+]
+
+???
+
+- So our next session will be on the 4th Tuesday of the month,
+  at BitTemple,
+- check out the details on the sessions page on our website
+- **Show the sessions page**
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E06
+### Hands-on
+
+]
+.right-column[
+
+- Read from Ethereum Book:
+  - [Chapter 9 - DApps](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)
+- Try out one of the following:
+  - [Capture the Ether](https://capturetheether.com/)
+  - [Ethernaut](https://ethernaut.zeppelin.solutions/)
+  - [EtherHack](https://etherhack.positive.com/)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E06
+### Hands-on
+### Setup
+
+]
+.right-column[
+
+- To install:
+  - Nothing new! 🎉
+- Already installed:
+  - [Chrome](https://www.google.com/chrome/)
+  - [MetaMask](https://metamask.io/)
+  - [NodeJs](https://nodejs.org/)
+  - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+  - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+  - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E06
+### Hands-on
+### Setup
+### Q&amp;A
+
+]
+.right-column[
+
+Questions?
+
+.footnote[
+[bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Before we wrap up, do you have any questions?
+- Is you think of some questions later, or already have them, but prefer to
+  type instead, head over to our discord, the link is right there!
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Lifelong Learning Institute &amp; SkillsFutureSG,
+Chainstack &amp; Acronis,
+BitTemple,
+NBC'19,
+Spartan,
+StartupToken,
+EngineersSG,
+CryptoJobsList, and
+Blockchain&amp;DApps
+
+---
+layout: false
+class: center, middle, inverse
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+[dappsdev.org](https://dappsdev.org/)
+
+???
+
+- be sure to check out the sessions page for updates, and join our discord
+- Q&amp;A
+- any other announcements?
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>

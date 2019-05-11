@@ -30,7 +30,9 @@ Here's what you need to know!
 
 ## Event
 
-The session will be held at Chainstack's office in Suntec City.
+The session will be held at
+[Chainstack](https://chainstack.com/)'s
+office in Suntec City.
 
 Thanks [Ashlie](https://www.ashliechin.com/) for helping us run the event!
 
