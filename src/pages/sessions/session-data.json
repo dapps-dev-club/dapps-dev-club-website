@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-05-01T00:00:00.000+0800",
+  "lastUpdated": "2019-05-20T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -275,6 +275,14 @@
         {
           "text": "Details about session #06",
           "url": "/blog/2019-05-03-dapps-dev-club-6th-session-info/"
+        },
+        {
+          "text": "Round up of session #06",
+          "url": "/blog/2019-05-16-dapps-dev-club-6th-session-roundup/"
+        },
+        {
+          "text": "Videos from session #06",
+          "url": "/blog/2019-05-17-dapps-dev-club-6th-session-videos/"
         }
       ],
       "rsvp": {
@@ -290,6 +298,7 @@
         "id": "sg-bittemple"
       },
       "time": {
+        "confirmed": true,
         "start": "2019-05-28T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
@@ -313,8 +322,8 @@
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "https://dappsdev-s01e07.eventbrite.com/"
       }
     },
     {
@@ -325,6 +334,7 @@
         "id": "sg-chainstack"
       },
       "time": {
+        "confirmed": false,
         "start": "2019-06-11T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
@@ -352,6 +362,7 @@
         "id": "sg-bittemple"
       },
       "time": {
+        "confirmed": false,
         "start": "2019-06-25T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
@@ -387,6 +398,7 @@
         "id": "sg-chainstack"
       },
       "time": {
+        "confirmed": false,
         "start": "2019-07-09T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
