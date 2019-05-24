@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S01E07 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="S01E07 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="S01E07 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="S01E07 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E07"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+.width50percent[
+  ![DApps Dev Club S01E07 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e07](http://bit.do/dadc-s01e07)
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# Decentralised Applications Development Club
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+## Smart Contract Security
+
+28/05/2019
+
+???
+
+- In our previous session, ...
+- In this session, ...
+- As with previous sessions, ...
+- Unlike the previous session, this one will be less focused on coding,
+  and more focused on demonstrations.
+  This is largely a result of the feedback from the previous session being that
+  the difficulty level was too high, and also because of the nature of tonight's
+  area - it has a huge surface area to be covered, and we'll only succeed
+  within the time that we have for this session if we just do an introductory
+  survey of each topic within the area.
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![DApps Dev Club S01E07 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.do/dadc-s01e07](http://bit.do/dadc-s01e07)
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![Where to get our discord link](/img/dadc-chat-qrcode.png)
+]
+
+.footnote[
+[bit.do/dadc-chat](https://bit.do/dadc-chat)
+]
+
+???
+
+- This is where you can find our discord link. It's on our homepage -
+  dappsdev.org - near the top, before the blog posts
+
+---
+layout: false
+class: left, middle, inverse
+
+### Already have these!
+
+You should already have these from the previous sessions
+
+- [NodeJs](https://nodejs.org/)
+- [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+- [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+- [ganache](https://truffleframework.com/docs/ganache/quickstart)
+- [MetaMask](https://metamask.io/)
+
+Note: Make sure you don't have Python 3 on your `PATH`
+
+```bash
+$ python --version
+Python 3.6.5 :: Anaconda, Inc. # node-gyp may fail
+```
+
+???
+
+- For this session, we don't really need to install anything,
+  we'll be using Remix for the most part
+- But here are all the stuff that we have already instaled in prior sessions,
+  which you will need to install if you wish to follow along with the previous
+  sessions, or need for future development
+
+---
+layout: false
+class: left, middle, inverse
+
+### Install these!
+
+- [slither](https://github.com/crytic/slither) -
+  `pip install slither-analyzer`
+  - Note that you will need a Python 3 environment set up for this to work,
+    which contradicts the requirement for `node-gyp` with Python 2 😬
+- [solidity-coverage](https://github.com/sc-forks/solidity-coverage) -
+  `npm i -g solidity-coverage`
+- Either:
+  - get [ethernaut](https://github.com/OpenZeppelin/ethernaut) running locally, *or*
+  - get some Ropsten test net ether from a faucet
+- Either
+  - get [remix-ide](https://github.com/ethereum/remix-ide) -
+    `npm i -g remix-ide` - running loclally, *or*
+  - visit [remix.ethereum.org](https://remix.ethereum.org/)
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- Also, for those of you who are joining us in our DApps Dev Club session for
+  the very first time - welcome!
+- We are a technical book club, and we run our sessions twice per month -
+  and a book club implies a book, well this is the book
+- Mastering Ethereum by Andreas Antonopoulos & Gavin Wood
+
+---
+layout: false
+class: left, middle, inverse
+
+- This session:
+  - [Chapter 9 - Smart Contract Security](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- For this session, our materials come from Chapter 9
+
+---
+name: agenda
+layout: false
+class: left, middle, inverse
+
+## Today
+
+- [Partners](#partners)
+- [Intro](#intro)
+- [Recap of #06](#recap)
+- [Security Training Games](#games)
+- [Modules &amp; Libraries](#libs)
+- [Analysis Tools](#tools)
+- [Smart Contract Auditing](#audit)
+- [Next session](#next)
+- [Announcements](#next)
+
+???
+
+- This is the line up for tonight's session
+- We'll start off by introducing our partners, and ourselves
+- Then do a quick recap of the previous session
+- Then we'll cover
+  - Secruity training games
+  - Modules &amp; libraries
+  - Analysis tools
+  - Smart contract auditing
+- And finally we'll wrap up with a recap, plus information about our next session
+
+---
+name: partners
+layout: false
+class: left, middle, inverse
+
+## Partners
+
+???
+
+- Before we begin, let us thank all of our partners who made this session possible
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Lifelong Learning Institute](/img/lli-skillsfuture-logo.png)
+  ]
+]
+
+???
+
+- In our previous session, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+
+.width100percent[
+  ![Lifelong Learning Institute Partnership with DApps Dev Club](/img/lli-s01e04-dr-leong.jpg)
+]
+
+[Blog Post](https://dappsdev.org/blog/2019-04-15-lifelong-learning-institute-partnership/)
+
+[Video from session](https://youtu.be/pfV-XnQYoLw?t=114)
+
+]
+
+???
+
+- In our session #04, we mentioned that the Lifelong Learning Institute
+  is partnering with us. And we even had Dr Leong,
+  who is the Principal Manager at LLI, to tell us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Chainstack](/img/chainstack-logo.svg)
+  ]
+
+  .width100percent.lightBg[
+    ![Acronis](/img/acronis-logo.svg)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+]
+.right-column[
+  .width100percent.lightBg[
+    ![BitTemple](/img/bittemple-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+]
+.right-column[
+  .width50percent.lightBg[
+    ![National Blockchain Challenge '19](/img/nbc-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Spartan Group](/img/spartan-logo-black.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+]
+.right-column[
+  .width100percent.lightBg[
+    ![StartupToken meetup](/img/startuptoken-logo-blue.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Engineers.SG](/img/engineerssg-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+### CryptoJobsList
+]
+.right-column[
+  .width100percent.lightBg[
+    ![CryptoJobsList](/img/cryptojobslist-logo.png)
+  ]
+]
+
+---
+name: intro
+layout: false
+class: left, middle, inverse
+
+## Intro
+
+???
+
+- Before we go into the the topics, for the benefit of those who are attending
+  the their first session today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- Decentralised Applications Development Club
+- Format inspired by the technical book club from SingaporeJS
+
+]
+
+???
+
+- The DApps Dev Club meets twice a month, and this is our 4th session
+  - In each session, we plan to discuss about 3 or four different topics,
+   selected from the *Mastering Ethereum* book
+- We are a technical book club, so in each session, when we meet up together,
+  we'll be discussing select parts from this book, plus working through things
+  together
+  - I should mention that while this is not a common format, it isn't completely
+    new - in fact it is inspired by the book club that the SingaporeJS meetup
+    runs
+  - In the first couple of sessions, it was mostly me talking, but the rest of
+    the sessions are going to be hands-on
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![Let me hit you with some knowledge](https://i.giphy.com/media/coYo4nM8jE1TW/giphy.webp)
+]
+
+&hellip; maybe just a little!
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC/2
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- [dappsdev.org](https://dappsdev.org/)
+- [bit.do/dadc-chat](https://bit.do/dadc-chat)
+
+]
+
+???
+
+- The nexus for all the club happenings are on this website, dappsdev.org
+  - The main thing to look out for on the website are the news feed, which you
+    can subscribe to via the RSS feed, or check back on manually
+  - The other thing to look out for on the website is the sessions page,
+    which is a calendar for all of the events
+- Apart from meeting in person, we can also have discussions online
+  - We have a discord server for that, and you can join using the link found
+    on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+]
+.right-column[
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+]
+
+???
+
+- As mentioned earlier, the book which we're covering together is
+  Mastering Ethereum, which is written by by Andreas Antonopoulos & Gavin Wood
+- Andreas Antonopoulos is the author of the Mastering Bitcoin book, and Gavin
+  wrote most of the initial implementation of Ethereum itself.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+]
+.right-column[
+- CTO of Baypay
+- Also runs the Blockchain&amp;DApps meetup
+
+.width50percent[
+  ![Kenneth Hu](http://www.kennethhu.net/img/huchiawei.jpg)
+]
+
+.footnote[
+[kennethhu.net](http://www.kennethhu.net/)
+]
+]
+
+???
+
+- Kenneth is the CTO of Baypay
+- He knows the Ethereum stack inside out
+- He also runs a blockchain events across Taiwan, Malaysia, and Singapore
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+]
+.right-column[
+- Started DApps Dev Club
+- NodeJS developer
+
+.footnote[
+[bguiz.com](http://bguiz.com/)
+]
+]
+
+???
+
+- I'm Brendan, and I work as a software engineer
+- Spend most of my time doing NodeJs
+- Met Kenneth through the EthSG hackathon last year
+- We decided to collaborate and create a series of educational blockchain
+  meetups, and here we are
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+]
+.right-column[
+- No blockchain knowledge required
+- No solidity or smart contract knowledge required
+- Basic Javascript needed in session #05
+]
+
+???
+
+- So, how about you? These sessions are designed with a particular audience in
+  mind.
+- If you know nothing about blockchain, or about smart contracts, that's perfect
+- However, if you don't know some basic JS, you'll need to pick that up to follow along in the later sessions.
+  - I've already posted some resources that you can use to learn JS - it's in
+    the latest post on dappsdev.org now,
+    or come talk to me, or ask around in our discord
+- Bring your laptops to the sessions, as you'll be able to participate in the
+  hands on parts of the sessions
+
+---
+layout: false
+class: left, middle, inverse
+
+wen ico? wen moon?
+
+.width100percent[
+  ![Ya Basic - The Good Place](https://66.media.tumblr.com/1d07b7c0c9625031871bc3855858270a/tumblr_phjkj5Jgr61qb77hzo3_540.gif)
+]
+
+???
+
+- I think most of us by now have encountered someone on a Telegram group, who
+  joins, and within seconds says "wen ico? wen moon?" (with that exact spelling)
+- If you're that person, these sessions are not for you. We're *not* going
+  to be building an ERC20, or learning how to trade or speculate on them.
+- What we're about here is focussed on developing decentralised applications
+- This is a great show by the way, it takes real skill to take a subject matter
+  that dry and make it entertaining
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+]
+.right-column[
+
+.width50percent[
+  !["Author of Mastering Ethereum likes tweet about DApps Dev Club"](/deck/s01e03/andreas-antonopoulos-likes-tweet.png)
+]
+
+.footnote[
+[this tweet](https://twitter.com/ChainstackHQ/status/1106042958443233280)
+]
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+### Basics
+]
+.right-column[
+
+- Get Wifi
+- Open this deck to follow links
+- Questions:
+  - Raise your hands!
+  - Ask in chat group
+- For hands-on exercises, use git and push your work
+- F&B - don't leave a mess
+- Attendance
+- Photos
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+### Basics
+### Projects
+]
+.right-column[
+
+- Previous session: Some of you asked for projects to work on
+- Was some initial discussion on our [chat group](https://bit.do/dadc-chat)
+- &hellip; but that fizzled out
+- Come talk to me during the food break, or after the session!
+
+]
+
+???
+
+---
+name: intro-end
+class: center, middle, inverse, nextSection
+
+## /intro
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+---
+name: recap
+class: center, middle, inverse, nextSection
+
+## Recap #06
+
+???
+
+- Let's recap what we did in the previous session
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #06
+### Tools
+]
+.right-column[
+
+- Introduced Webpack
+- Continued using Ganache and MetaMask
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: recap-end
+class: center, middle, inverse, nextSection
+
+## /recap
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #06
+### Tools
+### Web3.js
+]
+.right-column[
+
+- Main focus was using web3.js to create a "bridge"
+- What is:
+  - Web3 provider
+  - `web3.eth.Contract`
+  - ABI + deployed address
+- Queery state, mutate state, listen to events
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: games
+class: center, middle, inverse, nextSection
+
+## Security Training Games
+
+???
+
+- OK we're going to start of today by playing some ethernaut
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ethernaut
+### What
+
+]
+.right-column[
+
+- Made by OpenZeppelin
+- Play on Ropsten (or localhost)
+- Load up sample contracts
+- &hellip; then "exploit" them
+- Learn how to write better smart contracts
+  - by learning the common ways they get hacked
+
+.width50percent[
+  ![](https://ethernaut.zeppelin.solutions/imgs/zeppelin-by-logo.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ethernaut
+### What
+### Hello
+
+]
+.right-column[
+
+- Let's play the very first level!
+- [Hello Ethernaut!](https://ethernaut.zeppelin.solutions/level/0xdf51a9e8ce57e7787e4a27dd19880fd7106b9a5c)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ethernaut
+### What
+### Hello
+### Reentrance/1
+
+]
+.right-column[
+
+- Ethernaut has a level about reentrance
+- [Re-entrancy](https://ethernaut.zeppelin.solutions/level/0xf70706db003e94cfe4b5e27ffd891d5c81b39488)
+- Take home:
+  Try out all the levels from *Hello*, all the way through *Re-entrancy*
+- &hellip; but for now:
+  - but let's explain/ demonstrate instead!
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ethernaut
+### What
+### Hello
+### Reentrance/2
+
+]
+.right-column[
+
+- Hands-on time!
+- Open remix:
+  - [remix.ethereum.org](http://remix.ethereum.org/), *or*
+  - `npm i -g remix-ide` and open [localhost:8080](http://localhost:8080/)
+- Use these solidity files:
+  - [bank_01.sol](/hands-on/reentrance/bank_01.sol)
+  - [bank_02.sol](/hands-on/reentrance/bank_02.sol)
+  - [bank_03.sol](/hands-on/reentrance/bank_03.sol)
+  - [bank_04.sol](/hands-on/reentrance/bank_04.sol)
+  - [bank_05.sol](/hands-on/reentrance/bank_05.sol)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Ethernaut
+### What
+### Hello
+### Reentrance
+### Others
+
+]
+.right-column[
+
+- There are other games that you can play to learn about security
+- [Capture the Ether](https://capturetheether.com/)
+
+![](https://capturetheether.com/cteicon.png)
+
+.footnote[
+[capturetheether.com](https://capturetheether.com/)
+]
+]
+
+???
+
+- ...
+
+---
+name: games-end
+class: center, middle, inverse, nextSection
+
+## /security training games
+
+???
+
+- Q&A
+- ...
+
+---
+name: libs
+class: center, middle, inverse, nextSection
+
+## Modules and Libraries
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Modules
+### OZ
+]
+.right-column[
+
+- Open Zeppelin
+- A collection of Solidity files
+- Created for developers to re-use in their smart contracts
+  - Start from a solid base
+  - These have been audited or peer reviewed
+- Learn best practices by reading the source
+
+
+.width50percent[
+  ![](https://ethernaut.zeppelin.solutions/imgs/zeppelin-by-logo.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Modules
+### OZ
+### ERCs
+]
+.right-column[
+
+- EIPs: Ethereum Improvement Proposals
+- ERCs: Ethereum Requests for Comment
+- These are "well known" standards that many smart contracts adhere to
+- OZ contains standard implmentations for many of these
+  - Including several variants
+- Example: [ERC721](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721.sol)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Modules
+### OZ
+### ERCs
+### Patterns
+]
+.right-column[
+
+- Think **Design Patterns** by the "Gang of Four"
+  -- &hellip; but for Solidity
+- Examples: [Solidity Patterns](https://fravoll.github.io/solidity-patterns/)
+- 💡: Do any of these spark interesting ideas for projects? ⚡⚡⚡
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Modules
+### OZ
+### ERCs
+### Patterns
+### Utilities
+]
+.right-column[
+
+- Certain things are done commonly enough
+- Put in utility functions
+- Example: [SafeMath](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: libs-end
+class: center, middle, inverse, nextSection
+
+## /Modules and Libraries
+
+???
+
+- Q&A
+- ...
+
+---
+name: tools
+class: center, middle, inverse, nextSection
+
+## Analysis Tools
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+]
+.right-column[
+
+- Just like developing in any other language
+- Various dev tools used to improve code quality
+- For smart contracts bugs are important to catch up front
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+]
+.right-column[
+
+- Even if you used all the tools available, you still need manual audits
+- Security has:
+  - Many abstract concepts
+  - Best practices evolve with time
+- Manual audits are often carried out with the aid of dev tools
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+]
+.right-column[
+
+- [SolHint](https://github.com/protofire/solhint)
+- Think: ESLint, but for Solidity
+- Also has plugins for various IDEs
+
+.width100percent[
+  ![](solhint-vscode-example.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+- Demonstrate this live within VS code
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage/1
+]
+.right-column[
+
+- Code coverage: Figure out what parts of your code are being called by tests
+- When code isn't "covered", it hasn't been tested
+  - Caveat: Indirect coverage can be misleading
+- Potentially that code has bugs - we should write tests for them to be sure
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage/2
+]
+.right-column[
+
+- [solidity-coverage](https://github.com/sc-forks/solidity-coverage)
+- Integrates with truffle
+
+```javascript
+// add to truffle-config.js
+coverage: {
+  host: "localhost",
+  network_id: "*",
+  port: 8555,         // <-- If you change this, also set the port option in .solcover.js.
+  gas: 0xfffffffffff, // <-- Use this high gas value
+  gasPrice: 0x01      // <-- Use this low gas price
+},
+```
+
+.footnote[
+Read: [Code coverage for Solidity](https://blog.colony.io/code-coverage-for-solidity-eecfa88668c2/)
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage/3
+]
+.right-column[
+
+.width100percent[
+  ![](solidity-coverage-output.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage/4
+]
+.right-column[
+
+- Javascript --> Instrumentation
+- Solidity --> Custom EVM
+  - [testrpc-sc](https://github.com/sc-forks/testrpc-sc)
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage
+### Analysis/1
+]
+.right-column[
+
+- Static Analysis: Inspecting code and figuring out various properties about
+  the code, **without** executing the code
+  - Example: Linting
+- Dynamic Analysis: Executing the code to figure out various properties about it
+  - Example: Code coverage
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage
+### Analysis/2
+]
+.right-column[
+
+- [slither](https://github.com/crytic/slither)
+- Requires python 3 to be installed
+  - ... so can be difficult to get working in conjunction with `node-gyp`
+
+.footnote[
+Read: [A Solidity Static Analysis Framework](https://blog.trailofbits.com/2018/10/19/slither-a-solidity-static-analysis-framework/)
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Tools
+### What
+### Caveats
+### Lint
+### Coverage
+### Analysis/3
+]
+.right-column[
+
+.width100percent[
+  ![](slither-output.png)
+]
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: tools-end
+class: center, middle, inverse, nextSection
+
+## /Analysis Tools
+
+???
+
+- Q&A
+- ...
+
+---
+name: audit
+class: center, middle, inverse, nextSection
+
+## Smart Contract Auditing
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+]
+.right-column[
+
+- Re-entrance
+- Race condiitons
+- Integer overflow/ underflow
+- Out of gas --> disable/ lock
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀/1
+]
+.right-column[
+
+- External calls
+  - State changes should complete **before** making external calls
+  - Avoid more than one external call - isolate
+  - Always check their return values
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀/2
+]
+.right-column[
+
+- Iteration
+  - Always should have bounds guaranteed
+  - Ensure cannot run out of gas based on any input
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀/3
+]
+.right-column[
+
+- Initial balance
+  - Make zero assumptions
+  - No way to prevent non-zero initial balance of contract prior to deployment
+
+.footnote[
+]
+]
+
+???
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀/4
+]
+.right-column[
+
+- Time-based
+  - Never rely on the order of transactions
+  - Never rely on the time stamp of the transaction
+  - Both can be manipulated/ influenced by miners
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀
+### Process
+]
+.right-column[
+
+- Outline audit process
+- Compare against any relevant EIPs &amp; ERCs
+- Try attacking!
+- Compile list of vulnerabilities
+- Analyse:
+  - Code complexity
+  - Failure recovery
+  - Reuse of audited code
+  - Up to date libraries
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Auditing
+### Attacks
+### 👀👀
+### Example
+]
+.right-column[
+
+- OpenZeppelin has many contracts that are widely used
+- [It has audits too](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/audit/2017-03.md)
+  - Even libraries have audits!
+  - More confidence in your smart contracts built using these!
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: audit-end
+class: center, middle, inverse, nextSection
+
+## /audit
+
+???
+
+- Q&A
+- ...
+
+---
+name: next
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+]
+.right-column[
+
+- Reentrancy attack:
+  - Wrote a vulnerable contract,
+  - Wrote another contract to steal Ethers from it
+  - Updated contract such that it was no longer vulnerable
+- Introduced to Ethernaut
+- Looked at some Solidity dev tools:
+  - Linting, coverage, analysis
+  - There are many more out there!
+- Looked at the goals of, and an overview of the process of,
+  smart contract auditing
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E08
+]
+.right-column[
+
+- [DApps Dev Club S01E08](https://dappsdev.org/sessions#session-SG-S01-E08)
+- IPFS
+
+.footnote[
+]
+]
+
+???
+
+- So our next session will be on the 2th Tuesday of the month,
+  at Chainstack,
+- check out the details on the sessions page on our website
+- **Show the sessions page**
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E08
+### Hands-on
+
+]
+.right-column[
+
+- Read from Ethereum Book:
+  - [Chapter 12 - DApps - Data Storage](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc#data-storage)
+- Further reading:
+  - [IPFS Overview](https://docs.ipfs.io/introduction/overview/)
+
+.footnote[
+]
+]
+
+???
+
+- On the topic of IPFS, there is only  a very brief mention of IPFS, alongside
+  Swarm, in the Ethereum book
+- So for the next section, heave a read of not just that, but also the
+  IPFS documentation - at least cover the overview
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E08
+### Hands-on
+### Setup
+
+]
+.right-column[
+
+- To install:
+  - [IPFS](https://docs.ipfs.io/guides/guides/install/)
+- Already installed:
+  - [Chrome](https://www.google.com/chrome/)
+  - [MetaMask](https://metamask.io/)
+  - [NodeJs](https://nodejs.org/)
+  - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+  - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+  - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E08
+### Hands-on
+### Setup
+### Q&amp;A
+
+]
+.right-column[
+
+Questions?
+
+.footnote[
+[bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Before we wrap up, do you have any questions?
+- Is you think of some questions later, or already have them, but prefer to
+  type instead, head over to our discord, the link is right there!
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Lifelong Learning Institute &amp; SkillsFutureSG,
+Chainstack &amp; Acronis,
+BitTemple,
+NBC'19,
+Spartan,
+StartupToken,
+EngineersSG,
+CryptoJobsList, and
+Blockchain&amp;DApps
+
+---
+layout: false
+class: center, middle, inverse
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+[dappsdev.org](https://dappsdev.org/)
+
+???
+
+- be sure to check out the sessions page for updates, and join our discord
+- Q&amp;A
+- any other announcements?
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>

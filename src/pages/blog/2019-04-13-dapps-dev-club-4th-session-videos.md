@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: "Videos from session #04"
 date: 2019-04-13T00:31:00Z
-updatedDate: 2019-04-13T00:31:00Z
+updatedDate: 2019-05-25T04:38:00Z
 draft: false
 description: "Solidity: Solidity-by-feature + solc + ganache + truffle"
 featuredImage: /img/dadc-s01e04-videos.png
@@ -50,10 +50,6 @@ A big thanks to Zi Hui &amp; [Wing](https://www.thegeekwing.com/) for helping wi
 to [Ashlie](https://www.ashliechin.com/) from
 [Chainstack](https://chainstack.com/), and Dennis from
 [Acronis](https://www.acronis.com/)
-
-and to Ashlie from
-[BitTemple](https://bittemple.io/)
-for setting up the venue.
 
 Also thanks to EngineersSG, especially
 [Michael Cheng](http://coderkungfu.com),
