@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-05-20T00:00:00.000+0800",
+  "lastUpdated": "2019-05-30T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -334,12 +334,16 @@
         "id": "sg-chainstack"
       },
       "time": {
-        "confirmed": false,
+        "confirmed": true,
         "start": "2019-06-11T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
       "topics": [
+        {
+          "id": "ipfs-node",
+          "name": "Running you own node"
+        },
         {
           "id": "static-sites",
           "name": "Static sites"
@@ -347,11 +351,15 @@
         {
           "id": "ipfs-uploading-updating",
           "name": "Uploading and updating"
+        },
+        {
+          "id": "off-chain-data",
+          "name": "Off-chain data"
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "https://dadc-s01e08.eventbrite.com"
       }
     },
     {
@@ -430,25 +438,31 @@
       "id": "sg-bittemple",
       "name": "BitTemple",
       "address": "9 Raffles Place, Distrii, Republic Plaza, Level 5",
-      "plusCode": "7VM2+6C Singapore"
+      "plusCode": "7VM2+6C Singapore",
+      "geo": {
+        "lat": 1.283325,
+        "lon": 103.851089
+      }
     },
     {
       "id": "sg-chainstack",
       "name": "Chainstack @Acronis",
       "address": "8 Temasek Boulevard, #30-01/02 Suntec Tower 3, Singapore 038988",
-      "plusCode": "7VW6+62 Singapore"
+      "plusCode": "7VW6+62 Singapore",
+      "geo": {
+        "lat": 1.295766,
+        "lon": 103.860073
+      }
     },
     {
       "id": "sg-microsoft",
       "name": "Microsoft Singapore",
       "address": "1 Marina Blvd, #22-01, Singapore 018989",
-      "plusCode": "7VJ2+XX Singapore"
-    },
-    {
-      "id": "sg-wework-beach-road",
-      "name": "WeWork Beach Centre",
-      "address": "15 Beach Rd, Singapore 189677",
-      "plusCode": "7VW4+86 Singapore"
+      "plusCode": "7VJ2+XX Singapore",
+      "geo": {
+        "lat": 1.282470,
+        "lon": 103.852448
+      }
     }
   ]
 }

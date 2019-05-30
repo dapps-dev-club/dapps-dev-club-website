@@ -54,6 +54,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "ics": "^2.13.2",
     "prettier": "^1.15.3",
     "rimraf": "^2.6.2"
   }
