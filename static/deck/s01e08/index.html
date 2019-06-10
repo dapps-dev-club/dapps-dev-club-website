@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>S01E07 - DApps Dev Club</title>
+    <title>S01E08 - DApps Dev Club</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
-    <meta name="description" content="S01E07 - The Decentralised Applications Development Club"/>
+    <meta name="description" content="S01E08 - The Decentralised Applications Development Club"/>
     <meta name="theme-color" content="#fff"/>
     <meta property="og:locale" content="en_GB"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="S01E07 | DApps Dev Club"/>
+    <meta property="og:title" content="S01E08 | DApps Dev Club"/>
     <meta property="og:site_name" content="DApps Dev Club"/>
-    <meta property="og:description" content="S01E07 - The Decentralised Applications Development Club"/>
-    <meta property="og:article:published_time" content="2019-03-24T07:05:35.000Z"/>
-    <meta property="og:article:modified_time" content="2019-03-24T07:05:35.000Z"/>
+    <meta property="og:description" content="S01E08 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-06-08T07:35:51.000Z"/>
+    <meta property="og:article:modified_time" content="2019-06-08T07:35:51.000Z"/>
     <meta property="og:section" content="presentation"/>
     <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
     <meta property="og:tag" content="S01"/>
-    <meta property="og:tag" content="S01E07"/>
+    <meta property="og:tag" content="S01E08"/>
     <meta property="og:url" content="https://dappsdev.org/"/>
     <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
     <meta property="og:image:type" content="image/png"/>
@@ -261,12 +261,12 @@ class: center, middle, inverse
 ---
 
 .width50percent[
-  ![DApps Dev Club S01E07 deck QR code](./deck-qrcode.png)
+  ![DApps Dev Club S01E08 deck QR code](./deck-qrcode.png)
 ]
 
 *scan me!* - you'll need to follow the links
 
-[bit.do/dadc-s01e07](http://bit.do/dadc-s01e07)
+[bit.ly/dadc-s01e08](http://bit.ly/dadc-s01e08)
 
 ---
 name: start
@@ -277,34 +277,27 @@ class: center, middle, inverse
 
 ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
 
-## Smart Contract Security
+## IPFS
 
-28/05/2019
+11/06/2019
 
 ???
 
 - In our previous session, ...
 - In this session, ...
 - As with previous sessions, ...
-- Unlike the previous session, this one will be less focused on coding,
-  and more focused on demonstrations.
-  This is largely a result of the feedback from the previous session being that
-  the difficulty level was too high, and also because of the nature of tonight's
-  area - it has a huge surface area to be covered, and we'll only succeed
-  within the time that we have for this session if we just do an introductory
-  survey of each topic within the area.
 
 ---
 layout: false
 class: center, middle, inverse
 
 .width50percent[
-  ![DApps Dev Club S01E07 deck QR code](./deck-qrcode.png)
+  ![DApps Dev Club S01E08 deck QR code](./deck-qrcode.png)
 ]
 
 *scan me!* - you'll need to follow the links
 
-[bit.do/dadc-s01e07](http://bit.do/dadc-s01e07)
+[bit.ly/dadc-chat](http://bit.ly/dadc-chat)
 
 ---
 layout: false
@@ -315,7 +308,7 @@ class: center, middle, inverse
 ]
 
 .footnote[
-[bit.do/dadc-chat](https://bit.do/dadc-chat)
+[bit.ly/dadc-chat](https://bit.ly/dadc-chat)
 ]
 
 ???
@@ -348,7 +341,7 @@ Python 3.6.5 :: Anaconda, Inc. # node-gyp may fail
 
 - For this session, we don't really need to install anything,
   we'll be using Remix for the most part
-- But here are all the stuff that we have already installed in prior sessions,
+- But here are all the stuff that we have already instaled in prior sessions,
   which you will need to install if you wish to follow along with the previous
   sessions, or need for future development
 
@@ -358,19 +351,13 @@ class: left, middle, inverse
 
 ### Install these!
 
-- [slither](https://github.com/crytic/slither) -
-  `pip install slither-analyzer`
-  - Note that you will need a Python 3 environment set up for this to work,
-    which contradicts the requirement for `node-gyp` with Python 2 😬
-- [solidity-coverage](https://github.com/sc-forks/solidity-coverage) -
-  `npm i -g solidity-coverage`
-- Either:
-  - get [ethernaut](https://github.com/OpenZeppelin/ethernaut) running locally, *or*
-  - get some Ropsten test net ether from a faucet
-- Either
-  - get [remix-ide](https://github.com/ethereum/remix-ide) -
-    `npm i -g remix-ide` - running locally, *or*
-  - visit [remix.ethereum.org](https://remix.ethereum.org/)
+- [IPFS](https://docs.ipfs.io/guides/guides/install/)
+
+```bash
+tar xvfz go-ipfs.tar.gz
+cd go-ipfs
+./install.sh
+```
 
 ???
 
@@ -400,7 +387,8 @@ layout: false
 class: left, middle, inverse
 
 - This session:
-  - [Chapter 9 - Smart Contract Security](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)
+  - [Data Storage section of Chapter 9 - DApps](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc#data-storage)
+  - [IPFS docs](https://docs.ipfs.io/)
 
 .footnote[
 - [ethereumbook.info](https://ethereumbook.info/)
@@ -409,7 +397,11 @@ class: left, middle, inverse
 
 ???
 
-- For this session, our materials come from Chapter 9
+- For this session, our materials don't really come from the Ethereum book,
+  because it is quite light on them - there is a very small section on IPFS
+- There's also an alternative called Swarm, which the book goes into much more
+  detail on, but it isn't as far along  as IPFS was
+- The main reading material for tonight's session will be the IPFS documentation
 
 ---
 name: agenda
@@ -420,11 +412,10 @@ class: left, middle, inverse
 
 - [Partners](#partners)
 - [Intro](#intro)
-- [Recap of #06](#recap)
-- [Security Training Games](#games)
-- [Modules &amp; Libraries](#libs)
-- [Analysis Tools](#tools)
-- [Smart Contract Auditing](#audit)
+- [Recap of #07](#recap)
+- [IPFS](#ipfs)
+- [Extending storage](#storage)
+- [Further](#further)
 - [Next session](#next)
 - [Announcements](#next)
 
@@ -434,10 +425,9 @@ class: left, middle, inverse
 - We'll start off by introducing our partners, and ourselves
 - Then do a quick recap of the previous session
 - Then we'll cover
-  - Security training games
-  - Modules &amp; libraries
-  - Analysis tools
-  - Smart contract auditing
+  - Introduction to IPFS
+  - How to use IPFS to extend the limited storage capacity of smart contracts
+  - .. then have some further discussions of where we can go with this
 - And finally we'll wrap up with a recap, plus information about our next session
 
 ---
@@ -703,7 +693,7 @@ class: left, middle, inverse
 ]
 
 - [dappsdev.org](https://dappsdev.org/)
-- [bit.do/dadc-chat](https://bit.do/dadc-chat)
+- [bit.ly/dadc-chat](https://bit.ly/dadc-chat)
 
 ]
 
@@ -915,9 +905,7 @@ class: left, middle, inverse
 
 ???
 
-- Session #02 was held at Chainstack as well, and they tweeted about it
-- And it looks like DApps Dev Club has been *noticed* by an author of the book
-  we're using as our reference material for our sessions!
+-
 
 ---
 layout: false
@@ -937,7 +925,7 @@ class: left, middle, inverse
 .right-column[
 
 - Previous session: Some of you asked for projects to work on
-- Was some initial discussion on our [chat group](https://bit.do/dadc-chat)
+- Was some initial discussion on our [chat group](https://bit.ly/dadc-chat)
 - &hellip; but that fizzled out
 - Come talk to me during the food break, or after the session!
 
@@ -962,7 +950,7 @@ class: center, middle, inverse, nextSection
 name: recap
 class: center, middle, inverse, nextSection
 
-## Recap #06
+## Recap #07
 
 ???
 
@@ -973,13 +961,15 @@ layout: false
 class: left, middle, inverse
 
 .left-column[
-## Recap #06
-### Tools
+## Recap #07
+### Topics
 ]
 .right-column[
 
-- Introduced Webpack
-- Continued using Ganache and MetaMask
+- Security training games - Ethernaut
+- Modules &amp; libraries - Open Zeppelin
+- Analysis tools - solhint, solcover, slither
+- Auditing
 
 .footnote[
 ]
@@ -988,6 +978,56 @@ class: left, middle, inverse
 ???
 
 - ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #07
+### Topics
+### Practice
+]
+.right-column[
+
+- Created a smart contract with bugs
+  - Re-entrance
+  - Integer underflow
+- Fixed the bugs in the same smart contract
+
+.footnote[
+]
+]
+
+???
+
+- We actually kicked off the session with this
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Recap #07
+### Topics
+### Practice
+### Summary
+]
+.right-column[
+
+- Dived right into demonstrating  a security bug, then fixing it
+- Explored various dev resources and tools used to aid with developing secure
+  smart contracts
+- Latest versions of solidity have made it harder to write insecure code
+  - Still possible, and we don't know what else will be discovered in the future
+
+.footnote[
+]
+]
+
+???
+
+- Also received my first heckle from the audience
 
 ---
 name: recap-end
@@ -1003,22 +1043,41 @@ class: center, middle, inverse, nextSection
 - (attendance)
 
 ---
+name: ipfs
+class: center, middle, inverse, nextSection
+
+## IPFS
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![](https://ipfs.io/images/ipfs-logo.svg)
+]
+
+---
 layout: false
 class: left, middle, inverse
 
 .left-column[
-## Recap #06
-### Tools
-### Web3.js
+## IPFS
+### What
 ]
 .right-column[
 
-- Main focus was using web3.js to create a "bridge"
-- What is:
-  - Web3 provider
-  - `web3.eth.Contract`
-  - ABI + deployed address
-- Query state, mutate state, listen to events
+- (used to be named) Inter-planetary File system
+- Decentralised file system, with a lot more
+- [IPFS Concepts](https://docs.ipfs.io/guides/concepts/)
+  - Content (files) &amp; pinning
+  - IPNS &amp; DNS link
+  - Mutable File System
+  - UnixFS
+- We will *not* be covering most of this today
 
 .footnote[
 ]
@@ -1026,39 +1085,77 @@ class: left, middle, inverse
 
 ???
 
-- ...
-
----
-name: games
-class: center, middle, inverse, nextSection
-
-## Security Training Games
-
-???
-
-- OK we're going to start of today by playing some ethernaut
+- We do not have enough time to go through all of this today,
+  and there's a lot of theory as well that goes into this,
+  but we're going to focus on practice
 
 ---
 layout: false
 class: left, middle, inverse
 
 .left-column[
-## Ethernaut
+## IPFS
 ### What
-
+### Hands-on
 ]
 .right-column[
 
-- Made by OpenZeppelin
-- Play on Ropsten (or localhost)
-- Load up sample contracts
-- &hellip; then "exploit" them
-- Learn how to write better smart contracts
-  - by learning the common ways they get hacked
+[dappsdev.org/hands-on/ipfs/basics](/hands-on/ipfs/basics/)
+
+.footnote[
+]
+]
+
+???
+
+- Next up, we have our first hands-on exercise for this session
+- We're going to be setting up and running our own IPFS node
+
+---
+name: ipfs-end
+class: center, middle, inverse, nextSection
+
+## /ipfs
+
+???
+
+- Recap:
+- ...
+- Q&A
+
+---
+name: storage
+class: center, middle, inverse, nextSection
+
+## Extending Storage
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
 
 .width50percent[
-  ![](https://ethernaut.zeppelin.solutions/imgs/zeppelin-by-logo.png)
+  ![](https://i.pinimg.com/originals/bb/2e/c1/bb2ec13eac46437e9ceede1d9a2ed0ee.jpg)
+] + .width50percent[
+![](https://upload.wikimedia.org/wikipedia/commons/f/f8/Laptop-hard-drive-exposed.jpg)
 ]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Storage
+### Why
+]
+.right-column[
+
+- Smart contract storage is expensive
+  - Five-digit range per megabyte!
+- Typical web applications need more than a handful of bytes per user
 
 .footnote[
 ]
@@ -1073,15 +1170,17 @@ layout: false
 class: left, middle, inverse
 
 .left-column[
-## Ethernaut
-### What
-### Hello
-
+## Storage
+### Why
+### How
 ]
 .right-column[
 
-- Let's play the very first level!
-- [Hello Ethernaut!](https://ethernaut.zeppelin.solutions/level/0xdf51a9e8ce57e7787e4a27dd19880fd7106b9a5c)
+- Solution:
+  - Store large data off-chain
+  - Store small data on-chain
+- Off-chain -> Full file in IPFS
+- On-chain -> IPFS hash in smart contract
 
 .footnote[
 ]
@@ -1096,20 +1195,14 @@ layout: false
 class: left, middle, inverse
 
 .left-column[
-## Ethernaut
-### What
-### Hello
-### Reentrance/1
-
+## Storage
+### Why
+### How
+### Hands-on
 ]
 .right-column[
 
-- Ethernaut has a level about reentrance
-- [Re-entrancy](https://ethernaut.zeppelin.solutions/level/0xf70706db003e94cfe4b5e27ffd891d5c81b39488)
-- Take home:
-  Try out all the levels from *Hello*, all the way through *Re-entrancy*
-- &hellip; but for now:
-  - but let's explain/ demonstrate instead!
+[dappsdev.org/hands-on/ipfs/storage/](/hands-on/ipfs/storage/)
 
 .footnote[
 ]
@@ -1117,465 +1210,63 @@ class: left, middle, inverse
 
 ???
 
-- ...
+- So this hands-on is going to be quite fun
+- Previously we took about four different sessions to build up to a
+  complete DApp
+- This time, we're going to rip through from beginning to end in just
+  a single session
+- How are we going to do this? Well, we're going to cheat a little,
+  by having most of it already available via a scaffold/ template
+  - Github just released a new feature called repository templates
+    less than a week ago, IIRC, so we'll take full advantage of that
+- We'll focus less on all the stuff that we have done to date,
+  and instead mainly care about the IPFS bits
 
 ---
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Ethernaut
-### What
-### Hello
-### Reentrance/2
-
-]
-.right-column[
-
-- Hands-on time!
-- Open remix:
-  - [remix.ethereum.org](http://remix.ethereum.org/), *or*
-  - `npm i -g remix-ide` and open [localhost:8080](http://localhost:8080/)
-- Use these solidity files:
-  - [bank_01.sol](/hands-on/reentrance/bank_01.sol)
-  - [bank_02.sol](/hands-on/reentrance/bank_02.sol)
-  - [bank_03.sol](/hands-on/reentrance/bank_03.sol)
-  - [bank_04.sol](/hands-on/reentrance/bank_04.sol)
-  - [bank_05.sol](/hands-on/reentrance/bank_05.sol)
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Ethernaut
-### What
-### Hello
-### Reentrance
-### Others
-
-]
-.right-column[
-
-- There are other games that you can play to learn about security
-- [Capture the Ether](https://capturetheether.com/)
-
-![](https://capturetheether.com/cteicon.png)
-
-.footnote[
-[capturetheether.com](https://capturetheether.com/)
-]
-]
-
-???
-
-- ...
-
----
-name: games-end
+name: storage-end
 class: center, middle, inverse, nextSection
 
-## /security training games
+## /storage
 
 ???
 
+- Recap:
+- ...
 - Q&A
-- ...
 
 ---
-name: libs
+name: further
 class: center, middle, inverse, nextSection
 
-## Modules and Libraries
+## Further
 
 ???
 
-- ...
+- There's much much more to IPFS than what we have covered
 
 ---
 layout: false
 class: left, middle, inverse
-
-.left-column[
-## Modules
-### OZ
-]
-.right-column[
-
-- Open Zeppelin
-- A collection of Solidity files
-- Created for developers to re-use in their smart contracts
-  - Start from a solid base
-  - These have been audited or peer reviewed
-- Learn best practices by reading the source
-
-
-.width50percent[
-  ![](https://ethernaut.zeppelin.solutions/imgs/zeppelin-by-logo.png)
-]
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Modules
-### OZ
-### ERCs
-]
-.right-column[
-
-- EIPs: Ethereum Improvement Proposals
-- ERCs: Ethereum Requests for Comment
-- These are "well known" standards that many smart contracts adhere to
-- OZ contains standard implmentations for many of these
-  - Including several variants
-- Example: [ERC721](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721.sol)
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Modules
-### OZ
-### ERCs
-### Patterns
-]
-.right-column[
-
-- Think **Design Patterns** by the "Gang of Four"
-  -- &hellip; but for Solidity
-- Examples: [Solidity Patterns](https://fravoll.github.io/solidity-patterns/)
-- 💡: Do any of these spark interesting ideas for projects? ⚡⚡⚡
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Modules
-### OZ
-### ERCs
-### Patterns
-### Utilities
-]
-.right-column[
-
-- Certain things are done commonly enough
-- Put in utility functions
-- Example: [SafeMath](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol)
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-name: libs-end
-class: center, middle, inverse, nextSection
-
-## /Modules and Libraries
-
-???
-
-- Q&A
-- ...
-
----
-name: tools
-class: center, middle, inverse, nextSection
-
-## Analysis Tools
-
-???
-
--
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-]
-.right-column[
-
-- Just like developing in any other language
-- Various dev tools used to improve code quality
-- For smart contracts bugs are important to catch up front
-
-.footnote[
-]
-]
-
-???
-
--
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-]
-.right-column[
-
-- Even if you used all the tools available, you still need manual audits
-- Security has:
-  - Many abstract concepts
-  - Best practices evolve with time
-- Manual audits are often carried out with the aid of dev tools
-
-.footnote[
-]
-]
-
-???
-
--
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-]
-.right-column[
-
-- [SolHint](https://github.com/protofire/solhint)
-- Think: ESLint, but for Solidity
-- Also has plugins for various IDEs
 
 .width100percent[
-  ![](solhint-vscode-example.png)
+  ![](https://upload.wikimedia.org/wikipedia/commons/6/6a/P2P_Topology.jpg)
 ]
-
-.footnote[
-]
-]
-
-???
-
-- Demonstrate this live within VS code
 
 ---
 layout: false
 class: left, middle, inverse
 
 .left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage/1
+## Further
+### IPFS
 ]
 .right-column[
 
-- Code coverage: Figure out what parts of your code are being called by tests
-- When code isn't "covered", it hasn't been tested
-  - Caveat: Indirect coverage can be misleading
-- Potentially that code has bugs - we should write tests for them to be sure
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage/2
-]
-.right-column[
-
-- [solidity-coverage](https://github.com/sc-forks/solidity-coverage)
-- Integrates with truffle
-
-```javascript
-// add to truffle-config.js
-coverage: {
-  host: "localhost",
-  network_id: "*",
-  port: 8555,         // <-- If you change this, also set the port option in .solcover.js.
-  gas: 0xfffffffffff, // <-- Use this high gas value
-  gasPrice: 0x01      // <-- Use this low gas price
-},
-```
-
-.footnote[
-Read: [Code coverage for Solidity](https://blog.colony.io/code-coverage-for-solidity-eecfa88668c2/)
-]
-]
-
-???
-
--
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage/3
-]
-.right-column[
-
-.width100percent[
-  ![](solidity-coverage-output.png)
-]
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage/4
-]
-.right-column[
-
-- Javascript --> Instrumentation
-- Solidity --> Custom EVM
-  - [testrpc-sc](https://github.com/sc-forks/testrpc-sc)
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage
-### Analysis/1
-]
-.right-column[
-
-- Static Analysis: Inspecting code and figuring out various properties about
-  the code, **without** executing the code
-  - Example: Linting
-- Dynamic Analysis: Executing the code to figure out various properties about it
-  - Example: Code coverage
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage
-### Analysis/2
-]
-.right-column[
-
-- [slither](https://github.com/crytic/slither)
-- Requires python 3 to be installed
-  - ... so can be difficult to get working in conjunction with `node-gyp`
-
-.footnote[
-Read: [A Solidity Static Analysis Framework](https://blog.trailofbits.com/2018/10/19/slither-a-solidity-static-analysis-framework/)
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Tools
-### What
-### Caveats
-### Lint
-### Coverage
-### Analysis/3
-]
-.right-column[
-
-.width100percent[
-  ![](slither-output.png)
-]
+- Much, much, more to explore here
+- IPNS
+- Host static sites
+- CRDTs
+- Signed data
 
 .footnote[
 ]
@@ -1586,202 +1277,196 @@ class: left, middle, inverse
 - ...
 
 ---
-name: tools-end
-class: center, middle, inverse, nextSection
+layout: false
+class: left, middle, inverse
 
-## /Analysis Tools
+.left-column[
+## Further
+### IPFS
+### IPNS
+
+]
+.right-column[
+
+- The equivalent of DNS for IPFS
+- Each time you update files on IPFS, their hash changes
+- &hellip; so each time you update your site, you need to tell your users
+  to visit a new URL?
+  - (that's clearly not going to work!)
+- Enter IPNS - a dentralised name server for your IPFS sites
+
+.footnote[
+[IPNS docs](https://docs.ipfs.io/guides/concepts/ipns/)
+]
+]
 
 ???
 
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Further
+### IPFS
+### IPNS
+### Static sites
+
+]
+.right-column[
+
+- `ipfs add -r ${DIR}`
+  - Recursively uploads all the files within `${DIR}`
+  - Try this on your `app/dist` directory
+- You get the IPFS hash of the root
+  - &hellip; which you can visit in your browser
+- Use in conjunction with a `DNS TXT` record + IPNS
+  - Can use this to serve your entire IPFS website from your own domain
+
+.footnote[
+[IPFS for Websites docs](https://docs.ipfs.io/guides/examples/websites/)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Further
+### IPFS
+### IPNS
+### Static sites
+### CRDTs
+
+]
+.right-column[
+
+> Conflict-Free Replicated Data Types, is a type of specially-designed
+> data structure used to achieve strong eventual consistency (SEC) and
+> monotonicity (absence of rollbacks).
+
+- This is a very powerful concept when combined with a decentralised storage
+  system like IPFS
+- Take a look at the video linked below - where they show how you can build
+  Google-docs style collaborative editing backed by IPFS
+
+.footnote[
+- [github.com/ipfs/research-CRDT](https://github.com/ipfs/research-CRDT)
+- [github.com/ipfs-shipyard/js-delta-crdts)](https://github.com/ipfs-shipyard/js-delta-crdts)
+- [How to build an Collaborative Editing Application with IPFS using CRDT](https://www.youtube.com/watch?v=-kdx8rJd8rQ)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Further
+### IPFS
+### IPNS
+### Static sites
+### CRDTs
+### EIP712/1
+
+]
+.right-column[
+
+- When writing data to IPFS (off-chain),
+  and you store its hash in the smart contract (on-chain),
+  how can you **sure** that the same user did both operations?
+  - Simple contracts -> `msg.sender`
+  - Complex contracts -> ???
+
+.footnote[
+[EIP712](https://eips.ethereum.org/EIPS/eip-712)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Further
+### IPFS
+### IPNS
+### Static sites
+### CRDTs
+### EIP712/2
+
+]
+.right-column[
+
+- EIP712: Ethereum typed structured data hashing and signing
+  - Use your wallet (e.g. MetaMask) to sign data using your private key
+  - Anyone else who knows your public keys can cryptographically verify you
+    signed it
+  - &hellip; but **does not** need you to sign arbitrary binary data,
+    instead you can view the data you are signing
+
+.footnote[
+[EIP712](https://eips.ethereum.org/EIPS/eip-712)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Further
+### IPFS
+### IPNS
+### Static sites
+### CRDTs
+### EIP712/2
+
+]
+.right-column[
+
+- Demo: Arif Rahman
+- [github.com/ayepRahman/eip-712-testing-environment](https://github.com/ayepRahman/eip-712-testing-environment)
+
+.footnote[
+[EIP712](https://eips.ethereum.org/EIPS/eip-712)
+]
+]
+
+???
+
+- ...
+
+---
+name: further-end
+class: center, middle, inverse, nextSection
+
+## /further
+
+???
+
+- Recap:
+- ...
 - Q&A
-- ...
-
----
-name: audit
-class: center, middle, inverse, nextSection
-
-## Smart Contract Auditing
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-]
-.right-column[
-
-- Re-entrance
-- Race conditions
-- Integer overflow/ underflow
-- Out of gas --> disable/ lock
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀/1
-]
-.right-column[
-
-- External calls
-  - State changes should complete **before** making external calls
-  - Avoid more than one external call - isolate
-  - Always check their return values
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀/2
-]
-.right-column[
-
-- Iteration
-  - Always should have bounds guaranteed
-  - Ensure cannot run out of gas based on any input
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀/3
-]
-.right-column[
-
-- Initial balance
-  - Make zero assumptions
-  - No way to prevent non-zero initial balance of contract prior to deployment
-
-.footnote[
-]
-]
-
-???
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀/4
-]
-.right-column[
-
-- Time-based
-  - Never rely on the order of transactions
-  - Never rely on the time stamp of the transaction
-  - Both can be manipulated/ influenced by miners
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀
-### Process
-]
-.right-column[
-
-- Outline audit process
-- Compare against any relevant EIPs &amp; ERCs
-- Try attacking!
-- Compile list of vulnerabilities
-- Analyse:
-  - Code complexity
-  - Failure recovery
-  - Reuse of audited code
-  - Up to date libraries
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-layout: false
-class: left, middle, inverse
-
-.left-column[
-## Auditing
-### Attacks
-### 👀👀
-### Example
-]
-.right-column[
-
-- OpenZeppelin has many contracts that are widely used
-- [It has audits too](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/audit/2017-03.md)
-  - Even libraries have audits!
-  - More confidence in your smart contracts built using these!
-
-.footnote[
-]
-]
-
-???
-
-- ...
-
----
-name: audit-end
-class: center, middle, inverse, nextSection
-
-## /audit
-
-???
-
-- Q&A
-- ...
 
 ---
 name: next
@@ -1794,16 +1479,11 @@ class: left, middle, inverse
 ]
 .right-column[
 
-- Reentrancy attack:
-  - Wrote a vulnerable contract,
-  - Wrote another contract to steal Ethers from it
-  - Updated contract such that it was no longer vulnerable
-- Introduced to Ethernaut
-- Looked at some Solidity dev tools:
-  - Linting, coverage, analysis
-  - There are many more out there!
-- Looked at the goals of, and an overview of the process of,
-  smart contract auditing
+- Interacted with the IPFS in the terminal to upload and download files
+- Increased capacity and decreased costs of storage in smart contracts
+  - Technique: Large data off-chain, hash to data on-chain
+- Briefly surveyed more areas to explore:
+  - IPNS, static sites, CRDTs, and EIP712
 
 .footnote[
 ]
@@ -1820,12 +1500,12 @@ class: left, middle, inverse
 .left-column[
 ## Next
 ### Recap
-### S01E08
+### S01E09
 ]
 .right-column[
 
-- [DApps Dev Club S01E08](https://dappsdev.org/sessions#session-SG-S01-E08)
-- IPFS
+- [DApps Dev Club S01E09](https://dappsdev.org/sessions#session-SG-S01-E09)
+- Back end
 
 .footnote[
 ]
@@ -1833,7 +1513,7 @@ class: left, middle, inverse
 
 ???
 
-- So our next session will be on the 2nd Tuesday of the month,
+- So our next session will be on the 4th Tuesday of the month,
   at Chainstack,
 - check out the details on the sessions page on our website
 - **Show the sessions page**
@@ -1852,9 +1532,12 @@ class: left, middle, inverse
 .right-column[
 
 - Read from Ethereum Book:
-  - [Chapter 12 - DApps - Data Storage](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc#data-storage)
+  - Both of these are recaps - we would have already covered them before
+  - [Smart contracts as a backend](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc#backend-smart-contract)
+  - [Wallet best practices](https://github.com/ethereumbook/ethereumbook/blob/develop/05wallets.asciidoc#wallet-best-practices)
 - Further reading:
-  - [IPFS Overview](https://docs.ipfs.io/introduction/overview/)
+  - [EIP 712](https://eips.ethereum.org/EIPS/eip-712)
+    - Ethereum typed structured data hashing and signing
 
 .footnote[
 ]
@@ -1862,10 +1545,14 @@ class: left, middle, inverse
 
 ???
 
-- On the topic of IPFS, there is only  a very brief mention of IPFS, alongside
-  Swarm, in the Ethereum book
-- So for the next section, heave a read of not just that, but also the
-  IPFS documentation - at least cover the overview
+- So for the next session, we will not be covering any *new* material from the
+  ethereum book, but rather reviewing some old material, and tackling them
+  from a new angle, since we have learnt a lot and done quite a few hands-on
+  sessions since we first looked at those topics.
+- Also, we have a segue from the current session to the next, which is to read
+  up on EIP 712, which is a proposal about signing data in the client,
+  using for example MetaMask, but instead of arbitrary data, we do it on
+  structured data
 
 ---
 layout: false
@@ -1882,7 +1569,7 @@ class: left, middle, inverse
 .right-column[
 
 - To install:
-  - [IPFS](https://docs.ipfs.io/guides/guides/install/)
+  - Nothing new!
 - Already installed:
   - [Chrome](https://www.google.com/chrome/)
   - [MetaMask](https://metamask.io/)
@@ -1890,6 +1577,7 @@ class: left, middle, inverse
   - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
   - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
   - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+  - [IPFS](https://docs.ipfs.io/guides/guides/install/)
 
 .footnote[
 ]
@@ -1917,7 +1605,7 @@ class: left, middle, inverse
 Questions?
 
 .footnote[
-[bit.do/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+[bit.ly/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
 ]
 ]
 
