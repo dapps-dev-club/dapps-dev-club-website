@@ -17,7 +17,7 @@ tags:
 Follow all the steps in the web3 hands on,
 but this time in a new project with a different name,
 or just clone a starter repo from
-https://github.com/dappsdevclub/ipfs-hands-on
+[github.com/dapps-dev-club/ipfs-hands-on](https://github.com/dapps-dev-club/ipfs-hands-on/)
 
 Before proceeding further, make sure that the following steps can be executed,
 without errors:

@@ -297,7 +297,7 @@ we **do not** specify `value`.
 
 Take a look at the function signature for `honkCar`:
 
-```soldity
+```solidity
     function honkCar(uint256 carId, uint256 otherCarId)
         public
         onlyCarOwner(carId)

@@ -92,7 +92,7 @@ function preprocessSessions(sessionData) {
       const sessionTime = dateParseIso(session.time.start);
       const displayTime = dateFormat(
         sessionTime,
-        'EEEE, do MMMM YYYY, h:mm a',
+        'EEEE, do MMMM yyyy, h:mm a',
         {
           weekStartsOn: 1,
           awareOfUnicodeTokens: true,
@@ -259,7 +259,7 @@ function renderSessionsList(sessions) {
 function getCalendarSessionMapKey(date, timeZone) {
   return dateFormat(
     date,
-    'YYYY-MM-DD',
+    'yyyy-MM-dd',
     {
       weekStartsOn: 1,
       awareOfUnicodeTokens: true,
