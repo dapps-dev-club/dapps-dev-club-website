@@ -20,6 +20,8 @@ We're currently in the midst of
 and there are a few questions that keep coming up,
 and a few resources that I have been referring you to quite often. In the spirit of scaling my reach up, and also so that everyone gets the same information &hellip; the following compiles all of thoses things into one post! 🎉
 
+<!-- excerpt -->
+
 ## Things you need to install
 
 - [NodeJs](https://nodejs.org/)
