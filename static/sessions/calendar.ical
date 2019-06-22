@@ -7,7 +7,7 @@ X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:SG-S01-E01@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Kick off - Session #01
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190220T100000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E01
@@ -18,7 +18,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E02@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Technical overview - Session #02
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190312T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E02
@@ -30,7 +30,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E03@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Talking to Ethereum - Session #03
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190326T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E03
@@ -41,7 +41,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E04@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Solidity - Session #04
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190409T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E04
@@ -53,7 +53,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E05@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Testing Solidity - Session #05
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190430T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E05
@@ -64,7 +64,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E06@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Front end - Session #06
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190514T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E06
@@ -76,7 +76,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E07@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:Security - Session #07
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190528T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E07
@@ -87,13 +87,24 @@ END:VEVENT
 BEGIN:VEVENT
 UID:SG-S01-E08@sessions@DAppsDevClub@dappsdev.org
 SUMMARY:IPFS - Session #08
-DTSTAMP:20190530T092300Z
+DTSTAMP:20190622T065400Z
 DTSTART:20190611T103000Z
 DESCRIPTION:DApps Dev Club session.
 URL:https://dappsdev.org/sessions#session-SG-S01-E08
 GEO:1.295766;103.860073
 LOCATION:Chainstack @Acronis, 8 Temasek Boulevard, #30-01/02 Suntec Tower 3
 	, Singapore 038988
+DURATION:PT3H
+END:VEVENT
+BEGIN:VEVENT
+UID:SG-S01-E09@sessions@DAppsDevClub@dappsdev.org
+SUMMARY:Back end - Session #09
+DTSTAMP:20190622T065400Z
+DTSTART:20190625T103000Z
+DESCRIPTION:DApps Dev Club session.
+URL:https://dappsdev.org/sessions#session-SG-S01-E09
+GEO:1.28247;103.852448
+LOCATION:Microsoft Singapore, 1 Marina Blvd, #22-01, Singapore 018989
 DURATION:PT3H
 END:VEVENT
 END:VCALENDAR

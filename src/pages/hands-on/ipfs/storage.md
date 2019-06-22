@@ -294,6 +294,7 @@ as we will be making use of that next:
 
 ```javascript
 import ipfs from './ipfs.js';
+
 ```
 
 ### Writing off-chain data
@@ -320,7 +321,34 @@ In the `updateProfile()` function, modify the bottom half to do this instead:
   ).send({
     from: ProfilesApp.accounts[0],
   });
+
 ```
+
+### CORS errors
+
+When you press the **Update Profile** button here,
+you might encounter an error relating to *CORS* that looks similar to the one below:
+
+> Access to fetch at 'http://localhost:5001/api/v0/add?stream-channels=true' from origin
+> 'http://localhost:8081' has been blocked by CORS policy: No 'Access-Control-Allow-Origin'
+> header is present on the requested resource.
+> If an opaque response serves your needs, set the request's mode to 'no-cors'
+> to fetch the resource with CORS disabled.
+
+This means that you need to tell your IPFS node to white list cross origin requests made
+from `localhost`, for testing purposes:
+
+```bash
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8081"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST"]'
+
+```
+
+This is likely not the behaviour you would want if you intend to run your IPFS node for general use.
+However, for development purposes, this is OK.
+
+Further reading:
+[CORS documentation](https://github.com/ipfs/js-ipfs-http-client#cors)
 
 ### Reading off-chain data
 
@@ -342,6 +370,7 @@ In the `queryProfile()` function, modify the bottom half to do this instead:
   console.log({ profile });
   const profileOutput = document.querySelector('#profileOutput');
   profileOutput.value = profile;
+
 ```
 
 ## Try it out

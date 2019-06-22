@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S01E09 - DApps Dev Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="S01E09 - The Decentralised Applications Development Club"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="S01E09 | DApps Dev Club"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="S01E09 - The Decentralised Applications Development Club"/>
+    <meta property="og:article:published_time" content="2019-06-08T07:35:51.000Z"/>
+    <meta property="og:article:modified_time" content="2019-06-08T07:35:51.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="S01"/>
+    <meta property="og:tag" content="S01E09"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+.width50percent[
+  ![DApps Dev Club S01E09 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[http://bit.ly/dadc-9](http://http://bit.ly/dadc-9)
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# Decentralised Applications Development Club
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+## Back-end
+
+25/06/2019
+
+???
+
+- In our previous session, ...
+- In this session, ...
+- As with previous sessions, ...
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![DApps Dev Club S01E09 deck QR code](./deck-qrcode.png)
+]
+
+*scan me!* - you'll need to follow the links
+
+[bit.ly/dadc-chat](http://bit.ly/dadc-chat)
+
+---
+layout: false
+class: center, middle, inverse
+
+.width50percent[
+  ![Where to get our discord link](/img/dadc-chat-qrcode.png)
+]
+
+.footnote[
+[bit.ly/dadc-chat](https://bit.ly/dadc-chat)
+]
+
+???
+
+- This is where you can find our discord link. It's on our homepage -
+  dappsdev.org - near the top, before the blog posts
+
+---
+layout: false
+class: left, middle, inverse
+
+### Already have these!
+
+You should already have these from the previous sessions
+
+- [NodeJs](https://nodejs.org/)
+- [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+- [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+- [ganache](https://truffleframework.com/docs/ganache/quickstart)
+- [MetaMask](https://metamask.io/)
+- [IPFS](https://docs.ipfs.io/guides/guides/install/)
+
+Note: Make sure you don't have Python 3 on your `PATH`
+
+```bash
+$ python --version
+Python 3.6.5 :: Anaconda, Inc. # node-gyp may fail
+```
+
+???
+
+- For this session, we don't really need to install anything,
+  we'll be using Remix for the most part
+- But here are all the stuff that we have already installed in prior sessions,
+  which you will need to install if you wish to follow along with the previous
+  sessions, or need for future development
+
+---
+layout: false
+class: left, middle, inverse
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- Also, for those of you who are joining us in our DApps Dev Club session for
+  the very first time - welcome!
+- We are a technical book club, and we run our sessions twice per month -
+  and a book club implies a book, well this is the book
+- Mastering Ethereum by Andreas Antonopoulos & Gavin Wood
+
+---
+layout: false
+class: left, middle, inverse
+
+- This session:
+  - [Data Storage section of Chapter 9 - DApps](https://github.com/ethereumbook/ethereumbook/blob/develop/12dapps.asciidoc#data-storage)
+  - [IPFS docs](https://docs.ipfs.io/)
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+???
+
+- For this session, our materials don't really come from the Ethereum book,
+  because it is quite light on them - there is a very small section on IPFS
+- There's also an alternative called Swarm, which the book goes into much more
+  detail on, but it isn't as far along  as IPFS was
+- The main reading material for tonight's session will be the IPFS documentation
+
+---
+name: agenda
+layout: false
+class: left, middle, inverse
+
+## Today
+
+- [Partners](#partners)
+- [Intro](#intro)
+- [Recap of #08](#recap)
+- [Infura](#infura)
+- [Encryption](#encrypt)
+- [Back-end](#backend)
+- [Next session](#next)
+- [Announcements](#next)
+
+???
+
+- This is the line up for tonight's session
+- We'll start off by introducing our partners, and ourselves
+- Then do a quick recap of the previous session
+- Then we'll cover
+  - Infura
+  - Encryption and decryption
+  - Back-end
+- And finally we'll wrap up with a recap, plus information about our next session
+
+---
+name: partners
+layout: false
+class: left, middle, inverse
+
+## Partners
+
+???
+
+- Before we begin, let us thank all of our partners who made this session possible
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Lifelong Learning Institute](/img/lli-skillsfuture-logo.png)
+  ]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+]
+.right-column[
+
+.width100percent[
+  ![Lifelong Learning Institute Partnership with DApps Dev Club](/img/lli-s01e04-dr-leong.jpg)
+]
+
+[Blog Post](https://dappsdev.org/blog/2019-04-15-lifelong-learning-institute-partnership/)
+
+[Video from session](https://youtu.be/pfV-XnQYoLw?t=114)
+
+]
+
+???
+
+- Dr Leong, Principal Manager at LLI, tells us a bit about what
+  they do, their Learning Circles program, and SkillsFuture.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Chainstack](/img/chainstack-logo.svg)
+  ]
+
+  .width100percent.lightBg[
+    ![Acronis](/img/acronis-logo.svg)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+]
+.right-column[
+  .width100percent.lightBg[
+    ![BitTemple](/img/bittemple-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+]
+.right-column[
+  .width50percent.lightBg[
+    ![National Blockchain Challenge '19](/img/nbc-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Spartan Group](/img/spartan-logo-black.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+]
+.right-column[
+  .width100percent.lightBg[
+    ![StartupToken meetup](/img/startuptoken-logo-blue.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+]
+.right-column[
+  .width100percent.lightBg[
+    ![Engineers.SG](/img/engineerssg-logo.png)
+  ]
+]
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Partners
+### LLI
+### Chainstack
+### BitTemple
+### NBC'19
+### Spartan
+### StartupToken
+### EngineersSG
+### CryptoJobsList
+]
+.right-column[
+  .width100percent.lightBg[
+    ![CryptoJobsList](/img/cryptojobslist-logo.png)
+  ]
+]
+
+---
+name: intro
+layout: false
+class: left, middle, inverse
+
+## Intro
+
+???
+
+- Before we go into the the topics, for the benefit of those who are attending
+  the their first session today
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- Decentralised Applications Development Club
+- Format inspired by the technical book club from SingaporeJS
+
+]
+
+???
+
+- The DApps Dev Club meets twice a month, and this is our 4th session
+  - In each session, we plan to discuss about 3 or four different topics,
+   selected from the *Mastering Ethereum* book
+- We are a technical book club, so in each session, when we meet up together,
+  we'll be discussing select parts from this book, plus working through things
+  together
+  - I should mention that while this is not a common format, it isn't completely
+    new - in fact it is inspired by the book club that the SingaporeJS meetup
+    runs
+  - In the first couple of sessions, it was mostly me talking, but the rest of
+    the sessions are going to be hands-on
+
+---
+layout: false
+class: left, middle, inverse
+
+.width100percent[
+  ![Let me hit you with some knowledge](https://i.giphy.com/media/coYo4nM8jE1TW/giphy.webp)
+]
+
+&hellip; maybe just a little!
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC/2
+]
+.right-column[
+
+.width50percent[
+  ![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+]
+
+- [dappsdev.org](https://dappsdev.org/)
+- [bit.ly/dadc-chat](https://bit.ly/dadc-chat)
+
+]
+
+???
+
+- The nexus for all the club happenings are on this website, dappsdev.org
+  - The main thing to look out for on the website are the news feed, which you
+    can subscribe to via the RSS feed, or check back on manually
+  - The other thing to look out for on the website is the sessions page,
+    which is a calendar for all of the events
+- Apart from meeting in person, we can also have discussions online
+  - We have a discord server for that, and you can join using the link found
+    on our website
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+]
+.right-column[
+
+.width50percent[
+  ![Mastering Ethereum by Andreas Antonopoulos & Gavin Wood](https://40vzljkg9oagshrb7bpkidyz-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/ME-design7.png)
+]
+
+.footnote[
+- [ethereumbook.info](https://ethereumbook.info/)
+- [github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+]
+
+]
+
+???
+
+- As mentioned earlier, the book which we're covering together is
+  Mastering Ethereum, which is written by by Andreas Antonopoulos & Gavin Wood
+- Andreas Antonopoulos is the author of the Mastering Bitcoin book, and Gavin
+  wrote most of the initial implementation of Ethereum itself.
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+]
+.right-column[
+- CTO of Baypay
+- Also runs the Blockchain&amp;DApps meetup
+
+.width50percent[
+  ![Kenneth Hu](http://www.kennethhu.net/img/huchiawei.jpg)
+]
+
+.footnote[
+[kennethhu.net](http://www.kennethhu.net/)
+]
+]
+
+???
+
+- Kenneth is the CTO of Baypay
+- He knows the Ethereum stack inside out
+- He also runs a blockchain events across Taiwan, Malaysia, and Singapore
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+]
+.right-column[
+- Started DApps Dev Club
+- NodeJS developer
+
+.footnote[
+[bguiz.com](http://bguiz.com/)
+]
+]
+
+???
+
+- I'm Brendan, and I work as a software engineer
+- Spend most of my time doing NodeJs
+- Met Kenneth through the EthSG hackathon last year
+- We decided to collaborate and create a series of educational blockchain
+  meetups, and here we are
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+]
+.right-column[
+- No blockchain knowledge required
+- No solidity or smart contract knowledge required
+- Basic Javascript needed in session #05
+]
+
+???
+
+- So, how about you? These sessions are designed with a particular audience in
+  mind.
+- If you know nothing about blockchain, or about smart contracts, that's perfect
+- However, if you don't know some basic JS, you'll need to pick that up to follow along in the later sessions.
+  - I've already posted some resources that you can use to learn JS - it's in
+    the latest post on dappsdev.org now,
+    or come talk to me, or ask around in our discord
+- Bring your laptops to the sessions, as you'll be able to participate in the
+  hands on parts of the sessions
+
+---
+layout: false
+class: left, middle, inverse
+
+wen ico? wen moon?
+
+.width100percent[
+  ![Ya Basic - The Good Place](https://66.media.tumblr.com/1d07b7c0c9625031871bc3855858270a/tumblr_phjkj5Jgr61qb77hzo3_540.gif)
+]
+
+???
+
+- I think most of us by now have encountered someone on a Telegram group, who
+  joins, and within seconds says "wen ico? wen moon?" (with that exact spelling)
+- If you're that person, these sessions are not for you. We're *not* going
+  to be building an ERC20, or learning how to trade or speculate on them.
+- What we're about here is focussed on developing decentralised applications
+- This is a great show by the way, it takes real skill to take a subject matter
+  that dry and make it entertaining
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+]
+.right-column[
+
+.width50percent[
+  !["Author of Mastering Ethereum likes tweet about DApps Dev Club"](/deck/s01e03/andreas-antonopoulos-likes-tweet.png)
+]
+
+.footnote[
+[this tweet](https://twitter.com/ChainstackHQ/status/1106042958443233280)
+]
+
+]
+
+???
+
+- Session #02 was held at Chainstack as well, and they tweeted about it
+- And it looks like DApps Dev Club has been *noticed* by an author of the book
+  we're using as our reference material for our sessions!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+### Basics
+]
+.right-column[
+
+- Get Wifi
+- Open this deck to follow links
+- Questions:
+  - Raise your hands!
+  - Ask in chat group
+- For hands-on exercises, use git and push your work
+- F&B - don't leave a mess
+- Attendance
+- Photos
+
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Intro
+### DADC
+### Book
+### Kenneth
+### Brendan
+### You!
+### Noticed
+### Basics
+### Projects
+]
+.right-column[
+
+- Previous session: Some of you asked for projects to work on
+- Was some initial discussion on our [chat group](https://bit.ly/dadc-chat)
+- &hellip; but that fizzled out
+- Come talk to me during the food break, or after the session!
+
+]
+
+???
+
+---
+name: intro-end
+class: center, middle, inverse, nextSection
+
+## /intro
+
+???
+
+- Q&A
+- (check if any of the sponsors have arrived after their slot, backtrack to
+  them)
+- (attendance)
+
+---
+name: infura
+class: center, middle, inverse, nextSection
+
+## Infura
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What/1
+]
+.right-column[
+
+.width100percent[
+  ![infura logo](https://www.trufflesuite.com/img/tutorials/infura/infura.png)
+]
+
+- `infura.io`
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What/2
+]
+.right-column[
+
+- Made by Consensys
+  - Who also make: Truffle, MetaMask
+- You have already used it!
+  - When you use Trufle or MetaMask to interact with
+    the main net,  or public test nets!
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What/3
+]
+.right-column[
+
+- Gateway to Consensys-hosted Ethereum nodes
+  - JSON-RPC (Ethereum's standard communication protocol)
+  - TLS: HTTPS &amp; WSS
+- Huge traffic
+  - Ten billion requests per day (mid-2018)
+
+.footnote[
+]
+]
+
+???
+
+- Note that there are some bugs with the WebSockets implementation,
+  and they seem to be related to particular versions of web3.js
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What
+### Why
+]
+.right-column[
+
+- End-users
+  - Users don't have to run their own local Ethereum node
+- Developers
+  - Developers don't have to run their own hosted Ethereum node for their DApps
+  - Can get a developer API key + use `HDWalletProvider`
+- Scalability
+  - Consensys has optimised it to make it very fast
+
+.footnote[
+]
+]
+
+???
+
+```javascript
+new HDWalletProvider(
+  mnemonic, 
+  `https://${networkId}.infura.io/v3/${developerId}>`, 
+  accountNumber);
+```
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What
+### Why
+### IPFS
+]
+.right-column[
+
+- Not just Ethereum JSON-RPC, but also hosts IPFS as well
+- `ipfs.infura.io`
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What
+### Why
+### IPFS
+### Catch?
+]
+.right-column[
+
+&hellip; so what's the Catch?
+
+> “If we don’t stop relying on Infura, the vision of Ethereum failed.”
+> - Afri Schoedon
+
+- Problems
+  - Bottleneck
+  - Centralisation
+
+.footnote[
+- https://twitter.com/5chdn/status/1055828869775810560 (deleted tweet)
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What
+### Why
+### IPFS
+### Catch?
+### Alts/1
+]
+.right-column[
+
+Decentralised alternatives to Infura
+
+- Turbo Geth
+- Dappnode 
+- DeNode
+- VIP Node
+
+Also, from EthSingapore: 
+[Decentralized Infura](https://devpost.com/software/decentralized-infura)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Infura
+### What
+### Why
+### IPFS
+### Catch?
+### Alts/2
+]
+.right-column[
+
+.width50percent[
+  ![success kid](meme-consensys-funds-infura-alternatives.png)
+]
+
+.footnote[
+https://blog.infura.io/investing-in-the-decentralization-of-ethereum-da59a734f61e
+]
+]
+
+???
+
+- Consensys themselves believe that decentralisation is core to
+  the mission of Ethereum, the paltform at their core,
+  to the point that they have invested in competitors to their
+  own product, Infura
+- Good-guy-greg meme here may have been more appropriate!
+
+---
+name: infura-end
+class: center, middle, inverse, nextSection
+
+## /Infura
+
+???
+
+- Q&A
+- ...
+
+---
+name: encrypt
+class: center, middle, inverse, nextSection
+
+## Encryption
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What/1
+]
+.right-column[
+
+> "Encryption is the process of encoding a message or information in such a way that
+> only authorized parties can access it and those who are not authorized cannot. 
+> Encryption does not itself prevent interference, but denies the intelligible 
+> content to a would-be interceptor."
+> - [Wikipedia](https://en.wikipedia.org/wiki/Encryption)
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What/2
+]
+.right-column[
+
+Key types
+
+- Symmetric (secret key) --> password-based (PBKDF2)
+- Asymmetric (public key + private key)
+  - RSA --> TLS (HTTPS, WSS)
+  - Elliptic Curves --> Bitcoin, Ethereum
+
+Public key vs private key uses
+
+  - **Everyone** with the **public key** can **verify** that the message was signed by this person
+  - **Everyone** with with the **public key** can not **sign** the message
+  - **Only one person** who has the **private key** can **sign** the message
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What
+### Usage/1
+]
+.right-column[
+
+- Elliptic curve `secp256k1` 
+  - Used by both Bitcoin and Ethereum
+- Primary use case is for ECDSA
+  - Elliptic Curve Digital Signature Algorithm
+  - "This message has been signed by me"
+  - Message can be a transaction, can also be any arbitrary data
+  - The signature is unique to the data being signed, and the person signing it
+
+Public key vs private key uses
+
+  - **Everyone** with the **public key** can **verify** that the message was signed by this person
+  - **Everyone** with with the **public key** can not **sign** the message
+  - **Only one person** who has the **private key** can **sign** the message
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What
+### Usage/1
+]
+.right-column[
+
+- Secondary use case is for ECIES
+  - Elliptic Curve Integrated Encryption Scheme
+  - "This message can only be read by this other person"
+  - Message can be a transaction, can also be any arbitrary data
+  - The output is unique to the data being signed, and the person receiving it
+
+Public key vs private key uses
+
+  - **Everyone** with the **public key** can **encrypt** a message
+  - **Everyone** with with the **public key** can not **decrypt** the message
+  - **Only one person** who has the **private key** can **decrypt** the message
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What
+### Usage/2
+]
+.right-column[
+
+- Secondary use case is for ECIES
+  - Not yet "ready"
+  - EIPs are still in discussion (since 2017)
+  - No "popular" implementations out there in the wild
+
+Public key vs private key uses
+
+  - **Everyone** with the **public key** can **encrypt** a message
+  - **Everyone** with with the **public key** can not **decrypt** the message
+  - **Only one person** who has the **private key** can **decrypt** the message
+
+.footnote[
+- https://github.com/ethereum/EIPs/issues/130
+- https://github.com/ethereum/EIPs/pull/1098
+- https://github.com/MetaMask/metamask-extension/issues/1190
+- https://github.com/MetaMask/eth-sig-util
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What
+### Usage
+### Limitations
+]
+.right-column[
+
+- Even better UX
+  - Your Ethereum key-pair is also your encryption key-pair
+- Much better to use specialised wallet software
+  - **Don't** manage your keys within your client apps - note secure!
+  - e.g. MetaMask stores your keys
+- However, this means that wallet must support encryption
+  - e.g. `web3.eth.encrypt(...)`
+  - However, wallets have to wait for JSON-RPC to be standardised
+  - Which means the EIPs must happen
+- Until this happens, we're stuck with roll-your-own encryption
+
+.footnote[
+- https://github.com/ethereum/EIPs/issues/130
+- https://github.com/ethereum/EIPs/pull/1098
+- https://github.com/MetaMask/metamask-extension/issues/1190
+- https://github.com/MetaMask/eth-sig-util
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Encryption
+### What
+### Usage
+### Limitations
+### Hands-on
+]
+.right-column[
+
+Hands-on!
+
+- Extremely insecure
+- Demonstrates that it is possible
+- Also demonstrates why you shouldn't do it this way
+
+[github.com/dapps-dev-club/backend-hands-on](https://github.com/dapps-dev-club/backend-hands-on)
+
+- `git clone git@github.com:dapps-dev-club/backend-hands-on.git`
+- `git checkout master`
+- `git checkout feat/impl-crypt`
+- `git checkout feat/impl-crypt2`
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+name: encrypt-end
+class: center, middle, inverse, nextSection
+
+## /Encryption
+
+???
+
+- Q&A
+- ...
+
+---
+name: backend
+class: center, middle, inverse, nextSection
+
+## Back-end
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+]
+.right-column[
+
+What are the different things that a DApp back-end may need?
+
+- Ethereum node
+- Smart contracts
+- Off-chain data storage/ querying
+- DAO
+- Chat/ messages
+- Large # transactions/ second
+- Dispute resolution
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+]
+.right-column[
+
+We have already covered:
+
+- Ethereum node --> Infura
+- Smart contracts --> Build your own, and deploy
+- Off-chain data storage/ querying --> IPFS
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+### Queries
+]
+.right-column[
+
+How about database-like behaviour?
+
+- IPFS really just stores files
+- What if we wanted to run SQL-like queries?
+- One option:
+  - `emit` events with indices
+  - Query by index
+  - Extremely limited
+- Another option:
+  - Use a two-step process, just like with our IPFS demo
+  - Instead of writing to IPFS, and storing IPFS hash in smart contract
+  - &hellip; write to a database (e.g. PostgreSQL), 
+    and store hash of record in smart contract
+  - Later on queries can be made against the database directly,
+    and verifies using the hash in the smart contract
+  - This introduces a degree of centralisation
+
+.footnote[
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+### Queries
+### DAO
+]
+.right-column[
+
+Decentralised autonomous organisations
+
+- When a smart contract is deployed, the default is to set
+  and `owner` variable to `msg.sender` in its constructor
+- &hellip; then restrict certain function calls to `owner` only
+- However, this means that while the smart contract itself is 
+  decentralised, its operations are still centralised
+- What if `owner` was not a person but *another* smart contract?
+- &hellip; and this `owner` smart contract was capable of 
+  doing stuff based on votes (signatures) by 2 or more people?
+
+.footnote[
+- https://aragon.one/
+- https://gnosis.io/
+- https://colony.io/
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+### Queries
+### DAO
+### Chat
+]
+.right-column[
+
+Chat/ messages
+
+- Ethereum also specifies another protocol
+- We have not discussed this in our sessions
+- Whisper - WIP
+- Status.IM - Ready to use (uses Whisper specs)
+
+.footnote[
+- https://github.com/ethereum/wiki/wiki/Whisper
+- https://status.im/
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+### Queries
+### DAO
+### Chat
+### Scale
+]
+.right-column[
+
+How to support a large number of transactions per second?
+
+- Ethereum itself is only designed to produce a block every 15 seconds
+- For some apps, this is too slow
+- One solution is to build a hybrid centralised and decentralised app
+  - The high-volume transactions get offloaded from Ethereum
+- There are various other apporaches
+  - Side-chain based: e.g. Loom
+  - State-channel based: e.g. Celer
+  - Off-chain computation based: e.g. Oraclize
+
+.footnote[
+- https://github.com/Awesome-Layer-2/Awesome-Layer-2/blob/master/README.md
+]
+]
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Back-end
+### List
+### (covered)
+### Queries
+### DAO
+### Chat
+### Scale
+### Disputes
+]
+.right-column[
+
+How do your resolve disputes?
+
+- DApps do not necessarily only interact with data
+- Just like CApps, they can often promise a certain good or service
+  to be made available IRL
+- When this happens, there is no way for a smart contract to
+  instrinsically know about IRL occurrences
+- Thus dispute resolution is necessary
+- Simple means:
+  - Hold payment in escrow
+  - Abitrator appointed by smart contract can determine ruling
+- More involved method:
+  - Use a dispute resolution protocol
+  - e.g. Kleros
+
+.footnote[
+- https://blog.localethereum.com/how-our-escrow-smart-contract-works/
+- https://kleros.io/
+]
+]
+
+???
+
+- ...
+
+---
+name: backend-end
+class: center, middle, inverse, nextSection
+
+## /Back-end
+
+???
+
+- Q&A
+- ...
+
+---
+name: next
+class: center, middle, inverse, nextSection
+
+## Next
+
+???
+
+- ...
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+]
+.right-column[
+
+- Introduced Infura (we have been using it all along)
+  - Without it you would need to run your own local Ethereum main net node
+  - Introduces centralisation
+- Introduced encryption and decryption
+  - Blockchains **do not** give you privacy
+  - Cryptography is currently used for: hashing, signing, &hellip;
+  - &hellip; but not yet for encryption
+  - Current limitations
+- Back-end
+  - There are a whole slew of things that back-end systems typically do
+  - &hellip; but cannot do using smart contracts alone
+  - Listed many alternatives/ projects that can you to do this
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E10
+]
+.right-column[
+
+- [DApps Dev Club S01E10](https://dappsdev.org/sessions#session-SG-S01-E10)
+- Beyond Ethereum
+
+.footnote[
+]
+]
+
+???
+
+- So our next session will be on the 4th Tuesday of the month,
+  at Chainstack,
+- check out the details on the sessions page on our website
+- **Show the sessions page**
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E10
+### Hands-on
+
+]
+.right-column[
+
+- Read from Ethereum Book:
+  - Nothing!
+  - We will be talking about other networks!
+- Discussion:
+  - What are the other networks that you can build decentralised apps on?
+  - What would you like to learn about in DApps Dev Club season #2?
+  - [bit.ly/dadc-chat](https://bit.ly/dadc-chat)
+
+.footnote[
+]
+]
+
+???
+
+- The next session is called "beyond ethereum", 
+  so by definition we will not be covering any new material from the "mastering ethereum book"
+- So no reading "homework" this time!
+- In lieu of that however, I would like all of you to take a look at some of your favourite
+  projects out there, and come back to me about what you would like to get covered in season 2
+  of DApps Dev Club
+- There are a variety of different ways this could go
+  - Continue with general-purpose Ethereum development
+  - Focus of specific Ethereum stuff, for example specific ERCs or EIPs,
+    or specific meta-projects built using Ethereum
+  - ... or we could change track completely, and learn about general-purpose
+    development on another network that supports the development of decentralised
+    apps, that is not Ethereum at all!
+- Please chime in on our group chat!
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E09
+### Hands-on
+### Setup
+
+]
+.right-column[
+
+- To install:
+  - Nothing new!
+- Already installed:
+  - [Chrome](https://www.google.com/chrome/)
+  - [MetaMask](https://metamask.io/)
+  - [NodeJs](https://nodejs.org/)
+  - [solc](https://solidity.readthedocs.io/en/v0.5.7/installing-solidity.html)
+  - [truffle](https://truffleframework.com/docs/truffle/getting-started/installation)
+  - [ganache](https://truffleframework.com/docs/ganache/quickstart)
+  - [IPFS](https://docs.ipfs.io/guides/guides/install/)
+
+.footnote[
+]
+]
+
+???
+
+-
+
+---
+layout: false
+class: left, middle, inverse
+
+.left-column[
+## Next
+### Recap
+### S01E09
+### Hands-on
+### Setup
+### Q&amp;A
+
+]
+.right-column[
+
+Questions?
+
+.footnote[
+[bit.ly/dadc-chat](https://discordapp.com/invite/eM9Vv7P)
+]
+]
+
+???
+
+- Before we wrap up, do you have any questions?
+- Is you think of some questions later, or already have them, but prefer to
+  type instead, head over to our discord, the link is right there!
+
+---
+layout: false
+class: left, middle, inverse
+
+## Thanks!
+
+Lifelong Learning Institute &amp; SkillsFutureSG,
+Chainstack &amp; Acronis,
+BitTemple,
+NBC'19,
+Spartan,
+StartupToken,
+CryptoJobsList,
+EngineersSG, and
+Blockchain&amp;DApps
+
+---
+layout: false
+class: center, middle, inverse
+
+![DApps Dev Club](https://dappsdev.org/img/dadc-logo.png)
+
+[dappsdev.org](https://dappsdev.org/)
+
+???
+
+- be sure to check out the sessions page for updates, and join our discord
+- Q&amp;A
+- any other announcements?
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>

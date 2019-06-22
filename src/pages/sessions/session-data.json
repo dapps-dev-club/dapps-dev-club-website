@@ -367,10 +367,10 @@
       "series": "SG-S09",
       "name": "Back end - Session #09",
       "location": {
-        "id": "sg-bittemple"
+        "id": "sg-microsoft"
       },
       "time": {
-        "confirmed": false,
+        "confirmed": true,
         "start": "2019-06-25T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
@@ -394,8 +394,8 @@
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "http://bit.ly/dadc-s01e09"
       }
     },
     {

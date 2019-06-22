@@ -148,3 +148,52 @@ connected to, i.e. its peers:
 ```bash
 ipfs swarm peers
 ```
+
+You should see a small list of peers that your current IPFS node is connected to.
+All of these other computers are also running their own instance of `ipfs daemon`!
+Also, like any other peer-to-peer network, your own node tries to discover more nodes on the network.
+
+```bash
+$ ipfs swarm peers | wc -l
+27
+# ... wait for a few minutes...
+$ ipfs swarm peers | wc -l
+41
+```
+
+Now if there are several of you connected to the same local area network,
+either wireless or wired, you should be able to discover each others nodes,
+assuming that there's no firewall on the network that is configured to impede this.
+However, this peer discovery is *eventual* -
+it does not occur automatically upon starting, and can take a while.
+
+In order to "force" your IPFS node to connect to another known IPFS node,
+you will need to somehow obtain its IP address, and `PeerID`.
+You can obtain this by running:
+
+```bash
+ipfs id
+```
+
+In the output, copy any of the lines that **does not** begin with:
+
+- `/ip4/127.0.0.1`
+- `/ip6/::1`
+
+(These addresses are normally only accessible from you own computer)
+
+Then on a different computer, enter the following, replacing the `${ADDRESS}` string with the one that you just copied:
+
+```bash
+ipfs swarm connect ${ADDRESS}
+```
+
+Note that this does not guarantee that your IPFS node will connect to the one that you have specified,
+but it does make it likely that it will connect to this one faster than it would have taken by default.
+If the current IPFS node does succeed in connecting to the other IPFS node,
+you will see output similar to the following:
+
+```bash
+$ ipfs swarm connect /ip4/123.123.21.43/tcp/4001/ipfs/QmWtjovndrUkjUWgHpzSPfyrEqNo3LGAD1WniPSZH4N4kU
+connect QmWtjovndrUkjUWgHpzSPfyrEqNo3LGAD1WniPSZH4N4kU success
+```
