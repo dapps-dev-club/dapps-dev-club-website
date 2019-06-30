@@ -133,7 +133,7 @@ export const pageQuery = graphql`
                     maxHeight: 60
                     maxWidth: 300
                     quality: 80
-                    grayscale: true
+                    grayscale: false
                     cropFocus: CENTER
                   ) {
                       ...GatsbyImageSharpSizes
