@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2019-06-12T00:00:00.000+0800",
+  "lastUpdated": "2019-07-01T00:00:00.000+0800",
   "calendarTimeZone": "Asia/Singapore",
   "sessions": [
     {
@@ -406,24 +406,32 @@
         "id": "sg-chainstack"
       },
       "time": {
-        "confirmed": false,
+        "confirmed": true,
         "start": "2019-07-09T18:30:00.000+0800",
         "locale": "en-SG",
         "tz": "Asia/Singapore"
       },
       "topics": [
         {
-          "id": "external-evm-based",
-          "name": "EVM-based"
+          "id": "external-beyond-ethereum",
+          "name": "Beyond Ethereum"
         },
         {
-          "id": "external-non-evm-based",
-          "name": "EVM-based"
+          "id": "external-nextid",
+          "name": "Verifiable Credentials - guest speaker: Wong Wai Chung, NextID"
+        },
+        {
+          "id": "external-hedera",
+          "name": "Non-blockchain DLT - guest speaker: Calvin Cheng, Hedera Hashgraph"
+        },
+        {
+          "id": "external-chainstack",
+          "name": "Quorum - guest speaker: Thomas Lee, Chainstack"
         }
       ],
       "rsvp": {
-        "name": "RSVP on meetup",
-        "url": ""
+        "name": "RSVP on eventbrite",
+        "url": "http://bit.ly/dadc-10"
       }
     }
   ],
