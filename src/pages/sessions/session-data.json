@@ -42,7 +42,7 @@
     },
     {
       "id": "SG-S01-E02",
-      "series": "SG-S02",
+      "series": "SG-S01",
       "name": "Technical overview - Session #02",
       "location": {
         "id": "sg-chainstack"
@@ -84,7 +84,7 @@
     },
     {
       "id": "SG-S01-E03",
-      "series": "SG-S03",
+      "series": "SG-S01",
       "name": "Talking to Ethereum - Session #03",
       "location": {
         "id": "sg-bittemple"
@@ -130,7 +130,7 @@
     },
     {
       "id": "SG-S01-E04",
-      "series": "SG-S04",
+      "series": "SG-S01",
       "name": "Solidity - Session #04",
       "location": {
         "id": "sg-chainstack"
@@ -184,7 +184,7 @@
     },
     {
       "id": "SG-S01-E05",
-      "series": "SG-S05",
+      "series": "SG-S01",
       "name": "Testing Solidity - Session #05",
       "location": {
         "id": "sg-bittemple"
@@ -238,7 +238,7 @@
     },
     {
       "id": "SG-S01-E06",
-      "series": "SG-S06",
+      "series": "SG-S01",
       "name": "Front end - Session #06",
       "location": {
         "id": "sg-chainstack"
@@ -292,7 +292,7 @@
     },
     {
       "id": "SG-S01-E07",
-      "series": "SG-S07",
+      "series": "SG-S01",
       "name": "Security - Session #07",
       "location": {
         "id": "sg-bittemple"
@@ -328,7 +328,7 @@
     },
     {
       "id": "SG-S01-E08",
-      "series": "SG-S08",
+      "series": "SG-S01",
       "name": "IPFS - Session #08",
       "location": {
         "id": "sg-chainstack"
@@ -364,7 +364,7 @@
     },
     {
       "id": "SG-S01-E09",
-      "series": "SG-S09",
+      "series": "SG-S01",
       "name": "Back end - Session #09",
       "location": {
         "id": "sg-microsoft"
@@ -400,7 +400,7 @@
     },
     {
       "id": "SG-S01-E10",
-      "series": "SG-S10",
+      "series": "SG-S01",
       "name": "Beyond Ethereum - Session #10",
       "location": {
         "id": "sg-chainstack"
@@ -432,6 +432,38 @@
       "rsvp": {
         "name": "RSVP on eventbrite",
         "url": "http://bit.ly/dadc-10"
+      }
+    },
+    {
+      "id": "SG-S02-E01",
+      "series": "SG-S02",
+      "name": "Build a chat DApp on Perlin using Typescript",
+      "location": {
+        "id": "sg-chainstack"
+      },
+      "time": {
+        "confirmed": true,
+        "start": "2019-08-06T18:00:00.000+0800",
+        "locale": "en-SG",
+        "tz": "Asia/Singapore"
+      },
+      "topics": [
+        {
+          "id": "dadc-season-2",
+          "name": "DApps Dev Club Season 2"
+        },
+        {
+          "id": "wasm-intro",
+          "name": "Introduction to Web Assembly"
+        },
+        {
+          "id": "perlin-wavelet-chat-dapp",
+          "name": "Build and deploy a chat DApp using Perlin and Wavelet in less than 100 lines of code"
+        }
+      ],
+      "rsvp": {
+        "name": "RSVP on eventbrite",
+        "url": "http://bit.ly/dadc-21-perlin"
       }
     }
   ],
