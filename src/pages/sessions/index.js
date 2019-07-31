@@ -42,11 +42,13 @@ export default class Sessions extends React.Component {
           <div className="container">
             <div className="content">
               <h1 id="session" name="session">Sessions</h1>
+
               <p>
                 We maintain a live list of all the sessions run by the club here.
                 Since we tailor each session based on the outcome of the one that just concluded,
                 expect this list to change as we progress.
               </p>
+
               <p>
                 Each session will link to an external site (meetup.com or eventbrite),
                 where we would like you
@@ -54,15 +56,23 @@ export default class Sessions extends React.Component {
                 After each session is over, we will add links to any resources or discussions
                 from that session.
               </p>
+
               <p>
-                Jump to: <a href="#upcoming">Upcoming sessions</a> | <a href="#past">Past sessions</a>
+                Jump to:&nbsp;
+                <a href="#calendar">Calendar</a>&nbsp;|&nbsp;
+                <a href="#upcoming">Upcoming sessions</a>&nbsp;|&nbsp;
+                <a href="#past">Past sessions</a>
               </p>
-              <h2 id="calendar" name="calendar">Calendar</h2>
-              { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
+
               <h2 id="upcoming" name="upcoming">Upcoming sessions</h2>
               { renderSessionsList(upcomingSessions) }
+
               <h2 id="past" name="past">Past sessions</h2>
               { renderSessionsList(pastSessions) }
+
+              <h2 id="calendar" name="calendar">Calendar</h2>
+              { renderCalendar(calendarTimeZone, upcomingSessions, pastSessions) }
+
               <QrCode
                 url="https://dappsdev.org/sessions/"
                 logoUrl="https://dappsdev.org/img/dadc-logo.png"
@@ -322,7 +332,7 @@ function renderCalendar(timeZone, upcomingSessions, pastSessions) {
       dayHeaderClassName="tt-cal-day-header"
       dayHeaderStyle={Calendar.DayHeaderStyles.InFirstMonth}
       firstRenderedDay="2019/02/01"
-      lastRenderedDay="2019/07/31"
+      lastRenderedDay="2019/08/31"
       monthClassName="tt-cal-month"
       monthHeaderFormat="MMM YYYY"
       monthHeaderClassName="tt-cal-month-header"
