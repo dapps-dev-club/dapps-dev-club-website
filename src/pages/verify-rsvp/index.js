@@ -30,15 +30,43 @@ export default class VerifyRsvp extends React.Component {
 
   handleCsvUpload = data => {
     const columns = data[0];
-    const tableFields = columns.map((column) => {
-      return {
-        name: column,
-        displayName: column, // TODO capitalise and un-camel-case etc
+    const tableFields = [
+      {
+        name: 'firstName',
+        displayName: 'First Name',
         inputFilterable: true,
-        exactFilterable: true,
+        exactFilterable: false,
         sortable: true,
-      };
-    });
+      },
+      {
+        name: 'lastName',
+        displayName: 'Last Name',
+        inputFilterable: true,
+        exactFilterable: false,
+        sortable: true,
+      },
+      {
+        name: 'email',
+        displayName: 'Email',
+        inputFilterable: true,
+        exactFilterable: false,
+        sortable: true,
+      },
+      {
+        name: 'quantity',
+        displayName: 'Tickets',
+        inputFilterable: true,
+        exactFilterable: false,
+        sortable: true,
+      },
+      {
+        name: 'order',
+        displayName: 'Order #',
+        inputFilterable: true,
+        exactFilterable: false,
+        sortable: true,
+      },
+    ];
     const tableData = data.slice(1).map((row) => {
       return columns.reduce((accumulator, column, columnIndex) => {
         return {
@@ -48,6 +76,7 @@ export default class VerifyRsvp extends React.Component {
       }, {});
     });
     console.log(tableData.slice(0,5));
+    console.log(tableFields);
     this.setState({
       tableData,
       tableFields,
@@ -178,6 +207,7 @@ export default class VerifyRsvp extends React.Component {
                 fields={this.state.tableFields}
                 noRecordsMessage={"There are no records"}
                 noFilteredRecordsMessage={"There are no records that match the filters"}
+                pageSize={50}
                 pageSizes={[10,25,50]}
               />
             </div>
