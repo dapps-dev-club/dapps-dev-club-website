@@ -1,13 +1,18 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import ReactCsvReader from 'react-csv-reader';
+import ReactFilterableTable from 'react-filterable-table';
 
 import Layout from '../../components/Layout'
 
 export default class VerifyRsvp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = {
+      text: '',
+      tableFields: [],
+      tableData: [],
+    };
   }
 
   handleSubmit = e => {
@@ -24,7 +29,29 @@ export default class VerifyRsvp extends React.Component {
   }
 
   handleCsvUpload = data => {
-    console.log(data);
+    const columns = data[0];
+    const tableFields = columns.map((column) => {
+      return {
+        name: column,
+        displayName: column, // TODO capitalise and un-camel-case etc
+        inputFilterable: true,
+        exactFilterable: true,
+        sortable: true,
+      };
+    });
+    const tableData = data.slice(1).map((row) => {
+      return columns.reduce((accumulator, column, columnIndex) => {
+        return {
+          ...accumulator,
+          [column]: row[columnIndex] || 'Nil',
+        }
+      }, {});
+    });
+    console.log(tableData.slice(0,5));
+    this.setState({
+      tableData,
+      tableFields,
+    });
   }
 
   render() {
@@ -140,21 +167,19 @@ export default class VerifyRsvp extends React.Component {
                         required={true}
                       />
                     </p>
-                    <p>
-                      <label htmlFor={"searchInput"}>Search</label>
-                      <br />
-                      <input
-                        className="searchInput"
-                        type={"text"}
-                        name={"searchInput"}
-                        id={"searchInput"}
-                        onChange={this.handleChange}
-                        required={true}
-                      />
-                    </p>
                   </div>
                 </div>
               </form>
+
+              <ReactFilterableTable
+                namespace="VerifyRsvpTable"
+                initialSort="firstName"
+                data={this.state.tableData}
+                fields={this.state.tableFields}
+                noRecordsMessage={"There are no records"}
+                noFilteredRecordsMessage={"There are no records that match the filters"}
+                pageSizes={[10,25,50]}
+              />
             </div>
           </div>
         </section>
