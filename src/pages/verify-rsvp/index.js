@@ -83,6 +83,23 @@ export default class VerifyRsvp extends React.Component {
     });
   }
 
+  renderTable() {
+    if (this.state.tableData.length > 0) {
+      return (<ReactFilterableTable
+        namespace="VerifyRsvpTable"
+        initialSort="firstName"
+        data={this.state.tableData}
+        fields={this.state.tableFields}
+        noRecordsMessage={"There are no records"}
+        noFilteredRecordsMessage={"There are no records that match the filters"}
+        pageSize={50}
+        pageSizes={[10,25,50]}
+      />);
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <Layout>
@@ -200,16 +217,7 @@ export default class VerifyRsvp extends React.Component {
                 </div>
               </form>
 
-              <ReactFilterableTable
-                namespace="VerifyRsvpTable"
-                initialSort="firstName"
-                data={this.state.tableData}
-                fields={this.state.tableFields}
-                noRecordsMessage={"There are no records"}
-                noFilteredRecordsMessage={"There are no records that match the filters"}
-                pageSize={50}
-                pageSizes={[10,25,50]}
-              />
+              { this.renderTable() }
             </div>
           </div>
         </section>
