@@ -2,8 +2,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import ReactCsvReader from 'react-csv-reader';
 import ReactFilterableTable from 'react-filterable-table';
+import md5  from 'js-md5';
 
-import Layout from '../../components/Layout'
+import throttle from '../qr/throttle';
+import Layout from '../../components/Layout';
 
 export default class VerifyRsvp extends React.Component {
   constructor(props) {
@@ -13,6 +15,7 @@ export default class VerifyRsvp extends React.Component {
       tableFields: [],
       tableData: [],
     };
+    this.throttledSetState = throttle(this.setState, 500);
   }
 
   handleSubmit = e => {
@@ -86,7 +89,7 @@ export default class VerifyRsvp extends React.Component {
 
   renderEmail(props) {
     console.log('renderEmail', props);
-    const verifyEmail = this.verifyEmail;
+    const component = this;
     const {
       value,
       record,
@@ -108,20 +111,23 @@ export default class VerifyRsvp extends React.Component {
         <button
           id={`verify-email-button-${orderId}`}
           className={'verify-email-button'}
-          onClick={ verifyEmail(record, orderId) }
+          onClick={ component.verifyEmail(record, orderId).bind(component) }
         >Verify</button>
       </div>);
     }
   }
 
   verifyEmail(record, orderId) {
-    return (event) => {
+    const component = this;
+    return (/* event */) => {
       const inputElem = document.getElementById(`verify-email-input-${orderId}`);
       const value = inputElem.value;
       console.log('verifyEmail closure', record, orderId, value);
 
-      // TODO use hash and salt instead of simple equality
-      const isCorrect = (value === record.email);
+      const salt = component.state.passPhraseInput;
+      const saltedEmail = `${salt}-${value}`;
+      const hashedAndSaltedEmail = md5(saltedEmail);
+      const isCorrect = (record.email === hashedAndSaltedEmail);
       const displayMessage = isCorrect ?
         'Match' :
         'Does not match';
@@ -142,6 +148,7 @@ export default class VerifyRsvp extends React.Component {
         noFilteredRecordsMessage={"There are no records that match the filters"}
         pageSize={50}
         pageSizes={[10,25,50]}
+        topPagerVisible={false}
       />);
     } else {
       return null;
@@ -165,7 +172,7 @@ export default class VerifyRsvp extends React.Component {
                   while preserving attendees' privacy.</p>
                 <h2>Instructions</h2>
                 <ol>
-                  <li>Copy and paste the provided CSV file into the "CSV" field</li>
+                  <li>Upload the provided CSV file into the "CSV" field</li>
                   <li>Copy and paste the provided pass phrase into the "pass phrase" field</li>
                   <li>Type in the first name of the attendee into the "search" field</li>
                   <li>The full list will filter as you type</li>
@@ -178,7 +185,7 @@ export default class VerifyRsvp extends React.Component {
                 <ol>
                   <li>Enter the email address that they have provided into the field.</li>
                   <li>Click on the verify button.</li>
-                  <li>Check that the field that they have provided does match the provided value</li>
+                  <li>You will be shown whether this email matches or does not match the one used during registration.</li>
                 </ol>
                 <h2>Why not just provide the raw data?</h2>
                 <p>
@@ -249,6 +256,8 @@ export default class VerifyRsvp extends React.Component {
                         inputStyle={{color: '#00c000'}}
                       />
                     </p>
+                  </div>
+                  <div className="control">
                     <p>
                       <label htmlFor={"passPhraseInput"}>Pass phrase</label>
                       <br />
