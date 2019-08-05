@@ -51,6 +51,7 @@ export default class VerifyRsvp extends React.Component {
         inputFilterable: true,
         exactFilterable: false,
         sortable: true,
+        render: this.renderEmail.bind(this),
       },
       {
         name: 'quantity',
@@ -81,6 +82,53 @@ export default class VerifyRsvp extends React.Component {
       tableData,
       tableFields,
     });
+  }
+
+  renderEmail(props) {
+    console.log('renderEmail', props);
+    const verifyEmail = this.verifyEmail;
+    const {
+      value,
+      record,
+      filteredRecords,
+    } = props;
+    const orderId = record.order;
+    if (filteredRecords.length > 10) {
+      return (<span>{ value }</span>);
+    } else {
+      const inputElem = (<input
+        id={`verify-email-input-${orderId}`}
+        className={'verify-email-input'}
+        type={'text'}
+      ></input>);
+      return (<div>
+        <span>{ value }</span>
+        <br />
+        { inputElem }
+        <button
+          id={`verify-email-button-${orderId}`}
+          className={'verify-email-button'}
+          onClick={ verifyEmail(record, orderId) }
+        >Verify</button>
+      </div>);
+    }
+  }
+
+  verifyEmail(record, orderId) {
+    return (event) => {
+      const inputElem = document.getElementById(`verify-email-input-${orderId}`);
+      const value = inputElem.value;
+      console.log('verifyEmail closure', record, orderId, value);
+
+      // TODO use hash and salt instead of simple equality
+      const isCorrect = (value === record.email);
+      const displayMessage = isCorrect ?
+        'Match' :
+        'Does not match';
+
+      // TODO display update within DOM instead of modal alert
+      alert(displayMessage);
+    };
   }
 
   renderTable() {
