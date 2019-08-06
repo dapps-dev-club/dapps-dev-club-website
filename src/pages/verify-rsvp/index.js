@@ -187,6 +187,51 @@ export default class VerifyRsvp extends React.Component {
                   <li>Click on the verify button.</li>
                   <li>You will be shown whether this email matches or does not match the one used during registration.</li>
                 </ol>
+              </div>
+              <br />
+
+              <form
+                name="contact"
+                onSubmit={this.handleSubmit}
+              >
+                <div className="field">
+                  <div className="control">
+                    <p>
+                      <label htmlFor={"csvInput"}>CSV</label>
+                      <br />
+                      <ReactCsvReader
+                        cssClass="csv-reader-input"
+                        label="Select CSV file"
+                        onFileLoaded={this.handleCsvUpload}
+                        onError={this.handleCsvUploadError}
+                        inputId="csvReaderInput"
+                        inputStyle={{color: '#00c000'}}
+                      />
+                    </p>
+                  </div>
+                  <div className="control">
+                    <p>
+                      <label htmlFor={"passPhraseInput"}>Pass phrase</label>
+                      <br />
+                      <input
+                        className="passPhraseInput"
+                        type={"text"}
+                        name={"passPhraseInput"}
+                        id={"passPhraseInput"}
+                        onChange={this.handleChange}
+                        required={true}
+                      />
+                    </p>
+                  </div>
+                </div>
+              </form>
+              <br />
+
+              { this.renderTable() }
+              <br />
+
+              <br />
+              <div>
                 <h2>Why not just provide the raw data?</h2>
                 <p>
                   In one word: <strong>Privacy!</strong>
@@ -238,43 +283,6 @@ export default class VerifyRsvp extends React.Component {
                 </p>
               </div>
 
-              <form
-                name="contact"
-                onSubmit={this.handleSubmit}
-              >
-                <div className="field">
-                  <div className="control">
-                    <p>
-                      <label htmlFor={"csvInput"}>CSV</label>
-                      <br />
-                      <ReactCsvReader
-                        cssClass="csv-reader-input"
-                        label="Select CSV file"
-                        onFileLoaded={this.handleCsvUpload}
-                        onError={this.handleCsvUploadError}
-                        inputId="csvReaderInput"
-                        inputStyle={{color: '#00c000'}}
-                      />
-                    </p>
-                  </div>
-                  <div className="control">
-                    <p>
-                      <label htmlFor={"passPhraseInput"}>Pass phrase</label>
-                      <br />
-                      <input
-                        className="passPhraseInput"
-                        type={"text"}
-                        name={"passPhraseInput"}
-                        id={"passPhraseInput"}
-                        onChange={this.handleChange}
-                        required={true}
-                      />
-                    </p>
-                  </div>
-                </div>
-              </form>
-
-              { this.renderTable() }
             </div>
           </div>
         </section>
