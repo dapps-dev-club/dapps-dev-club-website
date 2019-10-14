@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accelerating Learning</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="How to accelerate learning as a developer"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Accelerating Learning"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="How to accelerate learning as a developer"/>
+    <meta property="og:article:published_time" content="2019-10-11T08:35:51.000Z"/>
+    <meta property="og:article:modified_time" content="2019-10-11T08:35:51.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="JDSG"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/jdsg-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width33percent p {
+        width: 33%;
+        margin: 0.5em;
+      }
+
+      .width33percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+# 🏃📖💻
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# 🏃📖💻
+
+## How to accelerate learning as a developer
+
+14/10/2019
+
+???
+
+How to accelerate learning as a developer
+
+---
+name: start
+layout: false
+class: middle, inverse
+
+- structure: a series of ideas or tips
+- style: **not** going to read text on slides
+- questions: raise your hands and ask at any time
+- speed: fast (want to maximise time afterwards)
+- link: will post deck in chat after
+
+???
+
+- here's what you can expect in a nutshell
+
+---
+name: start
+layout: false
+class: middle, inverse
+
+- 💡💡💡
+- ❓ 🙋 (at any time)
+
+???
+
+- two things that I wanna call out:
+- First is that questions are welcome at any time, you don't have to wait till the end.
+- Second is: don't be worried if you can't take notes - the link to the deck will be shared in the chat group
+- Let's begin
+
+---
+name: start
+layout: false
+class: middle, inverse
+
+Thanks to everyone who has been asking questions, and adding tips!
+
+???
+
+- .
+
+---
+layout: false
+class: middle, inverse
+
+## Manage a team of one
+  
+- Use Trello tickets/ post its on a wall/ etc
+- Track your own learning progress
+- You are your own manager
+
+.footnote[
+  [Trello](https://trello.com/)
+]
+
+???
+
+- Let's start with who manages you
+- Chances are that you will have a colleague who manages you, for example your boss, or your project manager
+- You can also manage yourself - you don't need to only rely on your assigned manager to do it
+- You can include your own "private" tasks such as learning into your plans
+- To do this, Trello comes highly recommended as a tool to create, and arrange tasks. It's simple, unopinionated, and lets you get stuff done.
+
+---
+layout: false
+class: middle, inverse
+
+## Keep a weekly log
+
+- Use for reflection/ consolidation
+  - What did you accomplish this week?
+  - What did you learn this week?
+  - What questions do you still have from this week?
+- This is not for taking notes!
+- (daily if you wish + you can afford the time/ effort)
+
+???
+
+- This will allow you to track everything that you have done, which you'll probably forget as months so by.
+- Pro-tip: When you're writing your resume, and you need a list of accomplishments, this will come in handy
+
+---
+layout: false
+class: middle, inverse
+
+## There are a ton of free resources
+
+- Google `site:github.com "awesome-"`
+- Look for **curated** resources
+- Pick one and stick to it
+
+???
+
+- Make use of the free resources that are available
+- The awesome dash something lists are pretty good at finding curated resources on a particular topic
+- Don't go too far down a rabbit hole
+- Find a resource that resonates
+
+---
+layout: false
+class: middle, inverse
+
+.footnote[
+  [🐦](https://twitter.com/bguiz/status/1173766582641676288)
+]
+
+.width33percent[
+  ![](./pick-one-and-stick-to-it.png)
+]
+
+???
+
+- When you do pick something that resonates
+- Then stick to it
+- For how long? long enough that you get though the "initial pain"
+- Only then reassess/ switch to something else
+- What not to do: Jump all over the place and attempt to do many different things at once
+
+---
+layout: false
+class: middle, inverse
+
+## Version control your learning
+
+- Create git repos
+  - Commit your notes as markdown fields
+- If you don't want to learn in public, that's cool:
+  - github now supports free private repos too
+- Use this for any exercises/ tutorials too
+
+.footnote[
+- [Memory: Herman Ebbinghaus](https://web.archive.org/web/20050504104838/http://psy.ed.asu.edu/~classics/Ebbinghaus/index.htm)
+- [Anki](https://en.wikipedia.org/wiki/Anki_%28software%29)
+- [Leitner Boxes](https://en.wikipedia.org/wiki/Leitner_system)
+]
+
+???
+
+- If you want to remember something, you need to write it down.
+- Do just that - so that you don't lose any of the things that you learn "on the job"
+- As programmers, we have a great tool for that - which are version control systems, like git
+- If you want to take this a step further, you can delve into the science behind memory and forgetting, as well as tools that help in this area
+  - Links for these are in the footnotes
+  - Summary: Whenever you learn something new, you are very likely to forget it unless you encounter it again soon.
+
+---
+layout: false
+class: middle, inverse
+
+## Don't overcommit
+
+- Easy:
+  Create a laundry list of all the things you want to learn
+- Hard:
+  put into practice
+- So:
+  Choose one
+- Don't burn out!
+  - Remember that you still have a job and other life commitments - 
+
+???
+
+- Committing and overcommitting
+- Here's we're talking about all the other things that you want to learn "on the side", typically stuff that you don't need day to day, but you do aspire to learn.
+- It's great that you have that hunger or eagerness to learn, but temper that with the reality of life, that like everyone else, you only have 24 hours in a day
+- so don't burn out
+
+---
+layout: false
+class: middle, inverse
+
+.width50percent[
+  ![](./jack-of-all-trades--1900.png)
+]
+
+???
+
+- You may have heard the phrase: "Jack of all trades, master of none."
+- It means if you try to be/ do too many things at once, you wind up not being very good at any one of them
+- This applies to developers too - because there are so many different languages/ frameworks/ tools/ paradigms out there!
+
+- Fun fact: There was actually a book published in the year 1900, titled "Jack of all trades" - that's where this picture was taken from
+
+Image source: https://flic.kr/p/cobzMG - from "Jack of all Trades" published in 1900
+
+---
+layout: false
+class: middle, inverse
+
+## Practice over theory
+
+- School: learn new skills, but don't apply them
+- Job: apply new skills, but don't teach them
+  - (DIY learning)
+- Attempt to apply skills that you're about to learn, or have just learnt
+- A great way to make sure you do this is to publicly commit to it
+  - [#100DaysOfCode](https://www.100daysofcode.com/)
+
+???
+
+- The difference in how effective learning is with theory and practice will become apparent when you switch from schools to work
+- Chances are that you'll retain things you'll learn on the job more than things you learn at school
+- The flip side of that is: To learn things that **aren't** on the job, you should emulate how you learn on the job
+  - Which is to do as you learn
+- Additionally, if you're keen on making a public commitment to learning something - that helps as well
+  - 100 days of code comes highly recommended
+
+---
+layout: false
+class: middle, inverse
+
+## Learn from colleagues
+
+- Look at commits/ PRs, even ones that you aren't involved in
+- Ask yourself why the tackled a particular problem in the way that they did
+- Were there other ways to do the same thing?
+- Ask them questions
+
+???
+
+- When you learn on the job, you'll be doing the bulk of the learning from those who are around you - your colleagues.
+- These points here are some of the various ways to seek out and optimise this type of learning
+
+---
+layout: false
+class: middle, inverse
+
+## Look ahead, look behind
+
+- Don't only learn what is currently relevant
+- What has been around for more than five years?
+- What do you think will be relevant in five years?
+
+???
+
+- Don't **just** learn what is currently relevant
+- Hottest new frameworks are akin to pop music, in that they tend to stick around for a year, sometimes five, and then fizzle out
+- What has been around for more than five years? Chances are that's sticking around.
+- Sometimes it can also pay off to think about what will become relevant *in* five years time. There's a very good chance that you'll get this wrong, but it will be a big advantage if you're right. So hedge your bets.
+- For stuff that has been around for a while, aim to learn best practices and execution.
+- For stuff that you think will become the next big thing, aim to explore and attain a base level comprehension
+
+---
+layout: false
+class: middle, inverse
+
+## Alt. proof of skills
+
+- Formal qualifications - what else?
+- Certified by
+  - online MOOCs (e.g. Coursera) or
+  - professional certification bodies (e.g. AWS solutions architect)
+- Portfolio
+
+???
+
+- Learning something new is great for personal development, but sometimes the benefits from that really only manifest when you are able to prove your knowledge
+- You have options like diplomas, degrees, or even bootcamps
+- There are alternate sources of certification too
+- There's even a no-certification based approach, which is to create a portfolio of your work, which demonstrates your skills
+- This can be quite powerful
+
+---
+layout: false
+class: middle, inverse
+
+## Teach
+
+- Write
+- Present to an audience
+
+???
+
+- What happens when you teach something?
+  - You learn something - that's the input
+  - Then you codify it - by reflecting upon it
+  - Then you present what you have learnt - that's the output
+- By doing so, this is obviously helpful to others, as you're imparting knowledge
+- but also has a beneficial side effect for yourself
+  - The act of writing/ explaining edifies your knowledge
+
+---
+layout: false
+class: center, middle, inverse
+
+# Fin
+
+Questions?
+
+???
+
+---
+layout: false
+class: center, middle, inverse
+
+.width33percent[
+  ![](./how-to-accelerate-learning.jpg)
+]
+
+???
+
+We have come to the end,
+
+and I've clearly saved the best for last!
+
+Questions?
+
+---
+layout: false
+class: center, middle, inverse
+
+- Do **you** have any tips for everyone else?
+- Please share!
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>
