@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blockchain for Business</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
+    <meta name="description" content="Blockchain for Business Ideation Session"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Blockchain for Business"/>
+    <meta property="og:site_name" content="DApps Dev Club"/>
+    <meta property="og:description" content="Blockchain for Business Ideation Session"/>
+    <meta property="og:article:published_time" content="2019-10-11T08:35:51.000Z"/>
+    <meta property="og:article:modified_time" content="2019-10-11T08:35:51.000Z"/>
+    <meta property="og:section" content="presentation"/>
+    <meta property="og:author" content="https://dappsdev.org/author/bguiz"/>
+    <meta property="og:tag" content="blockchain"/>
+    <meta property="og:tag" content="dapps"/>
+    <meta property="og:tag" content="business"/>
+    <meta property="og:url" content="https://dappsdev.org/"/>
+    <meta property="og:image" content="https://dappsdev.org/img/dadc-logo-square.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:alt" content="The Decentralised Applications Development Club"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-number {
+        display: block;
+        position: absolute;
+        padding: 0.6em;
+        font-size: 1em;
+        bottom: 12px;
+        right: 12px;
+        opacity: 1.0;
+        color: rgba(256, 256, 256, 1.0);
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      .remark-slide-content {
+        line-height: 1.5em;
+        font-size: 1.25em;
+      }
+      .remark-slide-content:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        height: 28px;
+        width: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('/img/dadc-logo.png');
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li {
+        line-height: 1.25em;
+      }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        border-left: 0.25em solid #ccc;
+        padding-left: 0.5em;
+      }
+      blockquote > p {
+        font-style: italic;
+      }
+      blockquote > p::before, blockquote > p::after {
+        display: inline;
+        line-height: 0;
+        position: relative;
+        color: #ccc;
+        font-size: 2em;
+      }
+      blockquote > p::before {
+        content: open-quote;
+        left: -0.25em;
+        top: 0.25em;
+      }
+      blockquote > p::after {
+        content: close-quote;
+        left: 0.05em;
+        top: 0.25em;
+      }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #31396d;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+      .remark-code-line-highlighted     {
+        background-color: #373832;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #eaeaea;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse.nextSection {
+        background: #eaeaea;
+        color: #272822;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .inverse.nextSection h1, .inverse.nextSection h2, .inverse.nextSection h3 {
+        color: #171812;
+        line-height: 0.8em;
+      }
+
+      code {
+        text-shadow: none;
+        line-height: 1em;
+      }
+
+      pre > code {
+        padding: 1em;
+      }
+
+      .lightBg {
+        background-color: #ffffff;
+      }
+
+      .width100percent {
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+      }
+
+      .width100percent p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .width100percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width70percent p {
+        width: 70%;
+        margin: 0.5em;
+      }
+
+      .width70percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width50percent p {
+        width: 50%;
+        margin: 0.5em;
+      }
+
+      .width50percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .width33percent p {
+        width: 33%;
+        margin: 0.5em;
+      }
+
+      .width33percent img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .inverse .left-column h2, .inverse .left-column h3 {
+        color: #a8a8a8;
+      }
+      .inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+        color: #f3f3f3;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle, inverse
+---
+
+# 🧱⛓4💼💡🕙
+
+---
+name: start
+layout: false
+class: center, middle, inverse
+
+# 🧱⛓4💼💡🕙
+
+## Blockchain for Business
+### Ideation Session
+
+21/10/2019
+
+???
+
+-
+
+---
+name: sandwich
+layout: false
+class: middle, inverse
+
+## 🥪
+
+1. Preparation
+2. Topics
+  1. [Blockchain](#blockchain)
+  2. [DApps](#dapps)
+  3. [When to use?](#use-yes)
+  4. [When not use?](#use-no)
+3. Ideation
+
+???
+
+- Here's the structure of our session this evening, so that we all are on the same page, and we know what to expect
+- Firstly, some of you here may know me from DApps Dev Club, which is technical.
+  - This session is **not* going to be technical, and you do not need to be a programmer or anything like that to follow along
+  - The goal for tonight is very different, we're going to be exploring the business use cases for blockchain
+  - However, in my experience, interactive sessions are a little hard to get going, so here's what we're going to do
+- You can think of this session as a sandwich
+  - At the top, we will get all of you to open up a Q&A app
+  - Then in the middle, I'll talk - very briefly - about Blockchain, DApps, When to use, and When not to use
+  - Finally, at the end, we'll wrap up with the reason that we're all really here, which is the ideation session
+    - This last part will really depend on all of you in the audience.
+    - The more questions/ comments/ etc that you add to the Q&A app, the more we will have to talk about and discuss!
+- Let's get started!
+
+---
+layout: false
+class: middle, inverse
+
+- 💡💡  💡💡
+- ❓ 🙋  ❓ 🙋
+
+???
+
+- First up we have some prep work to do
+- As mentioned just moments ago, there's going to be an interactive session at the end
+- Both questions **and** comments are welcome
+- While I'm presenting the topics, please put all your comments and questions into this app called slido
+
+---
+name: slido
+layout: false
+class: middle, inverse
+
+## [sli.do](https://sli.do) -> #BBIS
+
+`-or-`
+
+.width33percent[
+  ![QR code for slido #BBIS](./qr-slido-bbis.png)
+]
+
+???
+
+- so please, I'd like everyone to get our their phones
+- either, type sli.do into your browser address bar, and then enter the code #BBIS
+- or, scan this QR code and get right in
+- now I know some of you are thinking that you don't have any questions or comments right now.
+  I have done this a few times before, and almost without fail, there's going to be someone who thinks that at the beginning,
+  and then midway through, realise that you actually have one,
+  and then jostle around trying to get the URL that was shown at the beginning.
+  so please, even if you don't have anything in mind at the moment, please just scan this just in case!
+- show of hands?
+
+---
+name: topics
+layout: false
+class: middle, inverse
+
+## Topics
+
+1. [Blockchain](#blockchain)
+2. [DApps](#dapps)
+3. [When to use?](#use-yes)
+4. [When not use?](#use-no)
+
+???
+
+- So here are the topics that we will be covering in this session.
+- We won't be going into too much detail about each one of them, unless there is interest
+- How do we know that you are interested? Well put those questions/ comments in slido!
+- Anyone need me to back up to the previous slide, so that you can scan the QR code again?
+
+---
+name: format
+layout: false
+class: middle, inverse
+
+## Format
+
+- Technical summary
+- So what?
+
+???
+
+- Blockchain, and decentralised apps are relatively new technologies,
+  and they are developing at such a fast pace that it is hard to keep up
+- In this presentation we intend to give a very brief summary of various aspects
+  of these technologies, without going into much detail
+- And of course, as the title for this session implies, the main thing that we
+  will focus on is "so what?" - what does this technology mean for your business?
+
+---
+name: blockchain
+layout: false
+class: middle
+
+## Blockchain
+
+- [Consensus](#consensus)
+- [P2P](#p2p)
+- [Transactions](#transactions)
+- [Cryptography](#cryptography)
+- [Immutable ledger](#immutable-ledger)
+
+.footnote[
+  [Bitcoin whitepaper](https://bitcoin.org/bitcoin.pdf)
+]
+
+???
+
+- What is a blockchain? There are various technical ways to define this, and the
+  original bitcoin whitepaper from 2008 does a good job of this
+- However, now we will focus on a subset of concepts that are particularly relevant
+  to business considerations
+
+---
+name: consensus
+layout: false
+class: middle, inverse
+
+## Consensus
+
+.width100percent[
+  ![byzantine generals problem](byzantine-generals-problem.png)
+]
+
+.footnote[
+  [src](https://flic.kr/p/Pgue7M)
+]
+
+???
+
+- The Byzantine generals problem is probably one of the most widely studied problems
+  on consensus.
+- It talks about consensus not just in the vacuum of technical implementation,
+  but in the context of incentives, and game theory
+
+---
+layout: false
+class: middle, inverse
+
+## Consensus
+
+- Algorithms for multiple computers to agree
+- Byzantine generals
+
+So what?
+
+- Blockchains provide one means to achieve consensus
+- Consensus is backed my economic incentive
+
+???
+
+- Computers also need a way to a group of them in sync with each other,
+  from everything from databases to cryptocurrencies
+- There are many different consensus algorithms out there, and blockchain
+  is just one of those algorithms
+
+---
+name: p2p
+layout: false
+class: middle, inverse
+
+## P2P
+
+.width100percent[
+  ![Client-Server Vs P2P Download](./client-server-vs-p2p.png)
+]
+
+.footnote[
+  ![src](https://commons.wikimedia.org/wiki/File:Direct_Vs_P2P_Download_-_en.png)
+]
+
+???
+
+- In this diagram on the left we have a client-server architecture.
+  Many clients all connect to the same server.
+  This is centralised
+- On the right we have a perr-to-peer network architecture.
+  Many clients discover each other, and they connect to each other.
+  This is decentralised.
+
+---
+layout: false
+class: middle, inverse
+
+## P2P
+
+- Computers talk to each other as peers
+- BitTorrent
+
+So what?
+
+- Fundamental component of decentralisation
+- Single entity cannot control
+
+???
+
+- For many, BitTorrent was probably our first encounter with peer-ro-peer technology
+- Blockchains use a very similar peer-to-peer connection method
+- The implication of this is that a single entity cannot control the communications between all of the clients.
+
+---
+name: transactions
+layout: false
+class: middle, inverse
+
+## Transactions
+
+.width100percent[
+  ![Blockchain - block - merkle tree - transaction](./blockchain-block-merkle-transaction.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Bitcoin_Block_Data.png)
+]
+
+???
+
+- This diagram shows blocks and transactions in a blockchain
+- Significantly, each block contains a reference to the previous block, seen here as **Prev Hash**, and a collection of transactions
+- Once a block is written, it cannot be undone, because
+
+---
+layout: false
+class: middle, inverse
+
+## Transactions
+
+- Analogy: ATM withdrawals
+- Multiple transactions combined: Block
+
+So what?
+
+- What activities occur in your business?
+- Can these be modelled as transactions?
+
+???
+
+- The way that transactions are modelled in a blockchain prevent a "double spend"
+  scenario, without the need for a centralised authority
+- Think about all of the actions that occur in your business - are they transactional?
+
+---
+name: cryptography
+layout: false
+class: middle, inverse
+
+## Cryptography
+
+.width70percent[
+  ![Digital Signature Algorithms](./digital-signature-diagram.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Digital_Signature_diagram.svg)
+]
+
+???
+
+- If you have used a username and password to log in to a website,
+- or if you have used a browser to visit a site starting with HTTPS, and you see
+  the lock icon in the address bar, congratulations, you are a user of cryptography
+
+---
+layout: false
+class: middle, inverse
+
+## Cryptography
+
+- Encryption and decryption
+- Signatures and verification
+
+So what?
+
+- Low level building blocks for blockchain
+- Similar to algorithms used for username/ password logins
+
+???
+
+- the "crypto" in cryptocurrency refers to cryptography,
+  and it is one of the base building blocks
+- those 2 examples are used in both the centralised web and the decentralised web
+
+---
+name: immutable-ledger
+layout: false
+class: middle, inverse
+
+## Immutable Ledger
+
+.width100percent[
+  ![Single entry accounting ledger](single-entry-accounting-ledger.png)
+]
+
+.footnote[
+  [src](https://en.wikipedia.org/wiki/File:Ledger.png)
+]
+
+???
+
+- here we see accounts, done the old school way,
+  written in pen in an accounts ledger blockquote
+- if the resolution is high enough, you'll notice that each line item has
+  a single entry for an amount
+- accounting nowadays uses double entry, so there are two columns,
+  one for credits, and another for debits.
+
+---
+layout: false
+class: middle, inverse
+
+## Immutable Ledger
+
+- Analogy: Triple entry ledger
+  - Debit, credit, signature
+- When a transaction is added to a ledger
+  - Can't delete, can't modify
+
+So what?
+
+- Better auditability than centralised systems
+
+???
+
+- double entry accounting makes "fudging" the ledger more difficult,
+  but doesn't prevent it
+- blockchain uses what became later known as triple entry accounting,
+  where you have (1) credit, (2) debit, and (3) digital signature,
+  and this effectively prevents and "fudging"
+- a nice side effect of everything being modelled as transactions on a ledger
+  is that it becomes readily auditable
+
+---
+name: dapps
+layout: false
+class: middle
+
+## DApps
+
+- [Transactions++](#transactions-plus)
+- [Data storage](#data-storage)
+- [Smart contracts](#smart-contracts)
+- [DApp](#dapp)
+
+???
+
+- Definition: TODO
+
+---
+name: transactions-plus
+layout: false
+class: middle, inverse
+
+## Transactions++
+
+.width100percent[
+  ![Blockchain with code and state](blockchain-with-code-and-state.png)
+]
+
+.footnote[
+  src: `DOI: 10.1016/j.future.2017.11.022`
+]
+
+???
+
+- In bitcoin, each transaction onto contained from, to, and amount.
+  You could also put data in there, but it was arbitrary, didn't have any meaning.
+- Ethereum did something novel, by adding the ability to put code and data in
+  each transaction.
+
+---
+layout: false
+class: middle, inverse
+
+## Transactions++
+
+- Bitcoin: Transfer currency
+- Ethereum: Also execute instructions, store data
+
+So what:
+
+- Building blocks: Payments + Programs
+- Centralised --> Decentralised
+
+???
+
+- This was a huge innovation, because once you have the ability to persist data,
+  and to have code that manipulates that data, you can write a programmer
+- So we already have payments, and now we can also create apps
+- But these apps are, for the first time, not centralised, but instead decentralised
+
+---
+name: data-storage
+layout: false
+class: middle, inverse
+
+## Data Storage
+
+.width70percent[
+  ![Hard disk](hard-disk.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Laptop-hard-drive-exposed.jpg)
+]
+
+???
+
+- Data is stored on the blockchain itself, which is good
+
+---
+layout: false
+class: middle, inverse
+
+## Data Storage
+
+- Data is stored in the blockchain itself
+
+So what:
+
+- Data cannot be modified once written
+  - 👍 Auditability
+  - 👍 Fraud prevention
+
+???
+
+- Good because that makes it auditable, and therefore harder to prevent fraud
+
+---
+name: smart-contracts
+layout: false
+class: middle, inverse
+
+## Smart Contracts
+
+.width70percent[
+  ![Solidity Smart Contract](./smart-contract-solidity.png)
+]
+
+.footnote[
+  [src](https://dappsdev.org/hands-on/solidity-intro/)
+]
+
+???
+
+- smart contracts are programs that are stored on the blockchain
+- here's an example of what one looks like written in Solidity,
+  which is the most common language they are written in at the moment
+
+---
+layout: false
+class: middle, inverse
+
+## Smart Contracts
+
+- Programs that run on a decentralised virtual machine
+- (quasi) Turing complete
+
+So what?
+
+- Many computers can verify program execution
+- Correct execution is guaranteed by consensus
+- In theory, can write any program
+
+???
+
+- the execution of smart contracts is also decentralised:
+- a client send a new input, it gets processed on multiple computers,
+  and the output gets added to the new state of the blockchain
+
+---
+name: dapp
+layout: false
+class: middle, inverse
+
+## DApp
+
+.width70percent[
+  ![centralised apps and decentralised apps](./capps-and-dapps.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:AppsVSdApps.jpg)
+]
+
+???
+
+- In this diagram, on the left we have centralised apps,
+  where each client talks to the same server.
+- and on the left we have decentralised apps,
+  where each client talks to every other client, in a decentralised manner
+
+---
+layout: false
+class: middle, inverse
+
+## DApp
+
+- App that "talks" to a smart contract
+- App --> Wallet --> Smart contract --> Blockchain
+
+So what:
+
+- These apps have immutable data stored on many devices
+- These apps are executed on many devices
+
+???
+
+- So dapps differ from centralised apps
+  - both data and execution are replicated across many devices in the network
+
+---
+name: use-yes
+layout: false
+class: middle
+
+## When to use
+
+- [Hype](#hype)
+- [Payments](#payments)
+- [Immutable data storage](#immutable-data-pro)
+- [Auth](#auth)
+
+???
+
+---
+name: hype
+layout: false
+class: middle, inverse
+
+## Hype
+
+.width100percent[
+  ![Hype Cycle](hype-cycle.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Hype-Cycle-General.png)
+]
+
+???
+
+- This diagram shows something called the hype cycle,
+  graphing the expectations of a new technology
+  - from when it was nascent and hardly anyone has heard of it,
+  - and up here when everyone is talking about it,
+  - to this trough here when it has become passe and it's not cool anymore,
+  - and finally this steady plateau at the end, where it becomes mature,
+    and is being used without any hype necessary
+- (show of hands who thinks we we are currently here - each part of the hype cycle)
+
+---
+layout: false
+class: middle, inverse
+
+## Hype
+
+- ~~Chase the buzzwords!~~
+- Could this tech become the next big thing?
+
+???
+
+- the last thing that you should be doing as a business, is making decisions about
+  adopting or not adopting a technology based on buzzwords, or how much hype it has
+- instead, do some research into the new technology,
+  - assess if it has any direct or indirect applications to you business
+  - does it open up the possibility for new features that were not previously possible
+  - does it radically change the manner if which you can implement an existing feature,
+    in a good way?
+- this applies, of course, not only to decentralised applications and blockchains,
+  but really to the adoption of any new technology
+- in this industry, the majority of people seem to conflate
+  the price or market cap of cryptocurrencies traded on exchanges,
+  with the maturity of the technology.
+  - this is not true most of the time - markets and prices are based
+    on demand and supply, and if there is just one thing that we have
+    learned from the ICO rush of 2017, it's that demand does not stem
+    from how how good a particular technology is
+
+---
+name: payments
+layout: false
+class: middle, inverse
+
+## Payments
+
+.width100percent[
+  ![Barter trade](./barter-trade.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Olaus_Magnus_-_On_Trade_Without_Using_Money.jpg)
+]
+
+???
+
+- Without payment systems, we'd still be doing this, exchanging goods and services
+  directly for other goods and services - in other words, barter trades
+
+---
+layout: false
+class: middle, inverse
+
+## Payments
+
+- Peer to peer payment was the 1st use case
+- No need for 3rd party payment processor
+
+???
+
+- When you build a business, you need a way to get paid
+- If you want to get paid in fiat currencies, you would typically implement an
+  integration with a credit card processor, or something similar
+- To accept cryptocurrencies OTOH, you don't need to have any external integrations,
+  it is built in!
+
+---
+name: immutable-data-pro
+layout: false
+class: middle, inverse
+
+## Immutable Data Storage
+
+.width100percent[
+  ![single entry accounting ledger](./single-entry-accounting-ledger.png)
+]
+
+.footnote[
+  [src](https://en.wikipedia.org/wiki/File:Ledger.png)
+]
+
+???
+
+- In the early days, businesses would track their accounts using something like this
+  a ledger book.
+- Cryptocurrencies model every single state change as a new transactions,
+  so that is where the term "immutable ledger" comes in
+
+---
+layout: false
+class: middle, inverse
+
+## Immutable Data Storage
+
+- Cannot "back date" a transaction
+- Cannot modify an old transaction
+- View transactions as audit logs
+- Fraud becomes harder
+
+&hellip; this opens up/ makes feasible many new use cases
+
+???
+
+- The word immutable simply means cannot be changed
+- In an immutable ledger, you can only add new entries,
+  existing entries are forever set in stone
+- To date, there has not been any form of ledger that has this property,
+  so that makes it interesting, and opens up a number of new use cases
+
+---
+name: auth
+layout: false
+class: middle, inverse
+
+## Auth
+
+.width70percent[
+  ![Username password](username-password.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Username_and_password_20170626.jpg)
+]
+
+???
+
+
+- In our current Internet, web 2.0, when we interact with websites,
+  we are accustomed to logging in using a username and password.
+
+---
+layout: false
+class: middle, inverse
+
+## Auth
+
+- DApps have built in primitives
+- Authorisation: You are who you say you are
+  - Digital signature algorithms
+- Authentication: You have permission to do a particular action
+  - Specific to smart contract implementation
+
+.footnote[
+  [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+]
+
+???
+
+- When you build a decentralised app, you don't need to BYO authentication
+  mechanisms for this, your wallet (which manages your key pairs)
+  does this for you by signing transactions
+
+---
+name: use-no
+layout: false
+class: middle
+
+## When not to use
+
+- [Poor user experience](#poor-ux)
+- [Slow transactions](#slow-tx)
+- [Data size restrictions](#data-size)
+- [Not anonymous](#not-anonymous)
+- [Unencrypted data](#not-anonymous)
+- [Immutable data](#immutable-data-con)
+- [Hard to hire](#hard-to-hire)
+
+???
+
+- .
+
+---
+name: poor-ux
+layout: false
+class: middle, inverse
+
+## Poor UX
+
+.width100percent[
+  ![Forgot password](./forgot-password.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Reset_password_en_wikipedia_proposal.png)
+]
+
+???
+
+- When we use site in which we have user accounts, we're accustomed to being
+  able to log in with a username and password,
+- and also have this expectation that when we forget passwords,
+  we'll be able to to this - and rest our passwords
+
+
+---
+layout: false
+class: middle, inverse
+
+## Poor UX
+
+- "Reset password"
+- Key management, wallets, are a huge stumbling block
+
+???
+
+- Public keys and private keys are used to accomplish a similar thing
+  to usernames and password, however, there is a critical difference,
+  which is that you as the user are entirely responsible for managing
+  those keys yourself. You cannot, and should not, ask another entity
+  to manage those keys on your behalf, that would defeat the premise
+  of decentralisation.
+- This, unfortunately, means that only the extremely technically savvy
+  users are able to operate decentralised apps. Think about what a user
+  has to do to even get started
+  - Have to install an extra piece of software for the wallet
+  - Have to learn new concepts to replace the old ones for username and password
+  - If you forget your "password" you lose everything, and cannot log in again
+- Now think about how much harder that would be for someone who is not
+  a developer, and does not know what a blockchain is, or what cryptography is
+
+---
+name: slow-tx
+layout: false
+class: middle, inverse
+
+## Slow Transactions
+
+.width100percent[
+  ![Speedometer](./speedometer.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Toyota_Corolla_2016_speedometer.jpg)
+]
+
+???
+
+- The average user should not need to care about what technology is behind
+  a particular app
+- Let use an example from web 2.0.
+  - If you are a developer you might care if your servers are written in
+    NodeJs or Java or .NET
+  - But if you are the average user, you may not know what those are,
+    and definitely do not care!
+  - Instead you just want the site to work, and to work fast!
+
+---
+layout: false
+class: middle, inverse
+
+## Slow Transactions
+
+- Throughput
+  - Transactions per second
+  - 10,000 Hz vs 7 Hz
+- Latency
+  - Time till response
+  - 0.3s vs 15s
+
+???
+
+- However, presently, when a user uses a decentralised app, it tuerns out
+  that they are in for a bad user experience in terms of speed
+- There are generally speaking two metrics that are relevant: throughput and Latency
+  - with a nodejs + postgres server, if you get your engineering right,
+    you can expect to hit about 10K transactions per second,
+    whereas on ethereum, you can expect to hit about 7 transactions per second
+  - again, with a well engineered nodejs + postgres server,
+    you can expect a latency of 300ms,
+    whereas on ethereum, you can expect to wait up to 15s
+- That being said, this area is probably the problem with the least concerns,
+  because there are many amazing innovations in this space that
+  are helping to solve scalability issues in blockchains
+
+---
+name: data-size
+layout: false
+class: middle, inverse
+
+## Data Size Restrictions
+
+.width100percent[
+  ![Oldest hard disk drive RAMAC 350](oldest-hard-disk-drive.png)
+]
+
+.footnote[
+- [src](https://commons.wikimedia.org/wiki/File:IBM_350_RAMAC.jpg)
+- [1956: 10K USD per MB, size of 2 refrigerators](https://thinkcomputers.org/the-history-of-the-hard-drive/)
+]
+
+???
+
+- Pictured here, we have the world's 1st hard disk, the IBM RAMAC 350
+- This was from 1956, and it cost 10K USD per megabyte
+
+---
+layout: false
+class: middle, inverse
+
+## Data Size Restrictions
+
+- Restricted to very small amounts of data
+- Cost: 4700 SGD per MB
+
+.footnote[
+  - [March 2019 calculation](https://dappsdev.org/deck/s01e02/#30)
+  - [April 2017 calculation](http://mitchellbarron.io/eth-storage)
+]
+
+???
+
+- Earlier this year, I did a calculation, and worked out that storage on Ethereum
+  costs about 5K SGD per megabyte, which means it's about a third of the cost in 1956
+- That also makes it the most expensive storage system (that I know of) at the moment
+- The effect of this is that it is only truly feasible to store tiny amounts of data
+  in a decentralised app, where all the data is stored on chain, because it simply
+  is not cost effective
+- Therefore when developing a DApp that needs larger data storage capacity,
+  one has to BYO storage, and this adds technical complexity, and often also
+  means a loss of decentralisation when centralised technologies are brought into the mix
+
+---
+name: not-anonymous
+layout: false
+class: middle, inverse
+
+## Pseudonymity
+
+.width100percent[
+  ![Anonymous mask](./anonymous-mask.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:G20_V_mask.jpg)
+]
+
+???
+
+- Many people assume that when you use a cryptocurrency, you are anonymous
+- You are actually probably better off using physical cash for payments
+  if you want anonymity, because every single transaction is in the open
+  for all to see, in the public
+
+---
+layout: false
+class: middle, inverse
+
+## Unencrypted Data
+
+- crypto != encrypted
+- all data is stored "as is"
+
+## Pseudonymity
+
+- **not** anonymity
+- crypto != anonymous
+
+???
+
+- The other thing worht noting is that cryptocurrecnies make heacy use of
+  cryptography for digital signature algorithms;
+  not so much their encryption alogrithms.
+- You base assumption should be that any data stored on the blockchain is
+  stored in the plain, and anyone can read it without requiring
+  to authenticate themselves as the owner of that data
+- When you use a cryptocurrency, it is true that while all transactions are public,
+  the from and to addresses are visible, but they aren't tied to your real world
+  identity. However, this is not anonymous. Technically that means that the
+  transactions are pseudonymous.
+- In fact there are many companies which offer
+  services which analyse public blockchain data to work out which addresses
+  belong to which people using various forensic accounting techniques.
+- There is also a bigger picture here,
+  in what leads to these assumptions or misconceptions,
+  which is that "crypto" is somehow both cryptocurrency as well as cryptography.
+  A better way to think about it is that cryptocurrencies make use of
+  some, but not all, parts of cryptography.
+
+---
+name: immutable-data-con
+layout: false
+class: middle, inverse
+
+## Immutable Data
+
+.width100percent[
+  ![Single entry accounting ledger](single-entry-accounting-ledger.png)
+]
+
+.footnote[
+  [src](https://en.wikipedia.org/wiki/File:Ledger.png)
+]
+
+???
+
+- Previously we saw how having an immutable ledger opens up new possibilities
+  by providing those guarantees that come with it.
+
+---
+layout: false
+class: middle, inverse
+
+## Immutable Data
+
+- You use case might need to
+  - "back date" entries
+  - modify old entries
+
+???
+
+- However, this same property can also close some doors for you.
+- Your business might have a genuine (non-fraudulent) need to alter existing records,
+  and in these cases, having an immutable ledger can be a hindrance rather than
+  a good thing.
+
+---
+name: hard-to-hire
+layout: false
+class: middle, inverse
+
+## Hard to hire
+
+.width100percent[
+  ![Hype Cycle](hype-cycle.png)
+]
+
+.footnote[
+  [src](https://commons.wikimedia.org/wiki/File:Hype-Cycle-General.png)
+]
+
+???
+
+- So this is the hype cycle diagram again, and where we are on it w.r.t. a new tech
+  can determine how hard it is to find talent with skills in that technology
+
+---
+layout: false
+class: middle, inverse
+
+## Hard to hire
+
+- Developers - Skillset is is not mainstream
+
+???
+
+- I remember in 2014, node.js was becoming quite popular, and was gaining serious
+  adoption as a backend technology choice.
+  Many companies were trying to hirte nodejs talent back then,
+  and often as a develoepr, you'd get recruiters spamming you with job ads
+  for "10 years" experience in NodeJs.
+  The problem was that NodeJs had only been around for 5 years at that time,
+  it was released in 2009.
+- Right now, in 2019, decentralised apps have been around for less than 5 years,
+  so you have no such thing as a senior developer with 10 years of experience in
+  this field. Someone with 4 years of experience is about as experienced as you
+  can get - and good luck hiring someone like that - it is virtually impossible.
+
+---
+name: ideation
+layout: false
+class: middle
+
+## Ideation
+
+
+???
+
+- .
+
+---
+name: slido-2
+layout: false
+class: middle, inverse
+
+## [sli.do](https://sli.do) -> #BBIS
+
+`-or-`
+
+.width33percent[
+  ![QR code for slido #BBIS](./qr-slido-bbis.png)
+]
+
+???
+
+- .
+
+---
+name: thanks
+layout: false
+class: middle, inverse
+
+## Thanks!
+
+???
+
+- Thank you everyone for coming!
+
+    </textarea>
+    <script src="/3rd/js/remark-0.14.0.min.js"></script>
+    <script>
+      const slideShow = remark.create();
+      document.addEventListener('tap', slideNumberListener);
+
+      function slideNumberListener (e) {
+        const classNames = [...e.target.classList];
+        if (classNames.indexOf('remark-slide-number') < 0) {
+          return;
+        }
+        e.preventDefault();
+        console.log('gotoNextSlide');
+        slideShow.gotoNextSlide();
+      }
+    </script>
+  </body>
+</html>
