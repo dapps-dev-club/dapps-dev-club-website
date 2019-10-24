@@ -1,6 +1,8 @@
 # DApps Dev Club website
 
-Source code for the website - [dappsdev.org](https://dappsdev.org/)
+Source code for the website of the Decentralised Apps Development Club.
+
+[dappsdev.org](https://dappsdev.org/)
 
 ## Author
 
