@@ -14,11 +14,10 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <script
-            key="autopilot"
-            dangerouslySetInnerHTML={{
-              __html: `(function(o){var b="https://stagingapi.bislr.net:8100/anywhere/",t="8a0a332b06164f32b17a159bb019197179692aebcadc44859251b247cee563f3",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});`
-            }}
-          ></script>
+            src="https://app.codefund.io/properties/680/funder.js?target=codefund-bottom-bar&theme=light&template=bottom-bar"
+            async
+          >
+          </script>
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
@@ -28,6 +27,7 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          <div id="codefund-bottom-bar"></div>
         </body>
       </html>
     )
