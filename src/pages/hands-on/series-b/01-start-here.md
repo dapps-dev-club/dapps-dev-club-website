@@ -67,6 +67,71 @@ git push -f origin master
 
 ```
 
+### From scratch
+
+```bash
+# initialise the project
+mkdir smart-contract-dev-patterns-workshop
+cd smart-contract-dev-patterns-workshop
+touch README.md
+```
+
+Edit your `README.md` file to add a basic description.
+You may use the following, modify as you see fit:
+
+```markdown
+# Smart Contract Development Patterns Workshop
+
+This is a **work in progress**.
+Please check back here later!
+
+## Instructions
+
+Instructions are available
+[here](http://dappsdev.org/hands-on/smart-contract-dev-patterns/).
+
+## Author
+
+[Brendan Graetz](http://bguiz.com/)
+
+## Licence
+
+GPL-3.0
+
+```
+
+```bash
+git init
+git add README.md
+git commit -m "docs: add README"
+git tag -a step-01-01 $( git rev-parse HEAD ) -m "step-01-01"
+```
+
+Note that `git rev-parse HEAD` simply returns the git commit hash for
+the most recent commit, that you just created.
+
+Visit `https://github.com/${YOUR_GITHUB_USERNAME}/repositories/new`
+
+For example: https://github.com/organizations/dapps-dev-club/repositories/new
+
+![Github - Create new repo - Button](./01-github-create-new-repo.png)
+
+Fill in fields ...
+
+![Github - Create new repo - Filled](./01-github-create-new-repo-filled.png)
+
+Copy the commands at the bottom of the page ...
+
+![Github - Create new repo - Commands](./01-github-create-new-repo-commands.png)
+
+```bash
+git remote add origin git@github.com:${YOUR_GITHUB_USERNAME}/smart-contract-dev-patterns-workshop.git
+git push -u origin master
+```
+
+Refresh your project's page on github,
+you should see your first commit there.
+
 ## More steps
 
 TODO
