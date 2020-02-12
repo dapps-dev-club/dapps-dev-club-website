@@ -17,8 +17,8 @@ This is a series of hands-on workshops that introduce the following contracts in
 ## Quick Links
 
 - [Start here](./01-start-here/)
-- [Ownable](./02-ownable)
-- [Pausable](./03-pausable)
+- [Ownable](./02-ownable/)
+- [Pausable](./03-pausable/)
 - [Non-fungible token](./04-non-fungible-token/)
 
 ## Recap
