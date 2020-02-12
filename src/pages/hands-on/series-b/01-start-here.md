@@ -14,15 +14,21 @@ tags:
 
 WIP!
 
-## Recap
+## Pre-requsites
 
-Previously, ...
+- A Github account
+- SSH keys set up, and authorised in your Github account
+- NodeJs set up, version `10.*`
+  - Use [nvm](https://github.com/nvm-sh/nvm) to install/ manage multiple versions if necessary
+- Ganache installed, version `2.1.*`
+- A POSIX compliant shell or terminal
+  - Linux: Your default terminal is OK
+  - Mac OSX: Your default terminal is OK
+  - Windows: `cmd` is **not OK**; need to install something else `git-terminal` or `WSL/2` instead
 
-## Preparation
+## More steps
 
-...
-
-## Steps
+TODO
 
 ...
 
