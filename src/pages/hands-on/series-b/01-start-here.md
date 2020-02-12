@@ -26,6 +26,47 @@ WIP!
   - Mac OSX: Your default terminal is OK
   - Windows: `cmd` is **not OK**; need to install something else `git-terminal` or `WSL/2` instead
 
+## Create a git repository
+
+You have 2 options.
+The quick way is to fork the demo repository.
+The not-so-quick way is to set it up from scratch.
+Both sets of instructions have been provided for your reference.
+
+### Fork demo repository
+
+Visit https://github.com/dapps-dev-club/smart-contract-dev-patterns-workshop and press the "Fork" button.
+
+![Github - Fork demo repo - Start](./01-github-fork-demo-repo.png)
+
+You should now see ...
+
+- Click "clone or download"
+- Select "clone with SSH" (you must be logged in, and have SSH keys set up)
+- Copy the git url
+
+![Github - Fork demo repo - Clone](./01-github-fork-then-clone.png)
+
+```bash
+git clone git@github.com:${YOUR_GITHUB_USERNAME}/smart-contract-dev-patterns-workshop.git
+
+```
+
+We roll back our local copy to the very first commit,
+which which can reference by the handy tag name `step-01-01`.
+
+```bash
+git reset --hard step-01-01
+```
+
+Ensure the git remote repository (on github) has rolled back too,
+to match your local git repository (on your computer).
+
+```bash
+git push -f origin master
+
+```
+
 ## More steps
 
 TODO
