@@ -302,6 +302,102 @@ You can read more about `git add --patch`,
 and its close relative `git add --interactive`,
 at this article on [git interactive staging](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging).
 
+## Intialise a Truffle project
+
+If you are already familiar with Truffle development,
+feel free to skip ahead to the next section.
+
+### Running npm executables
+
+We have already installed Truffle as a development dependency within this project -
+look in `package.json` -
+so let's use that version to initialise the Truffle project.
+Use the following command to reveal all of the executables
+that are available within the NodeJs modules that you have installed
+
+```bash
+$ ls -a $( npm bin )
+# several others, removed for brevity
+lrwxrwxrwx   1 bguiz bguiz    18 Feb 12 15:19 mocha -> ../mocha/bin/mocha
+lrwxrwxrwx   1 bguiz bguiz    14 Feb 12 15:19 solcjs -> ../solc/solcjs
+lrwxrwxrwx   1 bguiz bguiz    31 Feb 12 15:19 truffle -> ../truffle/build/cli.bundled.js
+
+$
+
+```
+
+When you run something via `npm run`, the value of `npm bin` is
+automatically prepended to the `PATH` environment variable.
+(That is how the `script` section in `package.json` works.)
+
+However to run these installed executables directly,
+via a shell command, we need to do this ourselves:
+
+```bash
+$( npm bin )/truffle init
+
+```
+
+The above command is effectively the same as running `truffle init`
+within an npm run script when Truffle is installed as a dependency,
+or as running `truffle init` on a global npm installation of Truffle,
+or as running `npx truffle init`.
+
+### Truffle configuration file
+
+This should generate a file named `truffle-config.js`.
+Open this file in your code editor, and modify the following values:
+
+(1) `networks.development`:
+
+```js
+    development: {
+     host: "127.0.0.1",
+     port: 7545,
+     network_id: 5777,
+    },
+
+```
+
+(2) `compilers.solc.version`:
+
+```js
+      version: '0.5.16',
+```
+
+Without the comments, your `truffle-config.js` file should now look like this.
+
+```javascript
+module.exports = {
+  networks: {
+    development: {
+     host: "127.0.0.1",
+     port: 7545,
+     network_id: 5777,
+    },
+  },
+  mocha: {
+  },
+  compilers: {
+    solc: {
+      version: '0.5.16',
+    }
+  }
+}
+```
+
+(You don't necessarily need to delete the comments, they might come in handy later.)
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git add -p
+git commit -m "proj: truffle init"
+git tag -a step-01-04 $( git rev-parse HEAD ) -m "step-01-04"
+git push origin master
+
+```
+
 ## More steps
 
 TODO
