@@ -211,6 +211,8 @@ Edit the `.gitignore` file to have the following files:
 
 ```
 
+### Version control for this step
+
 Don't forget to commit and push these changes to the git remote!
 
 ```bash
@@ -218,7 +220,7 @@ git add .
 git status
 git commit -m "proj: npm init + add dependencies + .gitignore"
 git tag -a step-01-02 $( git rev-parse HEAD ) -m "step-01-02"
-git push origin master
+git push origin master --tags
 
 ```
 
@@ -244,13 +246,15 @@ are likely to use frequently during development.
 
 ```
 
+### Version control for this step
+
 Don't forget to commit and push these changes to the git remote!
 
 ```bash
 git add -p
 git commit -m "proj: npm run scripts"
 git tag -a step-01-03 $( git rev-parse HEAD ) -m "step-01-03"
-git push origin master
+git push origin master --tags
 
 ```
 
@@ -328,10 +332,10 @@ $
 
 When you run something via `npm run`, the value of `npm bin` is
 automatically prepended to the `PATH` environment variable.
-(That is how the `script` section in `package.json` works.)
+(That is how the `script` section within `package.json` works.)
 
 However to run these installed executables directly,
-via a shell command, we need to do this ourselves:
+via a shell command, we need to do this by hand:
 
 ```bash
 $( npm bin )/truffle init
@@ -388,13 +392,15 @@ module.exports = {
 
 (You don't necessarily need to delete the comments, they might come in handy later.)
 
+### Version control for this step
+
 Don't forget to commit and push these changes to the git remote!
 
 ```bash
-git add -p
+git add truffle-config.js
 git commit -m "proj: truffle init"
 git tag -a step-01-04 $( git rev-parse HEAD ) -m "step-01-04"
-git push origin master
+git push origin master --tags
 
 ```
 
