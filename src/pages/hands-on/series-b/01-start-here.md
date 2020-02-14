@@ -697,17 +697,14 @@ git push origin master --tags
 Note that the `build` folder is `.gitignore`d,
 and that we do not intend to commit that.
 
-## More steps
-
-TODO
-
 ...
 
 ## Quick Links
 
-This workshop is part of a series:
+This workshop is part of  [a series](../ "Series - Smart Contract Development Patterns"):
 
 - [Start here](../01-start-here/) &hellip; You are here.
-- [Ownable](../02-ownable/)
-- [Pausable](../03-pausable/)
-- [Non-fungible token](../04-non-fungible-token/)
+- [Base contract](../02-base-contract/)
+- [Ownable](../03-ownable/)
+- [Pausable](../04-pausable/)
+- [Non-fungible token](../05-non-fungible-token/)

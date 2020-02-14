@@ -4,7 +4,7 @@ title: Pausable - Smart Contract Development Patterns
 date: 2020-02-11T10:36:00.000Z
 updatedDate: 2020-02-11T10:36:00.000Z
 draft: false
-description: "Pausable. The first hands-on workshop in a series about smart contract development patterns: Ownable, pausable, and non-fungible token"
+description: "Pausable. The fourth hands-on workshop in a series about smart contract development patterns: Ownable, pausable, and non-fungible token"
 section: "hands-on"
 authors:
   - bguiz
@@ -31,6 +31,7 @@ Previously, ...
 This workshop is part of a series:
 
 - [Start here](../01-start-here/)
-- [Ownable](../02-ownable/)
-- [Pausable](../03-pausable/) &hellip; You are here.
-- [Non-fungible token](../04-non-fungible-token/)
+- [Base contract](../02-base-contract/)
+- [Ownable](../03-ownable/)
+- [Pausable](../04-pausable/) &hellip; You are here.
+- [Non-fungible token](../05-non-fungible-token/)
