@@ -168,6 +168,85 @@ whereas `Bolsilmon` does not, because it has not been deployed yet.
 
 ![New smart contract - After compile before deploy - Ganache contracts](./02-after-compile-before-deploy-ganache-contracts.png)
 
+### Deploy empty contract
+
+Next, execute `npm run deploy`,
+and Truffle will take this compiled contract,
+and deploy it on the simulated blockchain running in Ganache.
+
+You should see output similar to the following:
+
+```bash
+$ npm run deploy
+
+> smart-contract-dev-patterns-workshop@0.0.0 deploy /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle migrate
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 0x6691b7
+
+
+2_bolsilmon.js
+==============
+
+   Deploying 'Bolsilmon'
+   ---------------------
+   > transaction hash:    0xee340f6223f7057d38b4eed1a34af107f7bc55235fc9d2d9f08789bc4203dbe1
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x51B2E14dd1A4b643dD3d72B33B819636886369EA
+   > block number:        3
+   > block timestamp:     1582010298
+   > account:             0x42A9dbF577d2B2129605e2F1d9cC3B626E29351d
+   > balance:             99.99245932
+   > gas used:            71270
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0014254 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0014254 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.0014254 ETH
+
+```
+
+Commentary:
+
+- See `Compiling your contracts` in the output.
+  This is because Truffle checks if the deployed version is up to date.
+  If it is not, it will automatically re-compile
+  (and subsequently deploy this new copy, not the previously compiled version).
+- See `Starting migrations` in the output.
+  This is where your migrations script is run.
+- See `Deploying 'Bolsilmon'` in the output.
+  This is the result of the migration,
+  showing the details of the deployment transaction.
+  A smart contract deployment is a transaction,
+  just like any other interaction with the blockchain.
+
+Switch to Ganache, and look in the "Contracts" tab again.
+This time you will notice that the the `Bolsilmon` smart contract
+has indeed been deployed, and has an address.
+
+![New smart contract - After compile after deploy - Ganache contracts](./02-after-compile-after-deploy-ganache-contracts.png)
+
 ## Quick Links
 
 This workshop is part of a series:
