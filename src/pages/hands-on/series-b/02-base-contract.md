@@ -85,6 +85,54 @@ In subsequent workshops, we will:
 - The subsequent workshops will be be short relative to this first one, however, they do introduce new concepts for those that have already completed the first series
 - The chief intent with these workshops is educational, the developed solutions here are merely referential, and by no means should you consider them audited or ready for production/ mainnet deployment
 
+## New smart contract
+
+To create a new smart contract within a Truffle project,
+we need to create not only the *smart contract*,
+but also the *migration script* for it.
+
+### Contract and migration files
+
+We do so by creating an empty `.sol` file in the `contracts` folder,
+and by making a copy of the existing file within the `migrations` folder.
+
+```bash
+touch contracts/Bolsilmon.sol
+cp migrations/1_initial_migration.js migrations/2_bolsilmon.js
+```
+
+Edit the smart contract file to give it the following contents:
+
+```solidity
+pragma solidity 0.5.16;
+
+contract Bolsilmon {
+  constructor()
+    public
+  {
+    // do nothing
+  }
+}
+
+```
+
+For the migrations file, you only need to replace all occurrences
+of `Migrations` with `Bolsilmon`.
+
+```diff
+--- migrations/2_bolsilmon.js
++++ migrations/2_bolsilmon.js
+@@ -1,5 +1,5 @@
+-const Migrations = artifacts.require("Migrations");
++const Bolsilmon = artifacts.require("Bolsilmon");
+
+ module.exports = function(deployer) {
+-  deployer.deploy(Migrations);
++  deployer.deploy(Bolsilmon);
+ };
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
