@@ -247,6 +247,19 @@ has indeed been deployed, and has an address.
 
 ![New smart contract - After compile after deploy - Ganache contracts](./02-after-compile-after-deploy-ganache-contracts.png)
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git commit -m "feat: empty main contract with migration"
+git tag -a step-02-01 $( git rev-parse HEAD ) -m "step-02-01"
+git push origin master --tags
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
