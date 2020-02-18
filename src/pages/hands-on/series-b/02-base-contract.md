@@ -43,6 +43,40 @@ Here are the design specifications for this smart contract.
   - The owner can pause a subset of the functions of this smart contract
 - One account may send a Mon that it owns to another account.
 
+## Implementation plan
+
+In this workshop, we will:
+
+- Create a new smart contract, `Bolsilmon.sol`
+- Create a Truffle deployment for the `Bolsilmon` smart contract
+- Define a `struct` named `Mon` to represent each Mon
+- Define mappings and related state variables to track the Mons' creations and births
+- Define a `createMon` function for the first step in the Mon creation process
+- Define a `birthMon` function for the second step in the Mon creation process
+- Define a `struct` named `MonMate` to represent each mate request
+- Define mappings and related state variables to track the mate requests
+- Define a `mateRequest` function for the first step in the mate process, to be called by the initiator
+- Define a `geneSplice` function to compute the randomised genes, for internal use in the mate process
+- Define a `mateAccept` function for the second step in the mate process, to be called by the acceptor
+- Define a `mateReject` function for the alternative second step in the mate process, to be called by the acceptor
+- Define an `ownerWithdrawal` function that enables the fees collected by the smart contract to be withdrawn by its owner
+
+In subsequent workshops, we will:
+
+- Create a new smart contract, `Ownable.sol`
+- This implements the `Ownable` pattern
+  - Allows for ownership to be transferred, and accepted
+  - Paves the way for future restrictions that certain function invocations may only be performed by its owner
+- Modify the `Bolsilmon` contract to be `Ownable`
+- Create a new smart contract, `Pausable.sol`
+- This implements the `Pausable` pattern
+  - Allows the owner, exclusively, toggle the paused state
+  - Paves the way for future restrictions that certain functions invocations may only be performed by its owner
+- Modify the `Bolsilmon` contract to be `Pausable`, which in turn is still `Ownable`
+- Modify `Bolsilmon` to import `ERC721` from Open Zeppelin
+- This implements the ERC721 non-fungible token specification
+- Modify existing functions to represent Mons as non-fungible tokens, and enable them to be transferred between accounts
+
 ## Quick Links
 
 This workshop is part of a series:
