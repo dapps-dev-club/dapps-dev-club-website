@@ -25,9 +25,23 @@ In this workshop, we will create our own smart contract,
 which will be the "base contract" used during the remainder
 of the workshops in this series.
 
-## Steps
+## Design specifications
 
-...
+Here are the design specifications for this smart contract.
+
+- Name: Bolsillo Monstruos
+- Each account can create a **Mon** in a 2 step process
+  1. Create the Mon with a random "seed" for its genes. This account must pay an amount to the smart contract do so.
+  2. Birth the Mon that was created earlier, after waiting a certain amount of time. The wait is to ensure randomisation of the new Mon's genes.
+- Two accounts can reproduce Mons that they own, in a 2 step process
+  1. The initiator account can send a "mate request" to the acceptor account. The initiating account must pay an amount to the smart contract do so.
+  2. The acceptor account may then either accept or reject this mate request.
+    - The acceptor rejects: The mate request is forgotten, and a partial amount previously paid by the initiator is paid to the acceptor, with the smart contract retaining the remainder.
+    - The acceptor accepts: After waiting a certain amount of time. The genes of the initiator's Mon and the acceptor's Mon are spliced together, in a manner inspired by DNA in biology, and creates + births a new Mon that probabilistically has half of each of its parent Mons' genes. The wait is to ensure randomisation of the splicing process. The mate request is is fulfilled, and a partial amount previously paid by the initiator is paid to the acceptor, with the smart contract retaining the remainder
+- This contract may designate an owner
+  - The owner can withdraw funds stored by the smart contract
+  - The owner can pause a subset of the functions of this smart contract
+- One account may send a Mon that it owns to another account.
 
 ## Quick Links
 
