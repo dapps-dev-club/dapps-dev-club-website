@@ -77,6 +77,14 @@ In subsequent workshops, we will:
 - This implements the ERC721 non-fungible token specification
 - Modify existing functions to represent Mons as non-fungible tokens, and enable them to be transferred between accounts
 
+## General notes
+
+- We will endeavour to test all code that is written by us thoroughly
+- We will endeavour to to use best practices, and avoid common pitfalls
+- This workshop will be the longest one, however, it introduces very few new concepts for those that have already completed the first series
+- The subsequent workshops will be be short relative to this first one, however, they do introduce new concepts for those that have already completed the first series
+- The chief intent with these workshops is educational, the developed solutions here are merely referential, and by no means should you consider them audited or ready for production/ mainnet deployment
+
 ## Quick Links
 
 This workshop is part of a series:
