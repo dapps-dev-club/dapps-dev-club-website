@@ -527,6 +527,26 @@ This function is not quite complete yet, however.
 We need to define a couple of new things outside of this function,
 before we come back to it and complete it.
 
+### Define a `MonCreate` event
+
+Under `// events`, add the following:
+
+```solidity
+  event MonCreate (
+    uint256 indexed monId,
+    address indexed owner
+  );
+
+```
+
+This simply means that there is now an `event` with the name `MonCreate`,
+and it has two fields, and unsigned integer, and an address.
+
+The `indexed` keyword here indicates that the events are emitted
+in such a manner that they may be searched using those fields.
+As this comes at a higher cost, there is a limit of three such fields.
+See [Solidity's document on events](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#events).
+
 ## Quick Links
 
 This workshop is part of a series:
