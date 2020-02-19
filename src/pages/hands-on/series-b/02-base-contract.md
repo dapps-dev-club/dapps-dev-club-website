@@ -582,6 +582,42 @@ which will throw (and therefore prevent the function from executing),
 when the amount sent together with the transaction (`msg.value`),
 is less than the amount specified in the parameter.
 
+### Modify `monCreate` to ensure minimum payment
+
+Under `// state variables`, add the following:
+
+```solidity
+  uint256 public createPrice = 0.1 ether;
+
+```
+
+This creates a state variable, which we will use shortly.
+
+Next, we add the modifier to the `createMon` function.
+The top part of the function should now look like this:
+
+```solidity
+  function createMon(
+    bytes32 geneSeed
+  )
+    external
+    payable
+    minPayment(createPrice)
+    returns(uint256 monId)
+  {
+
+```
+
+The part just added was `minPayment(createPrice)`.
+This makes the `createMon` function use
+the `minPayment` modifier that we have just defined above.
+The `amount` parameter sent to the modifier is the value of `createPrice`,
+which is a state variable in this smart contract.
+Tracing these values, the end effect of this is that
+the `createMon` function will not run unless
+the transaction in which it is invoked sends (`msg.value`)
+at least *0.1 ether* (`createPrice`) along with it.
+
 ## Quick Links
 
 This workshop is part of a series:
