@@ -302,6 +302,25 @@ that the smart contract is comprised of by category:
 This makes it easier to find what we are looking for,
 as we expect the size of this file to get quite large.
 
+### The Mon struct
+
+Under the section demarcated by `// structs`,
+add the first one:
+
+```solidity
+  struct Mon {
+    uint256 createBlock;
+    bool born;
+    bytes32 genes;
+  }
+
+```
+
+Keep in mind that this point,
+this smart contract does not yet store any state.
+A `struct` merely defines a logical grouping
+of state variables.
+
 ## Quick Links
 
 This workshop is part of a series:
