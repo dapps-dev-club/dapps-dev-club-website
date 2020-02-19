@@ -260,6 +260,48 @@ git push origin master --tags
 
 ```
 
+## Mon `struct`s and state variables
+
+This smart contract needs to represent multiple Mons,
+and therefore need to store data about all of them.
+We will use `struct`s to model the state of an individual Mon,
+and `uint256`s and `mapping`s to store the state of multiple Mons.
+
+### Smart contract arrangement
+
+Before we start with the above, a little housekeeping.
+A little organisation up front paves the way for
+easier to navigate code further along.
+
+Modify `contracts/Bolsilmon.sol` to add the following comments:
+
+```diff
+--- contracts/Bolsilmon.sol
++++ contracts/Bolsilmon.sol
+@@ -1,6 +1,15 @@
+ pragma solidity 0.5.16;
+
+ contract Bolsilmon {
++  // structs
++
++  // events
++
++  // state variables
++
++  // modifiers
++
++  // functions
+   constructor()
+     public
+   {
+```
+
+In this workshop, we will be grouping the different elements
+that the smart contract is comprised of by category:
+`struct`, `event`, state variable, `modifier`, and `function`.
+This makes it easier to find what we are looking for,
+as we expect the size of this file to get quite large.
+
 ## Quick Links
 
 This workshop is part of a series:
