@@ -374,6 +374,20 @@ git push origin master --tags
 
 ```
 
+## Creating a new Mon
+
+The `createMon` function will allow a user to
+create a Mon with a random "seed" for its genes.
+It expects the account to pay an amount to the smart contract
+for the right to do so.
+Since this function modifies the state,
+we should also emit an event to notify any listener
+the a state change has occurred.
+
+Note that, as per the design,
+the new Mon has not yet been *born*.
+That will require a subsequent function call.
+
 ## Quick Links
 
 This workshop is part of a series:
