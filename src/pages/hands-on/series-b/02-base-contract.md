@@ -321,6 +321,46 @@ this smart contract does not yet store any state.
 A `struct` merely defines a logical grouping
 of state variables.
 
+### A collection of Mons using state variables
+
+Under the section demarcated by `// state variables`,
+add these three:
+
+```solidity
+  uint256 public numMons = 0;
+  mapping(uint256 => Mon) public mons;
+  mapping(uint256 => address) public monCreators;
+
+```
+
+Using a combination of a `uint256` state variable
+and a `mapping(uint256 => $STRUCT)` is a common pattern
+used in Solidity for storing a collection of information.
+This is what we have done with `numMons` and `mons`.
+
+You may have noticed earlier that when we defined the `struct`,
+it did not define a field named `address owner`.
+If we had done this, when we have a Mon,
+we can find out who its owner is by looking up a property:
+e.g. `mon.owner`.
+
+Instead, we have chosen to keep this information stored
+in a separate `mapping` called `monCreators`.
+This is done for a couple of reasons:
+
+1. We would like to be able to look up a Mon's owner directly,
+   without retrieving the full Mon `struct`.
+2. This has implications at a later stage of the project,
+   when we implement a non-fungible token standard,
+   which may not be apparently just yet.
+   We shall get to that in a later workshop.
+
+At that this point, this smart contract does store some state.
+
+Compile the smart contract to ensure that you have no compilation errors,
+using `npm run compile`.
+The output should be similar to the compile output we saw earlier.
+
 ## Quick Links
 
 This workshop is part of a series:
