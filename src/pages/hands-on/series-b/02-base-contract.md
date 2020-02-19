@@ -388,6 +388,145 @@ Note that, as per the design,
 the new Mon has not yet been *born*.
 That will require a subsequent function call.
 
+### Define a `createMon` function
+
+Under `// functions` we already have the `constructor`.
+Underneath that, add this new function:
+
+```solidity
+  function createMon(
+    bytes32 geneSeed
+  )
+    public
+    payable
+    returns(uint256 monId)
+  {
+    monId = ++numMons;
+    Mon memory newMon = Mon(
+      block.number,
+      false,
+      geneSeed
+    );
+    mons[monId] = newMon;
+    monCreators[monId] = msg.sender;
+  }
+```
+
+Next, let us look through this one part at a time.
+
+#### Function name
+
+```solidity
+  function createMon
+
+```
+
+This is the function's name -
+`createMon`.
+
+#### Function parameter list
+
+```solidity
+  (
+    bytes32 geneSeed
+  )
+
+```
+
+This is the function's parameter list -
+it accepts one parameter named `geneSeed`,
+whose type is `bytes32`.
+
+#### Function modifier list
+
+```solidity
+    public
+    payable
+
+```
+
+This is the function's modifier list -
+it is both *public* and *payable*.
+These are both built-in modifiers,
+available from `solc`.
+Custom modifiers (ones that you write yourself)
+may also go here, if needed.
+
+#### Function return types
+
+```solidity
+    returns(uint256 monId)
+```
+
+This is the function's return types -
+it returns a single `uint256`.
+Since the return type has been given a name, `monId`,
+a variable with this name and type is available within
+the scope of the function,
+and its value at the point at which the function exits will be returned,
+without the need for an explicit return statement.
+
+#### Function body
+
+```solidity  {
+    monId = ++numMons;
+    Mon memory newMon = Mon(
+      block.number,
+      false,
+      geneSeed
+    );
+    mons[monId] = newMon;
+    monCreators[monId] = msg.sender;
+  }
+
+```
+
+This is the function's body.
+The code that appears between the opening `{`
+and the closing `}` will have access to
+the parameters of the function,
+the state variables of this smart contract,
+and the "return variable" (mentioned above).
+It also has the ability to call any functions
+in this smart contract that are have a modifier of
+`public`, `internal`, and private;
+but may not call any functions with an `external` modifier.
+
+#### Function as a whole
+
+What does this function actually do?
+
+1. It takes an input of 32 bytes, representing a seed used to initialise the genes for the new Mon.
+2. It increments the `numMons` state variable by 1, and uses this as the ID of the new Mon about to be created.
+    ```solidity
+        monId = ++numMons;
+
+    ```
+3. It creates a new `struct` representing a Mon, containing the current block number, a boolean flag to indicate that the Mon is not yet born, and the gene seed from the input.
+    ```solidity
+      Mon memory newMon = Mon(
+        block.number,
+        false,
+        geneSeed
+      );
+
+    ```
+4. It stores the new Mon's data within the `mons` `mapping`, and stores the owner of the Mon in the `monCreators` `mapping`.
+    ```solidity
+        mons[monId] = newMon;
+        monCreators[monId] = msg.sender;
+
+    ```
+5. It returns an output of unsigned integer, representing the ID of the newly created Mon.
+
+Note that `msg.sender` is the address of the account that calls a function.
+This is a special variable built into Solidity by its compiler.
+See [Solidity's documentation on block and transaction properties](https://solidity.readthedocs.io/en/v0.5.15/units-and-global-variables.html#block-and-transaction-properties).
+
+This function is not quite complete yet, however.
+We need to define a couple of new things outside of this function,
+before we come back to it and complete it.
+
 ## Quick Links
 
 This workshop is part of a series:
