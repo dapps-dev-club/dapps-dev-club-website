@@ -618,6 +618,23 @@ the `createMon` function will not run unless
 the transaction in which it is invoked sends (`msg.value`)
 at least *0.1 ether* (`createPrice`) along with it.
 
+### Modify `monCreate` to emit an event
+
+We also add the event to the `monCreate` event.
+This time, it should be at the bottom of the function.
+
+```solidity
+    emit MonCreate(
+      monId,
+      msg.sender
+    );
+
+```
+
+Any clients that are listening to events emitted by this smart contract
+may now learn about the creation on new Mons,
+without polling (querying at regular intervals).
+
 ## Quick Links
 
 This workshop is part of a series:
