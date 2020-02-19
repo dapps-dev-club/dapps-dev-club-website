@@ -635,6 +635,19 @@ Any clients that are listening to events emitted by this smart contract
 may now learn about the creation on new Mons,
 without polling (querying at regular intervals).
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol
+git commit -m "feat: createMon function, minPayment modifier, and MonCreate event"
+git tag -a step-02-03 $( git rev-parse HEAD ) -m "step-02-03"
+git push origin master --tags
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
