@@ -361,6 +361,19 @@ Compile the smart contract to ensure that you have no compilation errors,
 using `npm run compile`.
 The output should be similar to the compile output we saw earlier.
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git commit -m "feat: define struct and state vars to represent collection of Mons"
+git tag -a step-02-02 $( git rev-parse HEAD ) -m "step-02-02"
+git push origin master --tags
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
