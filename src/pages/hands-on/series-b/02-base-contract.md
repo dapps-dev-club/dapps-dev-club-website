@@ -547,6 +547,41 @@ in such a manner that they may be searched using those fields.
 As this comes at a higher cost, there is a limit of three such fields.
 See [Solidity's document on events](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#events).
 
+### Define a `minPayment` modifier
+
+Under `// modifiers`, add the following:
+
+```solidity
+  modifier minPayment(
+    uint256 amount
+  ) {
+    require(
+      msg.value > createPrice,
+      "You need to pay more"
+    );
+    _;
+  }
+
+```
+
+This creates a modifier, which looks very similar to a function.
+The main distinction is the `_;` which indicates a placeholder
+for further code execution.
+When a function specifies that it uses a particular modifier,
+that modifier's code is executed,
+and where the `_;` appears, the function's code is executed.
+
+In the case of this modifier,
+since the `_;` appears at the bottom of the modifier,
+it means that the modifier's code runs *before*
+the function's code.
+
+What does this modifier actually do?
+It runs a single `require` statement,
+which will throw (and therefore prevent the function from executing),
+when the amount sent together with the transaction (`msg.value`),
+is less than the amount specified in the parameter.
+
 ## Quick Links
 
 This workshop is part of a series:
