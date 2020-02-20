@@ -723,6 +723,28 @@ contract('Bolsilmon - initial state', () => {
 
 Let us take a look at this bit by bit.
 
+### Assertions
+
+```javascript
+const assert = require('assert');
+
+```
+
+This is not an external library, but rather the built in
+[`assert` module](https://nodejs.org/api/assert.html)
+that comes with NodeJs core.
+Most Javascript test frameworks do not have a built-in assertions library,
+opting instead to leave you to import your own choice.
+The [Chai](https://www.chaijs.com/) assertions library is
+a very popular choice among developers using Mocha as the test framework.
+Who would have thought that **café con chocolate**
+goes well with **té con especias**? 😂
+
+Anyway, for the purposes of keeping the surface area of
+this workshop as small as possible,
+we will not be using Chai, or any other assertions library.
+The built in `assert` works just fine for our pruposes.
+
 ## Quick Links
 
 This workshop is part of a series:
