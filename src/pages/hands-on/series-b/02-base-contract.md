@@ -914,6 +914,38 @@ and other aspects of it are left as an exercise for you.
 
 With that said, let's continue writing more tests!
 
+### Writing happy path tests
+
+In a typical set of tests for a smart contract,
+you would typically have both "happy path" tests and "failure path" tests.
+Happy path tests are when an interaction is successful.
+Failure path tests are when when an interaction is unsuccessful.
+Since failure path tests typically **do not** modify state,
+whereas happy paths tests **do** modify state,
+is is common to write the failure path tests first,
+and then write the happy path tests.
+
+In this particular case, there is no possible failure path
+for the intialisation of this smart contract -
+note that the constructor currently does not do anything -
+and thus we do not have any failure paths tests to write.
+We will skip ahead to writing a happy path test,
+that checks/ verifies the initial state of the smart contract.
+
+```javascript
+  it('initial state', async () => {
+    const inst = await Bolsilmon.deployed();
+
+    const numMons = await inst.numMons.call();
+
+    assert.equal(numMons.toString(), '0',
+      'Unexpected numMons initial value');
+  });
+
+```
+
+Let us look at this part by part.
+
 ## Quick Links
 
 This workshop is part of a series:
