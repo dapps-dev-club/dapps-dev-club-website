@@ -1074,6 +1074,30 @@ git push origin master --tags
 
 ```
 
+## Workshop progression check
+
+Here is a quick aside to comment on the
+general progression of this workshop.
+
+At this point, we have already covered almost all of
+the development patterns that we will be using
+in the development of the base contract.
+We will be going through writing implementations for,
+and tests for, several more functions in this smart contract.
+However, wil will be switching up the pace a little,
+in order to avoid a lot of repetition,
+as well as to keep the duration of this workshop manageable.
+
+As such, some things will be glossed over,
+and you are expected to read through them,
+and view them through the lens of the code and
+explanations that we have seen thus far in order to understand them.
+Feel free to jump from tag to tag in the sample git repository,
+view `diff`s between them, et cetera, to get a better picture.
+
+If there are any parts which are unclear,
+please do not hesitate to ask questions!
+
 ## Quick Links
 
 This workshop is part of a series:
