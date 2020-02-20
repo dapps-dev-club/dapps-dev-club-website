@@ -745,6 +745,46 @@ this workshop as small as possible,
 we will not be using Chai, or any other assertions library.
 The built in `assert` works just fine for our pruposes.
 
+### Smart contract Javascript representation
+
+We have written the smart contract in Solidity,
+but need to interact with it in Javascript,
+since that is how we're writing our tests.
+
+Thankfully this is done really easily, as we have web3.js.
+When developing the front end of an in-browser DApp,
+you are likely to use web3.js.
+Among other things, you can pass it
+the address at which as smart contract is deployed,
+and its application binary interface (ABI),
+and it will return a Javascript object
+that abstracts the low-level code required to
+interact with the smart contract.
+
+In the
+[previous workshop](../01-start-here/ "Start here - Smart Contract Development Patterns"),
+we observed that after we compiled and deployed smart contracts,
+they appeared in `build/contracts/*.json`.
+For example, take a look at `build/contracts/Bolsilmon.json`
+to see what Truffle has stored for our main contract.
+
+
+```javascript
+const Bolsilmon = artifacts.require('Bolsilmon');
+
+```
+
+The global variable `artifacts` is made available by Truffle,
+and `artifacts.require()` loads information about smart contracts
+that are stored in `build/contracts/*.json`,
+including, critically, its deployed address, and ABI.
+It then wraps this with web3.js and adds its own Truffle wrapper,
+giving you a copy of your smart contract ready for use within
+Javascript tests.
+
+> Note: Please do not confuse `artifacts.require()` with
+> the `require()` that is from NodeJs core - they are not the same.
+
 ## Quick Links
 
 This workshop is part of a series:
