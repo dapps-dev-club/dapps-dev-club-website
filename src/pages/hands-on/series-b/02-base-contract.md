@@ -810,6 +810,28 @@ which is an array of accounts.
 > Note: When we don't need accounts in any of the tests within
 > the `describe` block, we can omit the `accounts` a parameter.
 
+### The `it` block
+
+The `it` block in standard Mocha, is the same as
+the `it` block in Truffle's Mocha.
+
+```javascript
+  it('should initialise', async () => {
+    // assertions go here
+  });
+
+```
+
+- Its first parameter is a string,
+representing the name or description for this particular test.
+- Its second parameter is a callback function,
+within which any assertions should go.
+
+> Note: The callback function technically can be `async` or not.
+> However, many operations on smart contract are asynchronous,
+> as they have to interact with a blockchain via RPC.
+> Thus, virtually all tests need to be `async`.
+
 ## Quick Links
 
 This workshop is part of a series:
