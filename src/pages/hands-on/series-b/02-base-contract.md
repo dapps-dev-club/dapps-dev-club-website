@@ -892,6 +892,28 @@ and underneath it, indented, the name/ description of the `it` block.
 Right at the bottom, there is a summary,
 showing that the one and only test has passed.
 
+### A note on test driven development
+
+[Test driven development](https://en.wikipedia.org/wiki/Test-driven_development)
+(TDD) is an approach that is often used in software engineering,
+which requires the developer to write tests prior to
+implementing the parts of the application that meet the test criteria.
+
+In these workshops, however, we will not be taking that approach,
+and instead progress using a development cycle where
+we implement something prior to writing tests for it.
+
+TDD is indeed a valid approach toward software engineering,
+and there is nothing particular to smart contracts which prevent this.
+I would encourage those among you who would like to
+follow along these workshops while adhering to the TDD approach
+to do so by simply skipping ahead to the steps involving tests,
+and then jumping back to the implementation as appropriate.
+That would accommodate the main aspect of TDD,
+and other aspects of it are left as an exercise for you.
+
+With that said, let's continue writing more tests!
+
 ## Quick Links
 
 This workshop is part of a series:
