@@ -858,6 +858,40 @@ Thus, this test is a little bit pointless,
 but it serves as an easy "first test",
 and serves well for demonstrating the process of testing a smart contract.
 
+### Running tests and looking at output
+
+The command `npm t` is shorthand for `npm run test`,
+which in turn runs `truffle test`.
+Upon running it, you should get output similar to the following:
+
+```bash
+$ npm t
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - initial state
+    ✓ should initialise
+
+
+  1 passing (23ms)
+
+```
+
+This shows you the name/ description of the `contract` block,
+and underneath it, indented, the name/ description of the `it` block.
+Right at the bottom, there is a summary,
+showing that the one and only test has passed.
+
 ## Quick Links
 
 This workshop is part of a series:
