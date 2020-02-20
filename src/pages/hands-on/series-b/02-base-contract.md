@@ -695,6 +695,34 @@ This distinction may appear superfluous at first,
 but will become apparent later on,
 for example, it influences how we can mock smart contracts.
 
+### Writing your first test
+
+```bash
+mkdir -p test/Bolsilmon
+touch test/Bolsilmon/00-init.spec.js
+
+```
+
+Open up `touch test/Bolsilmon/00-init.spec.js` in your code editor,
+and add the following contents:
+
+```javascript
+const assert = require('assert');
+
+const Bolsilmon = artifacts.require('Bolsilmon');
+
+contract('Bolsilmon - initial state', () => {
+  it('should initialise', async () => {
+    assert.doesNotThrow(async () => {
+      await Bolsilmon.deployed();
+    });
+  });
+});
+
+```
+
+Let us take a look at this bit by bit.
+
 ## Quick Links
 
 This workshop is part of a series:
