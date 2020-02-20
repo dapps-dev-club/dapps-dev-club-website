@@ -957,6 +957,43 @@ we obtain an instance of the smart contract.
 
 ```
 
+#### Query smart contract state
+
+Let us query all of the `uint256` state variables
+that are stored in this smart contract:
+
+```bash
+    const numMons = await inst.numMons.call();
+
+```
+
+The code `await inst.SOME_VARIABLE_NAME.call()`,
+queries the smart contract for a primitive value.
+However, it makes this query on a local copy,
+thus resulting in no transaction being recorded on the blockchain.
+
+For non-primitive values,
+[`mapping`](https://solidity.readthedocs.io/en/v0.5.15/types.html#mapping-types) and
+[`array`](https://solidity.readthedocs.io/en/v0.5.15/types.html#arrays),
+simply add the key that you wish to look up as the parameter of `.call()`.
+For example:
+
+```javascript
+    const mon = await inst.mons.call(new BN(1));
+
+```
+
+The above would query the `mons` `mapping`,
+and return the Mon at key `1`.
+
+At this point however, the mappings are empty,
+and there is no point in querying them.
+So we are not going to do that within this test.
+
+> Note: `BN` is a big number utility library,
+> which we have yet to introduce at this point.
+> We shall get to that later.
+
 ## Quick Links
 
 This workshop is part of a series:
