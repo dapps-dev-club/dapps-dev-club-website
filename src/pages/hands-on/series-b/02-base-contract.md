@@ -785,6 +785,31 @@ Javascript tests.
 > Note: Please do not confuse `artifacts.require()` with
 > the `require()` that is from NodeJs core - they are not the same.
 
+### The `contract` block
+
+As mentioned earlier, the `contract` block in Truffle's Mocha
+is similar to the `describe` block in standard Mocha.
+It is used to group similar tests together.p of tests.
+
+```solidity
+contract('Bolsilmon - initial state', (accounts) => {
+  // `it` blocks go here
+});
+
+```
+
+- Its first parameter is a string,
+representing the name or description for this group of tests.
+- Its second parameter is a callback function,
+within which all the tests go.
+In standard Mocha, the callback function does **not**
+have any parameters of its own, however,
+in Truffle's Mocha callback function has one parameter,
+which is an array of accounts.
+
+> Note: When we don't need accounts in any of the tests within
+> the `describe` block, we can omit the `accounts` a parameter.
+
 ## Quick Links
 
 This workshop is part of a series:
