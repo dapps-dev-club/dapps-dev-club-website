@@ -527,6 +527,9 @@ This function is not quite complete yet, however.
 We need to define a couple of new things outside of this function,
 before we come back to it and complete it.
 
+Read more:
+[Solidity documentation of functions](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#functions)
+
 ### Define a `MonCreate` event
 
 Under `// events`, add the following:
@@ -545,7 +548,7 @@ and it has two fields, and unsigned integer, and an address.
 The `indexed` keyword here indicates that the events are emitted
 in such a manner that they may be searched using those fields.
 As this comes at a higher cost, there is a limit of three such fields.
-See [Solidity's document on events](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#events).
+See [Solidity's documentation on events](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#events).
 
 ### Define a `minPayment` modifier
 
@@ -581,6 +584,9 @@ It runs a single `require` statement,
 which will throw (and therefore prevent the function from executing),
 when the amount sent together with the transaction (`msg.value`),
 is less than the amount specified in the parameter.
+
+Read more:
+[Solidity documentation for function modifiers](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#function-modifiers)
 
 ### Modify `monCreate` to ensure minimum payment
 
@@ -634,6 +640,9 @@ This time, it should be at the bottom of the function.
 Any clients that are listening to events emitted by this smart contract
 may now learn about the creation on new Mons,
 without polling (querying at regular intervals).
+
+Read more:
+[Solidity documentation for events](https://solidity.readthedocs.io/en/v0.5.15/contracts.html#events).
 
 ### Version control for this step
 
