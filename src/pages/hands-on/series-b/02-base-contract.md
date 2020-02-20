@@ -1023,6 +1023,44 @@ which uses the following parameters:
 > Thus the actual values are converted to `String`s using `.toString()`,
 > and expected values are numbers that are quoted `String` literals.
 
+### Re-running tests and looking at output
+
+We have just completed writing our very first tests
+for this smart contract,
+which check that has been deployed,
+and that its initial values are what expect them to be
+prior to any function calls.
+
+We re-run the tests, using the same `npm t` command.
+
+```bash
+$ npm t
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - initial state
+    ✓ should initialise
+    ✓ initial state
+
+
+  2 passing (43ms)
+
+```
+
+The output should be almost the same as the previous time we ran the tests.
+The only difference is that there is an extra line: `✓ initial state`.
+Also, the final line should indicate that there are now two tests.
+
 ## Quick Links
 
 This workshop is part of a series:
