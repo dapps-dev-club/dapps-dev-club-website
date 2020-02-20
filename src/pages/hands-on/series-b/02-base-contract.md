@@ -657,6 +657,44 @@ git push origin master --tags
 
 ```
 
+## Testing smart contract initialisation
+
+One of Truffle's most useful features is that it provides
+a built in testing framework for your smart contracts.
+Any contracts that can be compiled and deployed successfully
+may be tested.
+
+Truffle did not re-invent the wheel with its own test framework,
+but instead builds upon one of the most popular
+Javascript test frameworks: [Mocha](https://mochajs.org/).
+So if you have previously written tests for a Javascript project,
+this will feel very familiar.
+
+Specifically, if you have used Mocha before,
+the two syntactic differences that you will notice are that:
+
+1. You can use a `contract` block in place of `describe` block.
+   You are still free to use describe blocks for grouping.
+2. The first parameter of the `contract` block's callback function
+   is an array of account addresses.
+   The state of the smart contracts being tested remain intact
+   across multiple tests within the `contract` block,
+   but are reset between one `contract` block and the next.
+
+Apart from these,
+all other syntax is the same as the standard Mocha framework.
+
+There is also a major non-syntactical difference between
+standard Mocha and Truffle's Mocha.
+With standard Mocha, you are free to write tests at any level:
+Unit tests, integration tests, acceptance tests.
+With Truffle's Mocha, all tests are acceptance tests,
+as they are run against copies of the smart contracts
+that are deployed on a blockchain (Ganache).
+This distinction may appear superfluous at first,
+but will become apparent later on,
+for example, it influences how we can mock smart contracts.
+
 ## Quick Links
 
 This workshop is part of a series:
