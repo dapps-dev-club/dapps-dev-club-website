@@ -832,6 +832,32 @@ within which any assertions should go.
 > as they have to interact with a blockchain via RPC.
 > Thus, virtually all tests need to be `async`.
 
+### A test assertion
+
+The
+[`assert.doesNotThrow`](https://nodejs.org/api/assert.html#assert_assert_doesnotthrow_fn_error_message)
+method throws an error if the function does indeed throw.
+
+We use that to check if we get any errors when creating an instance
+of a deployed contract, like so:
+
+```javascript
+    assert.doesNotThrow(async () => {
+      await Bolsilmon.deployed();
+    });
+
+```
+
+The statement `await Bolsilmon.deployed();` should not error,
+because we have already compiled and deployed this smart contract.
+This is a test which we expect to fail only in exceptional circumstances.
+For example, if you were to manually edit `build/contracts/Bolsilmon.json`
+and change the value of the deployed address (`networks['5777'].address`).
+
+Thus, this test is a little bit pointless,
+but it serves as an easy "first test",
+and serves well for demonstrating the process of testing a smart contract.
+
 ## Quick Links
 
 This workshop is part of a series:
