@@ -946,6 +946,17 @@ that checks/ verifies the initial state of the smart contract.
 
 Let us look at this part by part.
 
+#### Get contract instance
+
+At the beginning of each `it` block,
+If there are multiple `it` blocks within the same `contract` block
+we obtain an instance of the smart contract.
+
+```javascript
+    const inst = await Bolsilmon.deployed();
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
