@@ -994,6 +994,35 @@ So we are not going to do that within this test.
 > which we have yet to introduce at this point.
 > We shall get to that later.
 
+#### Assert smart contract state
+
+Now that we have obtained the variables we want,
+we may proceed to check that their values
+do indeed match with their expected value.
+
+```javascript
+    assert.equal(numMons.toString(), '0',
+      'Unexpected numMons initial value');
+```
+
+We are using
+[`assert.equal`](https://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message),
+which uses the following parameters:
+
+1. Actual value.
+   The value that is obtained from the system under test,
+   which is the smart contract in this case.
+2. Expected value.
+   The value which the system under test should have,
+   determined to be "correct" by the developer.
+3. Error message - Optional.
+   Text to include in the error that is thrown if actual value and expected value are not the same.
+
+> Note: The actual values here are `BN`s,
+> and thus cannot be compared with regular Javascript `Number`s directly.
+> Thus the actual values are converted to `String`s using `.toString()`,
+> and expected values are numbers that are quoted `String` literals.
+
 ## Quick Links
 
 This workshop is part of a series:
