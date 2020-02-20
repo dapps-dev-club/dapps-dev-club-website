@@ -1061,6 +1061,19 @@ The output should be almost the same as the previous time we ran the tests.
 The only difference is that there is an extra line: `✓ initial state`.
 Also, the final line should indicate that there are now two tests.
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git commit -m "test: for main contract initialisation"
+git tag -a step-02-04 $( git rev-parse HEAD ) -m "step-02-04"
+git push origin master --tags
+
+```
+
 ## Quick Links
 
 This workshop is part of a series:
