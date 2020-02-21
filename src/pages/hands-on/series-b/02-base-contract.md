@@ -703,7 +703,7 @@ touch test/Bolsilmon/00-init.spec.js
 
 ```
 
-Open up `touch test/Bolsilmon/00-init.spec.js` in your code editor,
+Open up `test/Bolsilmon/00-init.spec.js` in your code editor,
 and add the following contents:
 
 ```javascript
