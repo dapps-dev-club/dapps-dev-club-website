@@ -1074,6 +1074,48 @@ git push origin master --tags
 
 ```
 
+## Testing the `createMon` function
+
+Previously, we have written some tests for the initial state of the smart contract.
+Now let's write some tests for the function that we have implemented, `createMon`.
+As a recap, let us take a look at its implementation,
+through a test writing lens:
+
+```solidity
+  function createMon(
+    bytes32 geneSeed
+  )
+    external
+    payable
+    minPayment(createPrice)
+    returns(uint256 monId)
+  {
+    monId = ++numMons;
+    Mon memory newMon = Mon(
+      block.number,
+      false,
+      geneSeed
+    );
+    mons[monId] = newMon;
+    monCreators[monId] = msg.sender;
+
+    emit MonCreate(
+      monId,
+      msg.sender
+    );
+  }
+
+```
+
+- We should write a "failure path" test where we attempt to call the function,
+  but do not pay enough for it.
+- We should write a "happy path" test were we call the function successfully,
+  and then assert the following:
+  - `numMons` has increased by one
+  - `mons` contains a new Mon
+  - `monCreators` contains a new address
+  - a `MonCreate` event was emitted
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
