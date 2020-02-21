@@ -1666,6 +1666,19 @@ Compiling your contracts...
 
 You should see that there are `2 passing` tests.
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git commit -m "test: for createMon function"
+git tag -a step-02-05 $( git rev-parse HEAD ) -m "step-02-05"
+git push origin master --tags
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
