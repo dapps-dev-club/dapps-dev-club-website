@@ -1255,6 +1255,68 @@ but **do not** pay enough as we want it to fail.
 The `createMon` payment must be paid at least 0.1 ether,
 which is enforced by the `minPayment` modifier.
 
+#### Run the failing test
+
+Run `npm t -- test/Bolsilmon/01-create-mon.spec.js`.
+This is the same as `npm t`, except that only the tests within
+that one file are run.
+Any other tests - in this case, the ones in `test/Bolsilmon/00-init.spec.js` -
+are not run at all.
+
+This should produce output similar to the following:
+
+```bash
+$ npm t -- test/Bolsilmon/01-create-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/01-create-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - createMon
+    1) should bar when not paying enough
+    > No events were emitted
+
+
+  0 passing (58ms)
+  1 failing
+
+  1) Contract: Bolsilmon - createMon
+       should bar when not paying enough:
+     Error: Returned error: VM Exception while processing transaction: revert You need to pay more -- Reason given: You need to pay more.
+     at PromiEvent (node_modules/truffle/build/webpack:/packages/contract/lib/promievent.js:9:1)
+      at TruffleContract.createMon (node_modules/truffle/build/webpack:/packages/contract/lib/execute.js:169:1)
+      at Context.it (test/Bolsilmon/01-create-mon.spec.js:24:16)
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+
+
+npm ERR! Test failed.  See above for more details.
+
+```
+
+In the summary you see that there is `1 failing` test,
+in particular: `Contract: Bolsilmon - createMon` ➡️ `should bar when not paying enough`.
+
+In the detailed output section look through the error
+and its stacktrace to to glean the important bits of information:
+
+- The error text was: `You need to pay more`.
+  This matches the error message of the `require` in the `minPayment` modifier.
+- The error occurred at `test/Bolsilmon/01-create-mon.spec.js:24:16`.
+  This means that it is on line 24 of our test file,
+  where we are calling `await inst.createMon()`.
+
+Do **not** be put off by the error,
+as this is exactly what we expect to happen at this point.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
