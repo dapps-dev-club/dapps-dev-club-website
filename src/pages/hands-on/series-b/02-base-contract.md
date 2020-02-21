@@ -1347,6 +1347,38 @@ some other (unrelated) error is thrown instead.
 
 See [`expectRevert` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-revert).
 
+#### Re-run the previously failing test
+
+This time, when we run the same test again,
+using `npm t -- test/Bolsilmon/01-create-mon.spec.js`,
+we expect to see a very different result:
+
+```bash
+$ npm t -- test/Bolsilmon/01-create-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/01-create-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - createMon
+    ✓ should bar when not paying enough
+
+
+  1 passing (60ms)
+
+```
+
+We see that there is `1 passing` test,
+and no failures.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
