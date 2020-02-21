@@ -1501,6 +1501,60 @@ because in this case our expected value can be anything more than zero.
 
 See [NodeJs `assert.ok` documentation](https://nodejs.org/api/assert.html#assert_assert_ok_value_message).
 
+#### Assert event emitted using `expectEvent`
+
+Changes to the state variables of the smart contract
+are **not** the only things we need to verify.
+We also want to verify that the function emitted an event.
+
+To do so, we need to go back up to where we invoke the function,
+and add `const txInfo = ` in front of it, like so:
+
+```javascript
+    const txInfo = await inst.createMon(
+      geneSeedBytes,
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
+
+```
+
+When we run `inst.createMon()`, or any other function on a smart contract,
+it returns a `Promise` that resolves to information about the transaction.
+This information is discarded, unless we assign it to a variable,
+which is what we have just done with `txInfo` here.
+
+Now that we have the transaction information,
+we can parse it and verify what events have occurred.
+To do this, we use the `expectEvent()` test helper.
+
+At the bottom of the `it` block, after the state change assertions,
+add the following:
+
+```javascript
+    expectEvent(
+      txInfo,
+      'MonCreate',
+      {
+        monId: '1',
+        owner: account1,
+      },
+    );
+
+```
+
+We pass the `txInfo` variable into `expectEvent` as the first parameter.
+The second and third parameters are the expected values to assert:
+The name and properties of the event.
+
+This part of the test can be stated as:
+When we invoke `createMon()`, assert that a `MonCreate` event is emitted,
+that has a `monId` property of 1, and an `owner` property of `account1`.
+
+> See [`expectEvent` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-event).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
