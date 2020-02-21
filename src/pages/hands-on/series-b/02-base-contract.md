@@ -1379,6 +1379,21 @@ Compiling your contracts...
 We see that there is `1 passing` test,
 and no failures.
 
+### Write a happy path test
+
+Now we have written a test for the failure path,
+let us move on and write a test for the happy path.
+
+Within the same `contract` block,
+we create a new `it` block, like so:
+
+```javascript
+  it('should allow', async () => {
+    const inst = await Bolsilmon.deployed();
+  });
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
