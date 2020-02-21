@@ -1317,6 +1317,36 @@ and its stacktrace to to glean the important bits of information:
 Do **not** be put off by the error,
 as this is exactly what we expect to happen at this point.
 
+#### Assert failure using `expectReject`
+
+Now that we have seen the error that we expected,
+let us modify this test to expect the error too.
+Put in a different way,
+we want to make this test pass when the code throws an error.
+We are testing the **failure path** after all!
+
+Instead of calling `inst.createMon()` directly,
+wrap it within `expectRevert` instead.
+Also, give it the error message that it should look out for,
+because we don't want this test to pass if
+some other (unrelated) error is thrown instead.
+
+```javascript
+    await expectRevert(
+      inst.createMon(
+        geneSeedBytes,
+        {
+          from: account1,
+          value: web3.utils.toWei('0.09', 'ether'),
+        },
+      ),
+      'You need to pay more',
+    );
+
+```
+
+See [`expectRevert` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-revert).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
