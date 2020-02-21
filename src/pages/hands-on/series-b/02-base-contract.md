@@ -1416,6 +1416,22 @@ However, it is insufficient to merely check that
 the function invocation does not throw an error.
 We also need to check for expected state changes and events emitted.
 
+#### Assert state variable change for a primitive variable
+
+We query the value of `numMons`,
+and then verify that it is now 1, using `assert.equal()`.
+
+```javascript
+    const numMons = await inst.numMons.call();
+
+    assert.equal(numMons.toString(), '1');
+
+```
+
+Note that `numMons` is a `BN`, so we need to convert it to a string.
+
+See [NodeJs `assert.equal` documentation](https://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
