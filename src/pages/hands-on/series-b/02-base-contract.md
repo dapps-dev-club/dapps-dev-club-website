@@ -1236,6 +1236,25 @@ Create a new `it` block, like so:
 
 ```
 
+#### Perform function call that fails
+
+Inside that `it` block, invoke the `createMon` function,
+but **do not** pay enough as we want it to fail.
+
+```javascript
+    await inst.createMon(
+      geneSeedBytes,
+      {
+        from: account1,
+        value: web3.utils.toWei('0.09', 'ether'),
+      },
+    );
+
+```
+
+The `createMon` payment must be paid at least 0.1 ether,
+which is enforced by the `minPayment` modifier.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
