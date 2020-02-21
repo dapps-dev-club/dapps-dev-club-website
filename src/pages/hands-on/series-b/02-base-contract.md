@@ -1462,6 +1462,45 @@ verify that the actual value matches the expected value.
 
 ```
 
+#### Assert state variable change for `mapping` with `struct` value
+
+This time we want to query a `mapping` which has keys of type `uint256`,
+and a values of type `Mon`:
+
+```solidity
+  mapping(uint256 => Mon) public mons;
+
+```
+
+(Note that `Mon` is not really a type, it is a `struct`.)
+
+So we use `mons.call(new BN(1))` to obtain the Mon with ID `1`.
+
+```javascript
+    const mon = await inst.mons.call(new BN(1));
+
+```
+
+What the smart contract actually returns is all the data for that Mon
+packed into a contiguous blob of data.
+Thankfully web3.js parses this and populates a regular
+Javascript object with keys named as expected.
+We use `assert.equal()` as we have previously for both `born` and `genes`.
+We also use `assert.ok()` to check `createBlock`,
+because in this case our expected value can be anything more than zero.
+
+```javascript
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    assert.equal(mon.born, false,
+      'born unexpected value');
+    assert.equal(mon.genes, geneSeed,
+      'genes unexpected value');
+
+```
+
+See [NodeJs `assert.ok` documentation](https://nodejs.org/api/assert.html#assert_assert_ok_value_message).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
