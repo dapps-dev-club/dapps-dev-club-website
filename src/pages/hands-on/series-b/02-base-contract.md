@@ -1555,6 +1555,117 @@ that has a `monId` property of 1, and an `owner` property of `account1`.
 
 > See [`expectEvent` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-event).
 
+### Putting it all together
+
+Now we should have two different tests within the same `contract` block.
+The test file should now look like this:
+
+```javascript
+const assert = require('assert');
+
+const {
+  BN,
+  expectRevert,
+  expectEvent,
+} = require('@openzeppelin/test-helpers');
+
+const Bolsilmon = artifacts.require('Bolsilmon');
+
+contract('Bolsilmon - createMon', (accounts) => {
+  const [
+    account1,
+  ] = accounts;
+
+  const geneSeed =
+    '0x0102030405060708090a0b0c0d0e0f100102030405060708090a0b0c0d0e0f10';
+  const geneSeedBytes =
+    web3.utils.hexToBytes(geneSeed);
+
+  it('should bar when not paying enough', async () => {
+    const inst = await Bolsilmon.deployed();
+
+    await expectRevert(
+      inst.createMon(
+        geneSeedBytes,
+        {
+          from: account1,
+          value: web3.utils.toWei('0.09', 'ether'),
+        },
+      ),
+      'You need to pay more',
+    );
+  });
+
+  it('should allow', async () => {
+    const inst = await Bolsilmon.deployed();
+
+    const txInfo = await inst.createMon(
+      geneSeedBytes,
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
+
+    const numMons = await inst.numMons.call();
+
+    assert.equal(numMons.toString(), '1');
+
+    const monCreator = await inst.monCreators.call(new BN(1));
+
+    assert.equal(monCreator, account1,
+      'creator unexpected value');
+
+    const mon = await inst.mons.call(new BN(1));
+
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    assert.equal(mon.born, false,
+      'born unexpected value');
+    assert.equal(mon.genes, geneSeed,
+      'genes unexpected value');
+
+    expectEvent(
+      txInfo,
+      'MonCreate',
+      {
+        monId: '1',
+        owner: account1,
+      },
+    );
+  });
+});
+
+```
+
+Run these tests to check that they both pass, like so:
+
+```bash
+$ npm t -- test/Bolsilmon/01-create-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/01-create-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - createMon
+    ✓ should bar when not paying enough (55ms)
+    ✓ should allow (134ms)
+
+
+  2 passing (221ms)
+
+```
+
+You should see that there are `2 passing` tests.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
