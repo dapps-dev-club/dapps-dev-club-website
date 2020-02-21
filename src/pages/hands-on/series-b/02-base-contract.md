@@ -1209,6 +1209,21 @@ contract('Bolsilmon - createMon', (accounts) => {
 
 See [MDN documentation for array destructuring assignments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring).
 
+### Define constants for use in tests
+
+The gene seed that is used as an input may be shared across multiple tests,
+so we will define it within the `contract` block.
+We make use of `web3.utils.hexToBytes()` to convert it to the form
+needed to interact with the smart contract.
+
+```javascript
+  const geneSeed =
+    '0x0102030405060708090a0b0c0d0e0f100102030405060708090a0b0c0d0e0f10';
+  const geneSeedBytes =
+    web3.utils.hexToBytes(geneSeed);
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
