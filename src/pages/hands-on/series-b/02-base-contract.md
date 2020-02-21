@@ -1394,6 +1394,28 @@ we create a new `it` block, like so:
 
 ```
 
+#### Perform a function call that succeeds
+
+We make the same function call as before.
+Instead of paying too little,
+this time we pay a sufficient amount,
+and therefore expect it to succeed.
+
+```javascript
+    await inst.createMon(
+      geneSeedBytes,
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
+
+```
+
+However, it is insufficient to merely check that
+the function invocation does not throw an error.
+We also need to check for expected state changes and events emitted.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
