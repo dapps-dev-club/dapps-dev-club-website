@@ -1166,6 +1166,31 @@ const {
 
 We will put all of these into action shortly.
 
+### Type conversion utilities
+
+#### Converting hexadecimal string to bytes
+
+Our `createMon` function expects us to pass in an input of type `bytes32`.
+We can obtain that by expressing it as a string literal,
+and then converting it using `hexToBytes`.
+
+For example `web3.utils.hexToBytes('0xff')` will return a single byte
+comprised of all `1`s.
+
+See [`hexToBytes` documentation](https://web3js.readthedocs.io/en/v1.2.4/web3-utils.html#hextobytes).
+
+#### Converting `ether` to `wei`
+
+The `web3.utils.toWei` allows us to specify an amount of currency in any denomination (
+common ones are `ether` and `gwei`),
+and converts these to `wei`, which is the smallest possible denomination of currency.
+It returns a `BN`, which is what web.js uses for all its numeric values.
+
+For example, `web3.utils.toWei('0.09', 'ether')` returns a `BN` that represents
+`0.09 * 10^18`, which would be a nine with 16 zeroes after it.
+
+See [`toWei` documentation](https://web3js.readthedocs.io/en/v1.2.4/web3-utils.html#towei).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
