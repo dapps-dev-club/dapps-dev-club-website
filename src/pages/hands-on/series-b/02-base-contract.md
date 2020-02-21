@@ -1432,6 +1432,36 @@ Note that `numMons` is a `BN`, so we need to convert it to a string.
 
 See [NodeJs `assert.equal` documentation](https://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message).
 
+#### Assert state variable change for `mapping` with primitive value
+
+Previously, we queried an `uint256`, which is a primitive value,
+so we used `.call()` without specifying any parameters.
+
+To query a `mapping`, we have to pass the key for said mapping
+in as the first parameter.
+
+The `monCreators` mapping has keys of type `uint256`,
+and values of type `address`:
+
+```solidity
+  mapping(uint256 => address) public monCreators;
+
+```
+
+So we use `monCreators.call(new BN(1))` to obtain the `address`
+that is stored against the key of `1`,
+which is the ID of the mon that was just created.
+Similar to the previous check, we use `assert.equal()` to
+verify that the actual value matches the expected value.
+
+```javascript
+    const monCreator = await inst.monCreators.call(new BN(1));
+
+    assert.equal(monCreator, account1,
+      'creator unexpected value');
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
