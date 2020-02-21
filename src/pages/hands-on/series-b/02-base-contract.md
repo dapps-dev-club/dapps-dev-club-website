@@ -1191,6 +1191,24 @@ For example, `web3.utils.toWei('0.09', 'ether')` returns a `BN` that represents
 
 See [`toWei` documentation](https://web3js.readthedocs.io/en/v1.2.4/web3-utils.html#towei).
 
+### Extract accounts in `contract` block
+
+In the contract block, we currently have no parameters in the callback function.
+We add one, named `accounts`,
+and expect this to be an array of addresses.
+We use array destructuring to extract the first address into `account1`.
+The top part of the `contract` block should now look like this:
+
+```javascript
+contract('Bolsilmon - createMon', (accounts) => {
+  const [
+    account1,
+  ] = accounts;
+
+```
+
+See [MDN documentation for array destructuring assignments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
