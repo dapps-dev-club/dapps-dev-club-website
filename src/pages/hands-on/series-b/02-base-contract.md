@@ -1138,6 +1138,34 @@ contract('Bolsilmon - createMon', () => {
 
 This is the same as how we started with the previous test file.
 
+### Adding the Open Zeppelin test helpers library
+
+When we were initialising the project, we installed a `devDependency`
+named `@openzeppelin/test-helpers`.
+We are going to make use of that in our tests now.
+
+```javascript
+const {
+  BN,
+  expectRevert,
+  expectEvent,
+} = require('@openzeppelin/test-helpers');
+
+```
+
+- `BN` is the big number library used in web3.js.
+  This may be included within the web3.js library,
+  but it is a library in its own right.
+  Check out [BN.js documentation](https://github.com/indutny/bn.js/).
+- `expectRevert` is a helper that allows us to assert when an attempted transaction
+  errors, and is reverted by the smart contract.
+  See [`expectRevert` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-revert).
+- `expectEvent` is a helper that allows us to assert that a transaction
+  emits an event of with the expected values.
+  See [`expectEvent` documentation](https://docs.openzeppelin.com/test-helpers/0.5/api#expect-event).
+
+We will put all of these into action shortly.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
