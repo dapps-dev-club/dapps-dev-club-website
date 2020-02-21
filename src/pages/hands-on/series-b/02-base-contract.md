@@ -1116,6 +1116,28 @@ through a test writing lens:
   - `monCreators` contains a new address
   - a `MonCreate` event was emitted
 
+### Create a new test file
+
+```bash
+touch test/Bolsilmon/01-create-mon.spec.js
+
+```
+
+Open up `test/Bolsilmon/01-create-mon.spec.js` in your code editor,
+and add the following contents:
+
+```javascript
+const assert = require('assert');
+
+const Bolsilmon = artifacts.require('Bolsilmon');
+
+contract('Bolsilmon - createMon', () => {
+});
+
+```
+
+This is the same as how we started with the previous test file.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
