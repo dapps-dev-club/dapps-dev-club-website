@@ -1224,6 +1224,18 @@ needed to interact with the smart contract.
 
 ```
 
+### Write a failure path test
+
+Now we are ready to write the first test for this `contract` block.
+Create a new `it` block, like so:
+
+```javascript
+  it('should bar when not paying enough', async () => {
+    const inst = await Bolsilmon.deployed();
+  });
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
