@@ -1948,6 +1948,42 @@ by emitting an event, like so:
 
 ```
 
+#### Putting it all together
+
+At this point, the full `birthMon` function should look like this:
+
+```solidity
+  function birthMon(
+    uint256 monId
+  )
+    external
+  {
+    require(
+      monCreators[monId] == msg.sender,
+      "You are not the creator"
+    );
+    Mon storage mon = mons[monId];
+    require(
+      block.number > mon.createBlock + 1 + birthWaitBlocks,
+      "You must wait longer"
+    );
+
+    mon.genes = keccak256(
+      abi.encodePacked(
+        mon.genes,
+        blockhash(mon.createBlock + birthWaitBlocks)
+      )
+    );
+    mon.born = true;
+
+    emit MonBirth(
+      monId,
+      msg.sender
+    );
+  }
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
