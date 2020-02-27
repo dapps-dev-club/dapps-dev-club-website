@@ -1703,6 +1703,13 @@ In this context, we need to devise a creative way to obtain random values.
 We need random values to ensure that when we create and birth a new Mon,
 that these Mons get random genes.
 
+#### The `blockhash` function
+
+The `blockhash` function simply returns the hash of an existing block.
+All mined blocks have a hash.
+
+See the [`blockhash` documentation](https://solidity.readthedocs.io/en/v0.5.15/units-and-global-variables.html#special-variables-and-functions).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
