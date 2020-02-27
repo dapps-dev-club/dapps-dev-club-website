@@ -1672,7 +1672,7 @@ Don't forget to commit and push these changes to the git remote!
 
 ```bash
 git status
-git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git add -p contracts/Bolsilmon.sol
 git commit -m "test: for createMon function"
 git tag -a step-02-05 $( git rev-parse HEAD ) -m "step-02-05"
 git push origin master --tags
@@ -2007,6 +2007,19 @@ Network up to date.
 ```
 
 You should not see any compilation errors.
+
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add contracts/Bolsilmon.sol migrations/2_bolsilmon.js
+git commit -m "feat: implement birthMon function"
+git tag -a step-02-06 $( git rev-parse HEAD ) -m "step-02-06"
+git push origin master --tags
+
+```
 
 ## Workshop progression check
 
