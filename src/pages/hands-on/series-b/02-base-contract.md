@@ -1679,6 +1679,12 @@ git push origin master --tags
 
 ```
 
+## Implement a birth Mon function
+
+After creating a Mon through the `createMon` function,
+we next want to be able to birth that same Mon through
+a `birthMon` function.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
