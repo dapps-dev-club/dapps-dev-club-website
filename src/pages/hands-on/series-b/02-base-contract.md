@@ -1803,6 +1803,32 @@ Let us define that number as `birthWaitBlocks`, as a state variable:
 
 ```
 
+### Define the `birthMon` function
+
+Now that we have the `MonBirth` event,
+and the `birthWaitBlocks` state variable,
+we are ready to implement the `birthMon` function.
+
+Start with an empty function, like so:
+
+```solidity
+
+  function birthMon(
+    uint256 monId
+  )
+    external
+  {
+  }
+
+```
+
+It takes in just one input parameter, `monId`,
+which it uses to look up the Mon that was created earlier.
+
+It has an `external` visibility modifier because
+we don't need this contract to be able to call it,
+but we do want it to be called by another party.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
