@@ -1873,6 +1873,68 @@ This check thus ensures that the `birthMon` function
 may only (successfully) be called after `createMon` has been called,
 plus a certain amount of time between.
 
+#### Updating the Mon
+
+If the pre-requisite checks have passed,
+it means that we are allowed to update the Mon,
+from a created state to a born state.
+
+The first thing we do is the randomise its genes.
+Let us look at the pseudo-random number generator covered earlier:
+
+```solidity
+    keccak256(
+      abi.encodePacked(
+        INPUT_FROM_BLOCK_X,
+        blockhash(BLOCK_NUMBER_AFTER_X)
+      )
+    );
+
+```
+
+- The `geneSeed` value input during `createMon` is presently
+  stored within `mon.genes`.
+  So we use that as the value of `INPUT_FROM_BLOCK_X`.
+- The block hash of the block that is `birthWaitBlocks`
+  number of blocks after `mon.createBlock`
+  could not have been known when `createMon` was called,
+  but is known now.
+  So we use `mon.createBlock + birthWaitBlocks` as the
+  value of `BLOCK_NUMBER_AFTER_X`.
+
+Now we have:
+
+```solidity
+    keccak256(
+      abi.encodePacked(
+        mon.genes,
+        blockhash(mon.createBlock + birthWaitBlocks)
+      )
+    );
+
+```
+
+We just overwrite the existing value of `mon.genes`
+with this new randomised value, like so:
+
+```solidity
+    mon.genes = keccak256(
+      abi.encodePacked(
+        mon.genes,
+        blockhash(mon.createBlock + birthWaitBlocks)
+      )
+    );
+
+```
+
+Now with its new birth genes, let us not forget the
+much simpler, yet critical, task of flipping the `born` flag.
+
+```solidity
+    mon.born = true;
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
