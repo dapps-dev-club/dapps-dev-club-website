@@ -1710,6 +1710,13 @@ All mined blocks have a hash.
 
 See the [`blockhash` documentation](https://solidity.readthedocs.io/en/v0.5.15/units-and-global-variables.html#special-variables-and-functions).
 
+#### The `abi.encodePacked` function
+
+The `abi.encodePacked` function allows us to convert and concatenate
+any number of arbitrary types into an arbitrary number of bytes.
+
+See the [`abi.encodePacked` documentation](https://solidity.readthedocs.io/en/v0.5.15/abi-spec.html#non-standard-packed-mode).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
