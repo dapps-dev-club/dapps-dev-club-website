@@ -1776,6 +1776,20 @@ we derive a psuedo-random value.
 Shortly, we will follow up on this pseudo-code
 with an actual implementation.
 
+### Define a new event
+
+We would like our `birthMon` function to emit an event.
+Define an event with `monId` and `owner`,
+both indexed, like so:
+
+```solidity
+  event MonBirth (
+    uint256 indexed monId,
+    address indexed owner
+  );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
