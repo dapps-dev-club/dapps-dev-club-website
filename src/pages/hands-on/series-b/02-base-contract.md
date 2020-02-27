@@ -1728,6 +1728,54 @@ and it returns exactly 32 bytes as its output.
 
 See the [`keccak256` documentation](https://solidity.readthedocs.io/en/v0.5.15/units-and-global-variables.html#mathematical-and-cryptographic-functions).
 
+#### Combining `blockhash`, `abi.encodePacked`, and `keccak256`
+
+Now, let us combine the 3 functions that we just looked at,
+in order to generate a pseudo-random value.
+
+First, let us take two inputs:
+An input which was saved from a transaction in a previous block,
+as well as a block number that is at least 1 more than said previous block.
+
+We:
+
+1. Get the hash of the block number via `blockhash`
+    --> `bytes32`
+2. Combine it together with the other input using `abi.encodePacked`
+    --> `bytes`
+3. Get a hash of this concatenated value using `keccak256`
+    --> `bytes32`
+
+```solidity
+    keccak256(
+      abi.encodePacked(
+        INPUT_FROM_BLOCK_X,
+        blockhash(BLOCK_NUMBER_AFTER_X)
+      )
+    );
+
+```
+
+Because `INPUT_FROM_BLOCK_X` was set in a previous transaction,
+it cannot be influenced in the current transaction.
+The hash of the block that is a certain number of blocks after that -
+`BLOCK_NUMBER_AFTER_X` -
+also could not have been known after that original transaction.
+Thus by concatenating and hashing them together,
+we derive a psuedo-random value.
+
+> Note: This method of pseudo-random number generation is not entirely
+> foolproof.
+> If miners with malicious intent collude to withhold blocks with particular
+> transaction hashes which are not favourable to them,
+> they can in theory influence the outcome of the random number generation.
+> The being said, this would come at a particularly high opportunity cost
+> and it would need to be a very high value transaction for
+> such actions to be worth it.
+
+Shortly, we will follow up on this pseudo-code
+with an actual implementation.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
