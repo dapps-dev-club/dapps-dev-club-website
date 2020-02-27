@@ -1717,6 +1717,17 @@ any number of arbitrary types into an arbitrary number of bytes.
 
 See the [`abi.encodePacked` documentation](https://solidity.readthedocs.io/en/v0.5.15/abi-spec.html#non-standard-packed-mode).
 
+#### The `keccak256` function
+
+The `keccak256` function is a cryptographic hash function
+used in many parts of the Ethereum code base,
+and is also globally available in smart contracts.
+
+You pass in an arbitrary number of bytes as input,
+and it returns exactly 32 bytes as its output.
+
+See the [`keccak256` documentation](https://solidity.readthedocs.io/en/v0.5.15/units-and-global-variables.html#mathematical-and-cryptographic-functions).
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
