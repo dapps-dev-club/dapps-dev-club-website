@@ -1984,6 +1984,30 @@ At this point, the full `birthMon` function should look like this:
 
 ```
 
+### Compile and deploy
+
+Compile and deploy the update smart contract:
+
+```bash
+$ npm run deploy
+
+> smart-contract-dev-patterns-workshop@0.0.0 deploy /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle migrate
+
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Bolsilmon.sol
+> Artifacts written to /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+Network up to date.
+
+```
+
+You should not see any compilation errors.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
