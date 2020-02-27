@@ -1935,6 +1935,19 @@ much simpler, yet critical, task of flipping the `born` flag.
 
 ```
 
+#### Emit an event
+
+Finally, we announce that a new Mon has been born
+by emitting an event, like so:
+
+```solidity
+    emit MonBirth(
+      monId,
+      msg.sender
+    );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
