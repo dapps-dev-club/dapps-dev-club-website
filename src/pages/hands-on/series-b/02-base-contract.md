@@ -1829,6 +1829,50 @@ It has an `external` visibility modifier because
 we don't need this contract to be able to call it,
 but we do want it to be called by another party.
 
+#### Pre-requisite checks
+
+In this function, instead of using modifiers,
+we have chosen to put the pre-requisite checks within
+the function itself.
+This is something we do if we don't expect it to be used in multiple places, and is specific to just this function.
+
+The first check is to ensure that it has to be the same account
+which creates and births a Mon.
+
+```solidity
+    require(
+      monCreators[monId] == msg.sender,
+      "You are not the creator"
+    );
+
+```
+
+The second check is to check that a number of of blocks have passed
+between `createMon` and `birthMon`.
+
+```solidity
+    Mon storage mon = mons[monId];
+    require(
+      block.number > mon.createBlock + 1 + birthWaitBlocks,
+      "You must wait longer"
+    );
+
+```
+
+Note that:
+
+- `block.number` is the block number (or block height)
+  of the block within which this transaction for
+  `birthMon` occurs.
+- `mon.createBlock` is the block number (or block height)
+  of the block within which the transaction for
+  `createMon` occurs.
+- `birthWaitBlocks` is the state variable which we just defined.
+
+This check thus ensures that the `birthMon` function
+may only (successfully) be called after `createMon` has been called,
+plus a certain amount of time between.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
