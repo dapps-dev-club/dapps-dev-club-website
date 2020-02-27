@@ -1790,6 +1790,19 @@ both indexed, like so:
 
 ```
 
+### Define more state variables
+
+In the part above about *using blockchain to generate randomness**,
+we needed to ensure that there have been a certain number of blocks
+between the mon being created (`createMon`),
+and it being born (`birthMon`).
+Let us define that number as `birthWaitBlocks`, as a state variable:
+
+```solidity
+  uint256 public birthWaitBlocks = 1;
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
