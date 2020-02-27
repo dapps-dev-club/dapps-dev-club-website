@@ -1685,6 +1685,24 @@ After creating a Mon through the `createMon` function,
 we next want to be able to birth that same Mon through
 a `birthMon` function.
 
+### Using blockchain to generate randomness
+
+Before we delve into the implementation,
+one might ask: **Why?**
+Why do this in two separate transactions,
+instead of doing it in a single one?
+
+The answer is **randomness**.
+The execution of smart contracts is completely deterministic.
+There are no opcodes for random number generation,
+thus there can be no `Math.random()` equivalent that you
+may have seen in other programming languages.
+
+In this context, we need to devise a creative way to obtain random values.
+
+We need random values to ensure that when we create and birth a new Mon,
+that these Mons get random genes.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
