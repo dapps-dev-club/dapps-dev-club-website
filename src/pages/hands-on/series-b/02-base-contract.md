@@ -2264,6 +2264,39 @@ Finally, we check that the Mon's creator remains unchanged.
 
 ```
 
+### Running the failure path tests
+
+At this point we have written two failure path tests,
+and have one more happy path test to go.
+Let us run these two tests, before moving on to the final one:
+
+```bash
+$ npm t -- test/Bolsilmon/02-birth-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/02-birth-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - birthMon
+    ✓ should bar when not creator
+    ✓ should bar when did not wait for long enough (75ms)
+
+
+  2 passing (169ms)
+
+```
+
+Ensure that you also get `2 passing` tests,
+and zero failing tests.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
