@@ -2021,6 +2021,12 @@ git push origin master --tags
 
 ```
 
+## Testing the birth Mon function
+
+Let us write some tests which verify whether the `birthMon` function,
+which we have just written,
+works as intended.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
