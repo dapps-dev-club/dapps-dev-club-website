@@ -2297,6 +2297,75 @@ Compiling your contracts...
 Ensure that you also get `2 passing` tests,
 and zero failing tests.
 
+### Test utility file
+
+We have a happy path test to write next,
+but before we do that, let us write out own test utilities file.
+This one is specific to tests for our smart contract,
+unlike the general purpose ones that we have imported.
+
+```bash
+touch test/Bolsilmon/test-util.js
+
+```
+
+Open this new file in your code editor,
+and import one of the general purpose test utilities.
+
+```javascript
+const {
+  time,
+} = require('@openzeppelin/test-helpers');
+
+```
+
+This next function will wait for a certain number of blocks
+which are specified in a state variable of the smart contract instance passed in.
+
+(Note that we are using a `for` loop to accomplish something that should
+be possible in a single call, but we need to wait for the next release
+of the test utilities library that we are using.)
+
+```javascript
+async function waitBeforeAction(inst, waitActionVariableName) {
+  const actionWaitBlocks =
+    await inst[waitActionVariableName].call();
+  if (actionWaitBlocks.gt(0)) {
+    for (let blockIdx = 0; blockIdx < actionWaitBlocks.toNumber(); ++blockIdx) {
+      await time.advanceBlock();
+    }
+    // When this PR is released:
+    // https://github.com/OpenZeppelin/openzeppelin-test-helpers/pull/94
+    // we will be able to use `time.advanceBlockTo` instead:
+    // const nowBlock = await time.latestBlock();
+    // const waitedBlock = nowBlock.add(actionWaitBlocks);
+    // await time.advanceBlockTo(waitedBlock);
+  }
+}
+
+```
+
+We also create a new function that calls the one that we just wrote before.
+What this does is simply provide us with a shorthand to call `waitBeforeAction`,
+locked to the value of `birthWaitBlocks`.
+
+```javascript
+async function waitBeforeBirth(inst) {
+  return waitBeforeAction(inst, 'birthWaitBlocks');
+}
+
+```
+
+Also, let us not forget to export the `waitBeforeBirth` function,
+so that we can import and use it within tests.
+
+```javascript
+module.exports = {
+  waitBeforeBirth,
+};
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
