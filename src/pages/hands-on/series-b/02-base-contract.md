@@ -2077,6 +2077,52 @@ contract('Bolsilmon - birthMon', (accounts) => {
 
 ```
 
+### Set up a non-default contract state
+
+
+The steps so far should be familiar from our tests for the `createMon` function.
+However, recall that for a Mon to be born,
+it needs to be created prior.
+This means that we **can not** write tests for `birthMon` right away,
+as the initial state of the smart contract contains zero Mons.
+This means that we need to perform some extra steps
+prior to writing the first step.
+
+
+The `before` block is similar to the `it`,
+in that it executes test code -
+the difference it mainly in *intent*:
+That one does **not** write assertions in it,
+as it is supposed to be for "set up" only.
+Within the `contract` block, create a `before` block, like so:
+
+```javascript
+  before(async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
+
+```
+
+Inside the `before` block,
+invoke the `createMon` function,
+such that `account` has successfully created a new Mon.
+
+```javascript
+    await inst.createMon(
+      web3.utils.hexToBytes(geneSeed),
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
+
+```
+
+Now, in the rest of this `contract` block,
+we will be able to use this particular Mon to test the use of
+the `birthMon` function.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
