@@ -2123,6 +2123,55 @@ Now, in the rest of this `contract` block,
 we will be able to use this particular Mon to test the use of
 the `birthMon` function.
 
+### Failure path test based on wrong account
+
+Let us write the first test for `birthMon`,
+which verifies that only the creator of the Mon is allowed
+to call `birthMon` on it - other accounts are not allowed to do so.
+We start with a standard `it` block, like so:
+
+```javascript
+  it('should bar when not creator', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
+
+```
+
+We then invoke `birthMon`, but attempt to use `account2`,
+even though we know that only `account1` should be allowed to do so.
+
+```javascript
+    await inst.birthMon(
+      new BN(1),
+      {
+        from: account2,
+        value: new BN(0),
+      },
+    );
+
+```
+
+At this point, if you run tests, the tests will fail.
+Since we **expect** that doing this should fail,
+we should pass the test when this fails.
+We do so by wrapping the `birthMon` invocation in an `expectRevert`,
+from the test helpers, like so:
+
+```javascript
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account2,
+          value: new BN(0),
+        },
+      ),
+      'You are not the creator',
+    );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
