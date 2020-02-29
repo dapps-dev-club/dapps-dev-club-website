@@ -2654,6 +2654,19 @@ Compiling your contracts...
 
 You should get `7 passing` tests, and zero failing ones.
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add test/Bolsilmon/02-birth-mon.spec.js test/Bolsilmon/test-util.js
+git commit -m "test: for birthMon function"
+git tag -a step-02-07 $( git rev-parse HEAD ) -m "step-02-07"
+git push origin master --tags
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
