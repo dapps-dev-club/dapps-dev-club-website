@@ -2027,6 +2027,36 @@ Let us write some tests which verify whether the `birthMon` function,
 which we have just written,
 works as intended.
 
+### Initialise a new test file
+
+Let us avoid adding more tests to the existing test file,
+and instead create a new `.spec.js` file
+dedicated to testing the `birthMon` function.
+(You may have already guessed this based on the file name used prior!)
+
+```bash
+touch test/Bolsilmon/02-birth-mon.spec.js
+
+```
+
+As we have done previously, open up this file in your code editor,
+and import our dependencies from
+the `assert` and `test-helpers` modules.
+Also import the artifact for the smart contract that we're testing.
+
+```javascript
+const assert = require('assert');
+
+const {
+  BN,
+  expectEvent,
+  expectRevert,
+} = require('@openzeppelin/test-helpers');
+
+const Bolsilmon = artifacts.require('Bolsilmon');
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
