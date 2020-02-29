@@ -2614,6 +2614,46 @@ contract('Bolsilmon - birthMon', (accounts) => {
 
 ```
 
+### Running all tests
+
+Run tests for the entire project,
+not just the particular test file that we just wrote.
+
+```bash
+$ npm t
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - initial state
+    ✓ should initialise
+    ✓ initial state
+
+  Contract: Bolsilmon - createMon
+    ✓ should bar when not paying enough
+    ✓ should allow (85ms)
+
+  Contract: Bolsilmon - birthMon
+    ✓ should bar when not creator
+    ✓ should bar when did not wait for long enough (89ms)
+    ✓ should allow (108ms)
+
+
+  7 passing (439ms)
+
+```
+
+You should get `7 passing` tests, and zero failing ones.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
