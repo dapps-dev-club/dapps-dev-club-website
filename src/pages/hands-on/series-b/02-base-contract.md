@@ -2057,6 +2057,26 @@ const Bolsilmon = artifacts.require('Bolsilmon');
 
 ```
 
+### Create a `contract` block for the test file
+
+Next, we create a new contract block,
+in which we extract the first 2 accounts from the array passed in.
+We also define a constant which we intend to reference in our tests.
+
+```javascript
+contract('Bolsilmon - birthMon', (accounts) => {
+  const [
+    account1,
+    account2,
+  ] = accounts;
+
+  const geneSeed =
+    '0x0102030405060708090a0b0c0d0e0f100102030405060708090a0b0c0d0e0f10';
+
+});
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
