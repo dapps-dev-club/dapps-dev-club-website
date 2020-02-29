@@ -2366,6 +2366,114 @@ module.exports = {
 
 ```
 
+### Happy path test
+
+Back in the test file for `birthMon` -
+`test/Bolsilmon/02-birth-mon.spec.js` -
+import the our own specific test utility file which we just created,
+at the top, like so:
+
+```javascript
+const testUtil = require('./test-util.js');
+
+```
+
+Create a new `it` block within the `contract` block.
+
+```javascript
+  it('should allow', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
+
+```
+
+Call the `waitBeforeBirth` test utility function that we created earlier:
+
+```javascript
+    await testUtil.waitBeforeBirth(inst);
+
+```
+
+Invoke the `birthMon` function.
+This time we are expecting it to succeed,
+because we are using the correct account (`account1`),
+and we have indeed waited for the appropriate number of blocks before doing so.
+We also save the transaction information returned in `txInfo`,
+in anticipation of needing it later.
+
+```javascript
+    const txInfo = await inst.birthMon(
+      new BN(1),
+      {
+        from: account1,
+        value: new BN(0),
+      },
+    );
+
+```
+
+Now we can begin assertions!
+
+Verify that the number of Mons is still one.
+We have not created any new Mons.
+The same one that was previously created has now been born,
+and the total number should remain unchanged.
+
+```javascript
+    const numMons = await inst.numMons.call();
+    assert.equal(numMons.toString(), '1',
+      'unexpected numMons');
+
+```
+
+Also verify the state of that Mon.
+It should now be `born`,
+and its `genes` should have changed, from what it was before.
+We could also write a test that verifies the randomisation of the updated genes,
+however, in this case we are happy with simply checking that it has changed.
+
+```javascript
+    const mon = await inst.mons.call(new BN(1));
+
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    assert.equal(mon.born, true,
+      'born unexpected value');
+    assert.notEqual(mon.genes, geneSeed,
+      'genes unexpected value');
+    // TODO potentially also compute the hash here too,
+    // instead of merely checking that it has changed
+
+```
+
+As we did in the previous test,
+we verify that the creator of the Mon has not changed.
+Whether or not the `birthMon` was successful,
+the Mon's creator should remain unchanged.
+
+```javascript
+    const monCreator = await inst.monCreators(new BN(1));
+    assert.equal(monCreator, account1,
+      'creator should remain same after mon is born');
+
+```
+
+We also expect a `MonBirth` event to be emitted
+upon a successful `birthMon` function invocation.
+
+```javascript
+    expectEvent(
+      txInfo,
+      'MonBirth',
+      {
+        monId: '1',
+        owner: account1,
+      },
+    );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
