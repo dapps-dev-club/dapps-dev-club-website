@@ -2172,6 +2172,98 @@ from the test helpers, like so:
 
 ```
 
+### Failure path test based on wait time
+
+Let us add a test for another failure path,
+this time for when the right account does attempt to invoke `birthMon`,
+but does so too fast - without waiting for the required time delay.
+
+We start with an `it` block, like so:
+
+```javascript
+  it('should bar when did not wait for long enough', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
+
+```
+
+Next we perform a small check to see if this test is worth running at all.
+If the value of the `birthWaitBlocks` state variable is not one or more,
+then this test is redundant, and the rest of the test may be skipped.
+
+Note that `.lt()` is a method available on `BN` which means "less than".
+
+```javascript
+    const birthWaitBlocks = await inst.birthWaitBlocks.call();
+    if (birthWaitBlocks.lt(1)) {
+      console.warn('skipping redundant test for birthWaitBlocks');
+      return true;
+    }
+
+```
+
+Now we invoke `birthMon`.
+Since `createMon` was invoked in the previous block,
+we know that it is too early, and will be rejected.
+Thus we wrap this in the `expectRevert` test helper.
+
+```javascript
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account1,
+          value: new BN(0),
+        },
+      ),
+      'You must wait longer',
+    );
+
+```
+
+After this is done, let us be pedantic and check that the
+state variables which would have changed,
+should the previous function invocation have succeeded,
+have not indeed changed,
+and instead remained the same.
+
+First, let us verify that the number of Mons has not changed.
+
+```javascript
+    const numMons = await inst.numMons.call();
+    assert.equal(numMons.toString(), '1',
+      'numMons unexpected value');
+
+```
+
+Also, we verify that the existing Mon remains as it was before,
+unchanged.
+
+```javascript
+    const mon = await inst.mons.call(new BN(1));
+
+    // mon is still created
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    // but mon is not born
+    assert.equal(mon.born, false,
+      'born unexpected value');
+    // since mon is not born, its genes are still the seed value
+    assert.equal(mon.genes, geneSeed,
+      'genes unexpected value');
+
+```
+
+Finally, we check that the Mon's creator remains unchanged.
+
+```javascript
+    const monCreator = await inst.monCreators(new BN(1));
+    assert.equal(monCreator, account1,
+      'creator should remain same before mon is born');
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
