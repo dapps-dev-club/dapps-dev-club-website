@@ -2899,6 +2899,19 @@ which was previous failing, now passes:
 We have just completed our mini-iteration of test-driven development
 and fixed this bug!
 
+### Version control for this step
+
+Don't forget to commit and push these changes to the git remote!
+
+```bash
+git status
+git add -p test/Bolsilmon/02-birth-mon.spec.js contracts/Bolsilmon.sol
+git commit -m "fix: for birthMon function allowing Mon to be born twice"
+git tag -a step-02-08 $( git rev-parse HEAD ) -m "step-02-08"
+git push origin master --tags
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
