@@ -2806,6 +2806,51 @@ does indeed exist.
 
 Next, let us fix this bug.
 
+### Implement the fix
+
+The fix for this bug is rather simple,
+as we simply need to make the `birthMon` function
+check that the Mon's `born` attribute is false.
+
+```solidity
+    require(
+      mon.born == false,
+      "Mon may not be born twice"
+    );
+
+```
+
+Note that the error message - `Mon may not be born twice` -
+should be exactly the same here as in the test code.
+
+We put this `require` statement in the `birthMon` function,
+the top part of which should now look like this:
+
+```solidity
+  function birthMon(
+    uint256 monId
+  )
+    external
+  {
+    require(
+      monCreators[monId] == msg.sender,
+      "You are not the creator"
+    );
+
+    Mon storage mon = mons[monId];
+
+    require(
+      mon.born == false,
+      "Mon may not be born twice"
+    );
+
+    require(
+      block.number > mon.createBlock + 1 + birthWaitBlocks,
+      "You must wait longer"
+    );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
