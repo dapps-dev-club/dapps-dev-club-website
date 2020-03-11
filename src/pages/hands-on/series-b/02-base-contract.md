@@ -912,6 +912,9 @@ and then jumping back to the implementation as appropriate.
 That would accommodate the main aspect of TDD,
 and other aspects of it are left as an exercise for you.
 
+However, in some cases, we will take the TDD approach,
+albeit only for one small segment of the development process at a time.
+
 With that said, let's continue writing more tests!
 
 ### Writing happy path tests
@@ -2666,6 +2669,29 @@ git tag -a step-02-07 $( git rev-parse HEAD ) -m "step-02-07"
 git push origin master --tags
 
 ```
+
+## Fixing a bug TDD style
+
+As it turns out, there is a bug in our implementation
+of the `birthMon` function.
+All of the tests have passed simply because we have not written
+a test case which covers that particular scenario.
+
+This gives us an excellent opportunity
+use a test-driven development approach.
+We are going to adopt this approach for just this bug fix though,
+so it will be a mini-iteration.
+
+What is the bug?
+
+Think about this for a moment, see if you are able to spot it.
+The clue is that it is in the `birthMon` function.
+
+...
+
+The bug is that a Mon that is already born,
+may get "born" again,
+simply by invoking `birthMon` an additional time.
 
 ## Workshop progression check
 
