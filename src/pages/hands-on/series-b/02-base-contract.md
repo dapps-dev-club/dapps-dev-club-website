@@ -2693,6 +2693,50 @@ The bug is that a Mon that is already born,
 may get "born" again,
 simply by invoking `birthMon` an additional time.
 
+### Write a failing test
+
+First up, we edit `test/Bolsilmon/02-birth-mon.spec.js`
+to add a new test case.
+
+As we are doing test-driven development,
+we write this test as if the smart contract
+has been implemented correctly,
+and thus write the assertions for the correct behaviour.
+(We do know, of course, that at this point the test is going to fail,
+because we have not implemented the fix yet.
+This is OK, and expected.)
+
+We create a new `it` block,
+which should come immediately *after* the `it` block,
+in which the `birthMon` function was successfully called.
+
+```javascript
+  it('should bar when attempt to birth same mon twice', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
+
+```
+
+We write an assertion that if we call the `birthMon` function again,
+with the same Mon that was born in the previous test,
+that that would throw an error,
+saying `Mon may not be born twice`.
+
+```javascript
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account1,
+          value: new BN(0),
+        },
+      ),
+      'Mon may not be born twice',
+    );
+
+```
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
