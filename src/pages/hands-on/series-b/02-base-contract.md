@@ -2737,6 +2737,75 @@ saying `Mon may not be born twice`.
 
 ```
 
+### Running the failing test
+
+Run the tests, just for `birthMon`.
+Yu should get output similar to the following:
+
+```bash
+$ npm t -- test/Bolsilmon/02-birth-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/02-birth-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  Contract: Bolsilmon - birthMon
+    ✓ should bar when not creator
+    ✓ should bar when did not wait for long enough (91ms)
+    ✓ should allow (104ms)
+    1) should bar when attempt to birth same mon twice
+
+    Events emitted during test:
+    ---------------------------
+
+    Bolsilmon.MonBirth(
+      monId: <indexed> 1 (type: uint256),
+      owner: <indexed> 0x8a17879BFde672E492A2a4244a2B76199EAD96A6 (type: address)
+    )
+
+
+    ---------------------------
+
+
+  3 passing (324ms)
+  1 failing
+
+  1) Contract: Bolsilmon - birthMon
+       should bar when attempt to birth same mon twice:
+     AssertionError: Expected an exception but none was received
+      at expectException (node_modules/@openzeppelin/test-helpers/src/expectRevert.js:25:10)
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+
+
+npm ERR! Test failed.  See above for more details.
+
+```
+
+You should see `3 passing` tests (the tests from before),
+and `1 failing` test (the test that we just wrote).
+
+Looking in the detailed error output,
+we see the following:
+
+```text
+AssertionError: Expected an exception but none was received
+```
+
+This is **exactly** what we expected to happen.
+This error message confirms that the bug that we thought existed,
+does indeed exist.
+
+Next, let us fix this bug.
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
