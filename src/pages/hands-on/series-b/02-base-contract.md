@@ -2851,6 +2851,54 @@ the top part of which should now look like this:
 
 ```
 
+### Run the passing test
+
+Run the tests, just for `birthMon`, again.
+Recall that Truffle automatically recompiles your smart contracts
+before running any tests, so you do not need to do that.
+This time, you should get output similar to the following:
+
+```bash
+$ npm t -- test/Bolsilmon/02-birth-mon.spec.js
+
+> smart-contract-dev-patterns-workshop@0.0.0 test /home/bguiz/code/dadc/smart-contract-dev-patterns-workshop
+> truffle test "test/Bolsilmon/02-birth-mon.spec.js"
+
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Bolsilmon.sol
+> Artifacts written to /tmp/test-2020211-29856-cvi6a6.pb54n
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+
+
+  Contract: Bolsilmon - birthMon
+    ✓ should bar when not creator
+    ✓ should bar when did not wait for long enough (96ms)
+    ✓ should allow (73ms)
+    ✓ should bar when attempt to birth same mon twice
+
+
+  4 passing (283ms)
+
+```
+
+Instead of getting some failures,
+you should see `4 passing` tests instead.
+The new test that we wrote,
+which was previous failing, now passes:
+
+```text
+✓ should bar when attempt to birth same mon twice
+```
+
+We have just completed our mini-iteration of test-driven development
+and fixed this bug!
+
 ## Workshop progression check
 
 Here is a quick aside to comment on the
