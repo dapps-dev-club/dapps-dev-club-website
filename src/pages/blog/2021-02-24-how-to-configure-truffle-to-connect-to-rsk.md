@@ -12,6 +12,15 @@ tags:
 authors:
   - bguiz
 ---
+
+Understanding Truffle's default configuration values
+(based on Ethereum),
+in particular surrounding polling intervals;
+and using 2 relatively new config options
+allows one to config Truffle to better connect to an RSK node.
+
+<!-- excerpt -->
+
 ### Public Nodes
 
 When connecting to **public nodes**,
@@ -47,7 +56,7 @@ Client applications, such as decentralised applications,
 or in this case Truffle (a developer tool),
 need to periodically check if blocks, and therefore transactions,
 that have been submitted have since been added to the blockchain.
-The **polling interval** is the duration of time between 
+The **polling interval** is the duration of time between
 one such check and the next.
 
 It thus makes sense to optimise the efficiency of the client application
@@ -93,10 +102,10 @@ In your `truffle-config.js` file:
 
 (1) Set a variable `testnetSeedPhrase` to
   contain a valid BIP-39 mnemonic phrase
-  
+
 (2) Set a variable `gasPriceTestnet` to
   contain the gas price you wish to use denominated in Wei.
-  
+
 (3) In the exported `config` object,
   set the value of `config.networks.testnet` to be the following.
 
@@ -123,7 +132,7 @@ In your `truffle-config.js` file:
 
 (4) Now you can run `truffle` sub-commands with this network selected,
   for example:
-  
+
 ```shell
 truffle migrate --network testnet
 ```
