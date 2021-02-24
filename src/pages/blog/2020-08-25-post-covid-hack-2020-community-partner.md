@@ -14,11 +14,14 @@ tags:
   - hackathon
   - inclusion
 ---
+
 The world has changed remarkably and drastically in the advent of this pandemic, and **re-emerging** from this is going to be big challenge for all. For the less fortunate, however, the challenge is much greater.
 
 The mission of this hackathon is to help those in most need resume their normal lives, or improve their lives, post-pandemic. **Socio-economic inclusion** is absolutely vital for this to happen.
 
 This hackathon features multiple challenges, which represent various avenues to disrupt the status quo, and make socio-economic inclusion for those who currently are denied it. Help to make the most **vulnerable** people **resilient** in the face of this crisis!
+
+<!-- excerpt -->
 
 Participating teams are encouraged to use decentralised technologies to solve these problems:
 

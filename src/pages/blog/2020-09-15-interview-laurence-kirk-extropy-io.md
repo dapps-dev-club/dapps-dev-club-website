@@ -13,16 +13,19 @@ tags:
 authors:
   - bguiz
 ---
+
 **Brendan**:
 Hi Laurence, great to have you on board as part of [#PCH2020](https://postcovidhack.com/?utm_source=dappsdev&ref=dappsdev.org)!
 
 **Laurence**:
 It's a pleasure to be here!
 
-**Brendan**: 
-You're the CEO of [Extropy.io](https://extropy.io/?utm_source=dappsdev&ref=dappsdev.org) - 
-can you tell us a bit about Extropy - perhaps let's start with the name - 
+**Brendan**:
+You're the CEO of [Extropy.io](https://extropy.io/?utm_source=dappsdev&ref=dappsdev.org) -
+can you tell us a bit about Extropy - perhaps let's start with the name -
 it seems like a play on the word "entropy"!
+
+<!-- excerpt -->
 
 **Laurence**:
 Extropy is actually a philosophy - it's defined as an "evolving framework of values and standards for continuously improving the human condition" which is what we strive for  at Extropy. We're the vehicle that gets our clients from where they are, to where they want to be - quite the opposite of Entropy, thankfully!
@@ -31,7 +34,7 @@ Extropy is actually a philosophy - it's defined as an "evolving framework of val
 What does Extropy do?
 
 **Laurence**:
-We're a consultancy for distributed ledger technology and cryptography. We place alot of emphasis on security, therefore we carry out independent audit reports for smart contracts, as well as full stack development work. 
+We're a consultancy for distributed ledger technology and cryptography. We place alot of emphasis on security, therefore we carry out independent audit reports for smart contracts, as well as full stack development work.
 
 **Brendan**:
 How did you come about the idea to start Extropy, and what pushed you to do it?
@@ -39,12 +42,12 @@ How did you come about the idea to start Extropy, and what pushed you to do it?
 **Laurence**:
 I had been following blockchain technology since 2013, when Ethereum was introduced I was intrigued by the possibilities, and wanted to be part of the movement towards decentralisation.
 
-**Brendan**: 
+**Brendan**:
 Apart from being CEO, you're also Senior Blockchain Developer at Extropy.
 So you're wearing two hats?
 
 **Laurence**:
-Yes, we're a small company, so all of us have multiple roles. Sadly, I don't get to code as often as I would like. 
+Yes, we're a small company, so all of us have multiple roles. Sadly, I don't get to code as often as I would like.
 
 
 **Brendan**:
@@ -59,7 +62,7 @@ You have already held your first workshop in this series - "Blockchain basics: W
 **Laurence**:
 I very much enjoyed the first workshop, thanks to the partners and everyone that attended.
 
-**Brendan**: 
+**Brendan**:
 For those of you only hearing about this now, not to worry, we'll be sure to publish the recorded video, along with the accompanying resources from that ASAP!
 
 > This event is over, and the recorded video will be published soon. Watch this space!
@@ -86,7 +89,7 @@ The final workshop covers zero knowledge proofs, and associated cryptography . I
 
 > RSVP for [Zero-knowledge proofs: A practical guide to developing ZKPs for a DApp](https://www.eventbrite.sg/e/zero-knowledge-proofs-a-practical-guide-to-developing-zkps-for-a-dapp-tickets-118591310803?aff=dappsdev&ref=dappsdev.org)
 
-**Brendan**: 
+**Brendan**:
 That sounds excellent - I'll be sure to attend all of them. (Kind of need to being one of the organisers anyway!)
 
 I think anyone who is participating in [#PCH2020](https://postcovidhack.com/?utm_source=dappsdev&ref=dappsdev.org&ref=dappsdev.org) should too - these are extremely useful skills when it comes to building decentralised applications quickly and securely! Plus, a dash of advanced wizardy (ZKPs) just to flex your skills!
@@ -94,7 +97,7 @@ I think anyone who is participating in [#PCH2020](https://postcovidhack.com/?utm
 **Laurence**:
 Indeed, I still sometimes think that *magic* is involved in zero knowledge proofs, I hope to explain them yet still keep a sense of awe.
 
-**Brendan**: 
+**Brendan**:
 Well, Arthur Clarke's 3rd Law does indeed state that "any sufficiently advanced technology is indistinguishable from magic," after all.
 Sounds like that was true in the 70s, and still holds true today!
 
@@ -107,13 +110,13 @@ There are many resources available to help you, including of course our workshop
 
 > Check out [Extropy's other workshops](http://extropy.foundation/?utm_source=dappsdev&ref=dappsdev.org&ref=dappsdev.org)
 
-**Brendan**: 
+**Brendan**:
 Thank you very much Laurence, and it was great speaking with you!
 
 **Laurence**:
 Thanks, you too!
 
-**Brendan**: 
+**Brendan**:
 Be sure to check out [Extropy.io](https://extropy.io/?utm_source=dappsdev&ref=dappsdev.org) and also sign up for Laurence's upcoming [#PCH2020](https://postcovidhack.com/?utm_source=dappsdev&ref=dappsdev.org&ref=dappsdev.org) workshops!
 
 > See the original [Post Covid Hack 2020 partnership announcement](https://dappsdev.org/blog/2020-08-25-post-covid-hack-2020-community-partner/)

@@ -19,6 +19,9 @@ One of the less talked about "features" of this release is not about something t
 
 In any case, this is no more, and this way to do so has been deprecated by MetaMask.
 Instead, the "Web3 provider" is now injected under a different variable name, `window.ethereum`.
+
+<!-- excerpt -->
+
 This can be confusing for a different reason than the one stated above, if you happen to be using the "Web3 Provider" to interact with a non-Ethereum network, such as [RSK](https://developers.rsk.co/).
 
 ### The differences
