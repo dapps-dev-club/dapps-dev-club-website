@@ -116,6 +116,7 @@ In your `truffle-config.js` file:
           phrase: testnetSeedPhrase,
         },
         providerOrUrl: 'https://public-node.testnet.rsk.co/',
+        derivationPath: "m/44'/37310'/0'/0/",
         // Higher polling interval to check for blocks less frequently
         pollingInterval: 15e3,
       }),
@@ -140,3 +141,10 @@ truffle migrate --network testnet
 ----
 
 Happy DApp developing!
+
+----
+
+**NOTE** You may have noticed that the config contains `derivationPath: "m/44'/37310'/0'/0/"`. This is indeed the appropriate [derivation path for RSK Testnet](https://developers.rsk.co/rsk/architecture/account-based/#derivation-path-info).
+However, if you are using this to develop a DApp, and using Metamask with the same mnemonic seed phrase, Metamask does not derive the same set of addresses.
+This is because the derivation path is hardcoded to use Ethereum's default value, and does not **yet** allow customisation.
+If this is the case, the **workaround** is to use Ethereum's derivation path in Truffle instead, and thus this part of the config should change to `derivationPath: "m/44'/60'/0'/0/"`. 
