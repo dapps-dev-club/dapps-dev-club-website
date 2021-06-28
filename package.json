@@ -31,7 +31,7 @@
     "netlify-cms": "^2.3.2",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.9.4",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.24.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-csv-reader": "^1.2.2",
