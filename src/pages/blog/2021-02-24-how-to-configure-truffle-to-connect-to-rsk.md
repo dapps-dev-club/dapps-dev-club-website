@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: How to configure Truffle to connect to RSK?
-featuredImage: /img/rsk-truffle-polling-interval.png
+featuredImage: /img/rsk-truffle-polling-interval.jpeg
 date: 2021-02-24T09:00:07.115Z
 description: >-
   using the new provider.pollingInterval and deploymentPollingInterval options
